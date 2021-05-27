@@ -1,44 +1,24 @@
-
 //Font awesome
 @import "./fontawesome/fontawesome.scss";
 @import "./fontawesome/regular.scss";
 @import "./fontawesome/brands.scss";
 @import "./fontawesome/solid.scss";
-
 // Setup
 @import "setup/variables.scss";
 @import "setup/functions.scss";
 @import "setup/mixins.scss";
 @import "setup/typography.scss";
-
-//Hamburger-menu
-@import "./hamburgers/hamburgers.scss";
-
 // /Components
 @import "components/app-header.scss";
-@import "components/main-nav.scss";
-@import "components/screen-overlay.scss";
-@import "components/toy-filter.scss";
-@import "components/toy-preview.scss";
-@import "components/toys-charts.scss";
-@import "components/review-add.scss";
-@import "components/review-list.scss";
-@import "components/review-preview.scss";
-@import "components/chat-window.scss";
-@import "components/message.scss";
-
+// @import "components/app-header.scss";
+@import "components/filter.scss";
 //Views
 @import "views/home-page.scss";
 @import "views/user-details.scss";
-@import "views/toy-app.scss";
-@import "views/toy-details.scss";
-@import "views/toy-edit.scss";
 @import "views/dashboard.scss";
 @import "views/login-signup.scss";
-
 // Basics
 @import "basics/helpers.scss";
 @import "basics/layout.scss";
 @import "basics/base.scss";
 @import "basics/buttons.scss";
-
