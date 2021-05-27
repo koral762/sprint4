@@ -9,3 +9,5 @@ export  class BoardDetails extends Component {
         )
     }
 }
+
+
