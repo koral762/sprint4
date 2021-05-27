@@ -4,39 +4,39 @@ import { connect } from 'react-redux'
 import { AppHeader } from './cmps/AppHeader'
 import React, { Component } from 'react';
 import { onLogout } from './store/actions/user.actions'
-import { createMuiTheme, ThemeProvider, } from '@material-ui/core'
+// import { createMuiTheme, ThemeProvider, } from '@material-ui/core'
 
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: '#a9d6e5',
-    },
-    secondary: {
-      main: '#ffff',
-    }
+// const theme = createMuiTheme({
+//   palette: {
+//     primary: {
+//       main: '#a9d6e5',
+//     },
+//     secondary: {
+//       main: '#ffff',
+//     }
 
-  }
-})
+//   }
+// })
 
 class _App extends Component {
   render() {
-    const { onLogout, loggedInUser } = this.props
+    const { onLogout, loggedinUser } = this.props
     return (
-      <ThemeProvider theme={theme}>
+      // <ThemeProvider theme={theme}>
       <div className="main-container flex column" >
-        <AppHeader onLogout={onLogout} loggedInUser={loggedInUser} />
+        <AppHeader onLogout={onLogout} loggedinUser={loggedinUser} />
         <Switch>
           {routes.map(route => <Route key={route.path} exact component={route.component} path={route.path} />)}
         </Switch>
       </div>
-      </ThemeProvider>
+      /* </ThemeProvider> */
     )
   }
 }
 
 function mapStateToProps(state) {
   return {
-    loggedInUser: state.appModule.loggedInUser
+    loggedinUser: state.userModule.loggedinUser
   }
 }
 

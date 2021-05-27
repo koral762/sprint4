@@ -1,9 +1,17 @@
-import React from 'react'
+export const storageService = {
+	load,
+	save,
+	clear
+}
 
-export default function storageservice() {
-	return (
-		<div>
-			storageservice
-		</div>
-	)
+function load(key) {
+	return JSON.parse(localStorage.getItem(key));
+}
+
+function save(key, val) {
+	localStorage.setItem(key, JSON.stringify(val));
+}
+
+function clear(key){
+	localStorage.clear(key)
 }
