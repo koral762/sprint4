@@ -3,7 +3,7 @@ import { routes } from './routes'
 import { connect } from 'react-redux'
 import { AppHeader } from './cmps/AppHeader'
 import React, { Component } from 'react';
-import { onLogout } from './store/actions/user.actions'
+import { onLogout } from './store/actions/user-actions.js'
 // import { createMuiTheme, ThemeProvider, } from '@material-ui/core'
 
 // const theme = createMuiTheme({
