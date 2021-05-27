@@ -22,14 +22,14 @@ export class _LoginSignUp extends Component {
 
     componentDidMount() {
         const { loggedinUser } = this.props
-        if (loggedinUser) this.props.history.push('/toy')
+        if (loggedinUser) this.props.history.push('/board')
         const pageMode = this.props.location.pathname === '/login' ? 'login' : 'signup'
         this.setState({ pageMode })
     }
 
     componentDidUpdate() {
         const { loggedInUser } = this.props
-        if (loggedInUser) this.props.history.push('/toy')
+        if (loggedInUser) this.props.history.push('/board')
     }
 
     validate = (values) => {

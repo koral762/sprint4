@@ -1,6 +1,6 @@
 
 export const boardService = {
-
+    getBoardById
 }
 
 const gBoard = {

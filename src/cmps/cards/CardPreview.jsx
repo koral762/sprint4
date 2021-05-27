@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
 
-export class CardPreview extends Component {
-    render() {
-        return (
-            <div>
-                CardPreview
-            </div>
-        )
-    }
+export function CardPreview({ card }) {
+
+
+    return (
+        <div>
+            <h1>{card.title}</h1>
+        </div>
+    )
+
 }

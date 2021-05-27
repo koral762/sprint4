@@ -23,7 +23,7 @@ export const userService = {
 
 async function login(credentials) {
     try {
-        const user = gUsers.find(user => user.username == credentials.username)//await httpService.post('auth/login', credentials)
+        const user = gUsers.find(user => user.username === credentials.username)//await httpService.post('auth/login', credentials)
         if (user) return _saveLocalUser(user)
     } catch (err) {
         throw err

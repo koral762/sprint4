@@ -2,7 +2,7 @@ const initialState = {
     currBoard: {}
 }
 
-export function toyReducer(state = initialState, action) {
+export function boardReducer(state = initialState, action) {
     switch (action.type) {
         case 'SET_BOARD':
             return { ...state, currBoard: action.board }

@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import { GroupPreview } from "./GroupPreview";
 
-export class GroupList extends Component {
-    render() {
-        return (
-            <div>
-                GroupList
-            </div>
-        )
-    }
+export function GroupList( {groups} ) {
+    console.log(groups);
+    if (!groups) return <h1>loading...</h1>
+    return (
+        <section className="group-list">
+            {groups.map(group => <GroupPreview key={group.id} group={group} />)}
+        </section>
+    )
 }
