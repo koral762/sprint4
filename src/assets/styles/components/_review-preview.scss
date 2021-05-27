@@ -1,0 +1,31 @@
+
+.review-preview{
+    color: $clr3;
+    box-shadow: $boxShadow1;
+    padding: em(10px);
+    margin-bottom: rem(16px);
+    >*:not(:last-child){
+        margin-bottom: em(16px);
+    }
+    .title{
+        >*:not(:last-child){
+           margin-inline-end: em(16px);
+        }
+        .avatar{
+            background-color: $clr1;
+            margin-inline-end: em(16px);
+        }
+        span{
+            font-family: Poppins-Regular;
+            font-weight: bolder;
+        }
+    }
+    p{
+        font-size: em(16px);
+    }
+
+    .review-published{
+        color:$clr5
+    }
+
+}

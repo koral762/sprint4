@@ -1,0 +1,61 @@
+.chat-window {
+    font-size: em(16px);
+    position: fixed;
+    justify-content: space-between;
+    right: em(16px);
+    bottom: em(48px);
+
+    h1 {
+        text-align: center;
+        font-size: em(18px);
+        font-weight: bolder;
+        color: $clr3;
+        margin-bottom: em(16px);
+    }
+
+    .user-typing{
+       font-size: em(14px);
+       color: $clr5;
+       bottom: em(16px);
+    }
+
+    > *:not(:last-child) {
+        margin-inline-end: em(16px);
+    }
+
+    button:first-of-type {
+        min-width: 48px;
+        min-height: 48px;
+        align-self: flex-end;
+    }
+
+    .chat-box {
+        background-color: $clr4;
+        box-shadow: $boxShadow1;
+        padding: em(10px);
+        width: 300px;
+
+        .chat-content {
+            max-height: 250px;
+            overflow-y: scroll;
+            ul{
+                padding: em(5px);
+                >*{
+                    margin-bottom: em(16px);
+                }
+            }
+        }
+        .chat-controller {
+            >*:not(:last-child){
+                margin-inline-end: em(32px);
+            }
+
+            button{
+                background-color: transparent;
+            }
+        }
+        @include  for-wide-layout{
+            width: 500px;
+        }
+    }
+}

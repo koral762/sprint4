@@ -1,0 +1,30 @@
+.app-header {
+    height: 10vh;
+    width: 100%;
+    background-color: $clr1;
+    box-shadow: $boxShadow1;
+    margin-bottom: rem(32px);
+
+    .logo {
+        &::after {
+            content: ".";
+            color: $clr2;
+        }
+    }
+
+    .hamburger {
+        position: absolute;
+        right: rem(32px);
+        z-index: 2;
+
+        @include for-wide-layout {
+            display: none;
+        }
+    }
+    
+    @include for-wide-layout {
+        & > *:not(:last-child) {
+            margin-inline-end: em(30px);
+        }
+    }
+}

@@ -1,0 +1,16 @@
+.message{
+    box-shadow: $boxShadow1;
+    color: $clr3;
+    border-radius: em(16px);
+    padding: em(8px);
+    .msg-content{
+        font-size: em(14px);
+        :first-child{
+            font-weight: bolder;
+        }
+    }
+    .msg-time{
+        font-size: em(12px);
+        color:$clr5
+    }
+}

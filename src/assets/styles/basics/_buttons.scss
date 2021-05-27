@@ -1,0 +1,17 @@
+
+.primary-btn {
+    font-family: Poppins-Regular;
+    font-size: em(16px);
+    padding: em(6px) em(15px);
+    background-color: $clr1;
+    border-radius: rem(25px);
+    transition: color .3s;
+
+    &:hover{
+        color: $clr2;
+    }
+
+    &:active{
+        color: $clr2;
+    }
+}
