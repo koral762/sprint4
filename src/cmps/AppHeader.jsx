@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 export function AppHeader (props) {
     return (
-        <header>
+        <header className="app-header flex justify-space-between">
             <nav>
                 <Link to="/">Home</Link>
                 <Link to="/board"> Boards </Link>
