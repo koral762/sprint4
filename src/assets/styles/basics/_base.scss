@@ -2,11 +2,6 @@
     box-sizing: border-box;
 }
 
-::selection {
-    background-color: $clr1;
-    color: #fff;
-}
-
 html {
     font-family: Poppins-Light;
     font-size: rem(18px);
@@ -22,19 +17,24 @@ img {
     width: 100%;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: Poppins-Regular;
     font-weight: normal;
     line-height: 1;
     margin: 0;
 }
 
-p{
+p {
     margin: 0;
     padding: 0;
 }
 
-button{
+button {
     font-family: inherit;
     background-color: transparent;
     border: none;
@@ -43,13 +43,10 @@ button{
     margin: 0;
 }
 
-a{
+a {
     color: $clr3;
     outline: none;
     text-decoration: none;
     padding: 0;
-    margin: 0; 
+    margin: 0;
 }
-
-
-

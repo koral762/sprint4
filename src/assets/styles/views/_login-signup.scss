@@ -3,24 +3,21 @@
         font-size: em(32px);
         margin-bottom: em(16px);
     }
-
-    p{
-        color: $clr6;
+    p {
+        color: $trnsprnt;
         font-size: em(14px);
     }
-
     form {
-        > * {
+        >* {
             width: 280px;
         }
-
-        > *:not(:last-child) {
+        >*:not(:last-child) {
             margin-bottom: em(16px);
         }
     }
     @include for-narrow-layout {
         form {
-            > * {
+            >* {
                 width: 500px;
             }
         }
