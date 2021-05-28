@@ -71,36 +71,17 @@ export class _AppHeader extends Component {
 
     render() {        
         return (
-            <React.Fragment className="flex">
-                {/* <Dialog open={this.state.isUserDetailsOpen} onClose={this.onCloseUserDetails} onBackdropClick={this.onCloseUserDetails}> */}
-                    {/* <div className="user-details-preview-header">
-                        <div>User Details</div>
-                        <button onClick={this.onCloseUserDetails}>
-                            <CloseOutlined />
-                        </button>
-                    </div> */}
-                    {/* <Users onCloseUserDetails={this.onCloseUserDetails} onLogout={this.onLogout}/> */}
-                {/* </Dialog> */}
-                {/* <Dialog open={this.state.isNewBoardModalShown} onClose={this.onCloseModal} onBackdropClick={this.onCloseModal}> */}
-                    {/* <div>Add new board</div> */}
-                    {/* <AddNewBoard onCloseModal={this.onCloseModal} redirectPath={this.redirectPath} /> */}
-                {/* </Dialog> */}
-                <div className="navbar-container flex">
-                    <div className="navbar-left-container flex">
-                        <div className="board-header-btn left"><NavLink to='/'><span className="material-icons">home </span></NavLink></div>
-                        <div className="board-header-btn left"><NavLink to='/board'><span className="material-icons"></span><h4 className="boards-text"> Boards </h4></NavLink></div>
+            <React.Fragment>
+                <div className="flex justify-space-between">
+                    <div className="flex">
+                        <div><NavLink to='/'><span>home </span></NavLink></div>
+                        <div><NavLink to='/board'><span></span><h4> Boards </h4></NavLink></div>
                     </div>
 
-                    {/* <div className="header-logo"><img src={logoFutura} alt="best logo ever" /></div> */}
                     <div> logo here </div>
 
-                    <div className="navbar-right-container flex">
-                        <div className="board-header-btn right" onClick={this.toggleModal}><span className="material-icons">add</span></div>
-
-                        {(!this.props.loggedinUser) ? <div className="board-header-btn login right" onClick={this.showLoginDrawer}><h4 className="login-text">Login</h4></div> :''}
-                        {/* {(this.props.loggedinUser) ? <div onClick={this.onOpenUserDetails} className="member-preview-header-container"><MemberPreview name={this.props.loggedinUser.fullName} imgUrl={this.props.loggedinUser.imgUrl} /></div> : <React.Fragment />} */}
-{/* 
-                        <LoginDrawer isShowing={this.state.isLoginDrawerShown} hideLoginDrawer={this.hideLoginDrawer} /> */}
+                    <div className="flex">
+                        <div onClick={this.toggleModal}><span>add</span></div>
                         <div> Login Here</div>
 
                     </div>

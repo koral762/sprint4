@@ -1,7 +1,7 @@
 // Edit card preivew - should have edit labels, change memebers change due date and archive
 import React, { Component } from 'react'
 
-import {Button, Dialog } from '@material-ui/core';
+import { Button, Dialog } from '@material-ui/core';
 import { CardLabels } from './CardLabels';
 import { connect } from 'react-redux';
 

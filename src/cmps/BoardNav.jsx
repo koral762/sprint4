@@ -17,22 +17,16 @@ export class _BoardNav extends Component {
     render() {
         
         return (
-                <div className="boards-header-container flex " >
-                    {/* <h3>{this.props.title}</h3> */}
-                    Board Title Here
-                    <div className="members-container">
-                        {/* <MemberList members={this.props.members} allUsers={this.props.allUsers}/> */}
+                <div className="flex justify-space-between" >
+                    <div>Board Title Here</div>
+                    <div>
                         Member List Here
                     </div>
 
-
-                    {/* <Filter onFilter={this.props.onFilter} /> */}
-                    Filter here
+                    <div>Filter here</div>
                     
-                    {/* <Notifications board={this.props.board} lastUpdate={this.props.lastUpdate}/> */}
-                    Notifications Here
-                    <div className="board-header-btn show-menu" onClick={() => this.props.onToggleSidebar(true)}>
-                        {/* <MoreHorizOutlinedIcon /> */}
+                    <div>Notifications Here</div>
+                    <div onClick={() => this.props.onToggleSidebar(true)}>
                         <p>Activities Menu Here</p>
                     </div>
                 </div>
