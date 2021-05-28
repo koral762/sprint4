@@ -17,22 +17,6 @@ export class _BoardNav extends Component {
     render() {
         
         return (
-<<<<<<< HEAD
-            <div className="board-nav">
-                <nav className="b-nav-item">
-                    {/* <h5>{selectedBoard.title}</h5> */}
-                    title of board here
-                </nav>
-                <nav>
-                    {/* <span style={this.state.userImgStyle}></span> */}
-                    pics of board member here
-                </nav>
-                <nav>
-                    <button onClick={toggleSideMenu}> Activities Menu</button>
-                </nav>
-
-            </div>
-=======
                 <div className="boards-header-container flex " >
                     {/* <h3>{this.props.title}</h3> */}
                     Board Title Here
@@ -52,7 +36,6 @@ export class _BoardNav extends Component {
                         <p>Activities Menu Here</p>
                     </div>
                 </div>
->>>>>>> 2d1f1df4feabb1f125cc7bc2c600407eed0a97b3
         )
     }
 }

@@ -30,13 +30,13 @@ export class _AppHeader extends Component {
 
     onCloseModal = () => {
         this.setState({ isNewBoardModalShown: false })
-    } 
+    }
 
     componentDidMount() {
         this.setState({ loggedinUser: userService.getLoggedinUser() })
     }
 
-    
+
     redirectPath = (id) => {
         this.props.history.replace(`/`)
         this.props.history.replace(`/board/${id}`)
@@ -69,40 +69,44 @@ export class _AppHeader extends Component {
         this.setState({ isUserDetailsOpen: false })
     }
 
-    render() {        
+    render() {
         return (
-            <React.Fragment className="flex">
+            <React.Fragment>
                 {/* <Dialog open={this.state.isUserDetailsOpen} onClose={this.onCloseUserDetails} onBackdropClick={this.onCloseUserDetails}> */}
-                    {/* <div className="user-details-preview-header">
+                {/* <div className="user-details-preview-header">
                         <div>User Details</div>
                         <button onClick={this.onCloseUserDetails}>
                             <CloseOutlined />
                         </button>
                     </div> */}
-                    {/* <Users onCloseUserDetails={this.onCloseUserDetails} onLogout={this.onLogout}/> */}
+                {/* <Users onCloseUserDetails={this.onCloseUserDetails} onLogout={this.onLogout}/> */}
                 {/* </Dialog> */}
                 {/* <Dialog open={this.state.isNewBoardModalShown} onClose={this.onCloseModal} onBackdropClick={this.onCloseModal}> */}
-                    {/* <div>Add new board</div> */}
-                    {/* <AddNewBoard onCloseModal={this.onCloseModal} redirectPath={this.redirectPath} /> */}
+                {/* <div>Add new board</div> */}
+                {/* <AddNewBoard onCloseModal={this.onCloseModal} redirectPath={this.redirectPath} /> */}
                 {/* </Dialog> */}
-                <div className="navbar-container flex">
+                <div className="navbar-container app-header flex justify-space-between full">
                     <div className="navbar-left-container flex">
-                        <div className="board-header-btn left"><NavLink to='/'><span className="material-icons">home </span></NavLink></div>
-                        <div className="board-header-btn left"><NavLink to='/board'><span className="material-icons"></span><h4 className="boards-text"> Boards </h4></NavLink></div>
+                        <div className="board-header-btn">
+                            <NavLink to='/' activeClassName="header-nav-link">
+                                <span className="material-icons">Home</span>
+                                </NavLink></div>
+                        <div className="board-header-btn">
+                            <NavLink to='/board' activeClassName="header-nav-link">
+                            <span className="material-icons">Boards</span></NavLink></div>
                     </div>
 
                     {/* <div className="header-logo"><img src={logoFutura} alt="best logo ever" /></div> */}
-                    <div> logo here </div>
+                    <div className="logo">LOGO</div>
 
                     <div className="navbar-right-container flex">
-                        <div className="board-header-btn right" onClick={this.toggleModal}><span className="material-icons">add</span></div>
+                        <div className="board-header-btn right header-nav-link" onClick={this.toggleModal}><span className="material-icons">add</span></div>
 
-                        {(!this.props.loggedinUser) ? <div className="board-header-btn login right" onClick={this.showLoginDrawer}><h4 className="login-text">Login</h4></div> :''}
+                        {(!this.props.loggedinUser) ? 
+                        <div className="board-header-btn login right header-nav-link" onClick={this.showLoginDrawer}>Login</div> : ''}
                         {/* {(this.props.loggedinUser) ? <div onClick={this.onOpenUserDetails} className="member-preview-header-container"><MemberPreview name={this.props.loggedinUser.fullName} imgUrl={this.props.loggedinUser.imgUrl} /></div> : <React.Fragment />} */}
-{/* 
+                        {/* 
                         <LoginDrawer isShowing={this.state.isLoginDrawerShown} hideLoginDrawer={this.hideLoginDrawer} /> */}
-                        <div> Login Here</div>
-
                     </div>
                 </div>
             </React.Fragment>
