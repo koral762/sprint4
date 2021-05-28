@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { CardPreview } from '../cards/CardPreview'
 import { addCard } from '../../store/actions/board-actions.js'
-import { NewItem } from '../cards/NewItem'
+import { NewItem } from '../NewItem'
 
 class _GroupPreview extends Component {
 
@@ -38,7 +38,8 @@ class _GroupPreview extends Component {
         const group = this.props.group
 
         return (
-            <section className="card-list" style={{ border: '1px solid black', margin: '5px' }}>
+            <section className="card-list">
+                {group.title}
                 {group.cards.map((card) => <CardPreview key={card.id}
                     card={card}
                 />)}

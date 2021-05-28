@@ -25,7 +25,7 @@ export class NewItem extends Component {
 
     getIsEditing = () => {
         if (!this.state.isEditing) return (
-            <div className="new-item-btn" onClick={this.setEditing}><button style={{ fontSize: 14 }}>add</button>{this.props.addItemTxt}</div>
+            <div className="new-item-btn" onClick={this.setEditing}><button style={{ fontSize: 14 }}>{this.props.addItemTxt}</button></div>
         )
         
         return (
