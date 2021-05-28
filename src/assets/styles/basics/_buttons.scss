@@ -1,17 +1,14 @@
-
 .primary-btn {
     font-family: Poppins-Regular;
     font-size: em(16px);
     padding: em(6px) em(15px);
-    background-color: $clr1;
+    background-color: $clr2;
     border-radius: rem(25px);
     transition: color .3s;
-
-    &:hover{
-        color: $clr2;
+    &:hover {
+        color: $clr5;
     }
-
-    &:active{
-        color: $clr2;
+    &:active {
+        color: $clr5;
     }
 }

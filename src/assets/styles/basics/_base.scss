@@ -3,13 +3,17 @@
 }
 
 html {
+    height: 100vh;
     font-family: Poppins-Light;
-    font-size: rem(18px);
-    color: $clr2;
+    color: $darktxt;
     line-height: 1.6;
+    margin: 0;
+    scroll-behavior: smooth;
 }
 
 body {
+    height: 100vh;
+    font-size: rem(14px);
     margin: 0;
 }
 
@@ -36,17 +40,35 @@ p {
 
 button {
     font-family: inherit;
-    background-color: transparent;
+    // background-color: transparent;
     border: none;
+    border-radius: 5px;
     outline: none;
     cursor: pointer;
     margin: 0;
 }
 
 a {
-    color: $clr3;
+    color: $darktxt;
     outline: none;
     text-decoration: none;
     padding: 0;
     margin: 0;
+}
+
+textarea {
+    resize: none;
+    height: 36px;
+    border: none;
+    border-radius: 3px;
+    padding: 4px 8px;
+    line-height: 24px;
+    width: 100%;
+    background-color: $clr3;
+    color: inherit;
+    margin-bottom: 2px;
+    &:focus {
+        border: 2px solid $clr4;
+        background-color: #fff;
+    }
 }
