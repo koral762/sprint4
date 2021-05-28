@@ -74,16 +74,15 @@ export class _AppHeader extends Component {
             <React.Fragment>
                 <div className="flex justify-space-between">
                     <div className="flex">
-                        <div><NavLink to='/'><span>home </span></NavLink></div>
-                        <div><NavLink to='/board'><span></span><h4> Boards </h4></NavLink></div>
+                        <div><NavLink to='/'>home</NavLink></div>
+                        <div><NavLink to='/board'>Boards</NavLink></div>
                     </div>
 
-                    <div> logo here </div>
+                    <div>logo here</div>
 
                     <div className="flex">
-                        <div onClick={this.toggleModal}><span>add</span></div>
-                        <div> Login Here</div>
-
+                        <div onClick={this.toggleModal}>Add</div>
+                        <div>Login Here</div>
                     </div>
                 </div>
             </React.Fragment>

@@ -11,20 +11,13 @@ export class _BoardNav extends Component {
     }
     render() {
         return (
-                <div className="boards-header-container flex " >
-                    {/* <h3>{this.props.title}</h3> */}
-                    Board Title Here
-                    <div className="members-container">
-                        {/* <MemberList members={this.props.members} allUsers={this.props.allUsers}/> */}
-                        Member List Here
-                    </div>
-                    {/* <Filter onFilter={this.props.onFilter} /> */}
-                    Filter here
-                    {/* <Notifications board={this.props.board} lastUpdate={this.props.lastUpdate}/> */}
+                <div className="flex" >
+                    <h3>{this.props.board.title}</h3>
+                    <div>Member List Here</div>
+                    <input type="text" placeholder="Filter here"></input>
                     Notifications Here
-                    <div className="board-header-btn show-menu" onClick={() => this.props.onToggleSidebar(true)}>
-                        {/* <MoreHorizOutlinedIcon /> */}
-                        <p>Activities Menu Here</p>
+                    <div onClick={() => this.props.onToggleSidebar(true)}>
+                        Activities Menu Here
                     </div>
                 </div>
         )
@@ -32,7 +25,7 @@ export class _BoardNav extends Component {
 }
 const mapStateToProps = state => {
     return {
-        board: state.boardModule.board,
+        board: state.boardModule.currBoard,
         allUsers: state.userModule.users
     };
 };
