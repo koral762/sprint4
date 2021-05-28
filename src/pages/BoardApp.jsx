@@ -11,11 +11,15 @@ export class _BoardApp extends Component {
         this.props.loadBoard()
     }
 
+    onAddGroup = (txt) => {
+        return txt
+      }
+
     render() {
         return (
             <section>
                 <BoardNav />
-                <GroupList groups={this.props.board.groups} /> 
+                <GroupList groups={this.props.board.groups} onAddGroup={this.onAddGroup} /> 
             </section>
         )
     }
