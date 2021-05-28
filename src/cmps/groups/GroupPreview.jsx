@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { CardPreview } from '../cards/CardPreview'
 import { addCard } from '../../store/actions/board-actions.js'
-import { NewItem } from '../cards/NewItem'
+import { NewItem } from '../NewItem'
 
 class _GroupPreview extends Component {
 
@@ -39,7 +39,7 @@ class _GroupPreview extends Component {
 
         return (
             <section className="card-list">
-                <div className="card-header">card header</div>
+                {group.title}
                 {group.cards.map((card) => <CardPreview key={card.id}
                     card={card}
                 />)}
