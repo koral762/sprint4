@@ -24,7 +24,7 @@ class _App extends Component {
     const { onLogout, loggedinUser } = this.props
     return (
       // <ThemeProvider theme={theme}>
-      <div className="main-container flex column" >
+      <div className="main-container flex column full" >
         <AppHeader onLogout={onLogout} loggedinUser={loggedinUser} />
         <Switch>
           {routes.map(route => <Route key={route.path} exact component={route.component} path={route.path} />)}

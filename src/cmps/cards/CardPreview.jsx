@@ -3,7 +3,7 @@ export function CardPreview({ card }) {
 
 
     return (
-        <div>
+        <div className="card-preview">
             <h1>{card.title}</h1>
         </div>
     )

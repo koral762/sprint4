@@ -24,8 +24,8 @@ class _BoardNav extends Component {
     render() {
         const { selectedBoard, toggleSideMenu } = this.props
         return (
-            <div>
-                <nav>
+            <div className="board-nav">
+                <nav className="b-nav-item">
                     {/* <h5>{selectedBoard.title}</h5> */}
                     title of board here
                 </nav>

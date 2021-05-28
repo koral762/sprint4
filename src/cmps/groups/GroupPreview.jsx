@@ -38,7 +38,8 @@ class _GroupPreview extends Component {
         const group = this.props.group
 
         return (
-            <section className="card-list" style={{ border: '1px solid black', margin: '5px' }}>
+            <section className="card-list">
+                <div className="card-header">card header</div>
                 {group.cards.map((card) => <CardPreview key={card.id}
                     card={card}
                 />)}
