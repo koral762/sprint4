@@ -1,5 +1,22 @@
+button,
+.btn {
+    color: $darktxt;
+    font-size: em(16px);
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: background-color 0.1s linear;
+    margin: 0 5px;
+    border-radius: 3px;
+    padding: 5px;
+    cursor: pointer;
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    &.active {
+        color: $clr5;
+    }
+}
+
 .primary-btn {
-    font-family: Poppins-Regular;
     font-size: em(16px);
     padding: em(6px) em(15px);
     background-color: $clr2;

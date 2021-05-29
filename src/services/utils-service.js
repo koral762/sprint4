@@ -1,6 +1,5 @@
 
 export const utils = {
-  
     makeId
 }
 

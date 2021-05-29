@@ -1,47 +1,22 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux';
-import { loadBoard } from '../../store/actions/board-actions';
+import { connect } from 'react-redux'
+import { loadBoard, updateCard, addActivity } from '../../store/actions/board-actions'
+import { boardService } from '../../services/board-service'
+import { CardDescription } from './CardDescription'
+import { CardAddComment } from './CardAddComment'
+import { ActivityLog } from '../ActivityLog'
+import { withRouter } from 'react-router'
 
 class _CardDetails extends Component {
-    
-    /*
-    {
-          "id": "XHygDINBkE",
-          "title": "Broccoli",
-          "description": "",
-          "archivedAt": null,
-          "members": [
-            
-          ],
-          "labels": [
-            {
-              "id": "l101"
-            }
-          ],
-          "createdAt": 1601366855608,
-          "dueDate": null,
-          "attachments": null,
-          "timeAnalysis": {
-            "timeInGroupsMap": {
-              
-            },
-            "currGroup": {
-              "groupId": "yS0BIH6hb0",
-              "enteredAt": 1601366855608
-            }
-          },
-          "byMember": {
-            
-          }
-        }
-    */
+
     state = {
         card: null,
         groupId: null,
-        groupName: null
+        groupName: null,
+        commentsOnly: false
     }
 
-    componentDidMount() {      
+    componentDidMount() {
         console.log('Did mount boardId: ' + this.props.boardId + ' cardId' + this.props.cardId)
         if (this.props.boardId && this.props.cardId) {
             this.props.loadBoard(this.props.boardId).then(() => {
@@ -79,22 +54,85 @@ class _CardDetails extends Component {
     }
 
     onCloseCard = () => {
-        this.props.history.push(`/board/${this.props.boardId}`)
+        this.props.history.push(`/board/`)
+    }
+
+    submitCard = (card, activity) => {
+        return new Promise(resolve => {
+            this.props.updateCard(this.props.board, card, activity).then(() => resolve())
+        })
+    }
+
+    onUpdateDesc = async (description) => {
+        const card = { ...this.state.card }
+        card.description = description
+
+        this.setState({ card }, async () => {
+            const activity = this.createActivity('updated the description')
+            this.submitCard(card, activity)
+        })
+    }
+
+    createActivity = (txt) => {
+        const activity = {
+            "txt": txt,
+            "commentTxt": '',
+            "card": {
+                "id": this.state.card.id,
+                "title": this.state.card.title
+            }
+        }
+
+        return boardService.createActivity(activity)
+    }
+
+    onAddComment = (txt) => {
+        const newActivity = this.createActivity(txt)
+
+        this.props.addActivity(this.props.board, newActivity)
+
+    }
+
+    toggleCommentsOnly = () => {
+        if (this.state.commentsOnly) return this.setState({ commentsOnly: false })
+        return this.setState({ commentsOnly: true })
+    }
+
+    getFilteredActivities = () => {
+        const card = this.state.card
+        const activities = this.props.board.activities
+        if (!activities) return []
+        let cardActivities = activities.filter(activity => activity.card.id === card.id)
+        if (this.state.commentsOnly) cardActivities = cardActivities.filter(activity => {
+            if (activity.commentTxt.length) return activity
+        })
+        return cardActivities
     }
 
     render() {
-        if (!this.state.card){
+        if (!this.state.card) {
             return <div>Loading...</div>
         }
+        console.log(this.state.card)
         return (
-            <div className="card-details">
-                <div>{this.state.card.title}</div>
-                <div>{this.state.card.description}</div>
+            <div>
                 <div>
-                    <div></div>
-                    <div></div>
+                    {this.state.card.title}
+                    <small>in list {this.state.groupName}</small>
                 </div>
-                <div></div>
+                <button onClick={this.onCloseCard}>X</button>
+                <div>
+                    <CardDescription onUpdateDesc={this.onUpdateDesc} description={this.state.card.description} />
+                </div>
+                <div>
+                    <h3>Activity</h3>
+                    <button onClick={this.toggleCommentsOnly}>{(this.state.commentsOnly) ? 'Show Details' : 'Hide Details'}</button>
+                </div>
+                <CardAddComment onAddComment={this.onAddComment} />
+                <ActivityLog
+                    boardId={this.props.board._id}
+                    displayMode="card"
+                    activities={this.getFilteredActivities()} />
             </div>
         )
     }
@@ -107,7 +145,9 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-    loadBoard
+    loadBoard,
+    updateCard,
+    addActivity
 };
 
-export const CardDetails = connect(mapStateToProps, mapDispatchToProps)(_CardDetails);
+export const CardDetails = connect(mapStateToProps, mapDispatchToProps)(connect(withRouter)(_CardDetails))

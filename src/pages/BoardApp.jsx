@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { GroupList } from '../cmps/groups/GroupList'
+import { CardDetails } from '../cmps/cards/CardDetails'
 import { BoardNav } from '../cmps/BoardNav'
-import { loadBoard , onRemoveGroup } from '../store/actions/board-actions'
+import { loadBoard, onRemoveGroup } from '../store/actions/board-actions'
 // import { Link } from "react-router-dom";
 
 export class _BoardApp extends Component {
@@ -17,10 +18,14 @@ export class _BoardApp extends Component {
 
     render() {
         return (
-            <section className="board-container flex column">
-                <BoardNav className="board-nav"/>
-                <GroupList groups={this.props.board.groups} onAddGroup={this.onAddGroup} /> 
-            </section>
+            <div className="board-app">
+            {(this.props.match.params.cardId) ? 
+            <CardDetails cardId={this.props.match.params.cardId} boardId={this.props.board._id} history={this.props.history} /> : <div></div>}
+                <section className="board-container flex column">
+                    <BoardNav />
+                    <GroupList groups={this.props.board.groups} onAddGroup={this.onAddGroup} history={this.props.history}/> 
+                </section>
+            </div>
         )
     }
 }
@@ -34,7 +39,7 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = {
     loadBoard,
-    onRemoveGroup
+    onRemoveGroup    
 }
 
 export const BoardApp = connect(mapStateToProps, mapDispatchToProps)(_BoardApp)

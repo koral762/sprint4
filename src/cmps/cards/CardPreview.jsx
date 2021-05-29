@@ -8,7 +8,9 @@ class _CardPreview extends Component {
         isEditing: false
     }
 
-    ref = React.createRef()
+    onDetails = (ev) => {
+        this.props.history.push(`/board/card/${this.props.card.id}`)
+    }
 
     onOpenCardActions = (ev) => {
         ev.stopPropagation()
@@ -28,7 +30,7 @@ class _CardPreview extends Component {
         const card = this.props.card
 
         return (
-            <div className="card-preview">
+            <div className="card-preview" onClick={this.onDetails}>
                 {card.title}
                 <button ref={this.ref} onClick={this.onOpenCardActions}>🖊</button>
                 {(this.state.isEditing) ? <CardMenu props={this.props} onClose={this.onSetNotEditing}/> : <React.Fragment />}

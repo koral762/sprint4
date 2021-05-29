@@ -12,12 +12,13 @@ export function loadBoard() {
     }
   }
 }
+
 export function onRemoveGroup(board, groupid) {
 
   return async dispatch => {
     try {
       let newBoard = JSON.parse(JSON.stringify(board))
-      const groupIdx = newBoard.groups.findIndex(group=>groupid === group.id)
+      const groupIdx = newBoard.groups.findIndex(group => groupid === group.id)
       newBoard.groups.splice(groupIdx, 1)
       dispatch({ type: 'SET_BOARD', board: newBoard })
       await boardService.updateBoard(newBoard) // updating the DB
@@ -83,6 +84,17 @@ export function updateCard(board, newCard) {
   }
 }
 
+export function updateBoard(board) {
+  return async dispatch => {
+    try {
+      let newBoard = JSON.parse(JSON.stringify(board))
+      dispatch({ type: 'SET_BOARD', board: newBoard })
+      await boardService.updateBoard(newBoard) // updating the DB
+    } catch (err) {
+      console.log('error updating board', err)
+    }
+  }
+}
 
 export function onRemoveCard(board, cardId) {
   return async dispatch => {
@@ -118,6 +130,20 @@ export function setNewGroupName(groupId, groupName, board) {
   }
 }
 
+export function addActivity(board, activity) {
+  return async dispatch => {
+    try {
+      let newBoard = JSON.parse(JSON.stringify(board))
+      if (!newBoard.activities) newBoard.activities = []
+      newBoard.activities.unshift(activity)
+      dispatch({ type: 'SET_BOARD', board: newBoard })
+      await boardService.updateBoard(newBoard) // updating the DB
+    } catch (err) {
+      console.log('error removing board', err)
+    }
+  }
+}
+
 // ////////////////////////////////////////////////
 function makeId(length = 8) {
   let text = '';
@@ -128,3 +154,4 @@ function makeId(length = 8) {
 
   return text;
 }
+

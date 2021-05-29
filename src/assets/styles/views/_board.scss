@@ -1,10 +1,16 @@
 .board-container {
     height: 100%;
     width: 100%;
+    padding: 0 8px;
     background-color: rgba(0, 0, 0, 0);
-    .board-nav {
-        background-color: rgb(250, 0, 117);
+    .proj-title {
+        font-size: rem(24px);
+        font-weight: bold;
+        letter-spacing: 1.5px;
+        vertical-align: middle;
     }
+    // input[type="text"] {}
+    // .boards-header-container {}
     .boards-header-container>* {
         margin: 7px;
     }
