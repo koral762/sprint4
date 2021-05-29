@@ -3,12 +3,14 @@
 }
 
 html {
-    height: 100vh;
+    // height: 100vh;
     font-family: Poppins-Light;
     color: $darktxt;
     line-height: 1.6;
     margin: 0;
     scroll-behavior: smooth;
+    background: rgb(255, 170, 165);
+    background: linear-gradient(164deg, rgba(255, 170, 165, 1) 15%, rgba(255, 193, 117, 1) 40%, rgba(208, 255, 132, 1) 55%, rgba(168, 230, 207, 1) 68%, rgba(0, 212, 255, 1) 100%);
 }
 
 body {

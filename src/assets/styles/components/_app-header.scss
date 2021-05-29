@@ -6,6 +6,7 @@
     // right: 0;
     // top: 0;
     // transform: translateX(100%);
+    align-items: center;
     background-color: $clr1;
     width: 100%;
     z-index: 2;
@@ -35,39 +36,20 @@
     button {
         color: $darktxt;
         font-size: em(18px);
+        background-color: rgba(0, 0, 0, 0.1);
+        transition: background-color 0.1s linear;
+        margin: 0 5px;
+        border-radius: 3px;
+        padding: 5px;
         &:hover {
-            color: $clr5;
+            background-color: rgba(0, 0, 0, 0.2);
         }
         &.active {
             color: $clr5;
         }
     }
-    // .user-panel {
-    //     span {
-    //         font-family: Poppins-Regular;
-    //         font-weight: bolder;
-    //         font-size: em(16px);
-    //         color: $clr3;
-    //         margin-inline-end: em(16px);
-    //     }
-    // }
-    // @include for-wide-layout {
-    //     display: flex;
-    //     position: unset;
-    //     // background-color: unset;
-    //     width: 100vw;
-    //     box-shadow: unset;
-    //     transform: none;
-    //     ul {
-    //         position: unset;
-    //         flex-direction: unset;
-    //         justify-content: space-between;
-    //         align-items: center;
-    //         padding: unset;
-    //     }
-    //     ul>*:not(:last-child) {
-    //         margin-inline-end: em(16px);
-    //         margin-bottom: unset;
-    //     }
+    // .header-nav-link {
+    //     
+    //     background-color: rgba(255, 255, 255, 0.6);
     // }
 }

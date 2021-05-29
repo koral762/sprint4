@@ -30,13 +30,13 @@ export class _AppHeader extends Component {
 
     onCloseModal = () => {
         this.setState({ isNewBoardModalShown: false })
-    } 
+    }
 
     componentDidMount() {
         this.setState({ loggedinUser: userService.getLoggedinUser() })
     }
 
-    
+
     redirectPath = (id) => {
         this.props.history.replace(`/`)
         this.props.history.replace(`/board/${id}`)
@@ -69,21 +69,21 @@ export class _AppHeader extends Component {
         this.setState({ isUserDetailsOpen: false })
     }
 
-    render() {        
+    render() {
         return (
             <React.Fragment>
-                <div className="flex justify-space-between">
+                {/* navbar-container app-header flex justify-space-between full */}
+                <div className="flex justify-space-between app-header">
                     <div className="flex">
-                        <div><NavLink to='/'><span>home </span></NavLink></div>
-                        <div><NavLink to='/board'><span></span><h4> Boards </h4></NavLink></div>
+                        <div><NavLink to='/'>home</NavLink></div>
+                        <div><NavLink to='/board'>Boards</NavLink></div>
                     </div>
 
-                    <div> logo here </div>
+                    <div>logo here</div>
 
                     <div className="flex">
-                        <div onClick={this.toggleModal}><span>add</span></div>
-                        <div> Login Here</div>
-
+                        <div onClick={this.toggleModal}>Add</div>
+                        <div>Login Here</div>
                     </div>
                 </div>
             </React.Fragment>
