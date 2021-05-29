@@ -18,7 +18,7 @@ export class _BoardApp extends Component {
     render() {
         return (
             <section className="board-container flex column">
-                <BoardNav className="board-nav"/>
+                <BoardNav />
                 <GroupList groups={this.props.board.groups} onAddGroup={this.onAddGroup} /> 
             </section>
         )

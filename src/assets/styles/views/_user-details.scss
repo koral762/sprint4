@@ -1,10 +1,9 @@
-.user-details{
+.user-details {
     color: $clr3;
-    >*:not(:last-child){
+    >*:not(:last-child) {
         margin-bottom: em(16px);
     }
-
-    h3{
-        color: $clr5;
+    h3 {
+        color: $darktxt;
     }
 }

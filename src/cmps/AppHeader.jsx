@@ -72,14 +72,15 @@ export class _AppHeader extends Component {
     render() {
         return (
             <React.Fragment>
-                {/* navbar-container app-header flex justify-space-between full */}
-                <div className="flex justify-space-between app-header">
-                    <div className="flex">
-                        <div><NavLink to='/'>home</NavLink></div>
-                        <div><NavLink to='/board'>Boards</NavLink></div>
+                <div className="flex justify-space-between app-header align-center">
+                    <div className="header-icons flex">
+                        <div><NavLink to='/'><span class="material-icons btn">
+                            home</span></NavLink></div>
+                        <div><NavLink to='/board'><span class="material-icons btn">
+                        dashboard</span></NavLink></div>
                     </div>
 
-                    <div>logo here</div>
+                    <div className="logo">LOGO</div>
 
                     <div className="flex">
                         <div onClick={this.toggleModal}>Add</div>

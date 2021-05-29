@@ -16,18 +16,18 @@ class _GroupPreview extends Component {
     onAddCard = (txt) => {
         return this.props.addCard(this.props.board, txt, this.props.group.id)
     }
-
+    
     getAddItemTxt = (txt) => {
         if (this.props.group.cards.length) return 'Add another card'
         return 'Add a card'
     }
 
-    handleChangeGroupName=(ev)=>{
+    handleChangeGroupName = (ev) => {
         this.setState({ currGroupName: ev.target.value })
     }
 
-    onSubmit=(ev)=>{
-        ev.preventDefault()        
+    onSubmit = (ev) => {
+        ev.preventDefault()
         const { currGroupId, currGroupName } = this.state
         this.props.setNewGroupName(currGroupId, currGroupName, this.props.board)
         this.setState({ isChangeGroupShown: false })
@@ -39,7 +39,10 @@ class _GroupPreview extends Component {
 
         return (
             <section className="card-list">
-                {group.title}
+                <div className="group-header-wrapper flex align-center">
+                    <textarea class="group-header" maxlength="512" >{group.title}</textarea>
+                    <div class="list-header-extras">...</div>
+                </div>
                 {group.cards.map((card) => <CardPreview key={card.id}
                     card={card}
                 />)}

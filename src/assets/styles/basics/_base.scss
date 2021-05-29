@@ -8,15 +8,19 @@ html {
     color: $darktxt;
     line-height: 1.6;
     margin: 0;
-    scroll-behavior: smooth;
-    background: rgb(255, 170, 165);
-    background: linear-gradient(164deg, rgba(255, 170, 165, 1) 15%, rgba(255, 193, 117, 1) 40%, rgba(208, 255, 132, 1) 55%, rgba(168, 230, 207, 1) 68%, rgba(0, 212, 255, 1) 100%);
 }
 
 body {
     height: 100vh;
     font-size: rem(14px);
     margin: 0;
+    scroll-behavior: smooth;
+    background-repeat: no-repeat;
+    background-image: url('../../imgs/output-onlinegiftools.gif');
+    background-size: auto;
+    background-position: bottom right;
+    // background-image: url('../../imgs/Quantum-Gradient.svg');
+    // background-size: cover;
 }
 
 img {
@@ -42,7 +46,6 @@ p {
 
 button {
     font-family: inherit;
-    // background-color: transparent;
     border: none;
     border-radius: 5px;
     outline: none;
@@ -63,14 +66,37 @@ textarea {
     height: 36px;
     border: none;
     border-radius: 3px;
-    padding: 4px 8px;
-    line-height: 24px;
+    padding: 2px;
+    line-height: 20px;
     width: 100%;
-    background-color: $clr3;
+    background-color: transparent;
     color: inherit;
     margin-bottom: 2px;
+    white-space: pre-wrap;
     &:focus {
         border: 2px solid $clr4;
         background-color: #fff;
     }
+}
+
+input[type=search],
+input[type=text] {
+    outline: none;
+    font-size: em(16px);
+    padding: 0.5em 0.5em;
+    background-color: $trnsprnt;
+    border: none;
+    border-radius: 4px;
+    &:focus {
+        width: 250px;
+        background-color: #fff;
+    }
+    &::placeholder {
+        color: $darktxt;
+    }
+}
+
+span {
+    vertical-align: middle;
+    margin-right: 5px;
 }

@@ -16,13 +16,15 @@ export class GroupList extends Component {
     render() {
         const { groups, onAddGroup } = this.props
 
-        if (!groups) return <h1>loading...</h1>
+        if (!groups) return <h1>Loading...</h1>
         return (
-            <section className="group-list flex">
+            <section className="group-list flex full">
                 {groups.map(group => <GroupPreview key={group.id} group={group} />)}
                 <div className="new-group" >
-                    {!this.state.isNewGroupShown && <div className="add-new-group-text"
-                        onClick={() => this.setState({ isNewGroupShown: true })}>+ Add another list</div>}
+                    {!this.state.isNewGroupShown && <div className="add-new-group-text btn"
+                        onClick={() => this.setState({ isNewGroupShown: true })}><span class="material-icons">
+                        add
+                        </span>Add another list</div>}
                     {this.state.isNewGroupShown && <AddNewGroup closeNewGroup={this.closeNewGroup} />}
                 </div>
             </section>
