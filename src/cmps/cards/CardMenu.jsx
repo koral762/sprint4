@@ -1,7 +1,7 @@
 // // Edit card preivew - should have edit labels, change memebers change due date and archive
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { updateCard , onRemoveCard} from '../../store/actions/board-actions.js'
+import { updateCard, onRemoveCard } from '../../store/actions/board-actions.js'
 
 class _CardMenu extends Component {
 
@@ -27,19 +27,24 @@ class _CardMenu extends Component {
     }
 
     componentDidMount() {
-        // this.getCurrTitle()
+        this.getCurrTitle()
     }
 
 
-    // onChange = (ev) => {
-    //     const txtValue = ev.target.value
-    //     this.setState({ txtValue })
-    // }
+    onChange = (ev) => {
+        const txtValue = ev.target.value
+        this.setState({ txtValue })
+    }
 
-    // onKeyPress = (ev) => {
-    //     if (ev.key === 'Enter') return this.onUpdateHeader()
-    // }
+    onKeyPress = (ev) => {
+        if (ev.key === 'Enter') return this.onUpdateHeader()
+    }
 
+    onUpdateHeader =  () => {
+        let card = { ...this.props.props.card }
+        card.title = this.state.txtValue
+        this.submitCard(card)
+    }
 
     onDeleteCard = () => {
         let card = { ...this.props.props.card }
@@ -48,15 +53,23 @@ class _CardMenu extends Component {
     }
 
 
-    // getCurrTitle() {
-    //     const txtValue = this.props.props.card.title
-    // }
+    getCurrTitle() {
+        const txtValue = this.props.props.card.title
+        this.setState({ txtValue })
+    }
 
 
     render() {
 
         return (
-            <button ref={this.ref} onClick={this.onDeleteCard}><span>Delete Card</span></button>
+            <section>
+                <button ref={this.ref} onClick={this.onDeleteCard}><span>Delete Card</span></button>
+                <form>
+                    <textarea className="card-preview-title-edit" autoFocus onKeyPress={this.onKeyPress} onChange={this.onChange} value={this.state.txtValue}/>
+                </form>
+                <button className="save-btn" onClick={this.onUpdateHeader}>Save</button>
+                <button className="close-btn" onClick={this.onClose}>Close</button>
+            </section>
 
         )
     }
