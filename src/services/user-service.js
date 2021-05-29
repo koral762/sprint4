@@ -68,7 +68,7 @@ async function getUsers() {
 }
 
 async function getById(userId) {
-    return gUsers.find(user => user._id == userId)
+    return gUsers.find(user => user._id === userId)
 
     //return storageService.get('user', userId)
     // return httpService.get(`user/${userId}`)

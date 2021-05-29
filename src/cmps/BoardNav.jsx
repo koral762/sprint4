@@ -15,7 +15,7 @@ export class _BoardNav extends Component {
                     <h3>{this.props.board.title}</h3>
                     <div>Member List Here</div>
                     <input type="text" placeholder="Filter here"></input>
-                    Notifications Here
+                    <p>Notifications Here</p>
                     <div onClick={() => this.props.onToggleSidebar(true)}>
                         Activities Menu Here
                     </div>
