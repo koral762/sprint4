@@ -11,15 +11,17 @@ export class _BoardNav extends Component {
     }
     render() {
         return (
-                <div className="flex" >
-                    <h3>{this.props.board.title}</h3>
-                    <div>Member List Here</div>
-                    <input type="text" placeholder="Filter here"></input>
-                    <p>Notifications Here</p>
-                    <div onClick={() => this.props.onToggleSidebar(true)}>
-                        Activities Menu Here
-                    </div>
-                </div>
+            <div className="boards-header-container flex " >
+                <h2 className="proj-title">{this.props.board.title}</h2>
+                <div className="btn">Member List</div>
+                <div className="btn"><span class="material-icons">
+                    person_add</span>Invite</div>
+                <input className="btn" type="text" placeholder="Filter here"></input>
+                <button>notifications</button>
+                <button onClick={() => this.props.onToggleSidebar(true)}>
+                    <span class="material-icons">more_horiz</span>Show menu
+                </button>
+            </div>
         )
     }
 }

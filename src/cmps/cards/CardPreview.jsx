@@ -8,7 +8,16 @@ class _CardPreview extends Component {
         isEditing: false
     }
 
+<<<<<<< HEAD
+    return (
+        <div className="card-preview flex justify-space-between">
+            {card.title}
+            <button>🖊</button>
+        </div>
+    )
+=======
     ref = React.createRef()
+>>>>>>> 7d947ac72aa2b39ce60c61fcaab000893a96a6d6
 
     onDetails = (ev) => {
         this.props.history.push(`/board/card/${this.props.card.id}`)
