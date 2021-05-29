@@ -34,8 +34,6 @@ class _GroupPreview extends Component {
         this.setState({ isChangeGroupShown: false })
     }
 
-
-
     toggleMenu = (ev = null) => {
         if (ev) ev.stopPropagation()
         const isShown = !this.state.isMenuShown
@@ -48,51 +46,45 @@ class _GroupPreview extends Component {
             this.closeChangeGroupName(ev)
         }
     }
-
     openHeadrEdit = (ev = null) => {
         if (ev) ev.stopPropagation()
         this.setState({ isChangeGroupShown: true })
     }
-
     closeChangeGroupName = (ev) => {
         this.setState({ isChangeGroupShown: false })
         this.onSubmit(ev)
     }
-
     onOpenChangeGroupName = (id, groupName) => {
         this.setState({ currGroupId: id, currGroupName: groupName, isChangeGroupShown: true })
     }
-
-
-    // /////////////////////////////////
     render() {
 
         const group = this.props.group
 
         return (
             <section className="card-list">
-
                 {!this.state.isChangeGroupShown && <div onClick={() => this.onOpenChangeGroupName(group.id, group.title)}>{group.title}</div>}
                 {this.state.isChangeGroupShown && <form onSubmit={this.onSubmit} className="change-group-name">
-                    <input className="change-group-name-input"
+                    <input className="group-header"
                         type="text" name="group-name" onKeyPress={this.onKeyPress} onChange={this.handleChangeGroupName}
                         defaultValue={group.title}
                         autoFocus spellCheck="false" autoComplete="off"
                         onFocus={ev => ev.target.select()}
                     />
                 </form>}
-                <button onClick={this.toggleMenu} className="list-header-extras">≡</button>
+                <button onClick={this.toggleMenu} className="list-header-extras"><span class="material-icons">more_horiz</span>
+                </button >
                 {
                     this.state.isMenuShown && <GroupMenu toggleMenu={this.toggleMenu} groupId={group.id}
                         onAdd={this.onAddCard} />
                 }
-
-                <div> {group.cards.map((card) => <CardPreview key={card.id}
-                    card={card}
-                    history={this.props.history}
-                    />)}
-                </div>
-
+                <div > {
+                    group.cards.map((card) => <CardPreview key={card.id}
+                        card={card}
+                        history={this.props.history}
+                    />)
+                }
+                </div >
                 <div className="new-card-btn-container">
                     <NewItem addItemTxt={this.getAddItemTxt()} placeHolderTxt='Add a card title..' addBtnTxt="Add Card" onAdd={this.onAddCard} />
                 </div>
@@ -108,8 +100,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-    addCard,
-    setNewGroupName
+    addCard
 };
 
 export const GroupPreview = connect(mapStateToProps, mapDispatchToProps)(_GroupPreview);
