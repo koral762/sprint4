@@ -19,11 +19,11 @@ export class _BoardApp extends Component {
     render() {
         return (
             <div className="board-app">
-            {/* { this.props.cardId &&  */}
-                {<CardDetails boardId={"5f72ea5a1ab1fc0017450368"} cardId={"9LCF8f9WKY"}/> }
+            {(this.props.match.params.cardId) ? 
+            <CardDetails cardId={this.props.match.params.cardId} boardId={this.props.board._id} history={this.props.history} /> : <div></div>}
                 <section className="board-container flex column">
                     <BoardNav />
-                    <GroupList groups={this.props.board.groups} onAddGroup={this.onAddGroup}/> 
+                    <GroupList groups={this.props.board.groups} onAddGroup={this.onAddGroup} history={this.props.history}/> 
                 </section>
             </div>
         )

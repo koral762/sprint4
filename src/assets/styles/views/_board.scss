@@ -1,7 +1,11 @@
 .board-container {
-    width: 100vw;
-    background-color: #000;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
     .board-nav {
         background-color: rgb(250, 0, 117);
+    }
+    .boards-header-container>* {
+        margin: 7px;
     }
 }
