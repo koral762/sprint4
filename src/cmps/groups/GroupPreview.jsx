@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { CardPreview } from '../cards/CardPreview'
 import { addCard } from '../../store/actions/board-actions.js'
 import { NewItem } from '../NewItem'
+import { GroupMenu } from '../groups/GroupMenu'
 
 class _GroupPreview extends Component {
 
@@ -22,15 +23,22 @@ class _GroupPreview extends Component {
         return 'Add a card'
     }
 
-    handleChangeGroupName=(ev)=>{
+    handleChangeGroupName = (ev) => {
         this.setState({ currGroupName: ev.target.value })
     }
 
-    onSubmit=(ev)=>{
-        ev.preventDefault()        
+    onSubmit = (ev) => {
+        ev.preventDefault()
         const { currGroupId, currGroupName } = this.state
         this.props.setNewGroupName(currGroupId, currGroupName, this.props.board)
         this.setState({ isChangeGroupShown: false })
+    }
+
+    toggleMenu = (ev = null) => {
+        if (ev) ev.stopPropagation()
+        const isShown = !this.state.isMenuShown
+        this.setState({ isMenuShown: isShown })
+
     }
 
     render() {
@@ -40,6 +48,10 @@ class _GroupPreview extends Component {
         return (
             <section className="card-list">
                 {group.title}
+                <button onClick={this.toggleMenu} className="material-icons dots-icon">≡</button>
+                {this.state.isMenuShown && <GroupMenu toggleMenu={this.toggleMenu} groupId={group.id}
+                    onAdd={this.onAddCard} />}
+
                 {group.cards.map((card) => <CardPreview key={card.id}
                     card={card}
                 />)}
