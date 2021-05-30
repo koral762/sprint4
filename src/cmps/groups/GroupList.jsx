@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { AddNewGroup } from './AddNewGroup';
 import { GroupPreview } from "./GroupPreview";
+import {DragDropContext,Draggable} from "react-beautiful-dnd";
 
 
 export class GroupList extends Component {
@@ -22,7 +23,7 @@ export class GroupList extends Component {
                 {groups.map(group => <GroupPreview key={group.id} group={group} history={this.props.history}/>)}
                 <div className="new-group" >
                     {!this.state.isNewGroupShown && <div className="add-new-group-text btn"
-                        onClick={() => this.setState({ isNewGroupShown: true })}><span class="material-icons">
+                        onClick={() => this.setState({ isNewGroupShown: true })}><span className="material-icons">
                         add
                         </span>Add another list</div>}
                     {this.state.isNewGroupShown && <AddNewGroup closeNewGroup={this.closeNewGroup} />}

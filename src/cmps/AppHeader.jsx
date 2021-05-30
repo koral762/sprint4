@@ -74,9 +74,9 @@ export class _AppHeader extends Component {
             <React.Fragment>
                 <div className="flex justify-space-between app-header align-center">
                     <div className="header-icons flex">
-                        <div><NavLink to='/'><span class="material-icons btn">
+                        <div><NavLink to='/'><span className="material-icons btn">
                             home</span></NavLink></div>
-                        <div><NavLink to='/board'><span class="material-icons btn">
+                        <div><NavLink to='/board'><span className="material-icons btn">
                         dashboard</span></NavLink></div>
                     </div>
 
