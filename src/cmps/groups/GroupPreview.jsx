@@ -4,6 +4,8 @@ import { CardPreview } from '../cards/CardPreview'
 import { addCard, setNewGroupName } from '../../store/actions/board-actions.js'
 import { NewItem } from '../NewItem'
 import { GroupMenu } from '../groups/GroupMenu'
+import { ClickAwayListener } from '@material-ui/core';
+
 
 class _GroupPreview extends Component {
 
@@ -70,17 +72,20 @@ class _GroupPreview extends Component {
         const group = this.props.group
 
         return (
+
             <section className="card-list">
 
                 {!this.state.isChangeGroupShown && <div onClick={() => this.onOpenChangeGroupName(group.id, group.title)}>{group.title}</div>}
-                {this.state.isChangeGroupShown && <form onSubmit={this.onSubmit} className="change-group-name">
-                    <input className="change-group-name-input"
-                        type="text" name="group-name" onKeyPress={this.onKeyPress} onChange={this.handleChangeGroupName}
-                        defaultValue={group.title}
-                        autoFocus spellCheck="false" autoComplete="off"
-                        onFocus={ev => ev.target.select()}
-                    />
-                </form>}
+                    {(this.state.isChangeGroupShown) ?
+                        <ClickAwayListener onClickAway={this.closeChangeGroupName}>
+                            <form onSubmit={this.onSubmit} className="change-group-name">
+                                <input className="change-group-name-input"
+                                    type="text" name="group-name" onKeyPress={this.onKeyPress} onChange={this.handleChangeGroupName}
+                                    defaultValue={group.title}
+                                    autoFocus spellCheck="false" autoComplete="off"
+                                    onFocus={ev => ev.target.select()} />
+                            </form>
+                        </ClickAwayListener> : ''}
                 <button onClick={this.toggleMenu} className="list-header-extras">≡</button>
                 {
                     this.state.isMenuShown && <GroupMenu toggleMenu={this.toggleMenu} groupId={group.id}
@@ -90,7 +95,7 @@ class _GroupPreview extends Component {
                 <div> {group.cards.map((card) => <CardPreview key={card.id}
                     card={card}
                     history={this.props.history}
-                    />)}
+                />)}
                 </div>
 
                 <div className="new-card-btn-container">

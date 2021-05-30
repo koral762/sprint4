@@ -14,12 +14,12 @@ export class _BoardNav extends Component {
             <div className="boards-header-container flex " >
                 <h2 className="proj-title">{this.props.board.title}</h2>
                 <div className="btn">Member List</div>
-                <div className="btn"><span class="material-icons">
+                <div className="btn"><span className="material-icons">
                     person_add</span>Invite</div>
                 <input className="btn" type="text" placeholder="Filter here"></input>
                 <button>notifications</button>
                 <button onClick={() => this.props.onToggleSidebar(true)}>
-                    <span class="material-icons">more_horiz</span>Show menu
+                    <span className="material-icons">more_horiz</span>Show menu
                 </button>
             </div>
         )
