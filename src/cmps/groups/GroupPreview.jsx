@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { CardPreview } from '../cards/CardPreview'
-import { addCard, setNewGroupName } from '../../store/actions/board-actions.js'
+import { addCard, setNewGroupName} from '../../store/actions/board-actions.js'
 import { NewItem } from '../NewItem'
 import { GroupMenu } from '../groups/GroupMenu'
 import { ClickAwayListener } from '@material-ui/core';
-
 
 class _GroupPreview extends Component {
 
@@ -33,7 +32,7 @@ class _GroupPreview extends Component {
         ev.preventDefault()
         const { currGroupId, currGroupName } = this.state
         this.props.setNewGroupName(currGroupId, currGroupName, this.props.board)
-        this.setState({ isChangeGroupShown: false })
+        this.setState({ isChangeGroupShown: false})
     }
 
     toggleMenu = (ev = null) => {
@@ -85,11 +84,6 @@ class _GroupPreview extends Component {
                     }
                 </div>
 
-                <div> {group.cards.map((card) => <CardPreview key={card.id}
-                    card={card}
-                    history={this.props.history}
-                />)}
-                </div>
                 <div className="cards-content-wrapper"> {
                     group.cards.map((card) => <CardPreview key={card.id}
                         card={card}
@@ -112,7 +106,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-    addCard
+    addCard,
+    setNewGroupName
 };
 
 export const GroupPreview = connect(mapStateToProps, mapDispatchToProps)(_GroupPreview);

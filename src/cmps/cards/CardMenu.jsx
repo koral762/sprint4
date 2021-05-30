@@ -2,6 +2,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { updateCard, onRemoveCard } from '../../store/actions/board-actions.js'
+import { Button, Dialog } from '@material-ui/core';
+import ArchiveOutlinedIcon from '@material-ui/icons/ArchiveOutlined';
+import CloseRoundedIcon from '@material-ui/icons/CloseRounded';
+import LabelIcon from '@material-ui/icons/Label';
+import PeopleAltOutlinedIcon from '@material-ui/icons/PeopleAltOutlined';
+import ShareIcon from '@material-ui/icons/Share';
+import AccessTimeIcon from '@material-ui/icons/AccessTime';
 
 class _CardMenu extends Component {
 
@@ -70,25 +77,36 @@ class _CardMenu extends Component {
     render() {
 
         return (
-            <section>
+            <Dialog onClose={this.props.onClose} open={true} >
                 <div className="card-edit-container" onClick={(ev) => ev.stopPropagation()} style={{
                     left: `${this.state.offsetLeft}px`,
                     top: `${this.state.offsetTop}px`,
                     position: 'fixed'
                 }}>
                     <div className="card-edit-left">
-                        <form>
-                            <textarea className="card-preview-title-edit" autoFocus onKeyPress={this.onKeyPress} onChange={this.onChange} value={this.state.txtValue} />
-                            <button className="save-btn" onClick={this.onUpdateHeader}>Save</button>
-                        </form>
+                        <div className="card-preview" style={{ width: `${this.state.width}px` }}>
+
+                            <form>
+                                <textarea className="card-preview-title-edit" autoFocus onKeyPress={this.onKeyPress} onChange={this.onChange} value={this.state.txtValue} />
+                            </form>
+                        </div>
+                    <button className="save-btn" onClick={this.onUpdateHeader}>Save</button>
                     </div>
 
                     <div className="card-edit-right">
-                        <button ref={this.ref} onClick={this.onDeleteCard}><span>Delete Card</span></button>
-                        <button className="close-btn" onClick={this.onClose}>Close</button>
+                        <div className="card-preview-edit-actions-container">
+
+                            <Button onClick={this.onDeleteCard}><ArchiveOutlinedIcon /> <span>Delete Card</span></Button>
+                            <Button><LabelIcon/><span>EDIT LABELS</span></Button>
+                            <Button><PeopleAltOutlinedIcon/><span>EDIT MEMBERS</span></Button>
+                            <Button><AccessTimeIcon/><span>SET DUE DATE</span></Button>
+                            <Button><ShareIcon/><span>SHARE</span></Button>
+                            <Button onClick={this.onClose}><CloseRoundedIcon /><span>CLOSE</span></Button>
+
+                        </div>
                     </div>
                 </div>
-            </section>
+            </Dialog >
 
         )
     }
