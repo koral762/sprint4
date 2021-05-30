@@ -3,6 +3,7 @@
     width: 100%;
     padding: 0 8px;
     background-color: rgba(0, 0, 0, 0);
+    overflow-y: hidden;
     .proj-title {
         font-size: rem(24px);
         font-weight: bold;
@@ -14,4 +15,11 @@
     .boards-header-container>* {
         margin: 7px;
     }
+    .show-menu {
+        float: right;
+    }
+}
+
+.board-app {
+    height: 100%;
 }

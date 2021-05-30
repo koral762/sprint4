@@ -11,16 +11,20 @@ export class _BoardNav extends Component {
     }
     render() {
         return (
-            <div className="boards-header-container flex " >
-                <h2 className="proj-title">{this.props.board.title}</h2>
-                <div className="btn">Member List</div>
-                <div className="btn"><span className="material-icons">
-                    person_add</span>Invite</div>
-                <input className="btn" type="text" placeholder="Filter here"></input>
-                <button>notifications</button>
-                <button onClick={() => this.props.onToggleSidebar(true)}>
-                    <span className="material-icons">more_horiz</span>Show menu
+            <div className="boards-header-container flex justify-space-between" >
+                <div className="board-nav-left flex">
+                    <h2 className="proj-title">{this.props.board.title}</h2>
+                    <div className="btn">Member List</div>
+                    <div className="btn"><span className="material-icons">
+                        person_add</span>Invite</div>
+                    <input className="btn" type="text" placeholder="Filter here"></input>
+                </div>
+                <div className="show-menu">
+                    <button>notifications</button>
+                    <button onClick={() => this.props.onToggleSidebar(true)}>
+                        <span className="material-icons">more_horiz</span>Show menu
                 </button>
+                </div>
             </div>
         )
     }

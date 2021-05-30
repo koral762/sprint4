@@ -10,11 +10,13 @@
 @import "setup/typography.scss";
 // /Components
 @import "components/app-header.scss";
-@import "components/card-list";
-@import "components/card-preview";
-@import "components/group-list";
-@import "components/group-preview";
+@import "components/card-list.scss";
+@import "components/card-preview.scss";
+@import "components/group-list.scss";
+@import "components/group-preview.scss";
 @import "components/group-menu.scss";
+@import "components/logo.scss";
+@import "components/card-details-modal.scss";
 //Views
 @import "views/home-page.scss";
 @import "views/board.scss";

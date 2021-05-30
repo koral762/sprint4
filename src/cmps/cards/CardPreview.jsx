@@ -3,9 +3,7 @@ import { connect } from 'react-redux'
 import { CardMenu } from './CardMenu'
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 
-
 class _CardPreview extends Component {
-
     state = {
         isEditing: false
     }
@@ -27,15 +25,10 @@ class _CardPreview extends Component {
         this.setState({ isEditing: false })
     }
 
-
-
     render() {
         const card = this.props.card
-
         return (
             <section className="card-preview">
-
-
                 <div className="card-preview-header">
                     {card.title}
                 </div>
@@ -44,19 +37,17 @@ class _CardPreview extends Component {
                     {(this.state.isEditing) ? <CardMenu props={this.props} onClose={this.onSetNotEditing} /> : <React.Fragment />}
                 </div>
             </section>
-        )
-
+        )  
     }
 }
-
 
 const mapStateToProps = state => {
     return {
         board: state.boardModule.currBoard
     };
 };
-const mapDispatchToProps = {
 
+const mapDispatchToProps = {
 };
 
 export const CardPreview = connect(mapStateToProps, mapDispatchToProps)(_CardPreview);

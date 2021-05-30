@@ -36,8 +36,6 @@ class _GroupPreview extends Component {
         this.setState({ isChangeGroupShown: false })
     }
 
-
-
     toggleMenu = (ev = null) => {
         if (ev) ev.stopPropagation()
         const isShown = !this.state.isMenuShown
@@ -50,23 +48,17 @@ class _GroupPreview extends Component {
             this.closeChangeGroupName(ev)
         }
     }
-
     openHeadrEdit = (ev = null) => {
         if (ev) ev.stopPropagation()
         this.setState({ isChangeGroupShown: true })
     }
-
     closeChangeGroupName = (ev) => {
         this.setState({ isChangeGroupShown: false })
         this.onSubmit(ev)
     }
-
     onOpenChangeGroupName = (id, groupName) => {
         this.setState({ currGroupId: id, currGroupName: groupName, isChangeGroupShown: true })
     }
-
-
-    // /////////////////////////////////
     render() {
 
         const group = this.props.group
@@ -98,7 +90,13 @@ class _GroupPreview extends Component {
                     history={this.props.history}
                 />)}
                 </div>
-
+                <div className="cards-content-wrapper"> {
+                    group.cards.map((card) => <CardPreview key={card.id}
+                        card={card}
+                        history={this.props.history}
+                    />)
+                }
+                </div >
                 <div className="new-card-btn-container">
                     <NewItem addItemTxt={this.getAddItemTxt()} placeHolderTxt='Add a card title..' addBtnTxt="Add Card" onAdd={this.onAddCard} />
                 </div>
@@ -114,8 +112,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-    addCard,
-    setNewGroupName
+    addCard
 };
 
 export const GroupPreview = connect(mapStateToProps, mapDispatchToProps)(_GroupPreview);

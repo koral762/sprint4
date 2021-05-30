@@ -14,9 +14,6 @@
     &.open {
         transform: translateX(0%);
     }
-    &:after {
-        content: '';
-    }
     ul {
         position: absolute;
         top: 10vh;
