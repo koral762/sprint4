@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import {onRemoveGroup} from '../../store/actions/board-actions.js'
+import { ClickAwayListener } from '@material-ui/core';
 
 export class _GroupMenu extends Component {
 
@@ -19,16 +20,16 @@ export class _GroupMenu extends Component {
 
     render() {
         return (
-            <section onClickAway={() => this.props.toggleMenu()}>
+            <ClickAwayListener onClickAway={() => this.props.toggleMenu()}>
                 <div className="group-menu-container">
                     <div>List Actions</div>
                     <div><hr /></div>
-                    <div onClick={this.addCard} style={{ cursor: 'pointer' }} className="group-menu-item">Add Card...</div>
-                    <div className="group-menu-item" style={{ cursor: 'pointer' }}>Delete All Cards...</div>
+                    <div onClick={this.addCard}  className="group-menu-item">+ Add Card...</div>
+                    <div className="group-menu-item" >Delete All Cards...</div>
                     <div><hr /></div>
-                    <div className="group-menu-item" onClick={this.removeGroup} style={{ cursor: 'pointer' }}>Delete This Group...</div>
+                    <div className="group-menu-item" onClick={this.removeGroup}>Delete This Group...</div>
                 </div>
-            </section>
+            </ClickAwayListener>
         )
     }
 }

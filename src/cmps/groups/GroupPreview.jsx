@@ -21,8 +21,8 @@ class _GroupPreview extends Component {
     }
 
     getAddItemTxt = (txt) => {
-        if (this.props.group.cards.length) return 'Add another card'
-        return 'Add a card'
+        if (this.props.group.cards.length) return '+ Add another card'
+        return '+ Add a card'
     }
 
     handleChangeGroupName = (ev) => {
@@ -73,9 +73,9 @@ class _GroupPreview extends Component {
 
         return (
 
-            <section className="card-list">
-
-                {!this.state.isChangeGroupShown && <div onClick={() => this.onOpenChangeGroupName(group.id, group.title)}>{group.title}</div>}
+            <section className="card-list group-container">
+                <div className="group-preview-header">
+                    {!this.state.isChangeGroupShown && <div onClick={() => this.onOpenChangeGroupName(group.id, group.title)}>{group.title}</div>}
                     {(this.state.isChangeGroupShown) ?
                         <ClickAwayListener onClickAway={this.closeChangeGroupName}>
                             <form onSubmit={this.onSubmit} className="change-group-name">
@@ -86,11 +86,12 @@ class _GroupPreview extends Component {
                                     onFocus={ev => ev.target.select()} />
                             </form>
                         </ClickAwayListener> : ''}
-                <button onClick={this.toggleMenu} className="list-header-extras">≡</button>
-                {
-                    this.state.isMenuShown && <GroupMenu toggleMenu={this.toggleMenu} groupId={group.id}
-                        onAdd={this.onAddCard} />
-                }
+                    <span onClick={this.toggleMenu} className="list-header-extras material-icons dots-icon">more_horiz</span>
+                    {
+                        this.state.isMenuShown && <GroupMenu toggleMenu={this.toggleMenu} groupId={group.id}
+                            onAdd={this.onAddCard} />
+                    }
+                </div>
 
                 <div> {group.cards.map((card) => <CardPreview key={card.id}
                     card={card}

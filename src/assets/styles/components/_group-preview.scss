@@ -1,0 +1,62 @@
+.material-icons { 
+
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;  
+
+}
+
+.group-container{
+      
+    width: rem(272px);
+    height: fit-content;
+    max-height: 100%;
+    border-radius: 3px;
+    box-sizing: border-box;
+    display: flex;
+    overflow-x: hidden;
+    flex-direction: column;
+    vertical-align: top;
+    padding: 0px 4px;
+
+    span{ 
+        display: flex;
+        align-items: center; 
+    }
+}
+
+.group-preview-header{
+    font-size: rem(15px);
+    font-weight: 800;
+    line-height: 20px;
+    padding: 10px 0px 2px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+    
+    .dots-icon {
+        text-align: center;
+        font-size: 1.4em;
+        margin-right: 0;
+        
+        
+        &:hover {
+            border-radius: 0.25em;
+            background-color: rgb(200, 204, 195);
+        }
+    }
+    
+}
+
+.new-card-btn-container{
+    margin-bottom: 0.4rem;
+}

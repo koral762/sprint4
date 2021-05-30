@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { CardMenu } from './CardMenu'
+import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
+
 
 class _CardPreview extends Component {
 
@@ -26,15 +28,22 @@ class _CardPreview extends Component {
     }
 
 
+
     render() {
         const card = this.props.card
 
         return (
-            <div className="card-preview" onClick={this.onDetails}>
-                {card.title}
-                <button ref={this.ref} onClick={this.onOpenCardActions}>🖊</button>
-                {(this.state.isEditing) ? <CardMenu props={this.props} onClose={this.onSetNotEditing}/> : <React.Fragment />}
-            </div>
+            <section className="card-preview">
+
+
+                <div className="card-preview-header">
+                    {card.title}
+                </div>
+                <div className="card-preview-edit-container" onClick={this.onDetails}>
+                    <div className="card-btn" ref={this.ref} onClick={this.onOpenCardActions}><EditOutlinedIcon fontSize="inherit" /></div>
+                    {(this.state.isEditing) ? <CardMenu props={this.props} onClose={this.onSetNotEditing} /> : <React.Fragment />}
+                </div>
+            </section>
         )
 
     }
