@@ -23,7 +23,7 @@ export class GroupList extends Component {
                 {groups.map(group => <GroupPreview key={group.id} group={group} history={this.props.history}/>)}
                 <div className="new-group" >
                     {!this.state.isNewGroupShown && <div className="add-new-group-text btn"
-                        onClick={() => this.setState({ isNewGroupShown: true })}><span class="material-icons">
+                        onClick={() => this.setState({ isNewGroupShown: true })}><span className="material-icons">
                         add
                         </span>Add another list</div>}
                     {this.state.isNewGroupShown && <AddNewGroup closeNewGroup={this.closeNewGroup} />}

@@ -4,6 +4,8 @@ import { CardPreview } from '../cards/CardPreview'
 import { addCard, setNewGroupName } from '../../store/actions/board-actions.js'
 import { NewItem } from '../NewItem'
 import { GroupMenu } from '../groups/GroupMenu'
+import { ClickAwayListener } from '@material-ui/core';
+
 
 class _GroupPreview extends Component {
 
@@ -62,6 +64,7 @@ class _GroupPreview extends Component {
         const group = this.props.group
 
         return (
+
             <section className="card-list">
                 {!this.state.isChangeGroupShown && <div onClick={() => this.onOpenChangeGroupName(group.id, group.title)}>{group.title}</div>}
                 {this.state.isChangeGroupShown && <form onSubmit={this.onSubmit} className="change-group-name">
@@ -72,7 +75,7 @@ class _GroupPreview extends Component {
                         onFocus={ev => ev.target.select()}
                     />
                 </form>}
-                <button onClick={this.toggleMenu} className="list-header-extras"><span class="material-icons">more_horiz</span>
+                <button onClick={this.toggleMenu} className="list-header-extras"><span className="material-icons">more_horiz</span>
                 </button >
                 {
                     this.state.isMenuShown && <GroupMenu toggleMenu={this.toggleMenu} groupId={group.id}
