@@ -28,11 +28,11 @@ class _CardPreview extends Component {
     render() {
         const card = this.props.card
         return (
-            <section className="card-preview">
+            <section className="card-preview" onClick={this.onDetails}>
                 <div className="card-preview-header">
                     {card.title}
                 </div>
-                <div className="card-preview-edit-container" onClick={this.onDetails}>
+                <div className="card-preview-edit-container">
                     <div className="card-btn" ref={this.ref} onClick={this.onOpenCardActions}><EditOutlinedIcon fontSize="inherit" /></div>
                     {(this.state.isEditing) ? <CardMenu props={this.props} onClose={this.onSetNotEditing} /> : <React.Fragment />}
                 </div>
