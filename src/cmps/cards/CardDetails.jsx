@@ -6,6 +6,8 @@ import { CardDescription } from './CardDescription'
 import { CardAddComment } from './CardAddComment'
 import { ActivityLog } from '../ActivityLog'
 import { withRouter } from 'react-router'
+import CloseIcon from '@material-ui/icons/Close'
+import { IconButton } from '@material-ui/core'
 
 class _CardDetails extends Component {
 
@@ -115,16 +117,22 @@ class _CardDetails extends Component {
         }
         // console.log(this.state.card)
         return (
-            <div className="card-details-modal flex column">
-                <div className="card-modal-header flex justify-space-between">
-                <div className="card-details-title">
-                    {this.state.card.title}<br/>
-                    <small>in list {this.state.groupName}</small>
-                </div>
-                <button onClick={this.onCloseCard}><span class="material-icons">close</span></button>
-                <div>
-                    <CardDescription onUpdateDesc={this.onUpdateDesc} description={this.state.card.description} />
-                </div>
+            <section className="card-details-modal flex column">
+                <div className="modal-content">
+                    <div className="card-modal-header flex column ">
+                        <div className="card-modal-title flex justify-space-between">
+                            <div className="card-details-title">
+                                {this.state.card.title}<br />
+                                <span className="group-name">in list <u>{this.state.groupName}</u></span>
+                            </div>
+                            <IconButton onClick={this.onCloseCard} aria-label="close" className="modal-close">
+                                <CloseIcon />
+                            </IconButton>
+                        </div>
+                        <div>
+                            <CardDescription onUpdateDesc={this.onUpdateDesc} description={this.state.card.description} />
+                        </div>
+                    </div>
                 </div>
                 <div>
                     <h3>Activity</h3>
@@ -135,7 +143,7 @@ class _CardDetails extends Component {
                     boardId={this.props.board._id}
                     displayMode="card"
                     activities={this.getFilteredActivities()} />
-            </div>
+            </section>
         )
     }
 }

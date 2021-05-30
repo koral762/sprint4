@@ -83,7 +83,10 @@ export class _AppHeader extends Component {
                     <div className="logo">LOGO</div>
 
                     <div className="flex">
-                        <div onClick={this.toggleModal}><span className="material-icons">add</span></div>
+                        <div onClick={this.toggleModal}><span className="material-icons">
+                            add
+                        </span>
+                        </div>
                         <div>Login</div>
                     </div>
                 </div>

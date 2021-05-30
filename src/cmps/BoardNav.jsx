@@ -20,9 +20,9 @@ export class _BoardNav extends Component {
                     <input className="btn" type="text" placeholder="Filter here"></input>
                 </div>
                 <div className="show-menu">
-                <button>notifications</button>
-                <button onClick={() => this.props.onToggleSidebar(true)}>
-                    <span className="material-icons">more_horiz</span>Show menu
+                    <button>notifications</button>
+                    <button onClick={() => this.props.onToggleSidebar(true)}>
+                        <span className="material-icons">more_horiz</span>Show menu
                 </button>
                 </div>
             </div>

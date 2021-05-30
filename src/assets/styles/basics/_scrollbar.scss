@@ -1,11 +1,14 @@
 ::-webkit-scrollbar {
     width: 14px;
     height: 14px;
+    background: rgba(255, 255, 255, 0.521);
 }
 
 ::-webkit-scrollbar-button {
     width: 14px;
     height: 14px;
+    display: none;
+    border-radius: 50px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -23,17 +26,17 @@
 }
 
 ::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0);
+    background: rgba(255, 255, 255, 0);
     border: 3px none transparent;
     border-radius: 50px;
 }
 
 ::-webkit-scrollbar-track:hover {
-    background: rgba(0, 0, 0, 0);
+    background: rgba(255, 255, 255, 0);
 }
 
 ::-webkit-scrollbar-track:active {
-    background: rgba(0, 0, 0, 0);
+    background: rgba(255, 255, 255, 0.568);
 }
 
 ::-webkit-scrollbar-corner {
