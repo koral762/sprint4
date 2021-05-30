@@ -133,16 +133,16 @@ class _CardDetails extends Component {
                             <CardDescription onUpdateDesc={this.onUpdateDesc} description={this.state.card.description} />
                         </div>
                     </div>
+                    <div>
+                        <h3>Activity</h3>
+                        <button onClick={this.toggleCommentsOnly}>{(this.state.commentsOnly) ? 'Show Details' : 'Hide Details'}</button>
+                        <CardAddComment onAddComment={this.onAddComment} />
+                        <ActivityLog
+                            boardId={this.props.board._id}
+                            displayMode="card"
+                            activities={this.getFilteredActivities()} />
+                    </div>
                 </div>
-                <div>
-                    <h3>Activity</h3>
-                    <button onClick={this.toggleCommentsOnly}>{(this.state.commentsOnly) ? 'Show Details' : 'Hide Details'}</button>
-                </div>
-                <CardAddComment onAddComment={this.onAddComment} />
-                <ActivityLog
-                    boardId={this.props.board._id}
-                    displayMode="card"
-                    activities={this.getFilteredActivities()} />
             </section>
         )
     }

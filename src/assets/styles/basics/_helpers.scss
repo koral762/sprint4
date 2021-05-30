@@ -60,6 +60,23 @@
     padding: 0
 }
 
+.text-box {
+    resize: none;
+    border: none;
+    border-radius: 3px;
+    padding: 2px;
+    line-height: 20px;
+    width: 100%;
+    background-color: transparent;
+    color: inherit;
+    margin-bottom: 2px;
+    white-space: pre-wrap;
+    &:focus {
+        border: 2px solid $clr4;
+        background-color: #fff;
+    }
+}
+
 // Media helpers
 .square-ratio {
     @include aspect-ratio(1, 1);
