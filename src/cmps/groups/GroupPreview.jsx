@@ -85,11 +85,6 @@ class _GroupPreview extends Component {
                     }
                 </div>
 
-                <div> {group.cards.map((card) => <CardPreview key={card.id}
-                    card={card}
-                    history={this.props.history}
-                />)}
-                </div>
                 <div className="cards-content-wrapper"> {
                     group.cards.map((card) => <CardPreview key={card.id}
                         card={card}

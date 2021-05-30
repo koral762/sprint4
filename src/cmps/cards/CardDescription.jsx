@@ -50,11 +50,11 @@ export class CardDescription extends Component {
 
     getIsEditing = () => {
         if (!this.state.isEditing) return (
-            <pre onClick={this.setEditing}>{this.getDescriptionTxt()}</pre>
+            <textarea className="description-text-box" onClick={this.setEditing}>{this.getDescriptionTxt()}</textarea>
         )
         return (
             <div>
-                <textarea value={this.state.description} autoFocus onChange={this.onChange} onBlur={this.onSave} placeholder="Enter a more details description here..." className="modal-desc-textarea"/>
+                <textarea value={this.state.description} autoFocus onChange={this.onChange} onBlur={this.onSave} placeholder="Enter a more details description here..." className="description-text-box"/>
                 <button onClick={this.onSave} className="btn">Save</button>
             </div>
         )
@@ -65,12 +65,8 @@ export class CardDescription extends Component {
         // if (!this.state.isReady) return <div>Loading...</div>
         return (
             <div className="modal-description">
-                {/* <input value={this.state.description} onChange={this.onChange} placeholder="Enter a more details description here..." /> */}
-                <div >
-                <h3 className="comment-box">Description</h3>
-                
+                <h3 className="">Description</h3>
                 {this.getIsEditing()}
-                </div>
             </div>
         )
     }
