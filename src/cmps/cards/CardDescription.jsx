@@ -47,14 +47,17 @@ export class CardDescription extends Component {
         if (!this.state.description) return 'Add a more detailed description…'
         return this.state.description
     }
+///
 
+//description-text-box
+///
     getIsEditing = () => {
         if (!this.state.isEditing) return (
-            <textarea className="description-text-box" onClick={this.setEditing}>{this.getDescriptionTxt()}</textarea>
+            <pre className="description-text-box" onClick={this.setEditing}>{this.getDescriptionTxt()}</pre>
         )
         return (
             <div>
-                <textarea value={this.state.description} autoFocus onChange={this.onChange} onBlur={this.onSave} placeholder="Enter a more details description here..." className="description-text-box"/>
+                <textarea value={this.state.description} autoFocus onChange={this.onChange} onBlur={this.onSave} placeholder="Enter a more details description here..." className="modal-desc-textarea"/> 
                 <button onClick={this.onSave} className="btn">Save</button>
             </div>
         )
