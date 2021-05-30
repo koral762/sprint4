@@ -84,7 +84,7 @@ export class _AppHeader extends Component {
 
                     <div className="flex">
                         <div onClick={this.toggleModal}>Add</div>
-                        <div>Login Here</div>
+                        <div>Login</div>
                     </div>
                 </div>
             </React.Fragment>
