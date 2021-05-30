@@ -113,16 +113,18 @@ class _CardDetails extends Component {
         if (!this.state.card) {
             return <div>Loading...</div>
         }
-        console.log(this.state.card)
+        // console.log(this.state.card)
         return (
-            <div>
-                <div>
-                    {this.state.card.title}
+            <div className="card-details-modal flex column">
+                <div className="card-modal-header flex justify-space-between">
+                <div className="card-details-title">
+                    {this.state.card.title}<br/>
                     <small>in list {this.state.groupName}</small>
                 </div>
-                <button onClick={this.onCloseCard}>X</button>
+                <button onClick={this.onCloseCard}><span class="material-icons">close</span></button>
                 <div>
                     <CardDescription onUpdateDesc={this.onUpdateDesc} description={this.state.card.description} />
+                </div>
                 </div>
                 <div>
                     <h3>Activity</h3>
