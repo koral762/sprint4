@@ -66,9 +66,10 @@ class _GroupPreview extends Component {
         return (
 
             <section className="card-list">
+                <div className="group-header flex justify-space-between">
                 {!this.state.isChangeGroupShown && <div onClick={() => this.onOpenChangeGroupName(group.id, group.title)}>{group.title}</div>}
                 {this.state.isChangeGroupShown && <form onSubmit={this.onSubmit} className="change-group-name">
-                    <input className="group-header"
+                    <input className="group-header-input"
                         type="text" name="group-name" onKeyPress={this.onKeyPress} onChange={this.handleChangeGroupName}
                         defaultValue={group.title}
                         autoFocus spellCheck="false" autoComplete="off"
@@ -81,7 +82,8 @@ class _GroupPreview extends Component {
                     this.state.isMenuShown && <GroupMenu toggleMenu={this.toggleMenu} groupId={group.id}
                         onAdd={this.onAddCard} />
                 }
-                <div > {
+                </div>
+                <div className="cards-content-wrapper"> {
                     group.cards.map((card) => <CardPreview key={card.id}
                         card={card}
                         history={this.props.history}

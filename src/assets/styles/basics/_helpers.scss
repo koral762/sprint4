@@ -1,19 +1,36 @@
 // Font Sizes
-.fs12 { font-size: rem(12px); }
-.fs14 { font-size: rem(14px); }
-.fs18 { font-size: rem(18px); }
-.fs20 { font-size: rem(20px); }
-.fs24 { font-size: rem(24px); }
-.fs28 { font-size: rem(28px); }
-.fs30 { font-size: rem(30px); }
+.fs12 {
+    font-size: rem(12px);
+}
+
+.fs14 {
+    font-size: rem(14px);
+}
+
+.fs18 {
+    font-size: rem(18px);
+}
+
+.fs20 {
+    font-size: rem(20px);
+}
+
+.fs24 {
+    font-size: rem(24px);
+}
+
+.fs28 {
+    font-size: rem(28px);
+}
+
+.fs30 {
+    font-size: rem(30px);
+}
 
 // flex helpers
-
 .flex {
-
     display: flex;
-
-    > *.full {
+    &.full {
         flex: 1;
     }
     &.column {
@@ -37,21 +54,21 @@
 }
 
 // list helpers{
-    .clean-list{
-        list-style-type: none;
-        margin: 0;
-        padding: 0
-    }
+.clean-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0
+}
 
 // Media helpers
-
 .square-ratio {
     @include aspect-ratio(1, 1);
 }
+
 .video-ratio {
     @include aspect-ratio(16, 9);
 }
+
 .portrait-ratio {
     @include aspect-ratio(9, 16);
 }
-
