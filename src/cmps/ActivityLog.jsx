@@ -9,7 +9,7 @@ export function ActivityLog({ boardId, displayMode, activities }) {
     if (activities && activities.length > 15) activities = activities.slice(0, 14);
     
     return (
-        <ul>
+        <ul className="activity-text-box">
             {activities.map(activity => {
                 return <li key={activity.id}>
                     {/* {(displayMode !== 'user') ? <MemberPreview name={activity.byMember.fullName} imgUrl={activity.byMember.imgUrl} /> : <React.Fragment />} */}
