@@ -7,6 +7,12 @@
     padding-bottom: 8px;
 }
 
-.add-new-group-text{
+.add-new-group-text {
     white-space: nowrap;
+}
+
+.new-item-btn {
+    button {
+        background-color: transparent;
+    }
 }
