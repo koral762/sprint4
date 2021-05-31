@@ -222,7 +222,9 @@ var gBoard = {
           "description": "",
           "archivedAt": null,
           "members": [
-
+              {
+                
+              }
           ],
           "labels": [
             {
@@ -243,7 +245,12 @@ var gBoard = {
           },
           "byMember": {
 
-          }
+          },
+          "checklist": [
+            {
+              "txtValue": 'todo'
+            }
+          ]
         },
         {
           "id": "QqCMNb9XNB",

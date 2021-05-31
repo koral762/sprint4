@@ -4,10 +4,15 @@ import { loadBoard, updateCard, addActivity } from '../../store/actions/board-ac
 import { boardService } from '../../services/board-service'
 import { CardDescription } from './CardDescription'
 import { CardAddComment } from './CardAddComment'
-import { ActivityLog } from '../ActivityLog'
+import { ActivityLog } from './card-sidebar/ActivityLog'
+import { CardTitle } from './CardTitle'
+import { CardDueDateSetter } from './CardDueDateSetter'
+import { CardChecklistContainer } from './CardChecklistContainer.jsx'
+import { CardSidebar } from './CardSidebar'
+import { CardLabels } from './CardLabels';
 import { withRouter } from 'react-router'
 import CloseIcon from '@material-ui/icons/Close'
-import { IconButton } from '@material-ui/core'
+import { IconButton, CircularProgress } from '@material-ui/core'
 
 class _CardDetails extends Component {
 
@@ -108,12 +113,82 @@ class _CardDetails extends Component {
         if (this.state.commentsOnly) cardActivities = cardActivities.filter(activity => {
             if (activity.commentTxt.length) return activity
         })
+        // console.log(JSON.stringify(activities))
         return cardActivities
     }
 
+    onUpdateTitle = async (txt) => {
+        let card = { ...this.state.card }
+        card.title = txt
+        this.setState({ card }, async () => {
+            const activity = this.createActivity('updated the title')
+            this.submitCard(card, activity)
+        })
+    }
+
+    onUpdateDueDate = async (dueDate) => {
+        let card = { ...this.state.card }
+        card.dueDate = dueDate
+
+        this.setState({ card }, async () => {
+            const activity = this.createActivity('updated due date')
+            await this.submitCard(card, activity)
+
+        })
+    }
+
+    onUpdateChecklists = (newChecklist, activityTxt) => {
+
+        const card = { ...this.state.card }
+        if (!card.checklists) {
+            card.checklists = []
+        }
+        // updating
+        const checklistIdx = card.checklists.findIndex(checklist => checklist.id === newChecklist.id)
+        if (checklistIdx >= 0) {
+            card.checklists = card.checklists.map(checklist => {
+                if (checklist.id === newChecklist.id) return newChecklist
+                return checklist
+            })
+        } else {
+            card.checklists.push(newChecklist)
+        }
+
+        // removing excess checklists
+        card.checklists = card.checklists.filter(checklist => {
+            if (checklist.title) return checklist
+        })
+
+        this.setState({ card }, () => {
+            if (activityTxt) {
+                let activity = this.createActivity(activityTxt)
+
+                this.submitCard(card, activity)
+            } else {
+                this.submitCard(card)
+            }
+        })
+    }
+
+    getLabels = () => {
+        const labels = this.state.card.labels
+        if (labels && labels.length) return (
+            <div className="card-details-label-container">
+                <h5>Labels</h5>
+                <CardLabels onClickLabel={this.openEditLabelsModal}
+                    cardLabels={labels}
+                    boardLabels={this.props.board.labels}
+                    preview={false}
+                />
+            </div>
+        )
+        return <React.Fragment />
+    }
+    
     render() {
+        console.log(JSON.stringify(this.state.card ? this.state.card : 'null' ))
         if (!this.state.card) {
-            return <div>Loading...</div>
+            return <div><CircularProgress /></div>
         }
         // console.log(this.state.card)
         return (
@@ -122,7 +197,7 @@ class _CardDetails extends Component {
                     <div className="card-modal-header flex column ">
                         <div className="card-modal-title flex justify-space-between">
                             <div className="card-details-title">
-                                {this.state.card.title}<br />
+                                <CardTitle titleTxt={this.state.card.title} onUpdate={this.onUpdateTitle} />
                                 <span className="group-name">in list <u>{this.state.groupName}</u></span>
                             </div>
                             <IconButton onClick={this.onCloseCard} aria-label="close" className="modal-close">
@@ -130,8 +205,20 @@ class _CardDetails extends Component {
                             </IconButton>
                         </div>
                         <div>
-                            <CardDescription onUpdateDesc={this.onUpdateDesc} description={this.state.card.description} />
+
+                        {this.getLabels()}
+                        <div>
+                            {(this.state.card.dueDate ? <h5>Due Date</h5> : <React.Fragment />)}
+                            <CardDueDateSetter onUpdateDueDate={this.onUpdateDueDate} dueDate={this.state.card.dueDate} displayDate={true} displayTime={true} />
                         </div>
+                    </div>
+                        <div>
+                            <CardDescription onUpdateDesc={this.onUpdateDesc} description={this.state.card.description} />
+                            <CardChecklistContainer checklists={this.state.card.checklists} onUpdate={this.onUpdateChecklists} />
+                        </div>
+                        <aside className="card-details-sidebar" ref={this.ref}>
+                            <CardSidebar anchorRef={this.ref} addActivity={this.createActivity} isUploading={this.state.isUploading} toggleCoverSelector={this.toggleCoverSelector} toggleUploadDropzone={this.toggleUploadDropzone} toggleDisplayMembers={this.toggleDisplayMembers} dueDate={this.state.card.dueDate} toggleLabelPallete={this.toggleLabelPalette} onUpdateDueDate={this.onUpdateDueDate} onArchiveCard={this.onArchiveCard} onUpdateChecklists={this.onUpdateChecklists} />
+                        </aside>
                     </div>
                     <div>
                         <h3>Activity</h3>
