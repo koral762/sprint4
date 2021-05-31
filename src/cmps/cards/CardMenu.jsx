@@ -33,7 +33,6 @@ class _CardMenu extends Component {
 
     getParentPos = () => {
         const pos = this.props.anchorEl.current.parentElement.parentElement.getBoundingClientRect()
-        console.log(pos)
         this.setState({ offsetTop: pos.top, offsetLeft: pos.left, width: pos.width })
     }
 
@@ -42,6 +41,7 @@ class _CardMenu extends Component {
     }
 
     componentDidMount() {
+        this.getParentPos()
         this.getCurrTitle()
     }
 
@@ -78,34 +78,35 @@ class _CardMenu extends Component {
 
         return (
             <Dialog onClose={this.props.onClose} open={true} >
-                <div className="card-edit-container" onClick={(ev) => ev.stopPropagation()} style={{
-                    left: `${this.state.offsetLeft}px`,
-                    top: `${this.state.offsetTop}px`,
-                    position: 'fixed'
-                }}>
-                    <div className="card-edit-left">
-                        <div className="card-preview" style={{ width: `${this.state.width}px` }}>
 
-                            <form>
-                                <textarea className="card-preview-title-edit" autoFocus onKeyPress={this.onKeyPress} onChange={this.onChange} value={this.state.txtValue} />
-                            </form>
+                    <div className="card-edit-container" onClick={(ev) => ev.stopPropagation()} style={{
+                        left: `${this.state.offsetLeft}px`,
+                        top: `${this.state.offsetTop}px`,
+                        position: 'fixed'
+                    }}>
+                        <div className="card-edit-left">
+                            <div className="card-preview" style={{ width: `${this.state.width}px` }}>
+
+                                <form>
+                                    <textarea className="card-preview-title-edit" autoFocus onKeyPress={this.onKeyPress} onChange={this.onChange} value={this.state.txtValue} />
+                                </form>
+                            </div>
+                            <button className="save-btn" onClick={this.onUpdateHeader}>Save</button>
                         </div>
-                    <button className="save-btn" onClick={this.onUpdateHeader}>Save</button>
-                    </div>
 
-                    <div className="card-edit-right">
-                        <div className="card-preview-edit-actions-container">
+                        <div className="card-edit-right">
+                            <div className="card-preview-edit-actions-container">
 
-                            <Button onClick={this.onDeleteCard}><ArchiveOutlinedIcon /> <span>Delete Card</span></Button>
-                            <Button><LabelIcon/><span>EDIT LABELS</span></Button>
-                            <Button><PeopleAltOutlinedIcon/><span>EDIT MEMBERS</span></Button>
-                            <Button><AccessTimeIcon/><span>SET DUE DATE</span></Button>
-                            <Button><ShareIcon/><span>SHARE</span></Button>
-                            <Button onClick={this.onClose}><CloseRoundedIcon /><span>CLOSE</span></Button>
+                                <Button onClick={this.onDeleteCard}><ArchiveOutlinedIcon /> <span>Delete Card</span></Button>
+                                <Button><LabelIcon /><span>EDIT LABELS</span></Button>
+                                <Button><PeopleAltOutlinedIcon /><span>EDIT MEMBERS</span></Button>
+                                <Button><AccessTimeIcon /><span>SET DUE DATE</span></Button>
+                                <Button><ShareIcon /><span>SHARE</span></Button>
+                                <Button onClick={this.onClose}><CloseRoundedIcon /><span>CLOSE</span></Button>
 
+                            </div>
                         </div>
                     </div>
-                </div>
             </Dialog >
 
         )

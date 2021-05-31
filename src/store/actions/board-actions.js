@@ -144,6 +144,34 @@ export function addActivity(board, activity) {
   }
 }
 
+export function addToMembers({ _id, fullName, imgUrl }, board) {
+  return async dispatch => {
+    const userToPush = {
+      _id,
+      fullName,
+      imgUrl
+    }
+    let newBoard = JSON.parse(JSON.stringify(board))
+    newBoard.members.unshift(userToPush)
+    dispatch({ type: 'SET_BOARD', board: newBoard })
+    await boardService.updateBoard(newBoard) // updating the DB
+  }
+}
+
+export function removeMember(id, board) {
+  return async dispatch => {
+    let newBoard = JSON.parse(JSON.stringify(board))
+    const memberIdx = newBoard.members.findIndex(member => member._id === id)
+    newBoard.members.splice(memberIdx, 1)
+    dispatch({ type: 'SET_BOARD', board: newBoard })
+    await boardService.updateBoard(newBoard) // updating the DB
+  }
+}
+
+
+
+
+
 // ////////////////////////////////////////////////
 function makeId(length = 8) {
   let text = '';

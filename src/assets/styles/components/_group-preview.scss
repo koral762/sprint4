@@ -69,12 +69,18 @@ div {
     justify-content: space-between;
     z-index: 1;
     white-space: normal;
+    padding: rem(5px) rem(5px);
+
 
     .dots-icon {
         color: #6b778c;
         text-align: center;
-        font-size: 1.4em;
+        font-size: 1.2em;
         margin-right: 0;
+        height: 20px;
+        padding: 6px;
+      
+        
         &:hover {
             border-radius: 0.25em;
             background-color: #dadbe2;
@@ -83,9 +89,10 @@ div {
 }
 
 .new-card-btn-container {
-    font-size: 0.875rem;
+    font-size: rem(12px);
     line-height: 1.25rem;
     font-family: 'Roboto-regular';
+
       
     .new-item-form {
         width: 100%;

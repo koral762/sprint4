@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-// import { MemberList } from './MemberList';
+import { MemberList } from '../cmps/BoardHeader/MemberList';
 // import { Filter } from './Filter';
-// import { loadAllUsers } from '../store/actions/user-actions';
+import { loadAllUsers } from '../store/actions/user-actions.js';
 // import { Notifications } from './Notifications';
 // import MoreHorizOutlinedIcon from '@material-ui/icons/MoreHorizOutlined';
 export class _BoardNav extends Component {
@@ -14,7 +14,11 @@ export class _BoardNav extends Component {
             <div className="boards-header-container flex justify-space-between wrap" >
                 <div className="board-nav-left flex">
                     <h2 className="proj-title">{this.props.board.title}</h2>
-                    <div className="btn">Member List</div>
+
+                    <div className="members-container">
+                        <MemberList members={this.props.members} allUsers={this.props.allUsers}/>
+                    </div>
+
                     <div className="btn"><span className="material-icons">
                         person_add</span>Invite</div>
                     <input className="btn" type="text" placeholder="Filter here"></input>
@@ -36,6 +40,6 @@ const mapStateToProps = state => {
     };
 };
 const mapDispatchToProps = {
-    // loadAllUsers
+    loadAllUsers
 };
 export const BoardNav = connect(mapStateToProps, mapDispatchToProps)(_BoardNav);

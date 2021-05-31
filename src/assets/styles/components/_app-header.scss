@@ -31,5 +31,19 @@
     span {
         font-size: rem(24px);
         vertical-align: middle;
+        display: flex;
+        align-items: center;
+        
+        .boardsicon{
+            font-weight: bold;
+            margin-left: rem(1px);
+            font-size: 14px;
+        
+        }
     }
+
+    .logo{
+        font-size: rem(24px);
+    }
+
 }

@@ -2,11 +2,15 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { CardMenu } from './CardMenu'
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
+import { CardPreviewDueDate } from './CardPreviewDueDate';
 
 class _CardPreview extends Component {
     state = {
         isEditing: false
     }
+
+    ref = React.createRef()
+
 
     onDetails = (ev) => {
         this.props.history.push(`/board/card/${this.props.card.id}`)
@@ -33,10 +37,17 @@ class _CardPreview extends Component {
                     {card.title}
                 </div>
                 <div className="card-preview-edit-container">
-                    <div className="card-btn" ref={this.ref} onClick={this.onOpenCardActions}><EditOutlinedIcon fontSize="inherit" />
-                    {(this.state.isEditing) ? <CardMenu anchorEl={this.ref} props={this.props} onClose={this.onSetNotEditing} /> : <React.Fragment />}
+                    <div className="card-btn" ref={this.ref} onClick={this.onOpenCardActions}>
+                        <EditOutlinedIcon fontSize="inherit" />
+                        {(this.state.isEditing) ? <CardMenu anchorEl={this.ref} props={this.props} onClose={this.onSetNotEditing} /> : <React.Fragment />}
                     </div>
+                <div className="card-preview-attrs">
+                    <CardPreviewDueDate dueDate={card.dueDate} />
+                    {/* {this.getCardPreviewAttrs()} */}
+                    {/* {this.getCardPreviewMembers()} */}
                 </div>
+                </div>
+
             </section>
         )
     }

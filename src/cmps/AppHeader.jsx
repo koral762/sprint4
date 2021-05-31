@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 // import { AddNewBoard } from './BoardHeader/AddNewBoard'
 // import logoFutura from '../assets/icons/newLogoFutura.png'
-
+import DashboardIcon from '@material-ui/icons/Dashboard';
 import { connect } from 'react-redux'
 // import { LoginDrawer } from './LoginDrawer'
 import { onLogout } from '../store/actions/user-actions'
@@ -76,11 +76,11 @@ export class _AppHeader extends Component {
                     <div className="header-icons flex">
                         <div><NavLink to='/'><span className="material-icons btn">
                             home</span></NavLink></div>
-                        <div><NavLink to='/board'><span className="material-icons btn">
-                            dashboard</span></NavLink></div>
+                        <div><NavLink to='/board'><span className="btn">
+                            <DashboardIcon/> <span className="boardsicon">Boards</span></span></NavLink></div>
                     </div>
 
-                    <div className="logo">LOGO</div>
+                    <div className="logo">Tree-lo</div>
 
                     <div className="flex">
                         <div onClick={this.toggleModal}><span className="material-icons">
