@@ -33,11 +33,12 @@ class _CardPreview extends Component {
                     {card.title}
                 </div>
                 <div className="card-preview-edit-container">
-                    <div className="card-btn" ref={this.ref} onClick={this.onOpenCardActions}><EditOutlinedIcon fontSize="inherit" /></div>
-                    {(this.state.isEditing) ? <CardMenu props={this.props} onClose={this.onSetNotEditing} /> : <React.Fragment />}
+                    <div className="card-btn" ref={this.ref} onClick={this.onOpenCardActions}><EditOutlinedIcon fontSize="inherit" />
+                    {(this.state.isEditing) ? <CardMenu anchorEl={this.ref} props={this.props} onClose={this.onSetNotEditing} /> : <React.Fragment />}
+                    </div>
                 </div>
             </section>
-        )  
+        )
     }
 }
 

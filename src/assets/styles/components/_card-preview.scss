@@ -21,7 +21,6 @@
 .card-preview-header {
     cursor: pointer;
     max-width: 210px;
-
 }
 
 .card-preview-edit-container {
@@ -38,7 +37,7 @@
         &:hover{
         
         border-radius: 5px;
-        background-color: rgba(226, 226, 226, 0.76);
+        background-color: $hovergray;
     }
 
 }

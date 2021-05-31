@@ -14,6 +14,7 @@
     justify-content: space-between;    
     padding: rem(6px) ;
     position: absolute;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
     cursor: auto;
     // >*{
@@ -33,7 +34,7 @@
         padding: rem(8px);
 
         &:hover{
-            background-color: rgb(200, 204, 195);
+            background-color: $hovergray;
             border-radius: 0.45em;
         }
     }

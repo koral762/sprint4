@@ -20,8 +20,8 @@ class _GroupPreview extends Component {
     }
 
     getAddItemTxt = (txt) => {
-        if (this.props.group.cards.length) return '+ Add another card'
-        return '+ Add a card'
+        if (this.props.group.cards.length) return 'Add another card'
+        return 'Add a card'
     }
 
     handleChangeGroupName = (ev) => {
@@ -91,7 +91,7 @@ class _GroupPreview extends Component {
                     />)
                 }
                 </div >
-                <div className="new-card-btn-container">
+                <div className="new-card-btn-container" id="add-btn">
                     <NewItem addItemTxt={this.getAddItemTxt()} placeHolderTxt='Add a card title..' addBtnTxt="Add Card" onAdd={this.onAddCard} />
                 </div>
             </section >
