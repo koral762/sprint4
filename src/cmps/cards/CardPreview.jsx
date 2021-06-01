@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { CardMenu } from './CardMenu'
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 import { CardPreviewDueDate } from './CardPreviewDueDate';
+import { Draggable } from 'react-beautiful-dnd'
 
 class _CardPreview extends Component {
     state = {
@@ -32,23 +33,35 @@ class _CardPreview extends Component {
     render() {
         const card = this.props.card
         return (
-            <section className="card-preview" onClick={this.onDetails}>
-                <div className="card-preview-header">
-                    {card.title}
-                </div>
-                <div className="card-preview-edit-container">
-                    <div className="card-btn" ref={this.ref} onClick={this.onOpenCardActions}>
-                        <EditOutlinedIcon fontSize="inherit" />
-                        {(this.state.isEditing) ? <CardMenu anchorEl={this.ref} props={this.props} onClose={this.onSetNotEditing} /> : <React.Fragment />}
-                    </div>
-                <div className="card-preview-attrs">
-                    <CardPreviewDueDate dueDate={card.dueDate} />
-                    {/* {this.getCardPreviewAttrs()} */}
-                    {/* {this.getCardPreviewMembers()} */}
-                </div>
-                </div>
+            <Draggable 
+            draggableId={this.props.card.id} 
+            index={this.props.index}>
+                {(provided) => (
+                    <section className="card-preview"
+                        onClick={this.onDetails}
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                        ref={provided.innerRef}>
+                        <div className="card-preview-header">
+                            {card.title}
+                        </div>
+                        <div className="card-preview-edit-container">
+                            <div className="card-btn" ref={this.ref} onClick={this.onOpenCardActions}>
+                                <EditOutlinedIcon fontSize="inherit" />
+                                {(this.state.isEditing) ? <CardMenu anchorEl={this.ref} props={this.props} onClose={this.onSetNotEditing} /> : <React.Fragment />}
+                            </div>
+                            <div className="card-preview-attrs">
+                                <CardPreviewDueDate dueDate={card.dueDate} />
+                                {/* {this.getCardPreviewAttrs()} */}
+                                {/* {this.getCardPreviewMembers()} */}
+                            </div>
+                        </div>
+                        {provided.placeholder}
 
-            </section>
+                    </section>
+                )}
+            </Draggable>
+
         )
     }
 }

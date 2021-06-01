@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { AddNewGroup } from './AddNewGroup';
 import { GroupPreview } from "./GroupPreview";
-import { Draggable, Droppable } from "react-beautiful-dnd";
+import { Droppable } from "react-beautiful-dnd";
 
 
 
@@ -25,7 +25,7 @@ export class GroupList extends Component {
                 <Droppable droppableId="droppableGroupId" direction="horizontal" type="group">
                     {(provided) => (
                         <div className="flex"
-                        {...provided.droppableProps}
+                            {...provided.droppableProps}
                             ref={provided.innerRef}>
 
                             {groups.map((group, index) =>
