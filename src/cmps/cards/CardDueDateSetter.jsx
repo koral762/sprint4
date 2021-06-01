@@ -49,7 +49,7 @@ export class CardDueDateSetter extends Component {
     }
 
     getDisplayDateBtn = () => {
-        if (!this.state.date) return <Button className="set-due-date-btn" onClick={this.openModal} ref={this.anchor}><ScheduleIcon /><span>Set Due Date</span></Button>
+        if (!this.state.date) return <button className="flex" onClick={this.openModal} ref={this.anchor}><ScheduleIcon /><span>Set Due Date</span></button>
 
         return (
             <div onClick={this.openModal} ref={this.anchor} className="set-due-date-expanded">
@@ -59,7 +59,6 @@ export class CardDueDateSetter extends Component {
     }
 
     parseDate = () => {
-        // 2020-09-26T04:52
         let date = new Date(this.state.date)
         if (!this.state.date) date = new Date(Date.now())
         let year = date.getFullYear()

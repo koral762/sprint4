@@ -222,9 +222,9 @@ var gBoard = {
           "description": "",
           "archivedAt": null,
           "members": [
-              {
-                
-              }
+            {
+
+            }
           ],
           "labels": [
             {
@@ -517,8 +517,8 @@ function getBoardById() {
 
 
 async function updateBoard(newBoard) {
-  gBoard=newBoard;
-  return Promise.resolve(gBoard)  
+  gBoard = newBoard;
+  return Promise.resolve(gBoard)
   // return await httpService.put(`board/${boardId}`, board)
 }
 
@@ -526,25 +526,24 @@ function createActivity(partialActivity) {
   // const user = userService.getLoggedInUser()
 
   const activity = {
-      "id": utils.makeId(),
-      "txt": partialActivity.txt,
-      "commentTxt": partialActivity.commentTxt,
-      "createdAt": Date.now(),
-      // "byMember": {
-      //     "_id": user._id,
-      //     "fullName": user.fullName,
-      //     "imgUrl": user.imgUrl
-      // }
+    "id": utils.makeId(),
+    "txt": partialActivity.txt,
+    "commentTxt": partialActivity.commentTxt,
+    "createdAt": Date.now(),
+    // "byMember": {
+    //     "_id": user._id,
+    //     "fullName": user.fullName,
+    //     "imgUrl": user.imgUrl
+    // }
   }
   if (partialActivity.card) {
-      activity.card = {
-          "id": partialActivity.card.id,
-          "title": partialActivity.card.title
-      }
+    activity.card = {
+      "id": partialActivity.card.id,
+      "title": partialActivity.card.title
+    }
   }
   if (!partialActivity.group) {
-      activity.group = {...partialActivity.group}
+    activity.group = { ...partialActivity.group }
   }
-
   return activity
 }

@@ -8,11 +8,14 @@ import { ActivityLog } from './card-sidebar/ActivityLog'
 import { CardTitle } from './CardTitle'
 import { CardDueDateSetter } from './CardDueDateSetter'
 import { CardChecklistContainer } from './CardChecklistContainer.jsx'
-import { CardSidebar } from './CardSidebar'
-import { CardLabels } from './CardLabels';
+import { CardSidebar } from './card-sidebar/CardSidebar'
+import { CardLabels } from './CardLabels'
+import { LabelPalette } from './card-sidebar/LabelPalette'
 import { withRouter } from 'react-router'
+import { IconButton, Popover } from '@material-ui/core'
+import SubtitlesIcon from '@material-ui/icons/Subtitles'
 import CloseIcon from '@material-ui/icons/Close'
-import { IconButton, CircularProgress } from '@material-ui/core'
+import ListIcon from '@material-ui/icons/List'
 
 class _CardDetails extends Component {
 
@@ -20,7 +23,8 @@ class _CardDetails extends Component {
         card: null,
         groupId: null,
         groupName: null,
-        commentsOnly: false
+        commentsOnly: false,
+        isLabelPaletteShowing: false
     }
 
     componentDidMount() {
@@ -38,6 +42,8 @@ class _CardDetails extends Component {
             this.getCardDetails()
         }
     }
+
+    ref = React.createRef()
 
     getCardDetails = () => {
         console.log('Get card details ' + this.props.cardId)
@@ -80,6 +86,19 @@ class _CardDetails extends Component {
         })
     }
 
+    onAddComment = (txt) => {
+        const activity = {
+            "txt": "",
+            "commentTxt": txt,
+            "card": {
+                "id": this.state.card.id,
+                "title": this.state.card.title
+            }
+        }
+        const newActivity = boardService.createActivity(activity)
+        this.props.addActivity(this.props.board, newActivity)
+    }
+
     createActivity = (txt) => {
         const activity = {
             "txt": txt,
@@ -90,14 +109,9 @@ class _CardDetails extends Component {
             }
         }
 
+        console.log('CREATING ACTIVITY FOR CARD ' + JSON.stringify(activity))
+
         return boardService.createActivity(activity)
-    }
-
-    onAddComment = (txt) => {
-        const newActivity = this.createActivity(txt)
-
-        this.props.addActivity(this.props.board, newActivity)
-
     }
 
     toggleCommentsOnly = () => {
@@ -111,9 +125,10 @@ class _CardDetails extends Component {
         if (!activities) return []
         let cardActivities = activities.filter(activity => activity.card.id === card.id)
         if (this.state.commentsOnly) cardActivities = cardActivities.filter(activity => {
-            if (activity.commentTxt.length) return activity
+            console.log(JSON.stringify(activity))
+            if (activity.commentTxt) return activity
         })
-        // console.log(JSON.stringify(activities))
+        // console.log(JSON.stringify(cardActivities))
         return cardActivities
     }
 
@@ -175,7 +190,8 @@ class _CardDetails extends Component {
         if (labels && labels.length) return (
             <div className="card-details-label-container">
                 <h5>Labels</h5>
-                <CardLabels onClickLabel={this.openEditLabelsModal}
+                <CardLabels
+                    onClickLabel={this.openEditLabelsModal}
                     cardLabels={labels}
                     boardLabels={this.props.board.labels}
                     preview={false}
@@ -184,51 +200,88 @@ class _CardDetails extends Component {
         )
         return <React.Fragment />
     }
-    
+
+    toggleLabelPalette = () => {
+        this.setState({ isLabelPaletteShowing: !this.state.isLabelPaletteShowing })
+    }
+
     render() {
-        console.log(JSON.stringify(this.state.card ? this.state.card : 'null' ))
         if (!this.state.card) {
-            return <div><CircularProgress /></div>
+            return null
         }
         // console.log(this.state.card)
         return (
             <section className="card-details-modal flex column">
                 <div className="modal-content">
-                    <div className="card-modal-header flex column ">
-                        <div className="card-modal-title flex justify-space-between">
-                            <div className="card-details-title">
+                    <div className="card-modal-title flex justify-space-between">
+                        <div className="card-details-title flex">
+                            <SubtitlesIcon />
+                            <div>
                                 <CardTitle titleTxt={this.state.card.title} onUpdate={this.onUpdateTitle} />
                                 <span className="group-name">in list <u>{this.state.groupName}</u></span>
                             </div>
-                            <IconButton onClick={this.onCloseCard} aria-label="close" className="modal-close">
-                                <CloseIcon />
-                            </IconButton>
                         </div>
-                        <div>
-
-                        {this.getLabels()}
-                        <div>
-                            {(this.state.card.dueDate ? <h5>Due Date</h5> : <React.Fragment />)}
-                            <CardDueDateSetter onUpdateDueDate={this.onUpdateDueDate} dueDate={this.state.card.dueDate} displayDate={true} displayTime={true} />
-                        </div>
+                        <IconButton onClick={this.onCloseCard} aria-label="close" className="modal-close">
+                            <CloseIcon />
+                        </IconButton>
                     </div>
-                        <div>
-                            <CardDescription onUpdateDesc={this.onUpdateDesc} description={this.state.card.description} />
-                            <CardChecklistContainer checklists={this.state.card.checklists} onUpdate={this.onUpdateChecklists} />
-                        </div>
-                        <aside className="card-details-sidebar" ref={this.ref}>
-                            <CardSidebar anchorRef={this.ref} addActivity={this.createActivity} isUploading={this.state.isUploading} toggleCoverSelector={this.toggleCoverSelector} toggleUploadDropzone={this.toggleUploadDropzone} toggleDisplayMembers={this.toggleDisplayMembers} dueDate={this.state.card.dueDate} toggleLabelPallete={this.toggleLabelPalette} onUpdateDueDate={this.onUpdateDueDate} onArchiveCard={this.onArchiveCard} onUpdateChecklists={this.onUpdateChecklists} />
-                        </aside>
+                    <div className="flex justify-space-between">
+                        <section>
+                            <div className="flex">
+                                {this.getLabels()}
+                                <div>
+                                    {(this.state.card.dueDate ? <h5>Due Date</h5> : <React.Fragment />)}
+                                    <CardDueDateSetter onUpdateDueDate={this.onUpdateDueDate} dueDate={this.state.card.dueDate} displayDate={true} displayTime={true} />
+                                </div>
+                            </div>
+                            <div>
+                                <CardDescription onUpdateDesc={this.onUpdateDesc} description={this.state.card.description} />
+                                <CardChecklistContainer checklists={this.state.card.checklists} onUpdate={this.onUpdateChecklists} />
+                            </div>
+                        </section>
+                        <CardSidebar
+                            anchorRef={this.ref}
+                            ref={this.ref}
+                            addActivity={this.createActivity}
+                            isUploading={this.state.isUploading}
+                            toggleCoverSelector={this.toggleCoverSelector}
+                            toggleUploadDropzone={this.toggleUploadDropzone}
+                            toggleDisplayMembers={this.toggleDisplayMembers}
+                            dueDate={this.state.card.dueDate}
+                            toggleLabelPalette={this.toggleLabelPalette}
+                            onUpdateDueDate={this.onUpdateDueDate}
+                            onArchiveCard={this.onArchiveCard}
+                            onUpdateChecklists={this.onUpdateChecklists} />
                     </div>
                     <div>
-                        <h3>Activity</h3>
-                        <button onClick={this.toggleCommentsOnly}>{(this.state.commentsOnly) ? 'Show Details' : 'Hide Details'}</button>
+                        <section className="flex justify-space-between">
+                            <div className="flex">
+                                <ListIcon />
+                                <h3>Activity</h3>
+                            </div>
+                            <button onClick={this.toggleCommentsOnly}>{(this.state.commentsOnly) ? 'Show Details' : 'Hide Details'}</button>
+                        </section>
                         <CardAddComment onAddComment={this.onAddComment} />
                         <ActivityLog
                             boardId={this.props.board._id}
                             displayMode="card"
                             activities={this.getFilteredActivities()} />
                     </div>
+                    <Popover
+                        anchorOrigin={{
+                            vertical: 'center',
+                            horizontal: 'center',
+                        }}
+                        transformOrigin={{
+                            vertical: 'center',
+                            horizontal: 'left',
+                        }}
+                        open={this.state.isLabelPaletteShowing}
+                        anchorEl={this.ref.current}
+                        onClose={this.toggleLabelPalette}
+                        onBackdropClick={this.toggleLabelPalette}>
+                        <LabelPalette createActivity={this.createActivity} card={this.state.card} />
+                    </Popover>
                 </div>
             </section>
         )

@@ -6,15 +6,29 @@ export class CardChecklist extends Component {
 
     state = {
         displayCompleted: true,
-        showDialog: false
+        showDialog: false,
+        tasksCompleted: 0,
+        totalTasks: 0
     }
 
-    componentDidMount() {   
-
+    componentDidMount() {
+        this.setTasksStatus()
     }
 
     componentDidUpdate(prevProps, prevState) {
+        if (this.props.checklist !== prevProps.checklist) this.setTasksStatus()
+    }
 
+    setTasksStatus = () => {
+        let tasksCompleted = 0
+        let totalTasks = 0
+
+        this.props.checklist.todos.forEach(todo => {
+            if (todo.isDone) tasksCompleted += 1
+            totalTasks += 1
+        });
+
+        this.setState({ tasksCompleted, totalTasks })
     }
 
     toggleDisplayCompleted = () => {
@@ -36,11 +50,11 @@ export class CardChecklist extends Component {
         )
     }
 
-    onRemoveChecklist = async() => {
-        const checklist = {...this.props.checklist}
+    onRemoveChecklist = async () => {
+        const checklist = { ...this.props.checklist }
         checklist.title = ''
-        let activityTxt= `removed ${this.props.checklist.title}`
-        this.props.onUpdate(checklist,activityTxt)
+        let activityTxt = `removed ${this.props.checklist.title}`
+        this.props.onUpdate(checklist, activityTxt)
         this.closeDialog()
 
     }
@@ -68,42 +82,44 @@ export class CardChecklist extends Component {
         return percent
     }
 
-    onUpdateChecklist = (newTodo,activityTxt) => {
+    onUpdateChecklist = (newTodo, activityTxt) => {
         // take the updated todo and insert it into the list
         let todos = [...this.props.checklist.todos]
         // find the todo index
         const todoIdx = todos.findIndex(todo => todo.id === newTodo.id)
         // if new title is blank - remove todo
         if (!newTodo.title) {
-            todos.splice(todoIdx,1)
-        } else if (todoIdx <0) { //if the index is less than 0 - this is a new item
+            todos.splice(todoIdx, 1)
+        } else if (todoIdx < 0) { //if the index is less than 0 - this is a new item
             todos.push(newTodo)
         } else {
-            todos[todoIdx] =  newTodo
+            todos[todoIdx] = newTodo
         }
-        const checklist = {...this.props.checklist}
+        const checklist = { ...this.props.checklist }
         checklist.todos = todos
-        this.props.onUpdate(checklist,activityTxt)
+        this.props.onUpdate(checklist, activityTxt)
     }
 
     render() {
         return (
-            <div className="checklist">
-                <div className="checklist-title-container">
-                    <CheckBoxOutlinedIcon />
-                    <div className="checklist-title">{this.props.checklist.title}</div>
-                    <div className="checklist-title-btns">
-                    {this.getDisplayCheckedBtn()}
-                    <Button onClick={this.openDialog}>Remove</Button>
+            <div>
+                <div className="flex justify-space-between">
+                    <div className="flex">
+                        <CheckBoxOutlinedIcon />
+                        {this.props.checklist.title}
+                    </div>
+                    <div>
+                        {this.getDisplayCheckedBtn()}
+                        <button onClick={this.openDialog}>Delete</button>
                     </div>
                 </div>
-                    <div className="checklist-progress">
-                    <div className="checklist-progress-numbers">%{this.getPercentCompleted(this.props.checklist)}</div>
-                    <LinearProgress value={this.getPercentCompleted(this.props.checklist)} variant="determinate" /> 
-                    </div>
-                <main className="checklist-main">
-                    {this.props.checklist.todos.map(todo => <CardChecklistTodo key={todo.id} displayCompleted={this.state.displayCompleted} todo={todo} onUpdate={this.onUpdateChecklist}/>)}
-                    <CardChecklistTodo isNew={true} onUpdate={this.onUpdateChecklist}/>
+                <div>
+                    <div>%{this.getPercentCompleted(this.props.checklist)}</div>
+                    <LinearProgress value={this.getPercentCompleted(this.props.checklist)} variant="determinate" />
+                </div>
+                <main>
+                    {this.props.checklist.todos.map(todo => <CardChecklistTodo key={todo.id} displayCompleted={this.state.displayCompleted} todo={todo} onUpdate={this.onUpdateChecklist} />)}
+                    <CardChecklistTodo isNew={true} onUpdate={this.onUpdateChecklist} />
                 </main>
                 <Dialog onClose={this.closeDialog} open={this.state.showDialog}>
                     <DialogTitle id="alert-dialog-title">{"Remove this checklist?"}</DialogTitle>

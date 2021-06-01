@@ -6,7 +6,7 @@ export function CardLabels(props) {
     function displayLabel(label) {
         const boardLabel = props.boardLabels.find(boardLabel => boardLabel.id === label.id)
         if (!props.preview) return (
-            <div className={`card-details-label ${boardLabel.color}`}>
+            <div className={`card-details-label ${boardLabel.color} flex`}>
                 <div className="card-details-mask">
                     {boardLabel.name}
                 </div>

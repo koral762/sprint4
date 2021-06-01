@@ -1,5 +1,5 @@
 import React from 'react'
-import AccessTimeIcon from '@material-ui/icons/AccessTime';
+import AccessTimeIcon from '@material-ui/icons/AccessTime'
 
 export function CardPreviewDueDate(props) {
     if (!props.dueDate) return <React.Fragment />

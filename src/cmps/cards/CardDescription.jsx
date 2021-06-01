@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import SubjectIcon from '@material-ui/icons/Subject';
-
+import SubjectIcon from '@material-ui/icons/Subject'
 export class CardDescription extends Component {
 
     state = {
@@ -47,18 +46,20 @@ export class CardDescription extends Component {
         if (!this.state.description) return 'Add a more detailed description…'
         return this.state.description
     }
-///
+    ///
 
-//description-text-box
-///
+    //description-text-box
+    ///
     getIsEditing = () => {
         if (!this.state.isEditing) return (
             <pre className="description-text-box" onClick={this.setEditing}>{this.getDescriptionTxt()}</pre>
         )
         return (
-            <div>
-                <textarea value={this.state.description} autoFocus onChange={this.onChange} onBlur={this.onSave} placeholder="Enter a more details description here..." className="modal-desc-textarea"/> 
-                <button onClick={this.onSave} className="btn">Save</button>
+            <div className="flex column">
+                <textarea value={this.state.description} autoFocus onChange={this.onChange}
+                    onBlur={this.onSave} placeholder="Enter a more details description here..."
+                    className="modal-desc-textarea" />
+                <button onClick={this.onSave}>Save</button>
             </div>
         )
     }
@@ -67,9 +68,12 @@ export class CardDescription extends Component {
     render() {
         // if (!this.state.isReady) return <div>Loading...</div>
         return (
-            <div className="modal-description">
-                <h3 className="">Description</h3>
-                {this.getIsEditing()}
+            <div className="modal-description flex">
+                <SubjectIcon />
+                <div className="flex column">
+                    <h3>Description</h3>
+                    {this.getIsEditing()}
+                </div>
             </div>
         )
     }

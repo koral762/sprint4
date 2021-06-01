@@ -41,9 +41,9 @@ export class CardChecklistTodo extends Component {
             </form>
         )}
         return (
-            <Button className="checklist-add-todo" onClick={this.setEditing}>
+            <button className="checklist-add-todo" onClick={this.setEditing}>
                 Add an item
-            </Button>
+            </button>
         )
     }
     
@@ -75,11 +75,8 @@ export class CardChecklistTodo extends Component {
     }
 
     onSubmit = (ev) => {
-        
         ev.preventDefault()
-        // this.setNotEditing()
         this.updateChecklist()
-
     }
 
     updateTodo = () => {
@@ -98,15 +95,7 @@ export class CardChecklistTodo extends Component {
     }
 
     onCheck = (ev) => {
-        
-        // let txt = ''
         let checkStatus = ev.target.checked
-        // if (checkStatus) {
-        //     txt = `completed ${this.state.txtValue}`
-        // } else {
-        //     txt = `marked ${this.state.txtValue} incomplete`
-        // }
-        
         this.setState({ isDone: checkStatus}, () => {
              this.updateChecklist()
         })
@@ -127,7 +116,6 @@ export class CardChecklistTodo extends Component {
     }
 
     updateChecklist = () => {
-        
             let id;
             if (this.props.todo) {
                 id = this.props.todo.id
@@ -153,7 +141,6 @@ export class CardChecklistTodo extends Component {
         if (!this.props.displayCompleted && this.state.isDone) return <React.Fragment />
         return (
             <div className="checklist-todo">
-
                 {(this.state.isNew) ? this.getNewTodoDisplay() : this.getTextBox()}
             </div>
         )
