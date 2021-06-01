@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { AddNewGroup } from './AddNewGroup';
 import { GroupPreview } from "./GroupPreview";
-import { Draggable, Droppable } from "react-beautiful-dnd";
+import { Droppable } from "react-beautiful-dnd";
 
 
 

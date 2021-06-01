@@ -22,15 +22,12 @@
     position: relative;
     white-space: normal;
     height: fit-content;
-
-    
-
+    vertical-align: top;
     span {
         display: flex;
         align-items: center;
     }
 }
-
 
 div {
     display: block;
@@ -51,7 +48,7 @@ div {
     user-select: none;
     white-space: nowrap;
     margin-bottom: 8px;
-    overflow-x: auto;
+    // overflow-x: auto;
     overflow-y: hidden;
     padding-bottom: 8px;
     position: absolute;
@@ -73,8 +70,6 @@ div {
     z-index: 1;
     white-space: normal;
     padding: rem(5px) rem(5px);
-
-
     .dots-icon {
         color: #6b778c;
         text-align: center;
@@ -82,8 +77,6 @@ div {
         margin-right: 0;
         height: 20px;
         padding: 6px;
-      
-        
         &:hover {
             border-radius: 0.25em;
             background-color: #dadbe2;
@@ -95,11 +88,8 @@ div {
     font-size: rem(12px);
     line-height: 1.25rem;
     font-family: 'Roboto-regular';
-
-      
     .new-item-form {
         width: 100%;
-
         textarea {
             background-color: #fff;
             height: 58px;
@@ -112,7 +102,6 @@ div {
             width: 100%;
             font-family: 'Roboto';
             resize: none;
-
         }
     }
 }
@@ -124,9 +113,7 @@ div {
     padding-top: 2px;
     border-radius: 3px;
 }
+
 .new-item-container:hover {
     background-color: rgba(9, 30, 66, 0.08);
 }
-
-
-    

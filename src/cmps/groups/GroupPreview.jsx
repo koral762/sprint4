@@ -97,7 +97,7 @@ class _GroupPreview extends Component {
   
                         <Droppable droppableId={group.id} type="card">
                             {(provided) => (
-                                <div className=" cards-content-wrapper"
+                                <div className="cards-content-wrapper"
                                     ref={provided.innerRef}
                                     {...provided.droppableProps}>
                                     {group.cards.map((card, index) => {

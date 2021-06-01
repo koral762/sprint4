@@ -1,11 +1,10 @@
 .group-list {
     overflow-x: scroll;
-    overflow-y:hidden;
+    overflow-y: hidden;
     align-items: flex-start;
     margin-bottom: 8px;
     padding-bottom: 8px;
-    flex:1;
-
+    flex: 1;
 }
 
 .add-new-group-text {
@@ -18,6 +17,7 @@
     }
 }
 
-.cards{
+.cards {
+    // flex: 1;
     height: 100%;
 }

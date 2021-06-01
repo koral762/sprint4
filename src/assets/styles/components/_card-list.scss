@@ -9,12 +9,10 @@
     flex-grow: 0;
     flex-shrink: 0;
     box-sizing: border-box;
-   
     .group-header {
         font-weight: 600;
         cursor: pointer;
     }
-    
     .list-header-extras {
         padding: 6px;
         border-radius: 3px;
@@ -27,8 +25,7 @@
     }
 }
 
-.cards-content-wrapper{
-
+.cards-content-wrapper {
     overflow-y: auto;
     overflow-x: hidden;
     margin: 0 4px;
@@ -36,7 +33,4 @@
     z-index: 0;
     min-height: 0;
     white-space: normal;
-
-    
 }
-
