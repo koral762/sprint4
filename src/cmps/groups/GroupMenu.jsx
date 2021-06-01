@@ -9,7 +9,7 @@ export class _GroupMenu extends Component {
         // currently adding without moving to focus to new card
         // need to focus on "NewItem" and set its state with the help of parent element (same parent)
         ev.stopPropagation()
-        this.props.onAdd('New Card')
+        this.props.onAdd('New Card..')
     }
 
     removeGroup=(ev)=>{

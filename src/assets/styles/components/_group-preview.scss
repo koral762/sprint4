@@ -13,42 +13,120 @@
 }
 
 .group-container {
-    width: rem(272px);
-    height: fit-content;
-    max-height: 100%;
+    background-color: #ebecf0;
     border-radius: 3px;
     box-sizing: border-box;
     display: flex;
-    overflow-x: hidden;
     flex-direction: column;
-    vertical-align: top;
-    padding: 0px 10px;
+    max-height: 100%;
+    position: relative;
+    white-space: normal;
+    height: fit-content;
+
+    
+
     span {
         display: flex;
         align-items: center;
     }
 }
 
+
+div {
+    display: block;
+}
+
+.list-wrapper {
+    width: 272px;
+    margin: 0 4px;
+    height: 100%;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+#board {
+    -webkit-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+    margin-bottom: 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 8px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
 .group-preview-header {
-    font-size: rem(15px);
-    font-weight: 800;
+    font-family: 'Segoe UI', sans-serif;
+    color: #172b4d;
+    font-size: rem(14px);
+    font-weight: 500;
     line-height: 20px;
-    padding: 10px 0px 2px 0px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 1;
+    white-space: normal;
+    padding: rem(5px) rem(5px);
+
+
     .dots-icon {
+        color: #6b778c;
         text-align: center;
-        font-size: 1.4em;
+        font-size: 1.2em;
         margin-right: 0;
+        height: 20px;
+        padding: 6px;
+      
+        
         &:hover {
             border-radius: 0.25em;
-            background-color: rgb(200, 204, 195);
+            background-color: #dadbe2;
         }
     }
 }
 
 .new-card-btn-container {
-    margin-bottom: 0.4rem;
+    font-size: rem(12px);
+    line-height: 1.25rem;
+    font-family: 'Roboto-regular';
+
+      
+    .new-item-form {
+        width: 100%;
+
+        textarea {
+            background-color: #fff;
+            height: 58px;
+            box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
+            border: none;
+            border-radius: 3px;
+            outline: 0px;
+            margin-bottom: rem(2px);
+            font-size: 0.875rem;
+            width: 100%;
+            font-family: 'Roboto';
+            resize: none;
+
+        }
+    }
 }
+
+.new-item-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 2px;
+    border-radius: 3px;
+}
+.new-item-container:hover {
+    background-color: rgba(9, 30, 66, 0.08);
+}
+
+
+    

@@ -8,6 +8,13 @@ html {
     color: $darktxt;
     line-height: 1.6;
     margin: 0;
+    -webkit-text-size-adjust: 100%;
+}
+
+body, button, html, input, select, textarea {
+    color: #172b4d;
+    line-height: 20px;
+    font-weight: 400;
 }
 
 body {

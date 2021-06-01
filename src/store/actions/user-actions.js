@@ -11,6 +11,13 @@ export function onLogin(credentials) {
     }
 }
 
+export function loadAllUsers(){
+    return async dispatch=>{
+        const users = await userService.getUsersFromDb()
+        dispatch({ type: 'SET_USERS', users })
+    }
+}
+
 export function onSignup(userInfo) {
     return async dispatch => {
         try {

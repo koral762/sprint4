@@ -1,0 +1,94 @@
+.members-container {
+    cursor: pointer;
+    display: flex;
+    margin: 0 .25rem;
+    font-size: .9375rem;
+    align-items: center;
+    color: #172b4d;
+}
+.member-preview {
+    background-color: $memberClr;
+    color: black;
+    height: rem(28px);
+    width: rem(28px);
+    border-radius: 50%;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: rem(14px);
+    margin-right: rem(0px);
+    text-align: center;
+    line-height: rem(28px);
+    cursor: default;
+    transition: 0.1s;
+    overflow: hidden;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+    
+    &:hover{
+        background-color: $hovergray;
+    }
+}
+
+.search-filter-container {
+    align-items: center;
+    justify-content: flex-start;
+    display: flex;
+    flex-grow: 1;
+
+    & > * {
+        align-self: center;
+        justify-self: center;
+    }
+}
+
+.add-member-modal {
+    width: rem(224px);
+    min-height: rem(350px) ;
+    max-height: rem(450px);
+    overflow-y: auto;    
+    background-color: #fff;
+    border: 1px solid black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: rem(6px);
+    position: absolute;
+    transform: translate(-50%, 5%);
+    z-index: 2;
+    border-radius: 0.25em;
+    box-shadow: $boxShadow1;
+    color: black;
+}
+
+.add-member-btn {
+    cursor: pointer
+}
+
+.member-container{    
+    cursor: pointer;
+    display: flex;
+    margin: 0 rem(4px);
+    font-size: rem(15px);
+    align-items: center;    
+    color: black;
+
+    p{  
+        text-align: left;  
+        color: black;
+        // margin: rem(6px);
+        line-height: 1;
+        flex-grow:1 ;
+    }
+
+    :last-child {
+        width: rem(18px);
+        opacity: 0.8;
+    }
+
+    &:hover {
+        background-color: $hovergray;
+        border-radius: 0.45em;
+    }
+}

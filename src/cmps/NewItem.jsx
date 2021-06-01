@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import AddIcon from '@material-ui/icons/Add';
+import CloseIcon from '@material-ui/icons/Close';
 
 export class NewItem extends Component {
 
@@ -25,7 +27,7 @@ export class NewItem extends Component {
 
     getIsEditing = () => {
         if (!this.state.isEditing) return (
-            <div className="new-item-btn" onClick={this.setEditing}><button style={{ fontSize: 14 }}>{this.props.addItemTxt}</button></div>
+            <div className="new-item-btn" onClick={this.setEditing}><AddIcon style={{ fontSize: "20px" }} />{this.props.addItemTxt}</div>
         )
         
         return (
@@ -35,7 +37,7 @@ export class NewItem extends Component {
                     <textarea placeholder={this.props.placeHolderTxt} autoFocus type="text" onChange={this.onChange} value={this.state.txtValue} />
                     <div className="save-btn-container">
                         <button className="save-btn" onMouseDown={this.onSubmit}>{this.props.addBtnTxt}</button>
-                        <button onClick={this.setNotEditing}>close</button>
+                        <CloseIcon className="close" onClick={this.setNotEditing} />
                     </div>
                 </form>
             </div>
@@ -54,7 +56,7 @@ export class NewItem extends Component {
 
     render() {
         return (
-            <div className="new-item-container">
+            <div style={{border:"0px"}} className="new-item-container">
                 {this.getIsEditing()}
             </div>
         )

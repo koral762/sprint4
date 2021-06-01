@@ -2,10 +2,11 @@ import { boardService } from '../../services/board-service'
 const { cardService } = require("../../services/card-service");
 
 
-export function loadBoard() {
+
+export function loadBoard(id) {
   return async dispatch => {
     try {
-      const board = await boardService.getBoardById()
+      const board = await boardService.getBoardById(id)
       dispatch({ type: 'SET_BOARD', board })
     } catch (err) {
       console.log('ReviewActions: err in loadBoard', err)
@@ -200,6 +201,33 @@ export function updateLabel(board, updatedlabel) {
     }
   }
 }
+export function addToMembers({ _id, fullName, imgUrl }, board) {
+  return async dispatch => {
+    const userToPush = {
+      _id,
+      fullName,
+      imgUrl
+    }
+    let newBoard = JSON.parse(JSON.stringify(board))
+    newBoard.members.unshift(userToPush)
+    dispatch({ type: 'SET_BOARD', board: newBoard })
+    await boardService.updateBoard(newBoard) // updating the DB
+  }
+}
+
+export function removeMember(id, board) {
+  return async dispatch => {
+    let newBoard = JSON.parse(JSON.stringify(board))
+    const memberIdx = newBoard.members.findIndex(member => member._id === id)
+    newBoard.members.splice(memberIdx, 1)
+    dispatch({ type: 'SET_BOARD', board: newBoard })
+    await boardService.updateBoard(newBoard) // updating the DB
+  }
+}
+
+
+
+
 
 // ////////////////////////////////////////////////
 function makeId(length = 8) {

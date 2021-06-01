@@ -3,6 +3,28 @@ import { userService } from '../../services/user-service.js'
 
 const initialState = {
     loggedinUser: userService.getLoggedinUser(),
+    users: [{
+        username: "ma",
+        password: "ma",
+        fullname: "Ma Ma"
+    },
+    {
+        username: "ba",
+        password: "ba",
+        fullname: "Ba Ba"
+    },
+    {
+        username: "koral",
+        password: "koral1",
+        fullname: "koral sabbah"
+    },
+    {
+        username: "roko",
+        password: "roro",
+        fullname: "roee kosh"
+    }
+
+    ]
 }
 
 export function userReducer(state = initialState, action) {
