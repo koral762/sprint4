@@ -22,6 +22,8 @@
     position: relative;
     white-space: normal;
 
+    
+
     span {
         display: flex;
         align-items: center;
@@ -107,7 +109,7 @@ div {
             margin-bottom: rem(2px);
             font-size: 0.875rem;
             width: 100%;
-            font-family: Roboto;
+            font-family: 'Roboto';
             resize: none;
 
         }
