@@ -29,14 +29,25 @@ export class NewItem extends Component {
         if (!this.state.isEditing) return (
             <div className="new-item-btn" onClick={this.setEditing}><AddIcon style={{ fontSize: "20px" }} />{this.props.addItemTxt}</div>
         )
-        
-        return (
 
+        return (
             <div className="new-item-form">
-                <form  onKeyDown={this.onKeyPress} onBlur={this.setNotEditing} onSubmit={this.onSubmit} >
-                    <textarea placeholder={this.props.placeHolderTxt} autoFocus type="text" onChange={this.onChange} value={this.state.txtValue} />
+                <form
+                    onKeyDown={this.onKeyPress}
+                    onBlur={this.setNotEditing}
+                    onSubmit={this.onSubmit} >
+                    <textarea
+                        placeholder={this.props.placeHolderTxt}
+                        autoFocus
+                        type="text"
+                        onChange={this.onChange}
+                        value={this.state.txtValue} />
                     <div className="save-btn-container">
-                        <button className="save-btn" onMouseDown={this.onSubmit}>{this.props.addBtnTxt}</button>
+                        <button
+                            className="save-btn"
+                            onMouseDown={this.onSubmit}>
+                            {this.props.addBtnTxt}
+                        </button>
                         <CloseIcon className="close" onClick={this.setNotEditing} />
                     </div>
                 </form>
@@ -45,7 +56,7 @@ export class NewItem extends Component {
     }
 
 
-    onSubmit = async(ev) => {
+    onSubmit = async (ev) => {
         ev.preventDefault()
         if (!this.state.txtValue) return
         await this.props.onAdd(this.state.txtValue)
@@ -56,7 +67,7 @@ export class NewItem extends Component {
 
     render() {
         return (
-            <div style={{border:"0px"}} className="new-item-container">
+            <div style={{ border: "0px" }} className="new-item-container">
                 {this.getIsEditing()}
             </div>
         )
