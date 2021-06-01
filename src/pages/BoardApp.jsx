@@ -13,7 +13,8 @@ export class _BoardApp extends Component {
     }
 
     componentDidMount() {
-        this.props.loadBoard()
+        const id='5f72ea5a1ab1fc0017450368';
+        this.props.loadBoard(id)
     }
 
     onAddGroup = (txt) => {
@@ -31,8 +32,8 @@ export class _BoardApp extends Component {
             <React.Fragment>
 
                 <div className="board-app board-container flex column">
-                    {/* {(this.props.match.params.cardId) ?
-                        <CardDetails cardId={this.props.match.params.cardId} boardId={this.props.board._id} history={this.props.history} /> : <div></div>} */}
+                    {(this.props.match.params.cardId) ?
+                        <CardDetails cardId={this.props.match.params.cardId} boardId={this.props.board._id} history={this.props.history} /> : <div></div>}
 
                     <BoardNav title={board.title}
                         members={board.members}

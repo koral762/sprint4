@@ -1,11 +1,10 @@
 import { boardService } from '../../services/board-service'
 const { cardService } = require("../../services/card-service");
 
-
-export function loadBoard() {
+export function loadBoard(id) {
     return async dispatch => {
         try {
-            const board = await boardService.getBoardById()
+            const board = await boardService.getBoardById(id)
             dispatch({ type: 'SET_BOARD', board })
         } catch (err) {
             console.log('ReviewActions: err in loadBoard', err)
@@ -59,8 +58,7 @@ export function addCard(board, cardTxt, groupId) {
     };
 }
 
-export function updateCard(board, newCard) {
-
+export function updateCard(board, newCard, activity) {
     return async dispatch => {
         try {
             // replicate board
@@ -72,6 +70,12 @@ export function updateCard(board, newCard) {
                 // replace the card content
             newBoard.groups[groupIdx].cards[cardIdx] = newCard
 
+            if (activity) {
+                if (!newBoard.activities) {
+                    newBoard.activities = []
+                }
+                newBoard.activities.unshift(activity)
+            }
 
             dispatch({ type: 'SET_BOARD', board: newBoard })
             await boardService.updateBoard(newBoard) // updating the DB
@@ -126,6 +130,57 @@ export function addActivity(board, activity) {
             await boardService.updateBoard(newBoard) // updating the DB
         } catch (err) {
             console.log('error removing board', err)
+        }
+    }
+}
+
+export function toggleFullLabels() {
+    return dispatch => {
+        dispatch({ type: 'TOGGLE_FULL_LABEL' })
+    }
+}
+
+export function addLabel(board, newLabel) {
+    return async dispatch => {
+        try {
+            let newBoard = JSON.parse(JSON.stringify(board))
+            newLabel.id = makeId()
+            if (!newBoard.labels) newBoard.labels = [];
+            newBoard.labels.push(newLabel)
+            dispatch({ type: 'SET_BOARD', board: newBoard })
+            await boardService.updateBoard(newBoard) // updating the DB
+        } catch (err) {
+            console.log('error adding label', err)
+        }
+    }
+}
+
+export function removeLabel(board, labelId) {
+    return async dispatch => {
+        try {
+            let newBoard = JSON.parse(JSON.stringify(board))
+            const labelIdx = newBoard.labels.findIndex(label => label.id === labelId)
+            newBoard.labels.splice(labelIdx, 1)
+            dispatch({ type: 'SET_BOARD', board: newBoard })
+            await boardService.updateBoard(newBoard) // updating the DB
+        } catch (err) {
+            console.log('error removing label', err)
+        }
+    }
+}
+
+export function updateLabel(board, updatedlabel) {
+    return async dispatch => {
+        try {
+            let newBoard = JSON.parse(JSON.stringify(board))
+            newBoard.labels = newBoard.labels.map(label => {
+                if (label.id === updatedlabel.id) label = updatedlabel
+                return label
+            })
+            dispatch({ type: 'SET_BOARD', board: newBoard })
+            await boardService.updateBoard(newBoard) // updating the DB
+        } catch (err) {
+            console.log('error updating label', err)
         }
     }
 }
@@ -187,8 +242,7 @@ export function updateBoard(board) {
     }
 }
 
-
-// ////////////////////////////////////////////////
+/////////////////////////////////////////////////
 function makeId(length = 8) {
     let text = '';
     const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';

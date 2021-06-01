@@ -1,5 +1,7 @@
 import { Home } from './pages/Home.jsx'
 import { BoardApp } from './pages/BoardApp.jsx'
+import { Boards } from './pages/Boards.jsx'
+
 
 
 export const routes = [

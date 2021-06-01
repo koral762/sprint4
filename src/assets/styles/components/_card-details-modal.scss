@@ -36,11 +36,12 @@
         background-color: #f4f5f7;
         margin: auto;
         padding: 20px;
+        overflow: scroll;
         // border: 1px solid #888;
         border-radius: 2px;
         width: 768px;
         h3 {
-            margin: 1em 0;
+            margin: 0.4em 0;
         }
         button {
             margin-bottom: 12px;
@@ -52,7 +53,6 @@
         min-height: 32px;
         margin-bottom: 50px;
     }
-    
     .modal-description,
     .description-text-box {
         margin: 15px 0 4px 0;

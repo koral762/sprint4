@@ -63,7 +63,7 @@
 .clean-list {
     list-style-type: none;
     margin: 0;
-    padding: 0
+    padding: 0;
 }
 
 .text-box {
@@ -94,4 +94,37 @@
 
 .portrait-ratio {
     @include aspect-ratio(9, 16);
+}
+
+//label colors
+.yellow {
+    background-color: gold;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.red {
+    background-color: tomato;
+}
+
+.purple {
+    background-color: orchid;
+}
+
+.blue {
+    background-color: darkcyan;
+}
+
+.darkturquoise {
+    background-color: darkturquoise;
+}
+
+.green {
+    background-color: mediumaquamarine;
+}
+
+.hotpink {
+    background-color: hotpink;
 }
