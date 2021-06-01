@@ -474,7 +474,7 @@ var gBoard = {
     ]
 }
 
-function getBoardById() {
+function getBoardById(id) {
     return Promise.resolve(gBoard)
 }
 

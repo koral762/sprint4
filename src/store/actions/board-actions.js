@@ -2,10 +2,11 @@ import { boardService } from '../../services/board-service'
 const { cardService } = require("../../services/card-service");
 
 
-export function loadBoard() {
+
+export function loadBoard(id) {
   return async dispatch => {
     try {
-      const board = await boardService.getBoardById()
+      const board = await boardService.getBoardById(id)
       dispatch({ type: 'SET_BOARD', board })
     } catch (err) {
       console.log('ReviewActions: err in loadBoard', err)

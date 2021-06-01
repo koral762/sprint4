@@ -13,7 +13,8 @@ export class _BoardApp extends Component {
     }
 
     componentDidMount() {
-        this.props.loadBoard()
+        const id='5f72ea5a1ab1fc0017450368';
+        this.props.loadBoard(id)
     }
 
     onAddGroup = (txt) => {

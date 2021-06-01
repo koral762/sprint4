@@ -24,7 +24,7 @@ export class GroupList extends Component {
             <section className="group-list flex">
                 <Droppable droppableId="droppableGroupId" direction="horizontal" type="group">
                     {(provided) => (
-                        <div className="flex"
+                        <div className="flex cards"
                         {...provided.droppableProps}
                             ref={provided.innerRef}>
 
