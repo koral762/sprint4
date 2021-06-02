@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom'
 import React from 'react';
 
 
+
 export function Home() {
 
     return (
 
 
         < section className="home flex column align-center justify-center" >
-            <img src='https://image.freepik.com/free-vector/business-planning-deadline-concept-illustration-cartoon-tiny-people-work-employee-characters-make-plan-business-task-organizer_109722-1191.jpg'/>
+            <img src=''/>
             <h1>koral</h1>
             <h1>HOME PAGE!!!</h1>
             <h1>HOME PAGE!!!</h1>
