@@ -68,7 +68,7 @@ class _CardDetails extends Component {
     }
 
     onCloseCard = () => {
-        this.props.history.push(`/board/`)
+        this.props.history.push(`/board/id`)
     }
 
     submitCard = (card, activity) => {
