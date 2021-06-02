@@ -16,7 +16,7 @@ export const routes = [
     },
     {
         path: '/board',
-        component: BoardApp,
+        component: Boards,
     },
     {
         path: '/',
