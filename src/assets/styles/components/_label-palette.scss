@@ -1,0 +1,95 @@
+.labels-modal {
+    padding: 9px;
+    height: 22rem;
+    width: 20rem;
+}
+
+.label {
+    text-align: end;
+}
+
+.label-color {
+    padding: 3px;
+    height: 35px;
+    color: white;
+    border-radius: 4px;
+}
+
+.labels-modal-header {
+    color: slategray;
+    margin-bottom: 10px;
+}
+
+.tick-symbol {
+    color: white;
+}
+
+.btn.new-label-button {
+    text-align: center;
+}
+
+.label-edit-modal {
+    background-color: #fff;
+    height: fit-content;
+    top: rem(150px);
+    left: rem(10px);
+    width: rem(300px);
+    height: rem(180px);
+    border-radius: rem(3px);
+    padding: rem(10px);
+    position: absolute;
+    z-index: 1;
+    box-shadow: 0px 0px 5px 0px #000000;
+    text-align: center;
+}
+
+.color-picker-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.color-pallete {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 rem(4px);
+    input[type="radio"] + label {
+        margin: rem(5px);
+    }
+    input[type="radio"]:checked + label {
+        box-shadow: 0 0 0 2px black;
+        border-radius: 3px;
+    }
+    .color-picker {
+        width: rem(30px);
+        height: rem(25px);
+        border-radius: rem(3px);
+        :checked {
+            border: 1px solid black;
+        }
+    }
+}
+
+.color-picker {
+    height: 25px;
+    width: 25px;
+    margin: 5px;
+    margin-top: 10px;
+    border-radius: 30%;
+    box-shadow: 1px gray
+}
+
+.card-details-label
+{
+    margin: 5px;
+    border-radius: 4px;
+}
+
+.card-details-mask {
+    margin:5px;
+}
+
+.label.add-label {
+    padding-bottom: 10px;
+}

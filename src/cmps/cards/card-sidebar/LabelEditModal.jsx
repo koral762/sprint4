@@ -3,7 +3,7 @@ import { IconButton } from '@material-ui/core';
 import CloseOutlinedIcon from '@material-ui/icons/CloseOutlined';
 
 export function LabelEditModal({ label, action, setLabelEditId, onRemoveLabel, card }) {
-    const colors = ['green', 'yellow', 'orange', 'red', 'purple', 'blue', 'grey', 'black'];
+    const colors = ['green', 'yellow', 'orange', 'red', 'purple', 'blue', 'pink'];
     return (
         <div className="label-edit-modal">
             <IconButton className="close-modal" size="small"
@@ -14,11 +14,11 @@ export function LabelEditModal({ label, action, setLabelEditId, onRemoveLabel, c
                 <input type="text" name="labelName"
                     defaultValue={label ? label.name : ''}
                     placeholder="Enter label's name..." />
-                <div className="color-pallete">
+                <div className="color-palette color-picker-container">
                     {colors.map(color => <React.Fragment key={color}>
                         <input required hidden type="radio" id={color} name="newColor"
                             value={color}
-                            defaultChecked={label ? color === label.color : 'grey'} />
+                            defaultChecked={label ? color === label.color : 'pink'} />
                         <label htmlFor={color}>
                             <div className={`color-picker ${color}`}></div>
                         </label>

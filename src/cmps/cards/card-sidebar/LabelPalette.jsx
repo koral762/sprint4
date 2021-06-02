@@ -56,34 +56,38 @@ class _LabelPalette extends Component {
 
     render() {
         const { board, card } = this.props;
-        return <ul className="label-palette">
+        return <ul className="clean-list">
+            <div className="labels-modal flex column">
+            <span className="labels-modal-header">Labels</span>
             {board.labels && board.labels.map(label => <li key={label.id} className="label">
-                <div className={`label-color ${label.color}`}
-                    onClick={card
-                        ? () => this.onToggleLabelToCard(card, label.id)
-                        : () => this.setLabelEditId(
-                            this.state.labelEditId === label.id
-                                ? null
-                                : label.id
-                        )}>
-                    <span className="label-text">{label.name}</span>
-                    {card && card.labels.find(cardLabel => cardLabel.id === label.id) && <CheckIcon fontSize="small" />}
+                <div className="flex justify-space-between label">
+                    <div className={`label-color ${label.color} flex justify-space-between`}
+                        onClick={card
+                            ? () => this.onToggleLabelToCard(card, label.id)
+                            : () => this.setLabelEditId(
+                                this.state.labelEditId === label.id
+                                    ? null
+                                    : label.id
+                            )}>
+                        <span>{label.name}</span>
+                        {card && card.labels.find(cardLabel => cardLabel.id === label.id) && <CheckIcon className="tick-symbol" fontSize="small" />}
+                    </div>
+                    <IconButton className="edit-label-btn" onClick={() => this.setLabelEditId(
+                        this.state.labelEditId === label.id
+                            ? null
+                            : label.id
+                    )}>
+                        <EditOutlinedIcon fontSize="small" />
+                    </IconButton>
+                    {!card && <IconButton className="remove-label-btn" onClick={() => this.onRemoveLabel(label.id)}>
+                        <DeleteOutlinedIcon fontSize="small" />
+                    </IconButton>}
+                    {this.state.labelEditId === label.id && <LabelEditModal
+                        label={label}
+                        action={this.onEditLabel}
+                        onRemoveLabel={this.onRemoveLabel}
+                        setLabelEditId={this.setLabelEditId} />}
                 </div>
-                <IconButton className="edit-label-btn" onClick={() => this.setLabelEditId(
-                    this.state.labelEditId === label.id
-                        ? null
-                        : label.id
-                )}>
-                    <EditOutlinedIcon fontSize="small" />
-                </IconButton>
-                {!card && <IconButton className="remove-label-btn" onClick={() => this.onRemoveLabel(label.id)}>
-                    <DeleteOutlinedIcon fontSize="small" />
-                </IconButton>}
-                {this.state.labelEditId === label.id && <LabelEditModal
-                    label={label}
-                    action={this.onEditLabel}
-                    onRemoveLabel={this.onRemoveLabel}
-                    setLabelEditId={this.setLabelEditId} />}
             </li>)}
             <li className="label add-label">
                 <div className="label-color add-label"
@@ -92,14 +96,14 @@ class _LabelPalette extends Component {
                             ? null
                             : 'addLabel'
                     )}>
-                    Create a new label
-                        </div>
+                    <div className="new-label-button btn">Create a new label</div>
+                </div>
                 {this.state.labelEditId === 'addLabel' && <LabelEditModal
                     action={this.onAddLabel}
                     setLabelEditId={this.setLabelEditId} />}
             </li>
+            </div>
         </ul>
-
     }
 }
 

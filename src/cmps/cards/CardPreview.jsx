@@ -52,12 +52,9 @@ class _CardPreview extends Component {
                             </div>
                             <div className="card-preview-attrs">
                                 <CardPreviewDueDate dueDate={card.dueDate} />
-                                {/* {this.getCardPreviewAttrs()} */}
-                                {/* {this.getCardPreviewMembers()} */}
                             </div>
                         </div>
                         {provided.placeholder}
-
                     </section>
                 )}
             </Draggable>
