@@ -1,0 +1,21 @@
+.card-preview-due-date-container {
+    padding: 5px;
+    border-radius: 4px;
+    margin: 2px;
+}
+
+.card-preview-due-date-container-long {
+    background-color: lightseagreen;
+}
+
+.card-preview-due-date-container-medium {
+    background-color: burlywood;
+}
+
+.card-preview-due-date-container-due-soon {
+    background-color: sandybrown;
+}
+
+.card-preview-due-date-container-overdue {
+    background-color: coral;
+}

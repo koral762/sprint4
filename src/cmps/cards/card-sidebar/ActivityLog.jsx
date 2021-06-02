@@ -14,7 +14,7 @@ export function ActivityLog({ boardId, displayMode, activities }) {
                 return <li key={activity.id}>
                     {/* {(displayMode !== 'user') ? <MemberPreview name={activity.byMember.fullName} imgUrl={activity.byMember.imgUrl} /> : <React.Fragment />} */}
                     <pre>
-                        <div className="flex">
+                        <div className="flex activity-text-box-text">
                             {/* {(displayMode==='user') ? <React.Fragment /> : (boardId) ? (<Link to={`/board/${boardId}`}>{activity.byMember.fullName + ' '}</Link>) : `${activity.byMember.fullName} `} */}
                             <span>{activity.commentTxt ? 'commented:' : activity.txt + ' '}</span>
                             {activity.commentTxt && <div>

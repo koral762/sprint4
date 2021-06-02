@@ -16,6 +16,7 @@ import { IconButton, Popover } from '@material-ui/core'
 import SubtitlesIcon from '@material-ui/icons/Subtitles'
 import CloseIcon from '@material-ui/icons/Close'
 import ListIcon from '@material-ui/icons/List'
+import { CardPreviewDueDate } from './CardPreviewDueDate'
 
 class _CardDetails extends Component {
 
@@ -226,13 +227,13 @@ class _CardDetails extends Component {
                         </IconButton>
                     </div>
                     <div className="flex justify-space-between">
-                        <section>
-                            <div className="flex">
+                        <section className="main-modal-section">
+                            <div className="labels-and-due-date">
                                 {this.getLabels()}
-                                <div>
-                                    {(this.state.card.dueDate ? <h5>Due Date</h5> : <React.Fragment />)}
+                                {(this.state.card.dueDate ? <div>
+                                    <h5>Due Date</h5>
                                     <CardDueDateSetter onUpdateDueDate={this.onUpdateDueDate} dueDate={this.state.card.dueDate} displayDate={true} displayTime={true} />
-                                </div>
+                                </div> : <React.Fragment />)}
                             </div>
                             <div>
                                 <CardDescription onUpdateDesc={this.onUpdateDesc} description={this.state.card.description} />

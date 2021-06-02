@@ -27,10 +27,10 @@ export function CardPreviewDueDate(props) {
             dueDateClass += 'long'
             break
         case (daysRemaining > 3):
-            dueDateClass += 'near'
+            dueDateClass += 'medium'
             break
         case (daysRemaining >= 0):
-            dueDateClass += 'close'
+            dueDateClass += 'due-soon'
             break
         default:
             dueDateClass += 'overdue'
@@ -38,7 +38,7 @@ export function CardPreviewDueDate(props) {
 
 
     return (
-        <div className={dueDateClass}>
+        <div className = {dueDateClass}>
             <AccessTimeIcon fontSize="inherit" />
             {parsedDate}
         </div>
