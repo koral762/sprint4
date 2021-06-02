@@ -23,6 +23,23 @@
     }
 }
 
+
+.start-home-page{
+    display: flex;
+}
+
+
+.img-home{
+
+    width:700PX;
+    height: 500px;
+    background-image:url("../../imgs/homenew.jpg") ;
+    background-position: center;
+    background-size: cover;
+
+
+}
+
 .about-us-container{
     background-color: #fff;
     height: 400px;
@@ -70,17 +87,38 @@
     }
     padding: 1rem;
 
+    .links-container {
+
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-bottom: rem(30px);
+
+      
+
+        a,
+        a:visited {
+            color: inherit;
+            margin: 0 rem(5px);
+            svg {
+                width: 2rem;
+                height: 2rem;
+            }
+        }
+        
+    }
+
 }
 
 .koral{
     background-image:url("../../imgs/koral.jpg") ;
-    background-position: center;
+    background-position: -10px;
     background-size: cover;
 }
 
 .miriam{
-    background-image:url("../../imgs/dock.jpg") ;
-    background-position: center;
+    background-image:url("../../imgs/miriam.jpg") ;
+    background-position: -14px;
     background-size: cover;
 }
 
@@ -88,4 +126,23 @@
     background-image:url("../../imgs/ksenia.jpeg") ;
     background-position: center;
     background-size: cover;
+}
+
+.facebook-icon{
+
+    &:hover{
+        color:#073874;
+    }
+}
+.linkedin-icon{
+    
+    &:hover{
+        color:#0166e2;        
+    }
+}
+.mail-icon{
+
+    &:hover{
+        color:#f63131;
+    }
 }
