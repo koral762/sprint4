@@ -18,7 +18,6 @@ body, button, html, input, select, textarea {
 }
 
 body {
-    height: 100vh;
     font-size: rem(14px);
     margin: 0;
     scroll-behavior: smooth;
@@ -29,7 +28,6 @@ body {
     // background-image: url('../../imgs/Quantum-Gradient.svg');
     background-image: url('../../imgs/field.jpg');
     background-size: cover;
-    overflow: hidden;
     white-space: nowrap;
 }
 

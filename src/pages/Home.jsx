@@ -9,12 +9,12 @@ export function Home() {
 
 
         < section className="home flex column align-center justify-center" >
+            <img src='https://image.freepik.com/free-vector/business-planning-deadline-concept-illustration-cartoon-tiny-people-work-employee-characters-make-plan-business-task-organizer_109722-1191.jpg'/>
             <h1>koral</h1>
             <h1>HOME PAGE!!!</h1>
             <h1>HOME PAGE!!!</h1>
             <h1>HOME PAGE!!!</h1>
             <h1>HOME PAGE!!!</h1>
-            <img src='https://image.freepik.com/free-vector/business-planning-deadline-concept-illustration-cartoon-tiny-people-work-employee-characters-make-plan-business-task-organizer_109722-1191.jpg'/>
             <h1>after img!!!</h1>
             <h1>HOME PAGE!!!</h1>
             <p className="aboutas">About us</p>
