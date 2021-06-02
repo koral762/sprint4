@@ -1,0 +1,68 @@
+
+.boards-page-bg{
+    background-color: #fff;
+    flex:1;
+    overflow-y: scroll;
+}
+
+.tryit{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(78, 38, 224);
+    color: azure;
+    
+    &:hover{
+        background-color: rgb(40, 11, 143);
+        
+    }
+    
+    @media (max-width:700px){
+        font-size:rem(15px);
+        height: 50px;
+        width: 100px;
+        border-radius: 15px;
+    }
+    @media (min-width:700px){
+        font-size:rem(30px);
+        height: 100px;
+        width: 200px;
+        border-radius: 30px;
+    }
+}
+
+.creat-new-board {
+    background-color: rgb(133, 231, 150);
+    
+    height: 200px;
+    width: 300px;
+    margin: 2rem;
+    border-radius: 20px;
+    font-size:rem(30px);
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    
+}
+
+.coverflow__text__39hqd{
+    display: none;
+}
+
+.coverflow__cover__25-7e{
+}
+
+.coverflow__figure__3bk_C {
+    box-shadow: none;
+}
+
+#coverflow__arrow1__2X2XF .coverflow__arrow__IDi7v{
+    
+    width: unset;
+}

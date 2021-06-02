@@ -1,16 +1,91 @@
 .home {
-    height: 90vh;
     width: 100%;
-    background-color: #000;
+    background-color: rgb(255, 255, 255);
+    position:initial;
+    overflow:scroll;
+    scroll-behavior: smooth;
+
+    
     h1 {
         color: $clr3;
         font-size: em(48px);
         margin-bottom: em(32px);
         display: block;
-        // position: relative;
-        // top: 100px;
+      
     }
     section {
+        display: flex;
+        flex-direction: column;
         height: 100%;
     }
+    img{
+        width: 90%;
+    }
+}
+
+.about-us-container{
+    background-color: #fff;
+    height: 400px;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+
+.about-me{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: rgb(138, 22, 22);
+    margin: 1rem;
+    
+}
+
+.contact-us{
+    height: 100px;
+    width: 300px;
+    background-color: rgb(138, 22, 22);
+    margin-bottom: 2rem;
+    
+}
+
+.about-me-container{
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    span{
+        color: blue;
+        font-size: x-large;
+    }
+    
+    p{
+        
+        font-size: large;
+    }
+    padding: 1rem;
+
+}
+
+.koral{
+    background-image:url("../../imgs/koral.jpg") ;
+    background-position: center;
+    background-size: cover;
+}
+
+.miriam{
+    background-image:url("../../imgs/dock.jpg") ;
+    background-position: center;
+    background-size: cover;
+}
+
+.ksenia{
+    background-image:url("../../imgs/ksenia.jpeg") ;
+    background-position: center;
+    background-size: cover;
 }

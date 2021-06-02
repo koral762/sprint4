@@ -11,8 +11,12 @@ export const routes = [
         component: BoardApp,
     },
     {
-        path: '/board',
+        path: '/board/:boardId',
         component: BoardApp,
+    },
+    {
+        path: '/board',
+        component: Boards,
     },
     {
         path: '/',

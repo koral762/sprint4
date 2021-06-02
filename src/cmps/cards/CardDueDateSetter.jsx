@@ -1,7 +1,7 @@
 
 import { Popover, TextField } from '@material-ui/core'
 import React, { Component } from 'react'
-import { DatePicker } from '@material-ui/pickers'
+// import { DatePicker } from '@material-ui/pickers'
 import { CardPreviewDueDate } from './CardPreviewDueDate';
 import ScheduleIcon from '@material-ui/icons/Schedule';
 
