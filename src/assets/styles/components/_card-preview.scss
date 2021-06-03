@@ -1,48 +1,85 @@
 .card-preview {
     display: flex;
+    flex-direction: row;
     justify-content:space-between;
     background-color: rgb(250, 250, 250);
     padding: 7px;
     min-height: 36px;
     max-height: 300px;
-    margin: 8px 0px;
+    margin: 6px 0px;
     border: none;
     border-radius: 3px;
     overflow: hidden;
+    position: relative;
+    
     cursor: pointer;
     box-shadow: 0px 1px 1px 0.5px rgba(0, 0, 0, 0.25);
 
     &:hover {
+        .card-btn{
+            display: block;
+            position: absolute;
+            right:0;
+            margin-right: 0.8rem;
+            margin-top: 0.4rem;
+            background-color:$hovergray;
+        }
         background: $trnsprnt;
     }
 
+    .img-attach{
+        background-color: rgb(34, 34, 34);
+        height: 106.167px;
+        background-size: cover;
+    }
+
+    .attach-div{
+        flex-grow: 1;
+    }
+
 }
+.card-preview-labels{
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 3px;
+    gap: 3px;
+    margin-bottom: 0.2rem;
+    cursor: pointer;
+
+}
+
+.card-preview-collapsed-label {
+    height: 8px;
+    width: 40px;
+    border-radius: 4px;
+    position: relative;
+    transition: height 0.2s ease, width 0.2s ease 0.2s;
+
+}
+
+.card-preview-full-label {
+    height: 1rem;
+    line-height: 1rem;
+    min-width: 2.5rem;
+    width: fit-content;
+    font-size: 0.5rem;
+    padding: 0px 0.5rem;
+    color: white;
+    overflow: hidden;
+    max-width: 15rem;
+    border-radius: 4px;
+   
+    transition: height 0.2s ease, width 0.2s ease 0.2s;
+
+}
+
 
 .card-preview-header {
     cursor: pointer;
     max-width: 210px;
+    margin-bottom: 0.2rem;
 }
 
-.card-preview-edit-container {
-    position: relative;
-    display: none;
-    border-radius: 3px;
-    padding: 0.5rem;
-    cursor: pointer;
-    
-    .card-btn{
-        position:absolute;
-        padding: 0.3rem;
-        border-radius: 3px;
-        
-        &:hover{
-        
-        border-radius: 5px;
-        background-color: $hovergray;
-    }
-
-}
-}
 
 .card-preview:hover .card-preview-edit-container {
     display: flex;
@@ -50,6 +87,78 @@
     margin-right: 0.7rem;
     right: 3px;
     top: 3px;
+
+}
+
+.card-preview-attr{
+    margin-right: 6px;
+    display: flex;
+    font-size: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    cursor:auto;
+    padding: rem(1px);
+}
+
+.card-preview-attrs{
+    display: flex;
+
+
+    .member-preview{
+        height: 1.25rem;
+        width: 1.25rem;
+    }
+}
+    
+    
+    .card-btn{
+        display: none;
+        border-radius: 3px;
+        cursor: pointer;
+        padding: 0.3rem;
+        
+        &:hover{
+        cursor: pointer;
+    }
+
+
 }
 
 
+.card-preview-due-date-container{
+    margin-right: 0.5rem;
+}
+
+
+.card-preview-due-date-container-overdue{
+        background-color: rgb(241, 71, 71);
+        display:flex;
+        align-items: center;
+        border-radius: 0.25em;
+        padding: 0 0.25em;
+        color: aliceblue;
+    
+    }
+.card-preview-due-date-container-close{
+        background-color: #f2d600;
+        display:flex;
+        align-items: center;
+        border-radius: 0.25em;
+        padding: 0 0.25em;
+        color: aliceblue;
+    
+    }
+
+
+
+
+.card-preview-checklist-counter{
+    span{
+        margin-left: 0.25rem;
+        
+    }
+}
+
+.card-preview-members {
+    display: flex;
+}

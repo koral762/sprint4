@@ -63,10 +63,11 @@ export class MemberPreview extends Component {
     }
 
     render() {
+        let _className = "member-preview" + (this.props.showBig ? " member-preview-big" : "")
 
         return (
             <Tooltip title={this.getName()}>
-                <div className="member-preview" style={this.getStyle()}>
+                <div className={_className} style={this.getStyle()}>
                     {(this.state.imgUrl) ? <React.Fragment /> : this.getInitials(this.props.name)}
                 </div>
             </Tooltip>

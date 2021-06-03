@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { MemberPreview } from './MemberPreview'
 import { ClickAwayListener } from '@material-ui/core';
 import CheckIcon from '@material-ui/icons/Check';
-import { addToMembers, removeMember } from '../../store/actions/board-actions.js';
+import { addToMembers, removeMember, addCardMember, removeCardMember } from '../../store/actions/board-actions.js';
 import { loadAllUsers } from '../../store/actions/user-actions.js';
 
 
@@ -15,8 +15,21 @@ export class _AddMemberModal extends Component {
 
     toggleUser=(user)=>{
         if (!this.props.members.find(member => member._id === user._id)) {
-            this.props.addToMembers(user, this.props.board)
-        } else this.props.removeMember(user._id, this.props.board)
+            if (!this.props.card) {
+                this.props.addToMembers(user, this.props.board)
+            }
+            else {
+                this.props.addCardMember(this.props.board, this.props.card, user)
+            }
+        } else {
+            if (!this.props.card) {
+                this.props.removeMember(user._id, this.props.board)
+            }
+            else {
+                this.props.removeCardMember(this.props.board, this.props.card, user._id)
+            }
+            
+        }
     }
  
     getMembers=(id)=>{
@@ -42,22 +55,13 @@ export class _AddMemberModal extends Component {
                     <h3>Members</h3>
                     <input type="search" onChange={this.handleChange} name="search-member" id="" autoCorrect="off" autoComplete="off"/>
                     <div className="add-members-container">
-                        {!this.state.searchLetters? 
-                            allUsers.map(user => {
+                        {allUsers.filter(user => 
+                        !this.state.searchLetters ? true : user.fullName.includes(this.state.searchLetters)).map(user => {
                                 return <div key={user._id} className="member-container" onClick={() => this.toggleUser(user)}>
                                     <MemberPreview name={user.fullName} /> 
                                     <p>{user.fullName}</p>
                                     {this.getMembers(user._id) && <div><CheckIcon /></div>}
                                 </div>
-                            }) : allUsers.map(user => {
-                                // filtering through the all users array
-                                if (user.fullName.toLowerCase().includes(this.state.searchLetters.toLocaleLowerCase())){
-                                return <div key={user._id} className="member-container" onClick={() => this.toggleUser(user)}>
-                                    <MemberPreview name={user.fullName} />
-                                    <p>{user.fullName}</p>
-                                    {this.getMembers(user._id) && <div><CheckIcon /></div>}
-                                    </div>
-                                }
                             })
                         }
                     </div>
@@ -70,13 +74,15 @@ export class _AddMemberModal extends Component {
 const mapStateToProps = state => {
     return {
         board: state.boardModule.currBoard,
-        members: state.boardModule.currBoard.members,
         allUsers: state.userModule.users
     };
 };
 const mapDispatchToProps = {
     loadAllUsers,
     addToMembers,
-    removeMember
+    addCardMember,
+    removeMember,
+    removeCardMember
 };
+
 export const AddMemberModal = connect(mapStateToProps, mapDispatchToProps)(_AddMemberModal);

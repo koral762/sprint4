@@ -152,6 +152,7 @@ export function addActivity(board, activity) {
             newBoard.activities.unshift(activity)
             dispatch({ type: 'SET_BOARD', board: newBoard })
             await boardService.updateBoard(newBoard) // updating the DB
+            console.log(newBoard)
         } catch (err) {
             console.log('error removing board', err)
         }
@@ -206,6 +207,60 @@ export function updateLabel(board, updatedlabel) {
         } catch (err) {
             console.log('error updating label', err)
         }
+    }
+}
+
+export function removeCardMember(board, card, id) {
+    return async dispatch => {
+        const newCard = JSON.parse(JSON.stringify(card))
+
+        if (!newCard.members) newCard.members = []
+
+        newCard.members = newCard.members.filter(user => user.id != id)
+
+        // replicate board
+        let newBoard = JSON.parse(JSON.stringify(board))
+        // find the group idx
+        const groupIdx = newBoard.groups.findIndex(group => group.cards.find(card => card.id === newCard.id))
+        // find the card idx
+        const cardIdx = newBoard.groups[groupIdx].cards.findIndex(card => card.id === newCard.id)
+        // replace the card content
+            
+        newBoard.groups[groupIdx].cards[cardIdx] = newCard
+
+        dispatch({ type: 'SET_BOARD', board: newBoard })
+
+        await boardService.updateBoard(newBoard) // updating the DB
+    }
+}
+
+export function addCardMember(board, card, { _id, fullName, imgUrl }) {
+    return async dispatch => {
+        const userToPush = {
+            _id,
+            fullName,
+            imgUrl
+        }
+
+        const newCard = JSON.parse(JSON.stringify(card))
+
+        if (!newCard.members) newCard.members = []
+
+        newCard.members.push(userToPush)
+
+        // replicate board
+        let newBoard = JSON.parse(JSON.stringify(board))
+        // find the group idx
+        const groupIdx = newBoard.groups.findIndex(group => group.cards.find(card => card.id === newCard.id))
+        // find the card idx
+        const cardIdx = newBoard.groups[groupIdx].cards.findIndex(card => card.id === newCard.id)
+        // replace the card content
+            
+        newBoard.groups[groupIdx].cards[cardIdx] = newCard
+
+        dispatch({ type: 'SET_BOARD', board: newBoard })
+
+        await boardService.updateBoard(newBoard) // updating the DB
     }
 }
 

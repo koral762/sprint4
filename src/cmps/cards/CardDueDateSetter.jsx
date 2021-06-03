@@ -12,6 +12,7 @@ export class CardDueDateSetter extends Component {
         isPopperOpen: false,
         anchor: null
     }
+
     componentDidMount() {
         this.anchor = React.createRef();
         this.setState({ anchor: this.anchor })
@@ -49,7 +50,7 @@ export class CardDueDateSetter extends Component {
     }
 
     getDisplayDateBtn = () => {
-        if (!this.state.date) return <button className="flex" onClick={this.openModal} ref={this.anchor}><ScheduleIcon /><span>Set Due Date</span></button>
+        if (!this.state.date || this.props.alwaysShowButton) return <button className="flex" onClick={this.openModal} ref={this.anchor}><ScheduleIcon /><span className="sidebar-button-text">Set Due Date</span></button>
 
         return (
             <div onClick={this.openModal} ref={this.anchor} className="set-due-date-expanded">
@@ -79,7 +80,7 @@ export class CardDueDateSetter extends Component {
     render() {
         if (!this.state.anchor) return <React.Fragment />
         return (
-            <div className="due-date-container">
+            <>
                 {this.getDisplayDateBtn()}
                 {(!this.state.anchor.current) ? <React.Fragment /> :
                     <Popover
@@ -114,7 +115,7 @@ export class CardDueDateSetter extends Component {
                         </div>
                     </Popover>
                 }
-            </div>
+            </>
         )
     }
 }

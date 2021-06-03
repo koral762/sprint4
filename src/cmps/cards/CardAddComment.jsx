@@ -64,7 +64,7 @@ export class CardAddComment extends Component {
                 </AccordionSummary>
                 <AccordionDetails>
           <div>
-          <button className="save-btn" disabled={!this.state.txtValue.length} onClick={this.onSave}>Save</button>
+          <button className="save-btn" disabled={!this.state.txtValue.length} onClick={this.onSave}>Add Comment</button>
           </div>
         </AccordionDetails>
             </Accordion>

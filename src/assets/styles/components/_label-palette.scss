@@ -9,7 +9,7 @@
 }
 
 .label-color {
-    padding: 3px;
+    padding: 7px;
     height: 35px;
     color: white;
     border-radius: 4px;
@@ -72,6 +72,7 @@
 }
 
 .color-picker {
+    cursor: pointer;
     height: 25px;
     width: 25px;
     margin: 5px;
@@ -80,10 +81,11 @@
     box-shadow: 1px gray
 }
 
-.card-details-label
-{
-    margin: 5px;
+.card-details-label {
+    padding: 5px;
+    margin: 2px;
     border-radius: 4px;
+    color: white;
 }
 
 .card-details-mask {

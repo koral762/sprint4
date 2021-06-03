@@ -1,496 +1,1000 @@
-{
-  "_id": "5f72ea5a1ab1fc0017450368",
-  "title": "Groceries",
-  "isArchived": false,
-  "description": "Board's description",
-  "labels": [
-    {
-      "id": "l101",
-      "name": "Supermarket",
-      "color": "green"
-    },
-    {
-      "id": "l102",
-      "name": "Drugstore",
-      "color": "yellow"
-    },
-    {
-      "id": "l103",
-      "name": "Butcher",
-      "color": "orange"
-    },
-    {
-      "id": "l104",
-      "name": "Default",
-      "color": "red"
-    },
-    {
-      "id": "l105",
-      "name": "Default",
-      "color": "purple"
-    },
-    {
-      "id": "l106",
-      "name": "Default",
-      "color": "blue"
-    }
-  ],
-  "activities": [
-    {
-      "id": "0ahWTxOiG0",
-      "txt": "moved the card",
-      "commentTxt": "",
-      "createdAt": 1601367036803,
-      "byMember": {
-        "_id": "5f6a2528973d861c5d78c355",
-        "fullName": "Amir Asdasd",
-        "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
+[
+  {
+    "_id": "5f72ea5a1ab1fc0017450368",
+    "title": "Groceries",
+    "isArchived": false,
+    "description": "Board's description",
+    "labels": [
+      {
+        "id": "l101",
+        "name": "Release 21.1",
+        "color": "green"
       },
-      "card": {
-        "id": "sqLbqQkTgF",
-        "title": "Shaving cream"
+      {
+        "id": "l101",
+        "name": "Release 21.2",
+        "color": "darkgreen"
       },
-      "group": {
-        
+      {
+        "id": "l103",
+        "name": "Urgent",
+        "color": "orange"
+      },
+      {
+        "id": "l104",
+        "name": "Blocker",
+        "color": "red"
+      },
+      {
+        "id": "l105",
+        "name": "Default",
+        "color": "purple"
+      },
+      {
+        "id": "l106",
+        "name": "Default",
+        "color": "blue"
       }
-    },
-    {
-      "id": "sg4pQVwZVM",
-      "txt": "moved the card",
-      "commentTxt": "",
-      "createdAt": 1601367032102,
-      "byMember": {
-        "_id": "5f6a2528973d861c5d78c355",
-        "fullName": "Amir Asdasd",
-        "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
+    ],
+    "activities": [
+      {
+        "id": "0ahWTxOiG0",
+        "txt": "moved the card",
+        "commentTxt": "",
+        "createdAt": 1601367036803,
+        "byMember": {
+          "_id": "5f6a2528973d861c5d78c355",
+          "fullName": "Amir Asdasd",
+          "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
+        },
+        "card": {
+          "id": "sqLbqQkTgF",
+          "title": "Shaving cream"
+        },
+        "group": {},
+        "checklist": [
+          {
+            "txtValue": "todo"
+          }
+        ]
       },
-      "card": {
-        "id": "VfaJaRMYrh",
-        "title": "Soap"
+      {
+        "id": "sg4pQVwZVM",
+        "txt": "moved the card",
+        "commentTxt": "",
+        "createdAt": 1601367032102,
+        "byMember": {
+          "_id": "5f6a2528973d861c5d78c355",
+          "fullName": "Amir Asdasd",
+          "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
+        },
+        "card": {
+          "id": "VfaJaRMYrh",
+          "title": "Soap"
+        },
+        "group": {}
       },
-      "group": {
-        
+      {
+        "id": "tkdxhcdwoN",
+        "txt": "create this card",
+        "commentTxt": "",
+        "createdAt": 1601366968534,
+        "byMember": {
+          "_id": "5f6a2528973d861c5d78c328",
+          "fullName": "Fernando Chaves",
+          "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365537/rnymwcd6hepeuvw6domo.jpg"
+        },
+        "card": {
+          "id": "sqLbqQkTgF",
+          "title": "Shaving cream"
+        },
+        "group": {}
+      },
+      {
+        "id": "pHV1hzMBoy",
+        "txt": "create this card",
+        "commentTxt": "",
+        "createdAt": 1601367016951,
+        "byMember": {
+          "_id": "5f6a2528973d861c5d78c328",
+          "fullName": "Fernando Chaves",
+          "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365537/rnymwcd6hepeuvw6domo.jpg"
+        },
+        "card": {
+          "id": "N4y9h6sJxd",
+          "title": "Rice"
+        },
+        "group": {}
       }
-    },
-    {
-      "id": "tkdxhcdwoN",
-      "txt": "create this card",
-      "commentTxt": "",
-      "createdAt": 1601366968534,
-      "byMember": {
-        "_id": "5f6a2528973d861c5d78c328",
-        "fullName": "Fernando Chaves",
-        "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365537/rnymwcd6hepeuvw6domo.jpg"
-      },
-      "card": {
-        "id": "sqLbqQkTgF",
-        "title": "Shaving cream"
-      },
-      "group": {
-        
-      }
-    },
-    {
-      "id": "pHV1hzMBoy",
-      "txt": "create this card",
-      "commentTxt": "",
-      "createdAt": 1601367016951,
-      "byMember": {
-        "_id": "5f6a2528973d861c5d78c328",
-        "fullName": "Fernando Chaves",
-        "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365537/rnymwcd6hepeuvw6domo.jpg"
-      },
-      "card": {
-        "id": "N4y9h6sJxd",
-        "title": "Rice"
-      },
-      "group": {
-        
-      }
-    }
-  ],
-  "createdBy": {
-    "_id": "u101",
-    "fullName": "Abi Abambi",
-    "imgUrl": "http://some-img"
-  },
-  "style": {
-    "id": "bs106",
-    "fontClr": "#f9f9f9",
-    "bgImg": "url(https://res.cloudinary.com/duhz8ymod/image/upload/v1600708669/bg-6_tsrunp.jpg)"
-  },
-  "members": [
-    {
-      "_id": "5f6a2528973d861c5d78c355",
-      "fullName": "Amir Asdasd",
-      "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
-    },
-    {
-      "_id": "5f6a2528973d861c5d78c328",
-      "fullName": "Fernando Chaves",
-      "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365537/rnymwcd6hepeuvw6domo.jpg"
-    },
-    {
+    ],
+    "createdBy": {
       "_id": "u101",
       "fullName": "Abi Abambi",
       "imgUrl": "http://some-img"
-    }
-  ],
-  "groups": [
-    {
-      "id": "yS0BIH6hb0",
-      "title": "To Buy",
-      "description": "description",
-      "archivedAt": false,
-      "labels": [
-        
-      ],
-      "cards": [
-        {
-          "id": "9LCF8f9WKY",
-          "title": "Milk",
-          "description": "",
-          "archivedAt": null,
-          "members": [
-            
-          ],
-          "labels": [
-            {
-              "id": "l101"
-            }
-          ],
-          "createdAt": 1601366751048,
-          "dueDate": null,
-          "attachments": null,
-          "timeAnalysis": {
-            "timeInGroupsMap": {
+    },
+    "style": {
+      "id": "bs106",
+      "fontClr": "#f9f9f9",
+      "bgImg": "url(https://res.cloudinary.com/duhz8ymod/image/upload/v1600708669/bg-6_tsrunp.jpg)"
+    },
+    "members": [
+      {
+        "_id": "5f6a2528973d861c5d78c355",
+        "fullName": "Amir Asdasd",
+        "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
+      },
+      {
+        "_id": "5f6a2528973d861c5d78c328",
+        "fullName": "Fernando Chaves",
+        "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365537/rnymwcd6hepeuvw6domo.jpg"
+      },
+      {
+        "_id": "u101",
+        "fullName": "Abi Abambi",
+        "imgUrl": "http://some-img"
+      }
+    ],
+    "groups": [
+      {
+          "id": "jd678ah8",
+          "title": "Backlog",
+          "description": "description",
+          "archivedAt": false,
+          "labels": [],
+          "cards": [
               
+          ]
+      },
+      {
+          "id": "gadsgzZR",
+          "title": "Product Design",
+          "cards": [
+              {
+                  "id": "ozTQQr5seA",
+                  "title": "Optimizer",
+                  "description": "Add a user optimizer to convert more users",
+                  "archivedAt": null,
+                  "members": [],
+                  "labels": [
+                      {
+                          "id": "l101"
+                      },
+                      {
+                          "id": "l103"
+                      },
+                      {
+                          "id": "l106"
+                      }
+                  ],
+                  "createdAt": 1622663730473,
+                  "dueDate": null,
+                  "attachments": null,
+                  "timeAnalysis": {
+                      "timeInGroupsMap": {},
+                      "currGroup": {
+                          "groupId": "gadsgzZR",
+                          "enteredAt": 1622663730473
+                      }
+                  },
+                  "byMember": {}
+              },
+              {
+                "id": "OtKmRxN2FN",
+                "title": "Christmas Special",
+                "description": "Add a christmas landing page with special offers",
+                "archivedAt": null,
+                "members": [],
+                "labels": [
+                    {
+                        "id": "l105"
+                    },
+                    {
+                        "id": "l101"
+                    },
+                    {
+                        "id": "l103"
+                    }
+                ],
+                "createdAt": 1622663764149,
+                "dueDate": 1640033760000,
+                "attachments": null,
+                "timeAnalysis": {
+                    "timeInGroupsMap": {
+                        "gadsgzZQ": 113733
+                    },
+                    "currGroup": {
+                        "groupId": "gadsgzZR",
+                        "enteredAt": 1622663877882
+                    }
+                },
+                "byMember": {}
             },
-            "currGroup": {
-              "groupId": "yS0BIH6hb0",
-              "enteredAt": 1601366751048
-            }
-          },
-          "byMember": {
-            
-          }
-        },
-        {
-          "id": "mz33pnpBNd",
-          "title": "Sugar",
-          "description": "",
-          "archivedAt": null,
-          "members": [
             {
-              "_id": "5f6a2528973d861c5d78c355",
-              "fullName": "Amir Asdasd",
-              "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
-            }
-          ],
-          "labels": [
-            {
-              "id": "l101"
-            }
-          ],
-          "createdAt": 1601366757216,
-          "dueDate": null,
-          "attachments": null,
-          "timeAnalysis": {
-            "timeInGroupsMap": {
-              
-            },
-            "currGroup": {
-              "groupId": "yS0BIH6hb0",
-              "enteredAt": 1601366757216
-            }
-          },
-          "byMember": {
-            
+              "id": "OtKmRxN2AN",
+              "title": "Halloween Special",
+              "description": "Add a Halloween landing page with special offers",
+              "archivedAt": null,
+              "members": [],
+              "labels": [
+                  {
+                      "id": "l105"
+                  },
+                  {
+                      "id": "l101"
+                  },
+                  {
+                      "id": "l103"
+                  }
+              ],
+              "createdAt": 1622663764149,
+              "dueDate": 1640033760000,
+              "attachments": null,
+              "timeAnalysis": {
+                  "timeInGroupsMap": {
+                      "gadsgzZQ": 113733
+                  },
+                  "currGroup": {
+                      "groupId": "gadsgzZR",
+                      "enteredAt": 1622663877882
+                  }
+              },
+              "byMember": {}
           }
+            
+          ],
+          "archivedAt": 1601366705334,
+          "style": {}
+      },
+      {
+          "id": "Fb1Jainb",
+          "title": "In Development",
+          "cards": [
+              {
+                  "id": "yYM2GKD7da",
+                  "title": "User profile",
+                  "description": "Allows editing of user preferences:\n\nName\nEmail\nPassword reset",
+                  "archivedAt": null,
+                  "members": [],
+                  "labels": [
+                      {
+                          "id": "l101"
+                      },
+                      {
+                          "id": "l102"
+                      },
+                      {
+                          "id": "l103"
+                      },
+                      {
+                          "id": "l105"
+                      }
+                  ],
+                  "createdAt": 1601366761959,
+                  "dueDate": null,
+                  "attachments": null,
+                  "timeAnalysis": {
+                      "timeInGroupsMap": {
+                          "yS0BIH6hb0": 21297060893
+                      },
+                      "currGroup": {
+                          "groupId": "Fb1Jainb",
+                          "enteredAt": 1622663822852
+                      }
+                  },
+                  "byMember": {}
+              },
+              {
+                  "id": "QqCMNb9XNB",
+                  "title": "Dashboard",
+                  "description": "Add a chart component with user statistics\n\nTotal Users\nActive Users\nConverted Users",
+                  "archivedAt": null,
+                  "members": [
+                    {
+                        "_id": "5f6a2528973d861c5d78c355",
+                        "fullName": "Koral Sabbah",
+                        "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
+                    }
+                ],
+                  "labels": [
+                      {
+                          "id": "l101"
+                      }
+                  ],
+                  "createdAt": 1601366773657,
+                  "dueDate": 1622922840000,
+                  "attachments": null,
+                  "timeAnalysis": {
+                      "timeInGroupsMap": {
+                          "yS0BIH6hb0": 21296913157
+                      },
+                      "currGroup": {
+                          "groupId": "Fb1Jainb",
+                          "enteredAt": 1622663686814
+                      }
+                  },
+                  "byMember": {}
+              },
+              {
+                "id": "JqCMNa9GNB",
+                "title": "Extra Ideas",
+                "description": "Here are some ideas",
+                "archivedAt": null,
+                "members": [
+                  {
+                      "_id": "5f6a2528973d861c5d78c355",
+                      "fullName": "Koral Sabbah",
+                      "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
+                  }
+              ],
+                "labels": [
+                    {
+                        "id": "l101"
+                    }
+                ],
+                "createdAt": 1601366773657,
+                "dueDate": 1622922840000,
+                "attachments": "https://www.visual-paradigm.com/servlet/editor-content/tutorials/flowchart-tutorial/sites/7/2018/09/flowchart-example.png",
+                "timeAnalysis": {
+                    "timeInGroupsMap": {
+                        "yS0BIH6hb0": 21296913157
+                    },
+                    "currGroup": {
+                        "groupId": "Fb1Jainb",
+                        "enteredAt": 1622663686814
+                    }
+                },
+                "byMember": {}
+            }
+          ]
+      },
+      {
+          "id": "gadsgzZQ",
+          "title": "Quality Assurance",
+          "cards": [
+              {
+                  "id": "mz33pnpBNd",
+                  "title": "Authentication Backend",
+                  "description": "Authentication Backend in node.js with express REST API",
+                  "archivedAt": null,
+                  "members": [
+                      {
+                          "_id": "5f6a2528973d861c5d78c355",
+                          "fullName": "Amir Asdasd",
+                          "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
+                      }
+                  ],
+                  "labels": [
+                      {
+                          "id": "l101"
+                      },
+                      {
+                          "id": "l103"
+                      }
+                  ],
+                  "createdAt": 1601366757216,
+                  "dueDate": 1625946660000,
+                  "attachments": null,
+                  "timeAnalysis": {
+                      "timeInGroupsMap": {
+                          "yS0BIH6hb0": 21297054790,
+                          "gadsgzZR": 61856
+                      },
+                      "currGroup": {
+                          "groupId": "gadsgzZQ",
+                          "enteredAt": 1622663873862
+                      }
+                  },
+                  "byMember": {}
+              },
+              {
+                  "id": "9LCF8f9WKY",
+                  "title": "Authentication Frontend",
+                  "description": "Authentication frontend in React.js including Material UI",
+                  "archivedAt": null,
+                  "members": [],
+                  "labels": [
+                      {
+                          "id": "l101"
+                      },
+                      {
+                          "id": "l103"
+                      },
+                      {
+                          "id": "l105"
+                      },
+                      {
+                          "id": "l104"
+                      }
+                  ],
+                  "createdAt": 1601366751048,
+                  "dueDate": 1625255100000,
+                  "attachments": null,
+                  "timeAnalysis": {
+                      "timeInGroupsMap": {
+                          "yS0BIH6hb0": 21297062846,
+                          "Fb1Jainb": 10868
+                      },
+                      "currGroup": {
+                          "groupId": "gadsgzZQ",
+                          "enteredAt": 1622663824762
+                      }
+                  },
+                  "byMember": {}
+              }
+          ],
+          "archivedAt": 1601366705334,
+          "style": {}
+      },
+      {
+          "id": "gadsgzZA",
+          "title": "Deployment",
+          "cards": [
+              {
+                  "id": "5HZvP5s9DF",
+                  "title": "User icon too big",
+                  "description": "Users are complaining about icons too big in version v0.1.2",
+                  "archivedAt": null,
+                  "members": [],
+                  "labels": [
+                      {
+                          "id": "l104"
+                      },
+                      {
+                          "id": "l102"
+                      }
+                  ],
+                  "createdAt": 1622663830145,
+                  "dueDate": null,
+                  "attachments": null,
+                  "timeAnalysis": {
+                      "timeInGroupsMap": {},
+                      "currGroup": {
+                          "groupId": "gadsgzZA",
+                          "enteredAt": 1622663830145
+                      }
+                  },
+                  "byMember": {}
+              }
+          ],
+          "archivedAt": 1601366705334,
+          "style": {}
+      }
+  ]
+  },
+  {
+    "_id": "5f33ea5a1ab1fc004378274",
+    "title": "R&D Board",
+    "isArchived": false,
+    "description": "Board's bla bla bla.... koko!!",
+    "labels": [
+      {
+        "id": "l101",
+        "name": "Release Candidate",
+        "color": "green"
+      },
+      {
+        "id": "l102",
+        "name": "Field Verification",
+        "color": "yellow"
+      },
+      {
+        "id": "l103",
+        "name": "Priority",
+        "color": "orange"
+      },
+      {
+        "id": "l104",
+        "name": "Bug",
+        "color": "red"
+      },
+      {
+        "id": "l105",
+        "name": "Blocker",
+        "color": "red"
+      },
+      {
+        "id": "l106",
+        "name": "User Experience",
+        "color": "purple"
+      },
+      {
+        "id": "l107",
+        "name": "Customer Support",
+        "color": "orange"
+      },
+      {
+        "id": "l108",
+        "name": "User Engagement",
+        "color": "blue"
+      }
+    ],
+    "activities": [
+      {
+        "id": "0ahWTxOiG0",
+        "txt": "moved the card",
+        "commentTxt": "",
+        "createdAt": 1601367036803,
+        "byMember": {
+          "_id": "5f6a2528973d861c5d78c355",
+          "fullName": "Amir Asdasd",
+          "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
         },
-        {
-          "id": "yYM2GKD7da",
-          "title": "Bread",
-          "description": "",
-          "archivedAt": null,
-          "members": [
-            
-          ],
-          "labels": [
-            {
-              "id": "l101"
-            }
-          ],
-          "createdAt": 1601366761959,
-          "dueDate": null,
-          "attachments": null,
-          "timeAnalysis": {
-            "timeInGroupsMap": {
-              
-            },
-            "currGroup": {
-              "groupId": "yS0BIH6hb0",
-              "enteredAt": 1601366761959
-            }
-          },
-          "byMember": {
-            
+        "card": {
+          "id": "sqLbqQkTgF",
+          "title": "Shaving cream"
+        },
+        "group": {},
+        "checklist": [
+          {
+            "txtValue": "todo"
           }
+        ]
+      },
+      {
+        "id": "sg4pQVwZVM",
+        "txt": "moved the card",
+        "commentTxt": "",
+        "createdAt": 1601367032102,
+        "byMember": {
+          "_id": "5f6a2528973d861c5d78c355",
+          "fullName": "Amir Asdasd",
+          "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
         },
-        {
-          "id": "QqCMNb9XNB",
-          "title": "Goldstar",
-          "description": "",
-          "archivedAt": null,
-          "members": [
-            
-          ],
-          "labels": [
-            {
-              "id": "l101"
-            }
-          ],
-          "createdAt": 1601366773657,
-          "dueDate": null,
-          "attachments": null,
-          "timeAnalysis": {
-            "timeInGroupsMap": {
-              
-            },
-            "currGroup": {
-              "groupId": "yS0BIH6hb0",
-              "enteredAt": 1601366773657
-            }
-          },
-          "byMember": {
-            
-          }
+        "card": {
+          "id": "VfaJaRMYrh",
+          "title": "Soap"
         },
-        {
-          "id": "XHygDINBkE",
-          "title": "Broccoli",
-          "description": "",
-          "archivedAt": null,
-          "members": [
-            
-          ],
-          "labels": [
-            {
-              "id": "l101"
-            }
-          ],
-          "createdAt": 1601366855608,
-          "dueDate": null,
-          "attachments": null,
-          "timeAnalysis": {
-            "timeInGroupsMap": {
-              
-            },
-            "currGroup": {
-              "groupId": "yS0BIH6hb0",
-              "enteredAt": 1601366855608
-            }
-          },
-          "byMember": {
-            
-          }
+        "group": {}
+      },
+      {
+        "id": "tkdxhcdwoN",
+        "txt": "create this card",
+        "commentTxt": "",
+        "createdAt": 1601366968534,
+        "byMember": {
+          "_id": "5f6a2528973d861c5d78c328",
+          "fullName": "Fernando Chaves",
+          "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365537/rnymwcd6hepeuvw6domo.jpg"
         },
-        {
+        "card": {
+          "id": "sqLbqQkTgF",
+          "title": "Shaving cream"
+        },
+        "group": {}
+      },
+      {
+        "id": "pHV1hzMBoy",
+        "txt": "create this card",
+        "commentTxt": "",
+        "createdAt": 1601367016951,
+        "byMember": {
+          "_id": "5f6a2528973d861c5d78c328",
+          "fullName": "Fernando Chaves",
+          "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365537/rnymwcd6hepeuvw6domo.jpg"
+        },
+        "card": {
           "id": "N4y9h6sJxd",
-          "title": "Rice",
-          "description": "",
-          "archivedAt": null,
-          "members": [
-            
-          ],
-          "labels": [
+          "title": "Rice"
+        },
+        "group": {}
+      }
+    ],
+    "createdBy": {
+      "_id": "u101",
+      "fullName": "Abi Abambi",
+      "imgUrl": "http://some-img"
+    },
+    "style": {
+      "id": "bs106",
+      "fontClr": "#f9f9f9",
+      "bgImg": "url(https://res.cloudinary.com/duhz8ymod/image/upload/v1600708669/bg-6_tsrunp.jpg)"
+    },
+    "members": [{
+        "_id": "5f6a2528973d861c5d78c355",
+        "fullName": "Koral Sabbah",
+        "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
+      },
+      {
+        "_id": "5f6a2528973d861c5d78c328",
+        "fullName": "Ksenia Braginsky",
+        "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365537/rnymwcd6hepeuvw6domo.jpg"
+      },
+      {
+        "_id": "5f6a2528973d861c5d78c322",
+        "fullName": "Miriam Baranovska",
+        "imgUrl": "http://some-img"
+      },
+      {
+        "_id": "5f6a2528973d861c5d78c323",
+        "fullName": "Avi Kohen",
+        "imgUrl": "../../imgs/miriam.jpg"
+      }
+    ],
+    "groups": [
+      {
+        "id": "jd678ah8",
+        "title": "Backlog",
+        "description": "description",
+        "archivedAt": false,
+        "labels": [],
+        "cards": [
             {
-              "id": "l101"
+                "id": "anmEumN7W8",
+                "title": "New User Onboarding",
+                "description": "Add modals to explain how the app works if the user logs in for the first time.\n\nThe modals should show arrows pointing the user to the store. \n\n",
+                "archivedAt": null,
+                "members": [
+                  {
+                      "_id": "5f6a2528973d861c5d78c355",
+                      "fullName": "Koral Sabbah",
+                      "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
+                  }
+              ],
+                "labels": [
+                    {
+                        "id": "l105"
+                    },
+                    {
+                        "id": "l107"
+                    },
+                    {
+                        "id": "l106"
+                    }
+                ],
+                "createdAt": 1622664378791,
+                "dueDate": null,
+                "attachments": null,
+                "timeAnalysis": {
+                    "timeInGroupsMap": {},
+                    "currGroup": {
+                        "groupId": "jd678ah8",
+                        "enteredAt": 1622664378791
+                    }
+                },
+                "byMember": {}
+            }
+        ]
+    },
+      {
+          "id": "gadsgzZR",
+          "title": "Product Design",
+          "cards": [
+              {
+                  "id": "ozTQQr5seA",
+                  "title": "Monetization",
+                  "description": "Add a user optimizer to convert more users",
+                  "archivedAt": null,
+                  "members": [
+                    {
+                        "_id": "5f6a2528973d861c5d78c355",
+                        "fullName": "Koral Sabbah",
+                        "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
+                    }
+                  ],
+                  "labels": [
+                      {
+                          "id": "l101"
+                      },
+                      {
+                          "id": "l103"
+                      },
+                      {
+                          "id": "l106"
+                      }
+                  ],
+                  "createdAt": 1622663730473,
+                  "dueDate": null,
+                  "attachments": null,
+                  "timeAnalysis": {
+                      "timeInGroupsMap": {},
+                      "currGroup": {
+                          "groupId": "gadsgzZR",
+                          "enteredAt": 1622663730473
+                      }
+                  },
+                  "byMember": {}
+              },
+              {
+                  "id": "OtKmRxN2FN",
+                  "title": "Christmas Special",
+                  "description": "Add a christmas landing page with special offers",
+                  "archivedAt": null,
+                  "members": [],
+                  "labels": [
+                      {
+                          "id": "l105"
+                      },
+                      {
+                          "id": "l101"
+                      },
+                      {
+                          "id": "l103"
+                      }
+                  ],
+                  "createdAt": 1622663764149,
+                  "dueDate": 1640033760000,
+                  "attachments": null,
+                  "timeAnalysis": {
+                      "timeInGroupsMap": {
+                          "gadsgzZQ": 113733
+                      },
+                      "currGroup": {
+                          "groupId": "gadsgzZR",
+                          "enteredAt": 1622663877882
+                      }
+                  },
+                  "byMember": {}
+              },
+              {
+                "id": "OtKmRxN2AN",
+                "title": "Holiday Activities",
+                "description": "Add festive holiday special offers landing page",
+                "archivedAt": null,
+                "members": [],
+                "labels": [
+                    {
+                        "id": "l105"
+                    },
+                    {
+                        "id": "l101"
+                    },
+                    {
+                        "id": "l103"
+                    }
+                ],
+                "createdAt": 1622663764149,
+                "dueDate": 1640033760000,
+                "attachments": null,
+                "timeAnalysis": {
+                    "timeInGroupsMap": {
+                        "gadsgzZQ": 113733
+                    },
+                    "currGroup": {
+                        "groupId": "gadsgzZR",
+                        "enteredAt": 1622663877882
+                    }
+                },
+                "byMember": {}
             }
           ],
-          "createdAt": 1601367016951,
-          "dueDate": null,
-          "attachments": null,
-          "timeAnalysis": {
-            "timeInGroupsMap": {
-              
+          "archivedAt": 1601366705334,
+          "style": {}
+      },
+      {
+        "id": "Fb1Jainb",
+        "title": "In Development",
+        "cards": [
+            {
+                "id": "yYM2GKD7da",
+                "title": "User profile",
+                "description": "Allows editing of user preferences:\n\nName\nEmail\nPassword reset",
+                "archivedAt": null,
+                "members": [],
+                "labels": [
+                    {
+                        "id": "l101"
+                    },
+                    {
+                        "id": "l102"
+                    },
+                    {
+                        "id": "l103"
+                    },
+                    {
+                        "id": "l105"
+                    }
+                ],
+                "createdAt": 1601366761959,
+                "dueDate": null,
+                "attachments": null,
+                "timeAnalysis": {
+                    "timeInGroupsMap": {
+                        "yS0BIH6hb0": 21297060893
+                    },
+                    "currGroup": {
+                        "groupId": "Fb1Jainb",
+                        "enteredAt": 1622663822852
+                    }
+                },
+                "byMember": {}
             },
-            "currGroup": {
-              "groupId": "yS0BIH6hb0",
-              "enteredAt": 1601367016951
+            {
+                "id": "QqCMNb9XNB",
+                "title": "Dashboard",
+                "description": "Add a chart component with user statistics\n\nTotal Users\nActive Users\nConverted Users",
+                "archivedAt": null,
+                "members": [
+                    {
+                        "_id": "5f6a2528973d861c5d78c355",
+                        "fullName": "Koral Sabbah",
+                        "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
+                    }
+                ],
+                "labels": [
+                    {
+                        "id": "l101"
+                    }
+                ],
+                "createdAt": 1601366773657,
+                "dueDate": 1622922840000,
+                "attachments": null,
+                "timeAnalysis": {
+                    "timeInGroupsMap": {
+                        "yS0BIH6hb0": 21296913157
+                    },
+                    "currGroup": {
+                        "groupId": "Fb1Jainb",
+                        "enteredAt": 1622663686814
+                    }
+                },
+                "byMember": {},
+                "checklists": [
+                    {
+                        "id": "Ab2TgpYUol",
+                        "title": "Charts",
+                        "todos": [
+                            {
+                                "id": "yt90o3k3CZ",
+                                "isDone": true,
+                                "title": "Total Users"
+                            },
+                            {
+                                "id": "I4FSsaKnZI",
+                                "isDone": true,
+                                "title": "Converted Users"
+                            },
+                            {
+                                "id": "QCnz5H249G",
+                                "isDone": false,
+                                "title": "Active Users"
+                            }
+                        ]
+                    }
+                ]
             }
-          },
-          "byMember": {
-            
-          }
-        }
-      ]
+        ]
     },
     {
-      "id": "gadsgzZR",
-      "title": "In store",
+      "id": "gadsgzZQ",
+      "title": "QA Testing",
       "cards": [
-        
+          {
+              "id": "mz33pnpBNd",
+              "title": "Authentication Backend",
+              "description": "Authentication Backend in node.js with express REST API",
+              "archivedAt": null,
+              "members": [
+                  {
+                      "_id": "5f6a2528973d861c5d78c355",
+                      "fullName": "Koral Sabbah",
+                      "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
+                  }
+              ],
+              "labels": [
+                  {
+                      "id": "l101"
+                  },
+                  {
+                      "id": "l103"
+                  }
+              ],
+              "createdAt": 1601366757216,
+              "dueDate": 1625946660000,
+              "attachments": null,
+              "timeAnalysis": {
+                  "timeInGroupsMap": {
+                      "yS0BIH6hb0": 21297054790,
+                      "gadsgzZR": 61856
+                  },
+                  "currGroup": {
+                      "groupId": "gadsgzZQ",
+                      "enteredAt": 1622663873862
+                  }
+              },
+              "byMember": {}
+          },
+          {
+              "id": "9LCF8f9WKY",
+              "title": "Authentication Frontend",
+              "description": "Authentication frontend in React.js including Material UI",
+              "archivedAt": null,
+              "members": [],
+              "labels": [
+                  {
+                      "id": "l101"
+                  },
+                  {
+                      "id": "l103"
+                  },
+                  {
+                      "id": "l105"
+                  },
+                  {
+                      "id": "l104"
+                  }
+              ],
+              "createdAt": 1601366751048,
+              "dueDate": 1625255100000,
+              "attachments": null,
+              "timeAnalysis": {
+                  "timeInGroupsMap": {
+                      "yS0BIH6hb0": 21297062846,
+                      "Fb1Jainb": 10868
+                  },
+                  "currGroup": {
+                      "groupId": "gadsgzZQ",
+                      "enteredAt": 1622663824762
+                  }
+              },
+              "byMember": {},
+              "checklists": [
+                  {
+                      "id": "dsAeDC0i22",
+                      "title": "Tasks",
+                      "todos": [
+                          {
+                              "id": "qXjOhBEGpw",
+                              "isDone": true,
+                              "title": "Add Login"
+                          },
+                          {
+                              "id": "hiSmFIQUZo",
+                              "isDone": true,
+                              "title": "Add Form"
+                          },
+                          {
+                              "id": "jdFEWNscWy",
+                              "isDone": true,
+                              "title": "CSS "
+                          }
+                      ]
+                  }
+              ]
+          }
       ],
       "archivedAt": 1601366705334,
-      "style": {
-        
+      "style": {}
+  },
+      {
+          "id": "gadsgzZA",
+          "title": "Deployment",
+          "cards": [
+              {
+                  "id": "5HZvP5s9DF",
+                  "title": "User icon too big",
+                  "description": "Users are complaining about icons too big in version v0.1.2",
+                  "archivedAt": null,
+                  "members": [
+                    {
+                        "_id": "5f6a2528973d861c5d78c355",
+                        "fullName": "Koral Sabbah",
+                        "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
+                    }
+                  ],
+                  "labels": [
+                      {
+                          "id": "l104"
+                      },
+                      {
+                          "id": "l102"
+                      }
+                  ],
+                  "createdAt": 1622663830145,
+                  "dueDate": null,
+                  "attachments": null,
+                  "timeAnalysis": {
+                      "timeInGroupsMap": {},
+                      "currGroup": {
+                          "groupId": "gadsgzZA",
+                          "enteredAt": 1622663830145
+                      }
+                  },
+                  "byMember": {}
+              }
+          ],
+          "archivedAt": 1601366705334,
+          "style": {}
       }
-    },
-    {
-      "id": "Fb1Jainb",
-      "title": "Have It Already",
-      "cards": [
-        {
-          "id": "0t32Ec5gDS",
-          "title": "Chicken",
-          "description": "Buy Chicken",
-          "archivedAt": null,
-          "members": [
-            
-          ],
-          "labels": [
-            {
-              "id": "l103"
-            }
-          ],
-          "createdAt": 1601366763127,
-          "dueDate": null,
-          "attachments": null,
-          "timeAnalysis": {
-            "timeInGroupsMap": {
-              "yS0BIH6hb0": 28761
-            },
-            "currGroup": {
-              "groupId": "Fb1Jainb",
-              "enteredAt": 1601366791888
-            }
-          },
-          "byMember": {
-            
-          }
-        },
-        {
-          "id": "Wk22cQhbja",
-          "title": "Eggs",
-          "description": "Get fresh eggs",
-          "archivedAt": null,
-          "members": [
-            
-          ],
-          "labels": [
-            {
-              "id": "l101"
-            }
-          ],
-          "createdAt": 1601366769311,
-          "dueDate": null,
-          "attachments": null,
-          "timeAnalysis": {
-            "timeInGroupsMap": {
-              "yS0BIH6hb0": 24727
-            },
-            "currGroup": {
-              "groupId": "Fb1Jainb",
-              "enteredAt": 1601366794038
-            }
-          },
-          "byMember": {
-            
-          }
-        },
-        {
-          "id": "oXYSdKpZxz",
-          "title": "Garlic",
-          "description": "Get garlic",
-          "archivedAt": null,
-          "members": [
-            
-          ],
-          "labels": [
-            {
-              "id": "l101"
-            }
-          ],
-          "createdAt": 1601366866007,
-          "dueDate": null,
-          "attachments": null,
-          "timeAnalysis": {
-            "timeInGroupsMap": {
-              "yS0BIH6hb0": 164360
-            },
-            "currGroup": {
-              "groupId": "Fb1Jainb",
-              "enteredAt": 1601367030367
-            }
-          },
-          "byMember": {
-            
-          }
-        },
-        {
-          "id": "VfaJaRMYrh",
-          "title": "Soap",
-          "description": "",
-          "archivedAt": null,
-          "members": [
-            
-          ],
-          "labels": [
-            {
-              "id": "l102"
-            }
-          ],
-          "createdAt": 1601366963901,
-          "dueDate": null,
-          "attachments": null,
-          "timeAnalysis": {
-            "timeInGroupsMap": {
-              "yS0BIH6hb0": 68200
-            },
-            "currGroup": {
-              "groupId": "Fb1Jainb",
-              "enteredAt": 1601367032101
-            }
-          },
-          "byMember": {
-            
-          }
-        },
-        {
-          "id": "sqLbqQkTgF",
-          "title": "Shaving cream",
-          "description": "",
-          "archivedAt": null,
-          "members": [
-            
-          ],
-          "labels": [
-            {
-              "id": "l102"
-            }
-          ],
-          "createdAt": 1601366968534,
-          "dueDate": null,
-          "attachments": null,
-          "timeAnalysis": {
-            "timeInGroupsMap": {
-              "yS0BIH6hb0": 68268
-            },
-            "currGroup": {
-              "groupId": "Fb1Jainb",
-              "enteredAt": 1601367036802
-            }
-          },
-          "byMember": {
-            
-          }
-        }
-      ],
-      "archivedAt": false,
-      "style": {
-        
-      }
-    }
   ]
-}
+  }
+]

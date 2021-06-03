@@ -16,6 +16,7 @@ import { IconButton, Popover } from '@material-ui/core'
 import SubtitlesIcon from '@material-ui/icons/Subtitles'
 import CloseIcon from '@material-ui/icons/Close'
 import ListIcon from '@material-ui/icons/List'
+import { CardPreviewDueDate } from './CardPreviewDueDate'
 
 class _CardDetails extends Component {
 
@@ -67,7 +68,7 @@ class _CardDetails extends Component {
     }
 
     onCloseCard = () => {
-        this.props.history.push(`/board/`)
+        this.props.history.push(`/board/id`)
     }
 
     submitCard = (card, activity) => {
@@ -226,13 +227,13 @@ class _CardDetails extends Component {
                         </IconButton>
                     </div>
                     <div className="flex justify-space-between">
-                        <section>
-                            <div className="flex">
+                        <section className="main-modal-section">
+                            <div className="labels-and-due-date">
                                 {this.getLabels()}
-                                <div>
-                                    {(this.state.card.dueDate ? <h5>Due Date</h5> : <React.Fragment />)}
+                                {(this.state.card.dueDate ? <div>
+                                    <h5>Due Date</h5>
                                     <CardDueDateSetter onUpdateDueDate={this.onUpdateDueDate} dueDate={this.state.card.dueDate} displayDate={true} displayTime={true} />
-                                </div>
+                                </div> : <React.Fragment />)}
                             </div>
                             <div>
                                 <CardDescription onUpdateDesc={this.onUpdateDesc} description={this.state.card.description} />
@@ -251,7 +252,12 @@ class _CardDetails extends Component {
                             toggleLabelPalette={this.toggleLabelPalette}
                             onUpdateDueDate={this.onUpdateDueDate}
                             onArchiveCard={this.onArchiveCard}
-                            onUpdateChecklists={this.onUpdateChecklists} />
+                            onUpdateChecklists={this.onUpdateChecklists} 
+                            members={this.state.card.members} 
+                            allUsers={this.props.allUsers}
+                            card={this.state.card}
+                            
+                            />
                     </div>
                     <div>
                         <section className="flex justify-space-between">
@@ -290,7 +296,9 @@ class _CardDetails extends Component {
 
 const mapStateToProps = state => {
     return {
-        board: state.boardModule.currBoard
+        board: state.boardModule.currBoard,
+        allUsers: state.userModule.users,
+        members: state.boardModule.currBoard.members
     };
 };
 

@@ -46,7 +46,7 @@ export class CardChecklist extends Component {
         }
 
         return (
-            <Button onClick={this.toggleDisplayCompleted}>{btnContent}</Button>
+            <button onClick={this.toggleDisplayCompleted}>{btnContent}</button>
         )
     }
 
@@ -106,11 +106,11 @@ export class CardChecklist extends Component {
                 <div className="flex justify-space-between">
                     <div className="flex">
                         <CheckBoxOutlinedIcon />
-                        {this.props.checklist.title}
+                        <h3>{this.props.checklist.title}</h3>
                     </div>
                     <div>
                         {this.getDisplayCheckedBtn()}
-                        <button onClick={this.openDialog}>Delete</button>
+                        <button className="checklist-delete-button" onClick={this.openDialog}>Delete</button>
                     </div>
                 </div>
                 <div>
