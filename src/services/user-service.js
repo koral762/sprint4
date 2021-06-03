@@ -1,5 +1,6 @@
 
-//import { httpService } from './http.service'
+import { storageService } from './storage-service'
+import { httpService } from './http-service'
 
 var gUsers = [
     {
@@ -16,10 +17,10 @@ export const userService = {
     logout,
     signup,
     getLoggedinUser,
-    // getUsers,
+    getUsers,
     // getById,
-    // remove,
-    // update,
+    remove,
+    update,
     // increaseScore
 }
 

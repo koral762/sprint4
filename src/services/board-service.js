@@ -1,3 +1,5 @@
+import { httpService } from './http-service'
+// var cloudinary = require('cloudinary').v2;
 import { utils } from './utils-service'
 
 export const boardService = {
@@ -8,921 +10,915 @@ export const boardService = {
 }
 
 var gBoards = [{
-    "_id": "5f72ea5a1ab1fc0017450368",
-    "title": "Groceries",
-    "isArchived": false,
-    "description": "Board's description",
-    "labels": [{
-        "id": "l101",
-        "name": "Supermarket",
-        "color": "green"
-    },
-    {
-        "id": "l102",
-        "name": "Drugstore",
-        "color": "yellow"
-    },
-    {
-        "id": "l103",
-        "name": "Butcher",
-        "color": "orange"
-    },
-    {
-        "id": "l104",
-        "name": "Default",
-        "color": "red"
-    },
-    {
-        "id": "l105",
-        "name": "Default",
-        "color": "purple"
-    },
-    {
-        "id": "l106",
-        "name": "Default",
-        "color": "blue"
-    }
-    ],
-    "activities": [{
-        "id": "0ahWTxOiG0",
-        "txt": "moved the card",
-        "commentTxt": "",
-        "createdAt": 1601367036803,
-        "byMember": {
-            "_id": "5f6a2528973d861c5d78c355",
-            "fullName": "Amir Asdasd",
-            "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
-        },
-        "card": {
-            "id": "sqLbqQkTgF",
-            "title": "Shaving cream"
-        },
-        "group": {
 
-        },
-        "checklist": [
+        "title": "Groceries",
+        "isArchived": false,
+        "description": "Board's description",
+        "labels": [{
+                "id": "l101",
+                "name": "Supermarket",
+                "color": "green"
+            },
             {
-                "txtValue": 'todo'
+                "id": "l102",
+                "name": "Drugstore",
+                "color": "yellow"
+            },
+            {
+                "id": "l103",
+                "name": "Butcher",
+                "color": "orange"
+            },
+            {
+                "id": "l104",
+                "name": "Default",
+                "color": "red"
+            },
+            {
+                "id": "l105",
+                "name": "Default",
+                "color": "purple"
+            },
+            {
+                "id": "l106",
+                "name": "Default",
+                "color": "blue"
             }
-        ]
-    },
-    {
-        "id": "sg4pQVwZVM",
-        "txt": "moved the card",
-        "commentTxt": "",
-        "createdAt": 1601367032102,
-        "byMember": {
-            "_id": "5f6a2528973d861c5d78c355",
-            "fullName": "Amir Asdasd",
-            "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
-        },
-        "card": {
-            "id": "VfaJaRMYrh",
-            "title": "Soap"
-        },
-        "group": {
-
-        }
-    },
-    {
-        "id": "tkdxhcdwoN",
-        "txt": "create this card",
-        "commentTxt": "",
-        "createdAt": 1601366968534,
-        "byMember": {
-            "_id": "5f6a2528973d861c5d78c328",
-            "fullName": "Fernando Chaves",
-            "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365537/rnymwcd6hepeuvw6domo.jpg"
-        },
-        "card": {
-            "id": "sqLbqQkTgF",
-            "title": "Shaving cream"
-        },
-        "group": {
-
-        }
-    },
-    {
-        "id": "pHV1hzMBoy",
-        "txt": "create this card",
-        "commentTxt": "",
-        "createdAt": 1601367016951,
-        "byMember": {
-            "_id": "5f6a2528973d861c5d78c328",
-            "fullName": "Fernando Chaves",
-            "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365537/rnymwcd6hepeuvw6domo.jpg"
-        },
-        "card": {
-            "id": "N4y9h6sJxd",
-            "title": "Rice"
-        },
-        "group": {
-
-        }
-    }
-    ],
-    "createdBy": {
-        "_id": "u101",
-        "fullName": "Abi Abambi",
-        "imgUrl": "http://some-img"
-    },
-    "style": {
-        "id": "bs106",
-        "fontClr": "#f9f9f9",
-        "bgImg": "url(https://res.cloudinary.com/duhz8ymod/image/upload/v1600708669/bg-6_tsrunp.jpg)"
-    },
-    "members": [{
-        "_id": "5f6a2528973d861c5d78c355",
-        "fullName": "Amir Asdasd",
-        "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
-    },
-    {
-        "_id": "5f6a2528973d861c5d78c328",
-        "fullName": "Fernando Chaves",
-        "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365537/rnymwcd6hepeuvw6domo.jpg"
-    },
-    {
-        "_id": "u101",
-        "fullName": "Abi Abambi",
-        "imgUrl": "http://some-img"
-    }
-    ],
-    "groups": [{
-        "id": "yS0BIH6hb0",
-        "title": "To Buy",
-        "description": "description",
-        "archivedAt": false,
-        "labels": [
-
         ],
-        "cards": [{
-            "id": "9LCF8f9WKY",
-            "title": "Milk",
-            "description": "",
-            "archivedAt": null,
-            "members": [
-
-            ],
-            "labels": [{
-                "id": "l101"
-            }],
-            "createdAt": 1601366751048,
-            "dueDate": null,
-            "attachments": null,
-            "timeAnalysis": {
-                "timeInGroupsMap": {
+        "activities": [{
+                "id": "0ahWTxOiG0",
+                "txt": "moved the card",
+                "commentTxt": "",
+                "createdAt": 1601367036803,
+                "byMember": {
+                    "_id": "5f6a2528973d861c5d78c355",
+                    "fullName": "Amir Asdasd",
+                    "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
+                },
+                "card": {
+                    "id": "sqLbqQkTgF",
+                    "title": "Shaving cream"
+                },
+                "group": {
 
                 },
-                "currGroup": {
-                    "groupId": "yS0BIH6hb0",
-                    "enteredAt": 1601366751048
+                "checklist": [{
+                    "txtValue": 'todo'
+                }]
+            },
+            {
+                "id": "sg4pQVwZVM",
+                "txt": "moved the card",
+                "commentTxt": "",
+                "createdAt": 1601367032102,
+                "byMember": {
+                    "_id": "5f6a2528973d861c5d78c355",
+                    "fullName": "Amir Asdasd",
+                    "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
+                },
+                "card": {
+                    "id": "VfaJaRMYrh",
+                    "title": "Soap"
+                },
+                "group": {
+
                 }
             },
-            "byMember": {
+            {
+                "id": "tkdxhcdwoN",
+                "txt": "create this card",
+                "commentTxt": "",
+                "createdAt": 1601366968534,
+                "byMember": {
+                    "_id": "5f6a2528973d861c5d78c328",
+                    "fullName": "Fernando Chaves",
+                    "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365537/rnymwcd6hepeuvw6domo.jpg"
+                },
+                "card": {
+                    "id": "sqLbqQkTgF",
+                    "title": "Shaving cream"
+                },
+                "group": {
 
+                }
+            },
+            {
+                "id": "pHV1hzMBoy",
+                "txt": "create this card",
+                "commentTxt": "",
+                "createdAt": 1601367016951,
+                "byMember": {
+                    "_id": "5f6a2528973d861c5d78c328",
+                    "fullName": "Fernando Chaves",
+                    "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365537/rnymwcd6hepeuvw6domo.jpg"
+                },
+                "card": {
+                    "id": "N4y9h6sJxd",
+                    "title": "Rice"
+                },
+                "group": {
+
+                }
             }
+        ],
+        "createdBy": {
+            "_id": "u101",
+            "fullName": "Abi Abambi",
+            "imgUrl": "http://some-img"
         },
-        {
-            "id": "mz33pnpBNd",
-            "title": "Sugar",
-            "description": "",
-            "archivedAt": null,
-            "members": [{
+        "style": {
+            "id": "bs106",
+            "fontClr": "#f9f9f9",
+            "bgImg": "url(https://res.cloudinary.com/duhz8ymod/image/upload/v1600708669/bg-6_tsrunp.jpg)"
+        },
+        "members": [{
                 "_id": "5f6a2528973d861c5d78c355",
                 "fullName": "Amir Asdasd",
                 "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
-            }],
-            "labels": [{
-                "id": "l101"
-            }],
-            "createdAt": 1601366757216,
-            "dueDate": null,
-            "attachments": null,
-            "timeAnalysis": {
-                "timeInGroupsMap": {
-
-                },
-                "currGroup": {
-                    "groupId": "yS0BIH6hb0",
-                    "enteredAt": 1601366757216
-                }
             },
-            "byMember": {
-
-            }
-        },
-        {
-            "id": "yYM2GKD7da",
-            "title": "Bread",
-            "description": "",
-            "archivedAt": null,
-            "members": [
-
-            ],
-            "labels": [{
-                "id": "l101"
-            }],
-            "createdAt": 1601366761959,
-            "dueDate": null,
-            "attachments": null,
-            "timeAnalysis": {
-                "timeInGroupsMap": {
-
-                },
-                "currGroup": {
-                    "groupId": "yS0BIH6hb0",
-                    "enteredAt": 1601366761959
-                }
-            },
-            "byMember": {
-
-            }
-        },
-        {
-            "id": "QqCMNb9XNB",
-            "title": "Goldstar",
-            "description": "",
-            "archivedAt": null,
-            "members": [
-
-            ],
-            "labels": [{
-                "id": "l101"
-            }],
-            "createdAt": 1601366773657,
-            "dueDate": null,
-            "attachments": null,
-            "timeAnalysis": {
-                "timeInGroupsMap": {
-
-                },
-                "currGroup": {
-                    "groupId": "yS0BIH6hb0",
-                    "enteredAt": 1601366773657
-                }
-            },
-            "byMember": {
-
-            }
-        },
-        {
-            "id": "XHygDINBkE",
-            "title": "Broccoli",
-            "description": "ASD",
-            "archivedAt": null,
-            "members": [
-
-            ],
-            "labels": [{
-                "id": "l101"
-            }],
-            "createdAt": 1601366855608,
-            "dueDate": null,
-            "attachments": null,
-            "timeAnalysis": {
-                "timeInGroupsMap": {
-
-                },
-                "currGroup": {
-                    "groupId": "yS0BIH6hb0",
-                    "enteredAt": 1601366855608
-                }
-            },
-            "byMember": {
-
-            }
-        },
-        {
-            "id": "N4y9h6sJxd",
-            "title": "Rice",
-            "description": "",
-            "archivedAt": null,
-            "members": [
-
-            ],
-            "labels": [{
-                "id": "l101"
-            }],
-            "createdAt": 1601367016951,
-            "dueDate": null,
-            "attachments": null,
-            "timeAnalysis": {
-                "timeInGroupsMap": {
-
-                },
-                "currGroup": {
-                    "groupId": "yS0BIH6hb0",
-                    "enteredAt": 1601367016951
-                }
-            },
-            "byMember": {
-
-            }
-        }
-        ]
-    },
-    {
-        "id": "gadsgzZR",
-        "title": "In store",
-        "cards": [
-
-        ],
-        "archivedAt": 1601366705334,
-        "style": {
-
-        }
-    },
-    {
-        "id": "Fb1Jainb",
-        "title": "Have It Already",
-        "cards": [{
-            "id": "0t32Ec5gDS",
-            "title": "Chicken",
-            "description": "",
-            "archivedAt": null,
-            "members": [
-
-            ],
-            "labels": [{
-                "id": "l103"
-            }],
-            "createdAt": 1601366763127,
-            "dueDate": null,
-            "attachments": null,
-            "timeAnalysis": {
-                "timeInGroupsMap": {
-                    "yS0BIH6hb0": 28761
-                },
-                "currGroup": {
-                    "groupId": "Fb1Jainb",
-                    "enteredAt": 1601366791888
-                }
-            },
-            "byMember": {
-
-            }
-        },
-        {
-            "id": "Wk22cQhbja",
-            "title": "Eggs",
-            "description": "",
-            "archivedAt": null,
-            "members": [
-
-            ],
-            "labels": [{
-                "id": "l101"
-            }],
-            "createdAt": 1601366769311,
-            "dueDate": null,
-            "attachments": null,
-            "timeAnalysis": {
-                "timeInGroupsMap": {
-                    "yS0BIH6hb0": 24727
-                },
-                "currGroup": {
-                    "groupId": "Fb1Jainb",
-                    "enteredAt": 1601366794038
-                }
-            },
-            "byMember": {
-
-            }
-        },
-        {
-            "id": "oXYSdKpZxz",
-            "title": "Garlic",
-            "description": "",
-            "archivedAt": null,
-            "members": [
-
-            ],
-            "labels": [{
-                "id": "l101"
-            }],
-            "createdAt": 1601366866007,
-            "dueDate": null,
-            "attachments": null,
-            "timeAnalysis": {
-                "timeInGroupsMap": {
-                    "yS0BIH6hb0": 164360
-                },
-                "currGroup": {
-                    "groupId": "Fb1Jainb",
-                    "enteredAt": 1601367030367
-                }
-            },
-            "byMember": {
-
-            }
-        },
-        {
-            "id": "VfaJaRMYrh",
-            "title": "Soap",
-            "description": "",
-            "archivedAt": null,
-            "members": [
-
-            ],
-            "labels": [{
-                "id": "l102"
-            }],
-            "createdAt": 1601366963901,
-            "dueDate": null,
-            "attachments": null,
-            "timeAnalysis": {
-                "timeInGroupsMap": {
-                    "yS0BIH6hb0": 68200
-                },
-                "currGroup": {
-                    "groupId": "Fb1Jainb",
-                    "enteredAt": 1601367032101
-                }
-            },
-            "byMember": {
-
-            }
-        },
-        {
-            "id": "sqLbqQkTgF",
-            "title": "Shaving cream",
-            "description": "",
-            "archivedAt": null,
-            "members": [
-
-            ],
-            "labels": [{
-                "id": "l102"
-            }],
-            "createdAt": 1601366968534,
-            "dueDate": null,
-            "attachments": null,
-            "timeAnalysis": {
-                "timeInGroupsMap": {
-                    "yS0BIH6hb0": 68268
-                },
-                "currGroup": {
-                    "groupId": "Fb1Jainb",
-                    "enteredAt": 1601367036802
-                }
-            },
-            "byMember": {
-
-            }
-        }
-        ],
-        "archivedAt": false,
-        "style": {
-
-        }
-    }
-    ]
-},
-{
-    "_id": "5f33ea5a1ab1fc004378274",
-    "title": "Three-lo",
-    "isArchived": false,
-    "description": "Board's bla bla bla.... koko!!",
-    "labels": [{
-        "id": "l101",
-        "name": "Copy Request",
-        "color": "green"
-    },
-    {
-        "id": "l102",
-        "name": "One more step",
-        "color": "yellow"
-    },
-    {
-        "id": "l103",
-        "name": "Priority",
-        "color": "orange"
-    },
-    {
-        "id": "l104",
-        "name": "Design Team",
-        "color": "red"
-    },
-    {
-        "id": "l105",
-        "name": "Product Marketing",
-        "color": "purple"
-    },
-    {
-        "id": "l106",
-        "name": "Halp",
-        "color": "blue"
-    }
-    ],
-    "activities": [{
-        "id": "0ahWTxOiG0",
-        "txt": "moved the card",
-        "commentTxt": "",
-        "createdAt": 1601367036803,
-        "byMember": {
-            "_id": "5f6a2528973d861c5d78c355",
-            "fullName": "Amir Asdasd",
-            "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
-        },
-        "card": {
-            "id": "sqLbqQkTgF",
-            "title": "Shaving cream"
-        },
-        "group": {
-
-        },
-        "checklist": [
             {
-                "txtValue": 'todo'
+                "_id": "5f6a2528973d861c5d78c328",
+                "fullName": "Fernando Chaves",
+                "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365537/rnymwcd6hepeuvw6domo.jpg"
+            },
+            {
+                "_id": "u101",
+                "fullName": "Abi Abambi",
+                "imgUrl": "http://some-img"
+            }
+        ],
+        "groups": [{
+                "id": "yS0BIH6hb0",
+                "title": "To Buy",
+                "description": "description",
+                "archivedAt": false,
+                "labels": [
+
+                ],
+                "cards": [{
+                        "id": "9LCF8f9WKY",
+                        "title": "Milk",
+                        "description": "",
+                        "archivedAt": null,
+                        "members": [
+
+                        ],
+                        "labels": [{
+                            "id": "l101"
+                        }],
+                        "createdAt": 1601366751048,
+                        "dueDate": null,
+                        "attachments": null,
+                        "timeAnalysis": {
+                            "timeInGroupsMap": {
+
+                            },
+                            "currGroup": {
+                                "groupId": "yS0BIH6hb0",
+                                "enteredAt": 1601366751048
+                            }
+                        },
+                        "byMember": {
+
+                        }
+                    },
+                    {
+                        "id": "mz33pnpBNd",
+                        "title": "Sugar",
+                        "description": "",
+                        "archivedAt": null,
+                        "members": [{
+                            "_id": "5f6a2528973d861c5d78c355",
+                            "fullName": "Amir Asdasd",
+                            "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
+                        }],
+                        "labels": [{
+                            "id": "l101"
+                        }],
+                        "createdAt": 1601366757216,
+                        "dueDate": null,
+                        "attachments": null,
+                        "timeAnalysis": {
+                            "timeInGroupsMap": {
+
+                            },
+                            "currGroup": {
+                                "groupId": "yS0BIH6hb0",
+                                "enteredAt": 1601366757216
+                            }
+                        },
+                        "byMember": {
+
+                        }
+                    },
+                    {
+                        "id": "yYM2GKD7da",
+                        "title": "Bread",
+                        "description": "",
+                        "archivedAt": null,
+                        "members": [
+
+                        ],
+                        "labels": [{
+                            "id": "l101"
+                        }],
+                        "createdAt": 1601366761959,
+                        "dueDate": null,
+                        "attachments": null,
+                        "timeAnalysis": {
+                            "timeInGroupsMap": {
+
+                            },
+                            "currGroup": {
+                                "groupId": "yS0BIH6hb0",
+                                "enteredAt": 1601366761959
+                            }
+                        },
+                        "byMember": {
+
+                        }
+                    },
+                    {
+                        "id": "QqCMNb9XNB",
+                        "title": "Goldstar",
+                        "description": "",
+                        "archivedAt": null,
+                        "members": [
+
+                        ],
+                        "labels": [{
+                            "id": "l101"
+                        }],
+                        "createdAt": 1601366773657,
+                        "dueDate": null,
+                        "attachments": null,
+                        "timeAnalysis": {
+                            "timeInGroupsMap": {
+
+                            },
+                            "currGroup": {
+                                "groupId": "yS0BIH6hb0",
+                                "enteredAt": 1601366773657
+                            }
+                        },
+                        "byMember": {
+
+                        }
+                    },
+                    {
+                        "id": "XHygDINBkE",
+                        "title": "Broccoli",
+                        "description": "ASD",
+                        "archivedAt": null,
+                        "members": [
+
+                        ],
+                        "labels": [{
+                            "id": "l101"
+                        }],
+                        "createdAt": 1601366855608,
+                        "dueDate": null,
+                        "attachments": null,
+                        "timeAnalysis": {
+                            "timeInGroupsMap": {
+
+                            },
+                            "currGroup": {
+                                "groupId": "yS0BIH6hb0",
+                                "enteredAt": 1601366855608
+                            }
+                        },
+                        "byMember": {
+
+                        }
+                    },
+                    {
+                        "id": "N4y9h6sJxd",
+                        "title": "Rice",
+                        "description": "",
+                        "archivedAt": null,
+                        "members": [
+
+                        ],
+                        "labels": [{
+                            "id": "l101"
+                        }],
+                        "createdAt": 1601367016951,
+                        "dueDate": null,
+                        "attachments": null,
+                        "timeAnalysis": {
+                            "timeInGroupsMap": {
+
+                            },
+                            "currGroup": {
+                                "groupId": "yS0BIH6hb0",
+                                "enteredAt": 1601367016951
+                            }
+                        },
+                        "byMember": {
+
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "gadsgzZR",
+                "title": "In store",
+                "cards": [
+
+                ],
+                "archivedAt": 1601366705334,
+                "style": {
+
+                }
+            },
+            {
+                "id": "Fb1Jainb",
+                "title": "Have It Already",
+                "cards": [{
+                        "id": "0t32Ec5gDS",
+                        "title": "Chicken",
+                        "description": "",
+                        "archivedAt": null,
+                        "members": [
+
+                        ],
+                        "labels": [{
+                            "id": "l103"
+                        }],
+                        "createdAt": 1601366763127,
+                        "dueDate": null,
+                        "attachments": null,
+                        "timeAnalysis": {
+                            "timeInGroupsMap": {
+                                "yS0BIH6hb0": 28761
+                            },
+                            "currGroup": {
+                                "groupId": "Fb1Jainb",
+                                "enteredAt": 1601366791888
+                            }
+                        },
+                        "byMember": {
+
+                        }
+                    },
+                    {
+                        "id": "Wk22cQhbja",
+                        "title": "Eggs",
+                        "description": "",
+                        "archivedAt": null,
+                        "members": [
+
+                        ],
+                        "labels": [{
+                            "id": "l101"
+                        }],
+                        "createdAt": 1601366769311,
+                        "dueDate": null,
+                        "attachments": null,
+                        "timeAnalysis": {
+                            "timeInGroupsMap": {
+                                "yS0BIH6hb0": 24727
+                            },
+                            "currGroup": {
+                                "groupId": "Fb1Jainb",
+                                "enteredAt": 1601366794038
+                            }
+                        },
+                        "byMember": {
+
+                        }
+                    },
+                    {
+                        "id": "oXYSdKpZxz",
+                        "title": "Garlic",
+                        "description": "",
+                        "archivedAt": null,
+                        "members": [
+
+                        ],
+                        "labels": [{
+                            "id": "l101"
+                        }],
+                        "createdAt": 1601366866007,
+                        "dueDate": null,
+                        "attachments": null,
+                        "timeAnalysis": {
+                            "timeInGroupsMap": {
+                                "yS0BIH6hb0": 164360
+                            },
+                            "currGroup": {
+                                "groupId": "Fb1Jainb",
+                                "enteredAt": 1601367030367
+                            }
+                        },
+                        "byMember": {
+
+                        }
+                    },
+                    {
+                        "id": "VfaJaRMYrh",
+                        "title": "Soap",
+                        "description": "",
+                        "archivedAt": null,
+                        "members": [
+
+                        ],
+                        "labels": [{
+                            "id": "l102"
+                        }],
+                        "createdAt": 1601366963901,
+                        "dueDate": null,
+                        "attachments": null,
+                        "timeAnalysis": {
+                            "timeInGroupsMap": {
+                                "yS0BIH6hb0": 68200
+                            },
+                            "currGroup": {
+                                "groupId": "Fb1Jainb",
+                                "enteredAt": 1601367032101
+                            }
+                        },
+                        "byMember": {
+
+                        }
+                    },
+                    {
+                        "id": "sqLbqQkTgF",
+                        "title": "Shaving cream",
+                        "description": "",
+                        "archivedAt": null,
+                        "members": [
+
+                        ],
+                        "labels": [{
+                            "id": "l102"
+                        }],
+                        "createdAt": 1601366968534,
+                        "dueDate": null,
+                        "attachments": null,
+                        "timeAnalysis": {
+                            "timeInGroupsMap": {
+                                "yS0BIH6hb0": 68268
+                            },
+                            "currGroup": {
+                                "groupId": "Fb1Jainb",
+                                "enteredAt": 1601367036802
+                            }
+                        },
+                        "byMember": {
+
+                        }
+                    }
+                ],
+                "archivedAt": false,
+                "style": {
+
+                }
             }
         ]
     },
     {
-        "id": "sg4pQVwZVM",
-        "txt": "moved the card",
-        "commentTxt": "",
-        "createdAt": 1601367032102,
-        "byMember": {
-            "_id": "5f6a2528973d861c5d78c355",
-            "fullName": "Amir Asdasd",
-            "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
-        },
-        "card": {
-            "id": "VfaJaRMYrh",
-            "title": "Soap"
-        },
-        "group": {
-
-        }
-    },
-    {
-        "id": "tkdxhcdwoN",
-        "txt": "create this card",
-        "commentTxt": "",
-        "createdAt": 1601366968534,
-        "byMember": {
-            "_id": "5f6a2528973d861c5d78c328",
-            "fullName": "Fernando Chaves",
-            "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365537/rnymwcd6hepeuvw6domo.jpg"
-        },
-        "card": {
-            "id": "sqLbqQkTgF",
-            "title": "Shaving cream"
-        },
-        "group": {
-
-        }
-    },
-    {
-        "id": "pHV1hzMBoy",
-        "txt": "create this card",
-        "commentTxt": "",
-        "createdAt": 1601367016951,
-        "byMember": {
-            "_id": "5f6a2528973d861c5d78c328",
-            "fullName": "Fernando Chaves",
-            "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365537/rnymwcd6hepeuvw6domo.jpg"
-        },
-        "card": {
-            "id": "N4y9h6sJxd",
-            "title": "Rice"
-        },
-        "group": {
-
-        }
-    }
-    ],
-    "createdBy": {
-        "_id": "u101",
-        "fullName": "Abi Abambi",
-        "imgUrl": "http://some-img"
-    },
-    "style": {
-        "id": "bs106",
-        "fontClr": "#f9f9f9",
-        "bgImg": "url(https://res.cloudinary.com/duhz8ymod/image/upload/v1600708669/bg-6_tsrunp.jpg)"
-    },
-    "members": [{
-        "_id": "5f6a2528973d861c5d78c355",
-        "fullName": "Amir Asdasd",
-        "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
-    },
-    {
-        "_id": "5f6a2528973d861c5d78c328",
-        "fullName": "Fernando Chaves",
-        "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365537/rnymwcd6hepeuvw6domo.jpg"
-    },
-    {
-        "_id": "u101",
-        "fullName": "Abi Abambi",
-        "imgUrl": "http://some-img"
-    }
-    ],
-    "groups": [{
-        "id": "jd678ah8",
-        "title": "Skeleton",
-        "description": "description",
-        "archivedAt": false,
-        "labels": [
-
+        "title": "Three-lo",
+        "isArchived": false,
+        "description": "Board's bla bla bla.... koko!!",
+        "labels": [{
+                "id": "l101",
+                "name": "Copy Request",
+                "color": "green"
+            },
+            {
+                "id": "l102",
+                "name": "One more step",
+                "color": "yellow"
+            },
+            {
+                "id": "l103",
+                "name": "Priority",
+                "color": "orange"
+            },
+            {
+                "id": "l104",
+                "name": "Design Team",
+                "color": "red"
+            },
+            {
+                "id": "l105",
+                "name": "Product Marketing",
+                "color": "purple"
+            },
+            {
+                "id": "l106",
+                "name": "Halp",
+                "color": "blue"
+            }
         ],
-        "cards": [{
-            "id": "9LCF8f9WKY",
-            "title": "Header",
-            "description": "header description",
-            "archivedAt": null,
-            "members": [
-
-            ],
-            "labels": [{
-                "id": "l101"
-            }],
-            "createdAt": 1601366751048,
-            "dueDate": null,
-            "attachments": null,
-            "timeAnalysis": {
-                "timeInGroupsMap": {
+        "activities": [{
+                "id": "0ahWTxOiG0",
+                "txt": "moved the card",
+                "commentTxt": "",
+                "createdAt": 1601367036803,
+                "byMember": {
+                    "_id": "5f6a2528973d861c5d78c355",
+                    "fullName": "Amir Asdasd",
+                    "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
+                },
+                "card": {
+                    "id": "sqLbqQkTgF",
+                    "title": "Shaving cream"
+                },
+                "group": {
 
                 },
-                "currGroup": {
-                    "groupId": "yS0BIH6hb0",
-                    "enteredAt": 1601366751048
+                "checklist": [{
+                    "txtValue": 'todo'
+                }]
+            },
+            {
+                "id": "sg4pQVwZVM",
+                "txt": "moved the card",
+                "commentTxt": "",
+                "createdAt": 1601367032102,
+                "byMember": {
+                    "_id": "5f6a2528973d861c5d78c355",
+                    "fullName": "Amir Asdasd",
+                    "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
+                },
+                "card": {
+                    "id": "VfaJaRMYrh",
+                    "title": "Soap"
+                },
+                "group": {
+
                 }
             },
-            "byMember": {
+            {
+                "id": "tkdxhcdwoN",
+                "txt": "create this card",
+                "commentTxt": "",
+                "createdAt": 1601366968534,
+                "byMember": {
+                    "_id": "5f6a2528973d861c5d78c328",
+                    "fullName": "Fernando Chaves",
+                    "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365537/rnymwcd6hepeuvw6domo.jpg"
+                },
+                "card": {
+                    "id": "sqLbqQkTgF",
+                    "title": "Shaving cream"
+                },
+                "group": {
 
+                }
+            },
+            {
+                "id": "pHV1hzMBoy",
+                "txt": "create this card",
+                "commentTxt": "",
+                "createdAt": 1601367016951,
+                "byMember": {
+                    "_id": "5f6a2528973d861c5d78c328",
+                    "fullName": "Fernando Chaves",
+                    "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365537/rnymwcd6hepeuvw6domo.jpg"
+                },
+                "card": {
+                    "id": "N4y9h6sJxd",
+                    "title": "Rice"
+                },
+                "group": {
+
+                }
             }
+        ],
+        "createdBy": {
+            "_id": "u101",
+            "fullName": "Abi Abambi",
+            "imgUrl": "http://some-img"
         },
-        {
-            "id": "mz33pnpBNd",
-            "title": "Home",
-            "description": "",
-            "archivedAt": null,
-            "members": [{
+        "style": {
+            "id": "bs106",
+            "fontClr": "#f9f9f9",
+            "bgImg": "url(https://res.cloudinary.com/duhz8ymod/image/upload/v1600708669/bg-6_tsrunp.jpg)"
+        },
+        "members": [{
                 "_id": "5f6a2528973d861c5d78c355",
                 "fullName": "Amir Asdasd",
                 "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
-            }],
-            "labels": [{
-                "id": "l101"
-            }],
-            "createdAt": 1601366757216,
-            "dueDate": null,
-            "attachments": null,
-            "timeAnalysis": {
-                "timeInGroupsMap": {
+            },
+            {
+                "_id": "5f6a2528973d861c5d78c328",
+                "fullName": "Fernando Chaves",
+                "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365537/rnymwcd6hepeuvw6domo.jpg"
+            },
+            {
+                "_id": "u101",
+                "fullName": "Abi Abambi",
+                "imgUrl": "http://some-img"
+            }
+        ],
+        "groups": [{
+                "id": "jd678ah8",
+                "title": "Skeleton",
+                "description": "description",
+                "archivedAt": false,
+                "labels": [
 
-                },
-                "currGroup": {
-                    "groupId": "yS0BIH6hb0",
-                    "enteredAt": 1601366757216
+                ],
+                "cards": [{
+                        "id": "9LCF8f9WKY",
+                        "title": "Header",
+                        "description": "header description",
+                        "archivedAt": null,
+                        "members": [
+
+                        ],
+                        "labels": [{
+                            "id": "l101"
+                        }],
+                        "createdAt": 1601366751048,
+                        "dueDate": null,
+                        "attachments": null,
+                        "timeAnalysis": {
+                            "timeInGroupsMap": {
+
+                            },
+                            "currGroup": {
+                                "groupId": "yS0BIH6hb0",
+                                "enteredAt": 1601366751048
+                            }
+                        },
+                        "byMember": {
+
+                        }
+                    },
+                    {
+                        "id": "mz33pnpBNd",
+                        "title": "Home",
+                        "description": "",
+                        "archivedAt": null,
+                        "members": [{
+                            "_id": "5f6a2528973d861c5d78c355",
+                            "fullName": "Amir Asdasd",
+                            "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
+                        }],
+                        "labels": [{
+                            "id": "l101"
+                        }],
+                        "createdAt": 1601366757216,
+                        "dueDate": null,
+                        "attachments": null,
+                        "timeAnalysis": {
+                            "timeInGroupsMap": {
+
+                            },
+                            "currGroup": {
+                                "groupId": "yS0BIH6hb0",
+                                "enteredAt": 1601366757216
+                            }
+                        },
+                        "byMember": {
+
+                        }
+                    },
+                    {
+                        "id": "yYM2GKD7da",
+                        "title": "User profile",
+                        "description": "",
+                        "archivedAt": null,
+                        "members": [
+
+                        ],
+                        "labels": [{
+                            "id": "l101"
+                        }],
+                        "createdAt": 1601366761959,
+                        "dueDate": null,
+                        "attachments": null,
+                        "timeAnalysis": {
+                            "timeInGroupsMap": {
+
+                            },
+                            "currGroup": {
+                                "groupId": "yS0BIH6hb0",
+                                "enteredAt": 1601366761959
+                            }
+                        },
+                        "byMember": {
+
+                        }
+                    },
+                    {
+                        "id": "QqCMNb9XNB",
+                        "title": "Dashboard",
+                        "description": "",
+                        "archivedAt": null,
+                        "members": [
+
+                        ],
+                        "labels": [{
+                            "id": "l101"
+                        }],
+                        "createdAt": 1601366773657,
+                        "dueDate": null,
+                        "attachments": null,
+                        "timeAnalysis": {
+                            "timeInGroupsMap": {
+
+                            },
+                            "currGroup": {
+                                "groupId": "yS0BIH6hb0",
+                                "enteredAt": 1601366773657
+                            }
+                        },
+                        "byMember": {
+
+                        }
+                    },
+                    {
+                        "id": "XHygDINBkE",
+                        "title": "Taskes",
+                        "description": "ASD",
+                        "archivedAt": null,
+                        "members": [
+
+                        ],
+                        "labels": [{
+                            "id": "l101"
+                        }],
+                        "createdAt": 1601366855608,
+                        "dueDate": null,
+                        "attachments": null,
+                        "timeAnalysis": {
+                            "timeInGroupsMap": {
+
+                            },
+                            "currGroup": {
+                                "groupId": "yS0BIH6hb0",
+                                "enteredAt": 1601366855608
+                            }
+                        },
+                        "byMember": {
+
+                        }
+                    },
+                    {
+                        "id": "N4y9h6sJxd",
+                        "title": "",
+                        "description": "New",
+                        "archivedAt": null,
+                        "members": [
+
+                        ],
+                        "labels": [{
+                            "id": "l101"
+                        }],
+                        "createdAt": 1601367016951,
+                        "dueDate": null,
+                        "attachments": null,
+                        "timeAnalysis": {
+                            "timeInGroupsMap": {
+
+                            },
+                            "currGroup": {
+                                "groupId": "yS0BIH6hb0",
+                                "enteredAt": 1601367016951
+                            }
+                        },
+                        "byMember": {
+
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "gadsgzZR",
+                "title": "Koral",
+                "cards": [
+
+                ],
+                "archivedAt": 1601366705334,
+                "style": {
+
                 }
             },
-            "byMember": {
+            {
+                "id": "Fb1Jainb",
+                "title": "Board",
+                "cards": [{
+                        "id": "0t32Ec5gDS",
+                        "title": "Chicken",
+                        "description": "",
+                        "archivedAt": null,
+                        "members": [
 
-            }
-        },
-        {
-            "id": "yYM2GKD7da",
-            "title": "User profile",
-            "description": "",
-            "archivedAt": null,
-            "members": [
+                        ],
+                        "labels": [{
+                            "id": "l103"
+                        }],
+                        "createdAt": 1601366763127,
+                        "dueDate": null,
+                        "attachments": null,
+                        "timeAnalysis": {
+                            "timeInGroupsMap": {
+                                "yS0BIH6hb0": 28761
+                            },
+                            "currGroup": {
+                                "groupId": "Fb1Jainb",
+                                "enteredAt": 1601366791888
+                            }
+                        },
+                        "byMember": {
 
-            ],
-            "labels": [{
-                "id": "l101"
-            }],
-            "createdAt": 1601366761959,
-            "dueDate": null,
-            "attachments": null,
-            "timeAnalysis": {
-                "timeInGroupsMap": {
+                        }
+                    },
+                    {
+                        "id": "Wk22cQhbja",
+                        "title": "Add card",
+                        "description": "",
+                        "archivedAt": null,
+                        "members": [
 
-                },
-                "currGroup": {
-                    "groupId": "yS0BIH6hb0",
-                    "enteredAt": 1601366761959
+                        ],
+                        "labels": [{
+                            "id": "l101"
+                        }],
+                        "createdAt": 1601366769311,
+                        "dueDate": null,
+                        "attachments": null,
+                        "timeAnalysis": {
+                            "timeInGroupsMap": {
+                                "yS0BIH6hb0": 24727
+                            },
+                            "currGroup": {
+                                "groupId": "Fb1Jainb",
+                                "enteredAt": 1601366794038
+                            }
+                        },
+                        "byMember": {
+
+                        }
+                    },
+                    {
+                        "id": "oXYSdKpZxz",
+                        "title": "Remove card",
+                        "description": "",
+                        "archivedAt": null,
+                        "members": [
+
+                        ],
+                        "labels": [{
+                            "id": "l101"
+                        }],
+                        "createdAt": 1601366866007,
+                        "dueDate": null,
+                        "attachments": null,
+                        "timeAnalysis": {
+                            "timeInGroupsMap": {
+                                "yS0BIH6hb0": 164360
+                            },
+                            "currGroup": {
+                                "groupId": "Fb1Jainb",
+                                "enteredAt": 1601367030367
+                            }
+                        },
+                        "byMember": {
+
+                        }
+                    },
+                    {
+                        "id": "VfaJaRMYrh",
+                        "title": "Edit card",
+                        "description": "",
+                        "archivedAt": null,
+                        "members": [
+
+                        ],
+                        "labels": [{
+                            "id": "l102"
+                        }],
+                        "createdAt": 1601366963901,
+                        "dueDate": null,
+                        "attachments": null,
+                        "timeAnalysis": {
+                            "timeInGroupsMap": {
+                                "yS0BIH6hb0": 68200
+                            },
+                            "currGroup": {
+                                "groupId": "Fb1Jainb",
+                                "enteredAt": 1601367032101
+                            }
+                        },
+                        "byMember": {
+
+                        }
+                    },
+                ],
+                "archivedAt": false,
+                "style": {
+
                 }
-            },
-            "byMember": {
-
             }
-        },
-        {
-            "id": "QqCMNb9XNB",
-            "title": "Dashboard",
-            "description": "",
-            "archivedAt": null,
-            "members": [
-
-            ],
-            "labels": [{
-                "id": "l101"
-            }],
-            "createdAt": 1601366773657,
-            "dueDate": null,
-            "attachments": null,
-            "timeAnalysis": {
-                "timeInGroupsMap": {
-
-                },
-                "currGroup": {
-                    "groupId": "yS0BIH6hb0",
-                    "enteredAt": 1601366773657
-                }
-            },
-            "byMember": {
-
-            }
-        },
-        {
-            "id": "XHygDINBkE",
-            "title": "Taskes",
-            "description": "ASD",
-            "archivedAt": null,
-            "members": [
-
-            ],
-            "labels": [{
-                "id": "l101"
-            }],
-            "createdAt": 1601366855608,
-            "dueDate": null,
-            "attachments": null,
-            "timeAnalysis": {
-                "timeInGroupsMap": {
-
-                },
-                "currGroup": {
-                    "groupId": "yS0BIH6hb0",
-                    "enteredAt": 1601366855608
-                }
-            },
-            "byMember": {
-
-            }
-        },
-        {
-            "id": "N4y9h6sJxd",
-            "title": "",
-            "description": "New",
-            "archivedAt": null,
-            "members": [
-
-            ],
-            "labels": [{
-                "id": "l101"
-            }],
-            "createdAt": 1601367016951,
-            "dueDate": null,
-            "attachments": null,
-            "timeAnalysis": {
-                "timeInGroupsMap": {
-
-                },
-                "currGroup": {
-                    "groupId": "yS0BIH6hb0",
-                    "enteredAt": 1601367016951
-                }
-            },
-            "byMember": {
-
-            }
-        }
         ]
-    },
-    {
-        "id": "gadsgzZR",
-        "title": "Koral",
-        "cards": [
-
-        ],
-        "archivedAt": 1601366705334,
-        "style": {
-
-        }
-    },
-    {
-        "id": "Fb1Jainb",
-        "title": "Board",
-        "cards": [{
-            "id": "0t32Ec5gDS",
-            "title": "Chicken",
-            "description": "",
-            "archivedAt": null,
-            "members": [
-
-            ],
-            "labels": [{
-                "id": "l103"
-            }],
-            "createdAt": 1601366763127,
-            "dueDate": null,
-            "attachments": null,
-            "timeAnalysis": {
-                "timeInGroupsMap": {
-                    "yS0BIH6hb0": 28761
-                },
-                "currGroup": {
-                    "groupId": "Fb1Jainb",
-                    "enteredAt": 1601366791888
-                }
-            },
-            "byMember": {
-
-            }
-        },
-        {
-            "id": "Wk22cQhbja",
-            "title": "Add card",
-            "description": "",
-            "archivedAt": null,
-            "members": [
-
-            ],
-            "labels": [{
-                "id": "l101"
-            }],
-            "createdAt": 1601366769311,
-            "dueDate": null,
-            "attachments": null,
-            "timeAnalysis": {
-                "timeInGroupsMap": {
-                    "yS0BIH6hb0": 24727
-                },
-                "currGroup": {
-                    "groupId": "Fb1Jainb",
-                    "enteredAt": 1601366794038
-                }
-            },
-            "byMember": {
-
-            }
-        },
-        {
-            "id": "oXYSdKpZxz",
-            "title": "Remove card",
-            "description": "",
-            "archivedAt": null,
-            "members": [
-
-            ],
-            "labels": [{
-                "id": "l101"
-            }],
-            "createdAt": 1601366866007,
-            "dueDate": null,
-            "attachments": null,
-            "timeAnalysis": {
-                "timeInGroupsMap": {
-                    "yS0BIH6hb0": 164360
-                },
-                "currGroup": {
-                    "groupId": "Fb1Jainb",
-                    "enteredAt": 1601367030367
-                }
-            },
-            "byMember": {
-
-            }
-        },
-        {
-            "id": "VfaJaRMYrh",
-            "title": "Edit card",
-            "description": "",
-            "archivedAt": null,
-            "members": [
-
-            ],
-            "labels": [{
-                "id": "l102"
-            }],
-            "createdAt": 1601366963901,
-            "dueDate": null,
-            "attachments": null,
-            "timeAnalysis": {
-                "timeInGroupsMap": {
-                    "yS0BIH6hb0": 68200
-                },
-                "currGroup": {
-                    "groupId": "Fb1Jainb",
-                    "enteredAt": 1601367032101
-                }
-            },
-            "byMember": {
-
-            }
-        },
-        ],
-        "archivedAt": false,
-        "style": {
-
-        }
     }
-    ]
-}
-
 ]
 
 function getBoardById(id) {
@@ -932,7 +928,7 @@ function getBoardById(id) {
 async function updateBoard(newBoard) {
     gBoards[1] = newBoard;
     return Promise.resolve(gBoards[1])
-    // return await httpService.put(`board/${boardId}`, board)
+        // return await httpService.put(`board/${boardId}`, board)
 }
 
 function createActivity(partialActivity) {
@@ -956,7 +952,7 @@ function createActivity(partialActivity) {
         }
     }
     if (!partialActivity.group) {
-        activity.group = { ...partialActivity.group }
+        activity.group = {...partialActivity.group }
     }
 
     return activity
