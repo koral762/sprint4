@@ -2,7 +2,6 @@
     width: 100%;
     background-color: rgb(255, 255, 255);
     position:initial;
-    overflow:scroll;
     scroll-behavior: smooth;
 
     
@@ -13,6 +12,7 @@
         display: block;
       
     }
+    
     section {
         display: flex;
         flex-direction: column;
