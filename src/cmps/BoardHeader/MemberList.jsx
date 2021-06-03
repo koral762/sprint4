@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { MemberPreview } from './MemberPreview';
 import { AddMemberModal } from './AddMemberModal';
-
+import AddIcon from '@material-ui/icons/Add';
 
 export class MemberList extends Component {
 
@@ -23,16 +23,16 @@ export class MemberList extends Component {
 
         return (
             <div className="members-container">
-                <div className="member-preview add-member-btn" onClick={() => this.onShowModal()}>+</div>
+                <div className={"member-preview add-member-btn" + (this.props.showBig ? " member-preview-big" : "")} onClick={() => this.onShowModal()}><AddIcon className="members-list-add-button"/></div>
                 <div className="add-member-modal-container">
-                    {this.state.isModalShown && <AddMemberModal onCloseModal={this.onCloseModal} allExistingUsers={this.props.allUsers} />}
+                    {this.state.isModalShown && <AddMemberModal onCloseModal={this.onCloseModal} allExistingUsers={this.props.allUsers} card={this.props.card} members={this.props.members}/>}
                 </div>
-
                 {
                     members.map(member => {
                         return <MemberPreview key={member._id}
                             name={member.fullName} 
                             imgUrl={member.imgUrl}
+                            showBig={this.props.showBig}
                             />
                 })}
             </div>

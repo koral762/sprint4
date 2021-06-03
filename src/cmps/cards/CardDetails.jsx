@@ -252,7 +252,12 @@ class _CardDetails extends Component {
                             toggleLabelPalette={this.toggleLabelPalette}
                             onUpdateDueDate={this.onUpdateDueDate}
                             onArchiveCard={this.onArchiveCard}
-                            onUpdateChecklists={this.onUpdateChecklists} />
+                            onUpdateChecklists={this.onUpdateChecklists} 
+                            members={this.state.card.members} 
+                            allUsers={this.props.allUsers}
+                            card={this.state.card}
+                            
+                            />
                     </div>
                     <div>
                         <section className="flex justify-space-between">
@@ -291,7 +296,9 @@ class _CardDetails extends Component {
 
 const mapStateToProps = state => {
     return {
-        board: state.boardModule.currBoard
+        board: state.boardModule.currBoard,
+        allUsers: state.userModule.users,
+        members: state.boardModule.currBoard.members
     };
 };
 

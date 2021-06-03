@@ -62,6 +62,21 @@
     margin-bottom: 50px;
 }
 
+.member-preview-big{
+    height: 2.5rem !important;
+    width: 2.5rem !important;
+    line-height: 3em;
+
+    .members-list-add-button {
+        margin-top: 8px;
+    }
+}
+
+.members-list-add-button {
+    margin-top: 8%;
+}
+
+
 .description-txt {
     flex-grow: 1;
 }
