@@ -6,17 +6,17 @@ export function CardLabels(props) {
     function displayLabel(label) {
         const boardLabel = props.boardLabels.find(boardLabel => boardLabel.id === label.id)
         if (!props.preview) return (
-            <div className={`card-details-label ${boardLabel.color}`}>
-                    {boardLabel.name}
+            <div className={`card-details-label ${boardLabel?.color}`}>
+                    {boardLabel?.name}
             </div>
         )
         if (props.isFull) return (
-            <div className={`card-preview-full-label ${boardLabel.color}`}>
-                    {boardLabel.name}
+            <div className={`card-preview-full-label ${boardLabel?.color}`}>
+                    {boardLabel?.name}
             </div>
         )
         return (
-            <div className={`card-preview-collapsed-label ${boardLabel.color}`}>
+            <div className={`card-preview-collapsed-label ${boardLabel?.color}`}>
             </div>
         )
     }
