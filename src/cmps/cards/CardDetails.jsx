@@ -17,6 +17,7 @@ import SubtitlesIcon from '@material-ui/icons/Subtitles'
 import CloseIcon from '@material-ui/icons/Close'
 import ListIcon from '@material-ui/icons/List'
 import { CardPreviewDueDate } from './CardPreviewDueDate'
+import FileCopyIcon from '@material-ui/icons/FileCopy';
 
 class _CardDetails extends Component {
 
@@ -206,10 +207,22 @@ class _CardDetails extends Component {
         this.setState({ isLabelPaletteShowing: !this.state.isLabelPaletteShowing })
     }
 
+    renderAttachments = (urlImg) => {
+        return (<div>
+            <section class="flex justify-space-between"><div class="flex">
+                <FileCopyIcon/>
+                <h3>Attachments</h3></div></section>
+            <img className="card-details-img-attach" src={urlImg}/>
+        </div>)
+    }
+
     render() {
         if (!this.state.card) {
-            return null
+            return ""
         }
+
+        const urlImg="url("+(this.state.card && this.state.card.attachments) ? this.state.card.attachments : "" +")"
+
         // console.log(this.state.card)
         return (
             <section className="card-details-modal flex column">
@@ -228,6 +241,7 @@ class _CardDetails extends Component {
                     </div>
                     <div className="flex justify-space-between">
                         <section className="main-modal-section">
+                      
                             <div className="labels-and-due-date">
                                 {this.getLabels()}
                                 {(this.state.card.dueDate ? <div>
@@ -236,6 +250,8 @@ class _CardDetails extends Component {
                                 </div> : <React.Fragment />)}
                             </div>
                             <div>
+                            {(this.state.card && this.state.card.attachments) ? this.renderAttachments(urlImg) : ""}
+
                                 <CardDescription onUpdateDesc={this.onUpdateDesc} description={this.state.card.description} />
                                 <CardChecklistContainer checklists={this.state.card.checklists} onUpdate={this.onUpdateChecklists} />
                             </div>
