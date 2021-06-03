@@ -39,7 +39,7 @@ export class CardNewChecklist extends Component {
     getNewChecklistDisplay = () => {
         if (this.state.isEditing) return (
             <form className="new-checklist-form" onBlur={this.setNotEditing} onSubmit={this.onSubmit} >
-                <input type="text" autoFocus value={this.state.txtValue} onChange={this.onChange} />
+                <input className="new-checklist-text" type="text" autoFocus value={this.state.txtValue} onChange={this.onChange} />
                 <button className="save-btn" onMouseDown={this.onSubmit}>Save</button>
             </form>
         )
