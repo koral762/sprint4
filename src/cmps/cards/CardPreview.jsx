@@ -21,7 +21,7 @@ class _CardPreview extends Component {
     ref = React.createRef()
 
     componentDidMount = () => {
-        console.log('des', this.props.card.description);
+        console.log('des', this.props.card.attachments);
 
     }
     getCardPreviewAttachments = () => {
@@ -129,6 +129,11 @@ class _CardPreview extends Component {
 
     render() {
         const card = this.props.card
+        const strStyle="url("+card.attachments+")"
+
+        const cardAttachStyle = {
+            "background-image": strStyle,
+        }
 
         return (
             <Draggable
@@ -140,7 +145,8 @@ class _CardPreview extends Component {
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
                         ref={provided.innerRef}>
-                        <div>
+                        <div className="attach-div">
+                            {card.attachments && <img className="img-attach" style={cardAttachStyle}/>}
                             <div className="card-preview-start">
                                 <CardLabels onClickLabel={this.onToggleLabels}
                                     isFull={this.props.fullLabel}

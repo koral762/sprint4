@@ -18,8 +18,23 @@
     &:hover {
         .card-btn{
             display: block;
+            position: absolute;
+            right:0;
+            margin-right: 0.8rem;
+            margin-top: 0.4rem;
+            background-color:$hovergray;
         }
         background: $trnsprnt;
+    }
+
+    .img-attach{
+        background-color: rgb(34, 34, 34);
+        height: 106.167px;
+        background-size: cover;
+    }
+
+    .attach-div{
+        flex-grow: 1;
     }
 
 }
@@ -104,9 +119,6 @@
         
         &:hover{
         cursor: pointer;
-        height: 10px;
-        border-radius: 5px;
-        background-color: $hovergray;
     }
 
 

@@ -10,12 +10,12 @@ export const boardService = {
 var gBoards = require('./data/board.json')
 
 function getBoardById(id) {
-    return Promise.resolve(gBoards[1])
+    return Promise.resolve(gBoards[0])
 }
 
 async function updateBoard(newBoard) {
-    gBoards[1] = newBoard;
-    return Promise.resolve(gBoards[1])
+    gBoards[0] = newBoard;
+    return Promise.resolve(gBoards[0])
     // return await httpService.put(`board/${boardId}`, board)
 }
 
@@ -27,11 +27,11 @@ function createActivity(partialActivity) {
         "txt": partialActivity.txt,
         "commentTxt": partialActivity.commentTxt,
         "createdAt": Date.now(),
-        // "byMember": {
-        //     "_id": user._id,
-        //     "fullName": user.fullName,
-        //     "imgUrl": user.imgUrl
-        // }
+        "byMember": {
+            // "_id": user._id,
+            // "fullName": user.fullName,
+            // "imgUrl": user.imgUrl
+        }
     }
     if (partialActivity.card) {
         activity.card = {
