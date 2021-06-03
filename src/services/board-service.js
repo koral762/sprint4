@@ -157,7 +157,7 @@ var gBoards = [{
         ],
         "cards": [{
             "id": "9LCF8f9WKY",
-            "title": "Milk",
+            "title": "koko",
             "description": "",
             "archivedAt": null,
             "members": [
@@ -168,7 +168,7 @@ var gBoards = [{
             }],
             "createdAt": 1601366751048,
             "dueDate": null,
-            "attachments": null,
+            "attachments": "http://avante.biz/wp-content/uploads/Tab-HD-Wallpapers/Tab-HD-Wallpapers-002.jpg",
             "timeAnalysis": {
                 "timeInGroupsMap": {
 
@@ -480,7 +480,7 @@ var gBoards = [{
 },
 {
     "_id": "5f33ea5a1ab1fc004378274",
-    "title": "Three-lo",
+    "title": "Tree-lo",
     "isArchived": false,
     "description": "Board's bla bla bla.... koko!!",
     "labels": [{
@@ -926,12 +926,12 @@ var gBoards = [{
 ]
 
 function getBoardById(id) {
-    return Promise.resolve(gBoards[1])
+    return Promise.resolve(gBoards[0])
 }
 
 async function updateBoard(newBoard) {
-    gBoards[1] = newBoard;
-    return Promise.resolve(gBoards[1])
+    gBoards[0] = newBoard;
+    return Promise.resolve(gBoards[0])
     // return await httpService.put(`board/${boardId}`, board)
 }
 
@@ -943,11 +943,11 @@ function createActivity(partialActivity) {
         "txt": partialActivity.txt,
         "commentTxt": partialActivity.commentTxt,
         "createdAt": Date.now(),
-        // "byMember": {
-        //     "_id": user._id,
-        //     "fullName": user.fullName,
-        //     "imgUrl": user.imgUrl
-        // }
+        "byMember": {
+            // "_id": user._id,
+            // "fullName": user.fullName,
+            // "imgUrl": user.imgUrl
+        }
     }
     if (partialActivity.card) {
         activity.card = {
