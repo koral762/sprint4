@@ -16,6 +16,7 @@ export function Home() {
 
             <h1>HOME PAGE!!!</h1>
             <h1>HOME PAGE!!!</h1>
+            <Link to={`/board/`} className="tryit">Try It now!</Link>
             <h1>HOME PAGE!!!</h1>
             <h1>HOME PAGE!!!</h1>
             <h1>after img!!!</h1>

@@ -11,9 +11,9 @@ export class _BoardApp extends Component {
         lastReceivedUpdateAt: ''
     }
 
-    componentDidMount() {
-        const id='5f72ea5a1ab1fc0017450368';
-        this.props.loadBoard(id)
+    async componentDidMount() {
+        const { boardId } = this.props.match.params
+        await this.props.loadBoard(boardId)
     }
 
     onAddGroup = (txt) => {
@@ -26,7 +26,7 @@ export class _BoardApp extends Component {
 
     render() {
         const { board } = this.props
-        
+        console.log('currBoard', board);
         return (
             <React.Fragment>
 
