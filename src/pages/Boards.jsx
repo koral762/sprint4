@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { loadBoard } from '../store/actions/board-actions'
+import { loadBoard, removeBoard } from '../store/actions/board-actions'
 import { Link } from "react-router-dom";
 import ReactDOM from 'react-dom';
 import Coverflow from 'react-coverflow';
@@ -14,13 +14,12 @@ export class _Boards extends Component {
     }
 
     componentDidMount() {
-        console.log('boardspage');
+        console.log('boards page')
+        this.props.loadBoard()
     }
+    // this.props.removeBoard()
 
-
-    fn() {
-    }
-
+    fn() {}
 
     render() {
         const { board } = this.props
@@ -145,7 +144,8 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-    loadBoard
+    loadBoard,
+    removeBoard
 }
 
 export const Boards = connect(mapStateToProps, mapDispatchToProps)(_Boards)

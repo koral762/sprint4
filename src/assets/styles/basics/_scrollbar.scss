@@ -1,12 +1,12 @@
 ::-webkit-scrollbar {
     width: 8px;
-    height: 8px;
-    background: rgba(9,30,66,.08);
+    height: 10px;
+    background: rgba(9,30,66,0.3);
 }
 
 ::-webkit-scrollbar-button {
-    width: 14px;
-    height: 14px;
+    width: 10px;
+    height: 10px;
     display: none;
     border-radius: 50px;
 }
@@ -32,11 +32,11 @@
 }
 
 ::-webkit-scrollbar-track:hover {
-    background: rgba(255, 255, 255, 0);
+    background: rgba(0, 0, 0, 0.274);
 }
 
 ::-webkit-scrollbar-track:active {
-    background: rgba(9,30,66,.08);
+    background: rgba(9,30,66,0.274);
 }
 
 ::-webkit-scrollbar-corner {

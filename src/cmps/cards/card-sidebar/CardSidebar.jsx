@@ -1,6 +1,7 @@
-import { CardDueDateSetter } from "../CardDueDateSetter"
 import React from 'react'
+import { CardDueDateSetter } from "../CardDueDateSetter"
 import { CardNewChecklist } from "../CardNewChecklist"
+// import { Upload } from "../../Upload"
 import LabelOutlinedIcon from '@material-ui/icons/LabelOutlined';
 import { MemberList } from '../../BoardHeader/MemberList';
 

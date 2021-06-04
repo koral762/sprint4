@@ -7,13 +7,9 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import EmailIcon from '@material-ui/icons/Email';
 
 export function Home() {
-
     return (
-
-
-        < section className="home flex column align-center justify-center" >
+        <section className="home flex column align-center justify-center" >
             <section className="start-home-page">
-
                 <h1>koral</h1>
                 <div className="img-home"></div>
             </section>

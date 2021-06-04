@@ -5,7 +5,6 @@ import { Boards } from './pages/Boards.jsx'
 
 
 export const routes = [
-
     {
         path: '/board/card/:cardId',
         component: BoardApp,

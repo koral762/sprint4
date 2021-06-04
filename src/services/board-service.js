@@ -1,3 +1,5 @@
+import { httpService } from './http-service'
+// var cloudinary = require('cloudinary').v2;
 import { utils } from './utils-service'
 
 export const boardService = {
@@ -40,7 +42,7 @@ function createActivity(partialActivity) {
         }
     }
     if (!partialActivity.group) {
-        activity.group = { ...partialActivity.group }
+        activity.group = {...partialActivity.group }
     }
 
     return activity
