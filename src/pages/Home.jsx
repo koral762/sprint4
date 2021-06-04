@@ -15,6 +15,8 @@ export function Home() {
             </section>
 
             <h1>HOME PAGE!!!</h1>
+            <h1>HOME PAGE!!!</h1>
+            <Link to={ `/board/` } className="tryit">Try It now!</Link>
             <h1>after img!!!</h1>
             <h1>HOME PAGE!!!</h1>
             <p className="about-us">Meet the Team</p>

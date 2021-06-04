@@ -13,6 +13,16 @@ export function loadBoard(id) {
         }
     }
 }
+export function loadBoards() {
+    return async dispatch => {
+        try {
+            const boards = await boardService.query()
+            dispatch({ type: 'SET_BOARDS', boards })
+        } catch (err) {
+            console.log('ReviewActions: err in loadBoard', err)
+        }
+    }
+}
 
 export function removeBoard(boardId) {
     return async dispatch => {

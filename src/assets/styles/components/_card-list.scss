@@ -9,6 +9,8 @@
     flex-grow: 0;
     flex-shrink: 0;
     box-sizing: border-box;
+    flex:1;
+    
     .group-header {
         font-weight: 600;
         cursor: pointer;
@@ -23,11 +25,10 @@
             background: $trnsprnt;
         }
     }
+ 
 }
 
 .cards-content-wrapper {
-    overflow-y: auto;
-    overflow-x: hidden;
     margin: 0 4px;
     padding: 0 4px;
     z-index: 0;
