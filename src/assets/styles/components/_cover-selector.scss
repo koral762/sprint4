@@ -1,0 +1,21 @@
+.cover-selector-container {
+    padding: 10px;
+}
+
+.close-cover-modal {
+    position: absolute;
+    left: 140px;
+}
+
+.color-selection {
+    display: grid;
+    grid-template-columns: repeat(3, 25px);
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.color-choice {
+    border-radius: 2px;
+}
