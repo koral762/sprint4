@@ -1,50 +1,83 @@
 .app-header {
-    padding: 4px 4px;
-    // padding: 10px 1rem 10px 1rem;
-    // position: fixed;
-    // right: 0;
-    // top: 0;
-    // transform: translateX(100%);
-    // align-items: center;
-    color: $darktxt;
-    background-color: $trnsprnt;
+  //   padding: 4px 4px;
+  // padding: 10px 1rem 10px 1rem;
+  // position: relative;
+  // right: 0;
+  // top: 0;
+  // transform: translateX(100%);
+  // align-items: center;
+  height: 40px;
+  color: $darktxt;
+  background-color: $trnsprnt;
+  width: 100vw;
+  // z-index: 2;
+  //   transition: transform 0.5s ease-in-out;
+  box-shadow: $boxShadow1;
+  &.open {
+    transform: translateX(0%);
+  }
+
+  ul {
+    position: absolute;
+    top: 10vh;
     width: 100%;
-    z-index: 2;
-    transition: transform 0.5s ease-in-out;
-    box-shadow: $boxShadow1;
-    &.open {
-        transform: translateX(0%);
+    flex-direction: column;
+    align-items: center;
+    // padding: em(10px);
+    > *:not(:last-child) {
+      //   margin-bottom: em(16px);
+      li {
+        // padding: 0 10px;
+      }
     }
-    ul {
-        position: absolute;
-        top: 10vh;
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-        padding: em(10px);
-        >*:not(:last-child) {
-            margin-bottom: em(16px);
-            li {
-                padding: 0 10px;
-            }
-        }
-    }
-    span {
-        font-size: rem(24px);
-        vertical-align: middle;
-        display: flex;
-        align-items: center;
-        
-        .boardsicon{
-            font-weight: bold;
-            margin-left: rem(1px);
-            font-size: 14px;
-        
-        }
-    }
+  }
+  span {
+    font-size: rem(24px);
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+  }
+}
 
-    .logo{
-        font-size: rem(24px);
-    }
+.boards-icon {
+  font-weight: bold;
+  //   margin-left: rem(1px);
+  font-size: 14px;
+}
 
+.logo {
+  font-size: rem(24px);
+}
+.logo-img {
+  transform: translateX(-50%);
+  height: 100%;
+  width: auto;
+}
+
+.login-btn,
+.signup-btn {
+  color: $lighttxt;
+  background-color: #30aa00;
+  font-weight: 500;
+  font-size: rem(17.5px);
+  line-height: 1.5;
+  border-radius: 0.2rem;
+  white-space: nowrap;
+  user-select: none;
+  padding: rem(4px) rem(8px);
+}
+.login-btn {
+  background-color: transparent;
+  color: #30aa00;
+  transition: text-decoration 0.15s ease-in-out;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.signup-btn {
+  transition: background-color 0.15s ease-in-out;
+  &:hover {
+    background-color: #2d9105;
+  }
 }

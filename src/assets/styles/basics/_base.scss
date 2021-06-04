@@ -1,38 +1,46 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    // height: 100vh;
-    font-family: 'Poppins-Light';
-    color: $darktxt;
-    line-height: 1.6;
-    margin: 0;
-    -webkit-text-size-adjust: 100%;
+  // height: 100vh;
+  // font-family: "Helvetica Neue",Arial,sans-serif;
+  // font-family: 'Poppins-Light';
+  font-family: 'Roboto', sans-serif;
+  color: $darktxt;
+  line-height: 1.6;
+  margin: 0;
+  -webkit-text-size-adjust: 100%;
 }
 
-body, button, html, input, select, textarea {
-    color: #172b4d;
-    line-height: 20px;
-    font-weight: 400;
+body,
+button,
+html,
+input,
+select,
+textarea {
+  color: #172b4d;
+  line-height: 20px;
+  font-weight: 400;
 }
 
 body {
-    font-size: rem(14px);
-    margin: 0;
-    scroll-behavior: smooth;
-    background-repeat: no-repeat;
-    // background-image: url('../../imgs/output-onlinegiftools.gif');
-    // background-size: auto;
-    // background-position: bottom right;
-    // background-image: url('../../imgs/Quantum-Gradient.svg');
-    background-image: url('../../imgs/field.jpg');
-    background-size: cover;
-    white-space: nowrap;
+  font-family: 'Roboto', sans-serif;
+  font-size: rem(14px);
+  margin: 0;
+  scroll-behavior: smooth;
+  background-repeat: no-repeat;
+  background-image: url('../../imgs/field.jpg');
+  background-size: cover;
+  white-space: nowrap;
+  // background-image: url('../../imgs/output-onlinegiftools.gif');
+  // background-size: auto;
+  // background-position: bottom right;
+  // background-image: url('../../imgs/Quantum-Gradient.svg');
 }
 
 img {
-    width: 100%;
+  width: 100%;
 }
 
 h1,
@@ -41,74 +49,75 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: Poppins-Regular;
-    font-weight: normal;
-    line-height: 1;
-    margin: 0;
+  font-family: Poppins-Regular;
+  // font-family: 'Arial', sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  margin: 0;
 }
 
 p {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 button {
-    font-family: inherit;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    cursor: pointer;
-    margin: 0;
+  // font-family: inherit;
+  border: none;
+  // border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  margin: 0;
 }
 
 a {
-    color: $darktxt;
-    outline: none;
-    text-decoration: none;
-    padding: 0;
-    margin: 0;
+  color: $darktxt;
+  outline: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
 }
 
 textarea {
-    resize: none;
-    height: 36px;
-    border: none;
-    border-radius: 3px;
-    padding: 2px;
-    line-height: 20px;
-    width: 100%;
-    background-color: transparent;
-    color: inherit;
-    margin-bottom: 2px;
-    white-space: pre-wrap;
-    &:focus {
-        border: 2px solid $clr4;
-        background-color: #fff;
-    }
+  resize: none;
+  height: 36px;
+  border: none;
+  border-radius: 3px;
+  padding: 2px;
+  line-height: 20px;
+  width: 100%;
+  background-color: transparent;
+  color: inherit;
+  margin-bottom: 2px;
+  white-space: pre-wrap;
+  &:focus {
+    border: 2px solid $clr4;
+    background-color: #fff;
+  }
 }
 
-input[type=search],
-input[type=text] {
-    outline: none;
-    font-size: em(16px);
-    padding: 0.5em 0.5em;
-    background-color: $trnsprnt;
-    border: none;
-    border-radius: 4px;
-    &:focus {
-        width: 250px;
-        background-color: #fff;
-    }
-    &::placeholder {
-        color: $darktxt;
-    }
+input[type='search']:not(.boards-filter),
+input[type='text']:not(.boards-filter) {
+  outline: none;
+  font-size: em(16px);
+  padding: 0.5em 0.5em;
+  background-color: $trnsprnt;
+  border: none;
+  border-radius: 4px;
+  &:focus {
+    width: 250px;
+    background-color: #fff;
+  }
+  &::placeholder {
+    color: $darktxt;
+  }
 }
 
 span {
-    vertical-align: middle;
-    margin-right: 5px;
+  vertical-align: middle;
+  margin-right: 5px;
 }
 
 span.MuiIconButton-label {
-    margin-right: 0px;
+  margin-right: 0px;
 }

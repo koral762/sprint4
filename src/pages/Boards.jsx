@@ -21,47 +21,46 @@ export class _Boards extends Component {
         console.log('propx koral', boards);
         return (
             <section className="boards-page-bg flex column ">
-
                 <div className="main-boards">
-
-                    <div className="title">Boards</div>
-                    <div className="search-board">
-                        <input type="text" placeholder="Search...🔍" ></input>
+                    <div className="flex justify-space-between align-center">
+                    <h3>Your Boards</h3>
+                        <input className="boards-filter" type="text" placeholder="Search...
+                        " ></input>
                     </div>
 
                     <section className="select-board-container">
-
-                        <div className="creat-new-board">
-                            <div><AddBoxIcon /></div>Create new board
-                        </div>
+                        <div className="creat-new-board ">
+                        <div className="new-board-text flex align-center">
+                            <AddBoxIcon />
+                            <p>Create new board</p>
+                        </div></div>
                         {boards.map((board) => <BoardPreview key={board._id} board={board} />)}
                     </section>
-                    <hr></hr>
-                    <div className="title">Most popular templates</div>
+
+                    <h3>Popular templates</h3>
 
                     <section className="select-board-container templates-board-container">
-                        <div className="board" style={{
+                        <div className="template" style={{
                             backgroundImage: "url(http://avante.biz/wp-content/uploads/Tab-HD-Wallpapers/Tab-HD-Wallpapers-004.jpg)"
                         }}><span>Templet</span></div>
-                        <div className="board" style={{
+                        <div className="template" style={{
                             backgroundImage: "url(http://avante.biz/wp-content/uploads2/Autumn-City-Wallpapers-for-desktop-1/Autumn-City-Wallpapers-for-desktop-74.jpg)"
                         }}><span>Templet</span></div>
-                        <div className="board" style={{
+                        <div className="template" style={{
                             backgroundImage: "url(http://avante.biz/wp-content/uploads/Tab-HD-Wallpapers/Tab-HD-Wallpapers-027.jpg)"
                         }}><span>Templet</span></div>
-                        <div className="board" style={{
+                        <div className="template" style={{
                             backgroundImage: "url(http://avante.biz/wp-content/uploads2/Autumn-City-Wallpapers-for-desktop-1/Autumn-City-Wallpapers-for-desktop-11.jpg)"
                         }}><span>Templet</span></div>
-                        <div className="board" style={{
+                        <div className="template" style={{
                             backgroundImage: "url(http://avante.biz/wp-content/uploads2/Autumn-City-Wallpapers-for-desktop-1/Autumn-City-Wallpapers-for-desktop-2.jpg)"
                         }}><span>Templet</span></div>
-                        <div className="board" style={{
+                        <div className="template" style={{
                             backgroundImage: "url(http://avante.biz/wp-content/uploads2/Autumn-City-Wallpapers-for-desktop-1/Autumn-City-Wallpapers-for-desktop-27.jpg)"
                         }}><span>Templet</span></div>
-                        <div className="board" style={{
+                        <div className="template" style={{
                             backgroundImage: "url(http://avante.biz/wp-content/uploads/Tab-HD-Wallpapers/Tab-HD-Wallpapers-059.jpg)"
                         }}><span>Templet</span></div>
-
                     </section>
 
                 </div>

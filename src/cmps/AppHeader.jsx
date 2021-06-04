@@ -12,6 +12,8 @@ import { onLogout } from '../store/actions/user-actions'
 
 import { userService } from '../services/user-service'
 // import { CloseOutlined } from '@material-ui/icons'
+// import Logo from '../assets/imgs/light-trello.jpeg'
+import Logo from '../assets/imgs/logo.png'
 
 
 export class _AppHeader extends Component {
@@ -22,7 +24,6 @@ export class _AppHeader extends Component {
         isUserDetailsOpen: false,
         loggedinUser: null
     }
-
 
     toggleModal = () => {
         this.setState({ isNewBoardModalShown: !this.state.isNewBoardModalShown })
@@ -35,7 +36,6 @@ export class _AppHeader extends Component {
     componentDidMount() {
         this.setState({ loggedinUser: userService.getLoggedinUser() })
     }
-
 
     redirectPath = (id) => {
         this.props.history.replace(`/`)
@@ -73,22 +73,23 @@ export class _AppHeader extends Component {
         return (
             <React.Fragment>
                 <div className="flex justify-space-between app-header align-center">
+
                     <div className="header-icons flex">
                         <div><NavLink to='/'><span className="material-icons btn">
                             home</span></NavLink></div>
                         <div><NavLink to='/board'><span className="btn">
-                            <DashboardIcon/> <span className="boardsicon">Boards</span></span></NavLink></div>
+                            <DashboardIcon/> <span className="boards-icon">Boards</span></span></NavLink></div>
                     </div>
 
                     <div className="logo">Tree-lo</div>
+                    {/* <img src={Logo} className="logo-img"/> */}
 
                     <div className="flex">
-                        <div onClick={this.toggleModal}><span className="material-icons">
-                            add
-                        </span>
-                        </div>
-                        <div>Login</div>
+                        <div onClick={this.toggleModal}></div>
+                        <NavLink to='#' className="login-btn">Log in</NavLink>
+                        <NavLink to='#' className="signup-btn">Sign up</NavLink>
                     </div>
+
                 </div>
             </React.Fragment>
         )
