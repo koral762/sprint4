@@ -23,6 +23,7 @@
     white-space: normal;
     height: fit-content;
     vertical-align: top;
+    flex:1;
     span {
         display: flex;
         align-items: center;
@@ -69,7 +70,7 @@ div {
     justify-content: space-between;
     z-index: 1;
     white-space: normal;
-    padding: rem(5px) rem(5px);
+    padding: rem(7px) rem(7px);
     .dots-icon {
         color: #6b778c;
         text-align: center;

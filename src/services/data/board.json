@@ -1,7 +1,7 @@
 [
   {
     "_id": "5f72ea5a1ab1fc0017450368",
-    "title": "Groceries",
+    "title": "Waza.app",
     "isArchived": false,
     "description": "Board's description",
     "labels": [
@@ -142,7 +142,68 @@
           "archivedAt": false,
           "labels": [],
           "cards": [
-              
+            {
+              "id": "JqCMNa9GNB",
+              "title": "Extra Ideas",
+              "description": "Here are some ideas",
+              "archivedAt": null,
+              "members": [
+                {
+                    "_id": "5f6a2528973d861c5d78c355",
+                    "fullName": "Koral Sabbah",
+                    "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
+                }
+            ],
+              "labels": [
+                  {
+                      "id": "l101"
+                  }
+              ],
+              "createdAt": 1601366773657,
+              "dueDate": 1622922840000,
+              "attachments": "https://www.visual-paradigm.com/servlet/editor-content/tutorials/flowchart-tutorial/sites/7/2018/09/flowchart-example.png",
+              "timeAnalysis": {
+                  "timeInGroupsMap": {
+                      "yS0BIH6hb0": 21296913157
+                  },
+                  "currGroup": {
+                      "groupId": "Fb1Jainb",
+                      "enteredAt": 1622663686814
+                  }
+              },
+              "byMember": {}
+          },
+          {
+            "id": "OtKmRxN2FN",
+            "title": "Fire someone like a BOSS",
+            "description": "",
+            "archivedAt": null,
+            "members": [],
+            "labels": [
+                {
+                    "id": "l105"
+                },
+                {
+                    "id": "l101"
+                },
+                {
+                    "id": "l103"
+                }
+            ],
+            "createdAt": 1622663764149,
+            "dueDate": 1640033760000,
+            "attachments": null,
+            "timeAnalysis": {
+                "timeInGroupsMap": {
+                    "gadsgzZQ": 113733
+                },
+                "currGroup": {
+                    "groupId": "gadsgzZR",
+                    "enteredAt": 1622663877882
+                }
+            },
+            "byMember": {}
+        }
           ]
       },
       {
@@ -150,6 +211,35 @@
           "title": "Product Design",
           "cards": [
               {
+                  "id": "ozTQQr5seA",
+                  "title": "Add Logo",
+                  "description": "Make logo for header",
+                  "archivedAt": null,
+                  "members": [],
+                  "labels": [
+                      {
+                          "id": "l101"
+                      },
+                      {
+                          "id": "l103"
+                      },
+                      {
+                          "id": "l106"
+                      }
+                  ],
+                  "createdAt": 1622663730473,
+                  "dueDate": null,
+                  "attachments": null,
+                  "timeAnalysis": {
+                      "timeInGroupsMap": {},
+                      "currGroup": {
+                          "groupId": "gadsgzZR",
+                          "enteredAt": 1622663730473
+                      }
+                  },
+                  "byMember": {}
+              },
+               {
                   "id": "ozTQQr5seA",
                   "title": "Optimizer",
                   "description": "Add a user optimizer to convert more users",
@@ -178,37 +268,6 @@
                   },
                   "byMember": {}
               },
-              {
-                "id": "OtKmRxN2FN",
-                "title": "Christmas Special",
-                "description": "Add a christmas landing page with special offers",
-                "archivedAt": null,
-                "members": [],
-                "labels": [
-                    {
-                        "id": "l105"
-                    },
-                    {
-                        "id": "l101"
-                    },
-                    {
-                        "id": "l103"
-                    }
-                ],
-                "createdAt": 1622663764149,
-                "dueDate": 1640033760000,
-                "attachments": null,
-                "timeAnalysis": {
-                    "timeInGroupsMap": {
-                        "gadsgzZQ": 113733
-                    },
-                    "currGroup": {
-                        "groupId": "gadsgzZR",
-                        "enteredAt": 1622663877882
-                    }
-                },
-                "byMember": {}
-            },
             {
               "id": "OtKmRxN2AN",
               "title": "Halloween Special",
@@ -289,11 +348,6 @@
                   "description": "Add a chart component with user statistics\n\nTotal Users\nActive Users\nConverted Users",
                   "archivedAt": null,
                   "members": [
-                    {
-                        "_id": "5f6a2528973d861c5d78c355",
-                        "fullName": "Koral Sabbah",
-                        "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
-                    }
                 ],
                   "labels": [
                       {
@@ -302,7 +356,7 @@
                   ],
                   "createdAt": 1601366773657,
                   "dueDate": 1622922840000,
-                  "attachments": null,
+                  "attachments": "https://support.monday.com/hc/article_attachments/360022571279/article_attachments_360016275899_db1_en-us.png",
                   "timeAnalysis": {
                       "timeInGroupsMap": {
                           "yS0BIH6hb0": 21296913157
@@ -313,38 +367,7 @@
                       }
                   },
                   "byMember": {}
-              },
-              {
-                "id": "JqCMNa9GNB",
-                "title": "Extra Ideas",
-                "description": "Here are some ideas",
-                "archivedAt": null,
-                "members": [
-                  {
-                      "_id": "5f6a2528973d861c5d78c355",
-                      "fullName": "Koral Sabbah",
-                      "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
-                  }
-              ],
-                "labels": [
-                    {
-                        "id": "l101"
-                    }
-                ],
-                "createdAt": 1601366773657,
-                "dueDate": 1622922840000,
-                "attachments": "https://www.visual-paradigm.com/servlet/editor-content/tutorials/flowchart-tutorial/sites/7/2018/09/flowchart-example.png",
-                "timeAnalysis": {
-                    "timeInGroupsMap": {
-                        "yS0BIH6hb0": 21296913157
-                    },
-                    "currGroup": {
-                        "groupId": "Fb1Jainb",
-                        "enteredAt": 1622663686814
-                    }
-                },
-                "byMember": {}
-            }
+              }
           ]
       },
       {
@@ -592,17 +615,17 @@
     "members": [{
         "_id": "5f6a2528973d861c5d78c355",
         "fullName": "Koral Sabbah",
-        "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
+        "imgUrl": "https://i.ibb.co/LSCZg2N/KORAL.png"
       },
       {
         "_id": "5f6a2528973d861c5d78c328",
         "fullName": "Ksenia Braginsky",
-        "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365537/rnymwcd6hepeuvw6domo.jpg"
+        "imgUrl": "https://i.ibb.co/k9H36Tm/MOIPNG.png"
       },
       {
         "_id": "5f6a2528973d861c5d78c322",
         "fullName": "Miriam Baranovska",
-        "imgUrl": "http://some-img"
+        "imgUrl": "https://i.ibb.co/85x18Tb/MIRIAMPNG.png"
       },
       {
         "_id": "5f6a2528973d861c5d78c323",
@@ -652,7 +675,38 @@
                     }
                 },
                 "byMember": {}
-            }
+            },
+            {
+              "id": "OtKmRxN2FN",
+              "title": "Fire someone like a BOSS",
+              "description": "",
+              "archivedAt": null,
+              "members": [],
+              "labels": [
+                  {
+                      "id": "l105"
+                  },
+                  {
+                      "id": "l101"
+                  },
+                  {
+                      "id": "l103"
+                  }
+              ],
+              "createdAt": 1622663764149,
+              "dueDate": 1640033760000,
+              "attachments": null,
+              "timeAnalysis": {
+                  "timeInGroupsMap": {
+                      "gadsgzZQ": 113733
+                  },
+                  "currGroup": {
+                      "groupId": "gadsgzZR",
+                      "enteredAt": 1622663877882
+                  }
+              },
+              "byMember": {}
+          }
         ]
     },
       {
@@ -804,11 +858,6 @@
                 "description": "Add a chart component with user statistics\n\nTotal Users\nActive Users\nConverted Users",
                 "archivedAt": null,
                 "members": [
-                    {
-                        "_id": "5f6a2528973d861c5d78c355",
-                        "fullName": "Koral Sabbah",
-                        "imgUrl": "https://res.cloudinary.com/dyslqd6pn/image/upload/v1601365356/tx2jp0nl1ruofyhbdrnv.webp"
-                    }
                 ],
                 "labels": [
                     {
@@ -817,7 +866,7 @@
                 ],
                 "createdAt": 1601366773657,
                 "dueDate": 1622922840000,
-                "attachments": null,
+                "attachments": "https://support.monday.com/hc/article_attachments/360022571279/article_attachments_360016275899_db1_en-us.png",
                 "timeAnalysis": {
                     "timeInGroupsMap": {
                         "yS0BIH6hb0": 21296913157

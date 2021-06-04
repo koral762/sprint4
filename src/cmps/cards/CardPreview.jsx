@@ -146,8 +146,8 @@ class _CardPreview extends Component {
                         {...provided.dragHandleProps}
                         ref={provided.innerRef}>
                         <div className="attach-div">
-                            {card.attachments && <img className="img-attach" style={cardAttachStyle}/>}
                             <div className="card-preview-start">
+                            {card.attachments && <img className="img-attach" style={cardAttachStyle}/>}
                                 <CardLabels onClickLabel={this.onToggleLabels}
                                     isFull={this.props.fullLabel}
                                     cardLabels={card.labels}

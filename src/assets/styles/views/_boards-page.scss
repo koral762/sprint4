@@ -2,45 +2,55 @@
 .boards-page-bg{
     background-color: #fff;
     flex:1;
-    overflow-y: scroll;
+    
 }
 
-.tryit{
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: rgb(78, 38, 224);
-    color: azure;
+.main-boards{
     
-    &:hover{
-        background-color: rgb(40, 11, 143);
-        
-    }
-    
-    @media (max-width:700px){
-        font-size:rem(15px);
-        height: 50px;
-        width: 100px;
-        border-radius: 15px;
-    }
-    @media (min-width:700px){
-        font-size:rem(30px);
-        height: 100px;
-        width: 200px;
-        border-radius: 30px;
+    margin-left: rem(50px);
+    margin-right: rem(50px);
+
+    hr{
+        margin-top:1rem;
     }
 }
 
-.creat-new-board {
-    background-color: rgb(133, 231, 150);
+.title{
+
+    &:first-child{
+
+        margin-top: rem(60px);
+    }
+    margin-top: rem(40px);
+    font-size: rem(50px);
+    margin-bottom: 2rem;
+}
+
+
+.select-board-container{
+    display:flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    margin-right: 2px;
+}
+
+.search-board{
+    border: 1px solid blue;
+    border-radius: 7px;
+    margin-bottom: 1rem;
+    width: 200px;
+}
+
+.creat-new-board, .board {
     
-    height: 200px;
-    width: 300px;
-    margin: 2rem;
+    background-color: rgba(133, 231, 149, 0.863);
+    box-shadow: 3px 3px #e0d8d8;
+    
+    height: 150px;
+    min-width: 200px;
+    margin: 4px;
     border-radius: 20px;
-    font-size:rem(30px);
+    font-size:rem(20px);
 
     display: flex;
     align-items: center;
@@ -48,14 +58,26 @@
     justify-content: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
+    background-position: center;
+    background-size: cover;
+
+    
+
+    span{
+        color: #e0d8d8;
+        text-transform: uppercase;
+        font-family: 'Raleway', cursive;
+        -webkit-text-stroke-width: 0.8px;
+        -webkit-text-stroke-color: black;
+    }
+    
+
     
 }
+
 
 .coverflow__text__39hqd{
     display: none;
-}
-
-.coverflow__cover__25-7e{
 }
 
 .coverflow__figure__3bk_C {

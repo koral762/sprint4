@@ -39,17 +39,15 @@ button,
 .new-item-btn{
     display: flex;
     align-items: center;
-    
-    height: 2.5rem;
+    height: 2rem;
     font-size: em(20px);
     text-align: baseline;
     color: #5e6c84;
     cursor: pointer;
-    
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Droid Sans,Helvetica Neue,sans-serif;
-    line-height: 20px;
+    line-height: 18px;
     font-weight: 400;
-
+padding-left: 2px;
     &:hover{
         background-color: #ebecf0;
     }

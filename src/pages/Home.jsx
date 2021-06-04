@@ -7,21 +7,16 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import EmailIcon from '@material-ui/icons/Email';
 
 export function Home() {
-
     return (
-
-
-        < section className="home flex column align-center justify-center" >
-            <section className="start-home-page">
-
+        <section className="home flex column align-center justify-center" >
+            <section className="start-home-page flex">
                 <h1>koral</h1>
                 <div className="img-home"></div>
             </section>
 
             <h1>HOME PAGE!!!</h1>
             <h1>HOME PAGE!!!</h1>
-            <h1>HOME PAGE!!!</h1>
-            <h1>HOME PAGE!!!</h1>
+            <Link to={ `/board/` } className="tryit">Try It now!</Link>
             <h1>after img!!!</h1>
             <h1>HOME PAGE!!!</h1>
             <p className="about-us">Meet the Team</p>
@@ -59,7 +54,7 @@ export function Home() {
                 </div>
 
             </div>
-            <div className="contact-us">k</div>
+            {/* <div className="contact-us">k</div> */ }
         </section>
     )
 }

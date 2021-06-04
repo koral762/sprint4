@@ -1,22 +1,27 @@
+import { httpService } from './http-service'
+// var cloudinary = require('cloudinary').v2;
 import { utils } from './utils-service'
 
 export const boardService = {
     getBoardById,
     updateBoard,
     createActivity,
-    getCardTitleById
+    getCardTitleById,
+    query
 }
 
 var gBoards = require('./data/board.json')
 
-function getBoardById(id) {
-    return Promise.resolve(gBoards[0])
+async function getBoardById(id) {
+    return await httpService.get(`board/${id}`)
+}
+
+async function query() {
+    return await httpService.get(`board`)
 }
 
 async function updateBoard(newBoard) {
-    gBoards[0] = newBoard;
-    return Promise.resolve(gBoards[0])
-    // return await httpService.put(`board/${boardId}`, board)
+    return await httpService.put(`board/${newBoard._id}`, newBoard)
 }
 
 function createActivity(partialActivity) {
@@ -40,7 +45,7 @@ function createActivity(partialActivity) {
         }
     }
     if (!partialActivity.group) {
-        activity.group = { ...partialActivity.group }
+        activity.group = {...partialActivity.group }
     }
 
     return activity

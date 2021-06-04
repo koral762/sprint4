@@ -1,151 +1,89 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { loadBoard } from '../store/actions/board-actions'
+import { loadBoards, removeBoard } from '../store/actions/board-actions'
 import { Link } from "react-router-dom";
-import ReactDOM from 'react-dom';
-import Coverflow from 'react-coverflow';
-import { StyleRoot } from 'radium';
 import AddBoxIcon from '@material-ui/icons/AddBox';
+import { BoardPreview } from '../cmps/BoardPreview';
 
 export class _Boards extends Component {
 
-    state = {
-        boardClicked: ''
+
+    async componentDidMount() {
+        await this.props.loadBoards()
+
     }
+    // this.props.removeBoard()
 
-    componentDidMount() {
-        console.log('boardspage');
-    }
-
-
-    fn() {
-    }
-
+    fn() { }
 
     render() {
-        const { board } = this.props
-
+        const { boards } = this.props
+        console.log('propx koral', boards);
         return (
-            <section className="boards-page-bg flex column align-center justify-center">
-                <Link to='/board/id' className="tryit">Try It now!</Link>
-                <div className="creat-new-board">
-                    <span><AddBoxIcon /></span>Create new board
-                </div>
-                <h1><br />Templates:</h1>
-                <br />
-                <StyleRoot style={{ background_color: 'red' }}>
-                    <Coverflow
-                        media={{
-                            '@media (max-width: 900px)': {
-                                width: '600px',
-                                height: '200px'
+            <section className="boards-page-bg flex column ">
 
-                            },
-                            '@media (min-width: 900px)': {
-                                width: '960px',
-                                height: '300px'
-                            }
-                        }}
-                        displayQuantityOfSide={2}
-                        navigation
-                        infiniteScroll
-                        enableHeading
-                    >
-                        <div
-                            onClick={() => this.fn()}
-                            onKeyDown={() => this.fn()}
-                            role="menuitem"
-                            tabIndex="0"
-                        >
-                            <Link to="/board/id">
-                                <img
-                                    src='http://avante.biz/wp-content/uploads/Tab-HD-Wallpapers/Tab-HD-Wallpapers-007.jpg'
-                                    alt='title or description'
-                                    onClick={() => this.fn()}
-                                    style={{
-                                        display: 'block',
-                                        width: '100%',
-                                        border: '1px solid red',
-                                        borderRadius: '5%',
-                                        display: 'flex'
+                <div className="main-boards">
 
-                                    }}
-                                />
-                            </Link>
+                    <div className="title">Boards</div>
+                    <div className="search-board">
+                        <input type="text" placeholder="Search...🔍" ></input>
+                    </div>
+
+                    <section className="select-board-container">
+
+                        <div className="creat-new-board">
+                            <div><AddBoxIcon /></div>Create new board
                         </div>
-                        <Link to="/board/id">
+                        {boards.map((board) => <BoardPreview key={board._id} board={board} />)}
+                    </section>
+                    <hr></hr>
+                    <div className="title">Most popular templates</div>
 
-                            <img src='http://avante.biz/wp-content/uploads/Tab-HD-Wallpapers/Tab-HD-Wallpapers-002.jpg'
-                                alt='title'
-                                onClick={() => this.fn()}
-                                style={{
-                                    display: 'block',
-                                    width: '100%',
-                                    border: '1px solid pink',
-                                    borderRadius: '5%',
-                                }}
-                            />
-                        </Link>
-                        <Link to="/board/id">
+                    <section className="select-board-container templates-board-container">
+                        <div className="board" style={{
+                            backgroundImage: "url(http://avante.biz/wp-content/uploads/Tab-HD-Wallpapers/Tab-HD-Wallpapers-004.jpg)"
+                        }}><span>Templet</span></div>
+                        <div className="board" style={{
+                            backgroundImage: "url(http://avante.biz/wp-content/uploads2/Autumn-City-Wallpapers-for-desktop-1/Autumn-City-Wallpapers-for-desktop-74.jpg)"
+                        }}><span>Templet</span></div>
+                        <div className="board" style={{
+                            backgroundImage: "url(http://avante.biz/wp-content/uploads/Tab-HD-Wallpapers/Tab-HD-Wallpapers-027.jpg)"
+                        }}><span>Templet</span></div>
+                        <div className="board" style={{
+                            backgroundImage: "url(http://avante.biz/wp-content/uploads2/Autumn-City-Wallpapers-for-desktop-1/Autumn-City-Wallpapers-for-desktop-11.jpg)"
+                        }}><span>Templet</span></div>
+                        <div className="board" style={{
+                            backgroundImage: "url(http://avante.biz/wp-content/uploads2/Autumn-City-Wallpapers-for-desktop-1/Autumn-City-Wallpapers-for-desktop-2.jpg)"
+                        }}><span>Templet</span></div>
+                        <div className="board" style={{
+                            backgroundImage: "url(http://avante.biz/wp-content/uploads2/Autumn-City-Wallpapers-for-desktop-1/Autumn-City-Wallpapers-for-desktop-27.jpg)"
+                        }}><span>Templet</span></div>
+                        <div className="board" style={{
+                            backgroundImage: "url(http://avante.biz/wp-content/uploads/Tab-HD-Wallpapers/Tab-HD-Wallpapers-059.jpg)"
+                        }}><span>Templet</span></div>
 
-                            <img src='http://avante.biz/wp-content/uploads/Tab-HD-Wallpapers/Tab-HD-Wallpapers-016.jpg'
-                                onClick={() => this.fn()}
-                                alt='title or description'
-                                style={{
-                                    display: 'block',
-                                    width: '100%',
-                                    border: '1px solid blue',
-                                    borderRadius: '5%',
+                    </section>
 
-                                }}
-                            />
-                        </Link>
-                        <Link to="/board/id">
-
-                            <img src='http://avante.biz/wp-content/uploads/Tab-HD-Wallpapers/Tab-HD-Wallpapers-016.jpg'
-                                onClick={() => this.fn('id')}
-                                alt='title or description'
-                                style={{
-                                    display: 'block',
-                                    width: '100%',
-                                    border: '1px solid blue',
-                                    borderRadius: '5%',
-
-                                }}
-                            />
-                        </Link>
-                        <Link to="/board/id">
-
-                            <img src='http://avante.biz/wp-content/uploads/Tab-HD-Wallpapers/Tab-HD-Wallpapers-016.jpg'
-                                alt='title or description'
-                                style={{
-                                    display: 'block',
-                                    width: '100%',
-                                    border: '1px solid blue',
-                                    borderRadius: '5%',
-
-                                }}
-                            />
-                        </Link>
+                </div>
 
 
-                    </Coverflow>
-                </StyleRoot>
 
             </section>
-
         )
+
     }
 }
 
 function mapStateToProps(state) {
     return {
+        boards: state.boardModule.boards
         // loggedInUser: state.appModule.loggedInUser
     }
 }
 
 const mapDispatchToProps = {
-    loadBoard
+    loadBoards,
+    removeBoard
 }
 
 export const Boards = connect(mapStateToProps, mapDispatchToProps)(_Boards)
