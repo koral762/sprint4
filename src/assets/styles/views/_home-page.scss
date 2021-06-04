@@ -1,8 +1,8 @@
 .home {
-  // width: 100%;
-  height: 100%;
+  width: 100%;
+  height: 100vh;
   background-color: rgb(255, 255, 255);
-  // position:initial;
+
   overflow: hidden;
   scroll-behavior: smooth;
   // font-family: "Helvetica Neue", Arial, sans-serif;
@@ -23,35 +23,36 @@
   //     height: 100%;
   // }
 
-  .start-home-page {
+  .hero {
     width: 100%;
   }
 }
 
+// hero img animation slide-right
 .slide-right {
   animation: slide-right 0.5s
     cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
+  animation-delay: 1s;
 }
 
-//  animation slide-right
 @keyframes slide-right {
   0% {
-    transform: translateX(0);
+    transform: translateX(-100%);
   }
   100% {
     transform: translateX(100px);
   }
 }
 
+// introduction animation slide-left
 .slide-left {
   animation: slide-left 0.5s
     cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
 }
 
-// animation slide-left
 @keyframes slide-left {
   0% {
-    transform: translateX(0);
+    transform: translateX(100%);
   }
   100% {
     transform: translateX(-100px);
@@ -60,25 +61,24 @@
 
 // HERO
 .introduction {
-  position: absolute;
+  position: relative;
   z-index: 5;
   top: 20%;
-  left: 10%;
+  max-width: 58%;
   h1 {
     font-weight: 500;
     margin: 1.5rem 0;
   }
-  p {
-    font-size: rem(20px);
-    margin-bottom: 1.5rem;
-    font-weight: 500;
+  .intro-text {
+    word-wrap: break-word;
+    width: 650px;
+    p {
+      font-size: rem(20px);
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+      white-space: normal;
+    }
   }
-}
-
-.intro-text {
-  width: 650px;
-  word-wrap: break-word;
-  white-space: normal;
 }
 
 .img-home {
@@ -126,7 +126,7 @@
   text-align: center;
 
   span {
-    color: blue;
+    color: #30aa00;
     font-size: x-large;
   }
 
@@ -143,7 +143,7 @@
 
     a,
     a:visited {
-      color: inherit;
+      color: #30aa00;
       margin: 0 rem(5px);
       svg {
         width: 2rem;
@@ -188,16 +188,18 @@
 }
 
 .tryit {
-  color: azure;
+  color: $lighttxt;
   font-size: rem(25px);
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana,
     sans-serif;
-  background-color: rgb(78, 38, 224);
+  background-color: #30aa00;
   padding: 6px 12px 8px 12px;
   vertical-align: middle;
   white-space: nowrap;
   border-radius: 6px;
+  border: 1px solid transparent;
+
   transition: color 0.15s ease-in-out,
     background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out,
@@ -205,8 +207,8 @@
 
   &:hover {
     background-color: $lighttxt;
-    color: rgb(40, 11, 143);
-    border: 1px solid rgb(40, 11, 143);
+    color: #30aa00;
+    border: 1px solid #30aa00;
   }
 
   // @media (max-width: 700px) {

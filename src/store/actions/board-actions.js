@@ -226,7 +226,7 @@ export function removeCardMember(board, card, id) {
 
         if (!newCard.members) newCard.members = []
 
-        newCard.members = newCard.members.filter(user => user.id != id)
+        newCard.members = newCard.members.filter(user => user.id !== id)
 
         // replicate board
         let newBoard = JSON.parse(JSON.stringify(board))
