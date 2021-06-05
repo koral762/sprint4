@@ -13,7 +13,6 @@ export class _BoardApp extends Component {
         lastReceivedUpdateAt: ''
     }
 
-
     async componentDidMount() {
         const { boardId } = this.props.match.params;
         await this.props.loadBoard(boardId)
@@ -31,7 +30,6 @@ export class _BoardApp extends Component {
             this.props.updateBoard(this.props.board)
         })
     }
-
 
     onAddGroup = (txt) => {
         return txt
