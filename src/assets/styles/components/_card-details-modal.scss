@@ -41,7 +41,7 @@
     position: relative;
     background-color: #f4f5f7;
     margin: auto;
-    padding: 20px;
+    // padding: 20px;
     overflow: scroll;
     max-width: 75vw;
     min-height: 80vh;
@@ -120,6 +120,10 @@
     display: flex;
 }
 
+.sidebar-button-with-cover {
+
+}
+
 .activity-text-box {
     margin: 12px;
     width: 100%;
@@ -169,7 +173,26 @@
     height: 25px;
 }
 
-.card-details-cover-color {
+.card-details-cover-color,.card-details-cover-image {
     width: 100%;
-    height: 25px;
+    height: 100px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+
+    .modal-close {
+        height: 50px;
+        right: 10px;
+        top: 10px;
+    }
+}
+
+.card-details-modal-container {
+    padding: 20px;
+    margin: auto;
+}
+
+.modal-close {
+    height: 50px;
 }

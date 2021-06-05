@@ -35,7 +35,7 @@ export class MemberList extends Component {
     renderCardDetailsMemberList = (members) => {
         return (
         <>
-            {this.state.isModalShown && <AddMemberModal onCloseModal={this.onCloseModal} allExistingUsers={this.props.allUsers} card={this.props.card} members={this.props.members}/>}
+            {this.state.isModalShown && <AddMemberModal onCloseModal={this.onCloseModal} allExistingUsers={this.props.allUsers} card={this.props.card} members={this.props.members} onAddCardMember={this.props.onAddCardMember} onRemoveCardMember={this.props.onRemoveCardMember}/>}
             <button class="flex sidebar-button" onClick={() => this.onShowModal()}>
             <PeopleAltIcon/>
             <span class="sidebar-button-text">Members</span>
@@ -44,9 +44,8 @@ export class MemberList extends Component {
     }
     
     render(){
-        const { members } = this.props
+        const members = this.props.card ? this.props.card.members : this.props.members
         if (!members) return <h4>Loading...</h4>
-
         return !this.props.card ? this.renderMemberList(members) : this.renderCardDetailsMemberList(members)
     }
 }

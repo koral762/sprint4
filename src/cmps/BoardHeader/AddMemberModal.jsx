@@ -14,21 +14,24 @@ export class _AddMemberModal extends Component {
     }
 
     toggleUser=(user)=>{
+        // Not a member
         if (!this.props.members.find(member => member._id === user._id)) {
             if (!this.props.card) {
                 this.props.addToMembers(user, this.props.board)
             }
             else {
                 this.props.addCardMember(this.props.board, this.props.card, user)
+                this.props.onAddCardMember(user)
             }
         } else {
+            
             if (!this.props.card) {
                 this.props.removeMember(user._id, this.props.board)
             }
             else {
                 this.props.removeCardMember(this.props.board, this.props.card, user._id)
-            }
-            
+                this.props.onRemoveCardMember(user)
+            }   
         }
     }
  
