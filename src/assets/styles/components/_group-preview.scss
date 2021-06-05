@@ -88,7 +88,7 @@ div {
 .new-card-btn-container {
     font-size: rem(12px);
     line-height: 1.25rem;
-    font-family: 'Roboto-regular';
+font-family: 'Roboto', sans-serif;
     .new-item-form {
         width: 100%;
         textarea {
@@ -101,7 +101,7 @@ div {
             margin-bottom: rem(2px);
             font-size: 0.875rem;
             width: 100%;
-            font-family: 'Roboto';
+font-family: 'Roboto', sans-serif;
             resize: none;
         }
     }

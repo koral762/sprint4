@@ -1,27 +1,44 @@
 
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import React from 'react';
 
 import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import EmailIcon from '@material-ui/icons/Email';
+import HeroImg from '../assets/imgs/homenew.jpg'
+import Logo from '../assets/imgs/logo.png'
+
 
 export function Home() {
     return (
         <section className="home flex column align-center justify-center" >
-            <section className="start-home-page flex">
-                <h1>koral</h1>
-                <div className="img-home"></div>
+
+                <header className="home-pg-header flex justify-space-between align-center">
+                     <img src={Logo} className="logo-img-left"/>
+
+                    <div className="flex">
+                        <NavLink to='/' className="login-btn">Log in</NavLink>
+                        <NavLink to='/' className="signup-btn">Sign up</NavLink>
+                    </div>
+                </header>
+                
+
+            <section className="hero flex justify-space-between">
+                <div className="introduction slide-right">
+                    <h1>Welcome to Treelo</h1>
+                    <div className="intro-text">
+                        <p>Start with a Trello board, lists, and cards. Customize and expand with more features as your teamwork grows. Manage projects, organize tasks, and build team spirit—all in one place.</p>
+                    </div>
+                    <NavLink to={ `/board/` } className="tryit">Try It now! &#x2192;</NavLink>
+                </div>
+                <img src={HeroImg} className="slide-left" />
+                {/* <div className="img-home slide-left"></div> */}
             </section>
 
-            <h1>HOME PAGE!!!</h1>
-            <h1>HOME PAGE!!!</h1>
-            <Link to={ `/board/` } className="tryit">Try It now!</Link>
-            <h1>after img!!!</h1>
-            <h1>HOME PAGE!!!</h1>
+        <section className="about-wrapper flex column">
             <p className="about-us">Meet the Team</p>
-            <div className="about-us-container">
-                <section></section>
+            <div className="about-us-container flex justify-center align-center">
+              
                 <div className="about-me-container">
                     <div className="about-me koral"></div>
                     <span>Koral Sabbah</span>
@@ -52,9 +69,9 @@ export function Home() {
                         <a href="mailto:ksu0593@gmail.com" target="blank"><EmailIcon className="mail-icon" /></a>
                     </div>
                 </div>
-
             </div>
             {/* <div className="contact-us">k</div> */ }
+        </section>
         </section>
     )
 }

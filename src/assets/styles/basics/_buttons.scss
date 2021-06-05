@@ -1,89 +1,83 @@
 button,
 .btn {
-    color: $darktxt;
-    font-size: em(16px);
-    background-color: rgba(0, 0, 0, 0.1);
-    transition: background-color 0.1s linear;
-    margin: 0 5px;
-    border-radius: 3px;
-    padding: 5px;
-    cursor: pointer;
-    &:hover {
-        background-color: $hovergray;
-    }
-    &.active {
-        color: $clr5;
-    }
-
+  color: $darktxt;
+  font-size: em(16px);
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: background-color 0.1s linear;
+  margin: 0 5px;
+  border-radius: 3px;
+  padding: 5px;
+  cursor: pointer;
+  &:hover {
+    background-color: $hovergray;
+  }
+  &.active {
+    color: $clr5;
+  }
 }
 
 .primary-btn {
-    font-size: em(16px);
-    padding: em(6px) em(15px);
-    background-color: $clr2;
-    border-radius: rem(25px);
-    transition: color .3s;
-    &:hover {
-        color: $clr5;
-    }
-    &:active {
-        color: $clr5;
-    }
+  font-size: em(16px);
+  padding: em(6px) em(15px);
+  background-color: $clr2;
+  border-radius: rem(25px);
+  transition: color 0.3s;
+  &:hover {
+    color: $clr5;
+  }
+  &:active {
+    color: $clr5;
+  }
 }
-
 
 .new-card-btn-container {
-    margin-bottom: 0.4rem;
+  margin-bottom: 0.4rem;
 }
 
-.new-item-btn{
-    display: flex;
-    align-items: center;
+.new-item-btn {
+  display: flex;
+  align-items: center;
+  height: 2rem;
+  font-size: em(20px);
+  text-align: baseline;
+  color: #5e6c84;
+  cursor: pointer;
+  // font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Droid Sans,Helvetica Neue,sans-serif;
+  line-height: 18px;
+  font-weight: 400;
+  padding-left: 2px;
+  &:hover {
+    background-color: #ebecf0;
+  }
+}
+
+.save-btn-container {
+  display: flex;
+  align-items: center;
+
+  .save-btn {
+    vertical-align: top;
+
+    font-size: rem(16px);
+    color: aliceblue;
     height: 2rem;
-    font-size: em(20px);
-    text-align: baseline;
+    background-color: $bluebtn;
+    // font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Droid Sans,Helvetica Neue,sans-serif;
+    padding: 0 1em 0 1em;
+    &:hover {
+      background-color: #055a8c;
+    }
+  }
+  .close {
+    height: 1.5rem;
     color: #5e6c84;
+    text-decoration: none;
     cursor: pointer;
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Droid Sans,Helvetica Neue,sans-serif;
-    line-height: 18px;
-    font-weight: 400;
-padding-left: 2px;
-    &:hover{
-        background-color: #ebecf0;
-    }
-    
-}
+    line-height: 32px;
+    width: 32px;
 
-
-.save-btn-container{
-    
-    display: flex;
-    align-items: center;
-    
-    .save-btn{
-        vertical-align: top;
-        
-        font-size: rem(16px);
-        color:aliceblue;
-        height: 2rem;
-        background-color: $bluebtn;
-        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Droid Sans,Helvetica Neue,sans-serif;
-        padding:  0 1em 0 1em ;
-        &:hover{
-            background-color: #055a8c;
-        }
+    &:hover {
+      color: #42526e;
     }
-    .close{
-        height: 1.5rem;
-        color: #5e6c84;
-        text-decoration: none;
-        cursor: pointer;
-        line-height: 32px;
-        width: 32px;
-
-        &:hover{
-            color: #42526e;
-        }
-    }
-    
+  }
 }
