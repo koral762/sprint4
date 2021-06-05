@@ -3,18 +3,35 @@ import { connect } from 'react-redux'
 import { GroupList } from '../cmps/groups/GroupList'
 import { CardDetails } from '../cmps/cards/CardDetails'
 import { BoardNav } from '../cmps/BoardNav'
-import { loadBoard, onRemoveGroup } from '../store/actions/board-actions'
+import { loadBoard, onRemoveGroup, updateBoard } from '../store/actions/board-actions'
+import { loadAllUsers } from '../store/actions/user-actions.js'
 // import { Link } from "react-router-dom";
+import { socketService } from '../services/socket-service.js';
 
 export class _BoardApp extends Component {
     state = {
         lastReceivedUpdateAt: ''
     }
 
+
     async componentDidMount() {
-        const { boardId } = this.props.match.params
+        const { boardId } = this.props.match.params;
         await this.props.loadBoard(boardId)
     }
+
+    async componentDidUpdate() {
+        const { boardId } = this.props.match.params;
+
+        await this.props.loadBoard(boardId)
+        this.props.loadAllUsers()
+        socketService.setup()
+
+        socketService.emit('join board', boardId)
+        socketService.on('updated board', () => {
+            this.props.updateBoard(this.props.board)
+        })
+    }
+
 
     onAddGroup = (txt) => {
         return txt
@@ -26,7 +43,6 @@ export class _BoardApp extends Component {
 
     render() {
         const { board } = this.props
-        console.log('currBoard', board);
         return (
             <React.Fragment>
 
@@ -59,7 +75,9 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = {
     loadBoard,
-    onRemoveGroup
+    onRemoveGroup,
+    updateBoard,
+    loadAllUsers
 }
 
 export const BoardApp = connect(mapStateToProps, mapDispatchToProps)(_BoardApp)
