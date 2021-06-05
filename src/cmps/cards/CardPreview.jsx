@@ -106,7 +106,7 @@ class _CardPreview extends Component {
 
 
     onDetails = (ev) => {
-        this.props.history.push(`/board/card/${this.props.card.id}`)
+        this.props.history.push(`/board/${this.props.board._id}/card/${this.props.card.id}`)
     }
 
     onOpenCardActions = (ev) => {
@@ -125,6 +125,19 @@ class _CardPreview extends Component {
 
     onSetNotEditing = () => {
         this.setState({ isEditing: false })
+    }
+
+    getCardCover = () => {
+
+        const cardCover = this.props.card.cover
+        if (!cardCover) return <React.Fragment />
+        if (!cardCover.src) return (
+            // if there is no src - this is a color
+            <div className="card-preview-cover-color" style={{backgroundColor:cardCover.color}} />
+        )
+        return (
+            <div className="card-preview-cover-image" style={{backgroundImage:`url(${cardCover.src})`}} /> 
+        )
     }
 
     render() {
@@ -147,6 +160,7 @@ class _CardPreview extends Component {
                         ref={provided.innerRef}>
                         <div className="attach-div">
                             <div className="card-preview-start">
+                            {this.getCardCover()}
                             {card.attachments && <img className="img-attach" style={cardAttachStyle}/>}
                                 <CardLabels onClickLabel={this.onToggleLabels}
                                     isFull={this.props.fullLabel}

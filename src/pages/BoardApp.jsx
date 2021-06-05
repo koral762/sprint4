@@ -32,7 +32,6 @@ export class _BoardApp extends Component {
         })
     }
 
-
     onAddGroup = (txt) => {
         return txt
     }
@@ -48,7 +47,7 @@ export class _BoardApp extends Component {
 
                 <div className="board-app board-container flex column">
                     {(this.props.match.params.cardId) ?
-                        <CardDetails cardId={this.props.match.params.cardId} boardId={this.props.board._id} history={this.props.history} /> : <div></div>}
+                        <CardDetails cardId={this.props.match.params.cardId} boardId={this.props.match.params.boardId} history={this.props.history} /> : <div></div>}
 
                     <BoardNav title={board.title}
                         members={board.members}

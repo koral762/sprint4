@@ -110,7 +110,7 @@ export class CoverSelector extends Component {
                         {this.getImageEls()}
                     </div> */}
                     <div className="cover-remove-container">
-                        <button className="cancel-btn" onClick={this.onRemoveCover}>Remove Container</button>
+                        <button className="cancel-btn" onClick={this.onRemoveCover}>Remove Cover</button>
                     </div>
                 </div>
             </Popover>

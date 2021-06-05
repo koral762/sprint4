@@ -18,7 +18,7 @@ import CloseIcon from '@material-ui/icons/Close'
 import ListIcon from '@material-ui/icons/List'
 import FileCopyIcon from '@material-ui/icons/FileCopy'
 import { CoverSelector } from './CoverSelector'
-
+import WebAssetOutlinedIcon from '@material-ui/icons/WebAssetOutlined'
 class _CardDetails extends Component {
 
     state = {
@@ -75,7 +75,7 @@ class _CardDetails extends Component {
     }
 
     onCloseCard = () => {
-        this.props.history.push(`/board/id`)
+        this.props.history.push(`/board/${this.props.board._id}`)
     }
 
     submitCard = (card, activity) => {
@@ -103,16 +103,48 @@ class _CardDetails extends Component {
         })
     }
 
+    onAddCardMember = (user) => {
+        var members = JSON.parse(JSON.stringify(this.state.card.members))
+        members.unshift(user)
+        this.onChangeMembers(members)
+    }
+
+    onRemoveCardMember = (user) => {
+        var members = JSON.parse(JSON.stringify(this.state.card.members))
+        members = members.filter(_user => _user._id != user._id)
+        this.onChangeMembers(members)
+    }
+
+    onChangeMembers = (members) => {
+        const card = { ...this.state.card }
+
+        card.members = members;
+        console.log(members)
+        this.setState({ card })
+    }
+
     getCardCover = () => {
         const cover = this.state.card.cover
         if (!cover) return <React.Fragment />
 
         if (!cover.src) return (
             // if there is no src - this is a color
-            <div className="card-details-cover-color" style={{ backgroundColor: cover.color }} />
+            <div className="card-details-cover-color" style={{ backgroundColor: cover.color }}>
+                { cover &&
+                    <IconButton onClick={this.onCloseCard} aria-label="close" className="modal-close">
+                        <CloseIcon />
+                    </IconButton>}
+                { cover && <button className="sidebar-button-with-cover" ref={this.ref} onClick={this.toggleCoverSelector}><WebAssetOutlinedIcon /><span>Cover</span></button>}
+            </div>
         )
         return (
-            <div className="card-details-cover-image" style={{ backgroundImage: `url(${cover.src})` }} />
+            <div className="card-details-cover-image" style={{ backgroundImage: `url(${cover.src})` }} >
+                { cover &&
+                    <IconButton onClick={this.onCloseCard} aria-label="close" className="modal-close">
+                        <CloseIcon />
+                    </IconButton>}
+                { cover && <button className="sidebar-button-with-cover" ref={this.ref} onClick={this.toggleCoverSelector}><WebAssetOutlinedIcon /><span>Cover</span></button>}
+            </div>
         )
     }
 
@@ -236,12 +268,13 @@ class _CardDetails extends Component {
     }
 
     renderAttachments = (urlImg) => {
-        return (<div>
-            <section class="flex justify-space-between"><div class="flex">
-                <FileCopyIcon/>
-                <h3>Attachments</h3></div></section>
-            <img className="card-details-img-attach" src={urlImg}/>
-        </div>)
+        return (
+            <div>
+                <section class="flex justify-space-between"><div class="flex">
+                    <FileCopyIcon />
+                    <h3>Attachments</h3></div></section>
+                <img className="card-details-img-attach" src={urlImg} />
+            </div>)
     }
 
     render() {
@@ -249,91 +282,95 @@ class _CardDetails extends Component {
             return ""
         }
 
-        const urlImg="url("+(this.state.card && this.state.card.attachments) ? this.state.card.attachments : "" +")"
+        const urlImg = "url(" + (this.state.card && this.state.card.attachments) ? this.state.card.attachments : "" + ")"
 
         // console.log(this.state.card)
         return (
             <section className="card-details-modal flex column">
                 <div className="modal-content">
-                    <div className="card-modal-title flex justify-space-between">
-                        <div className="card-details-title flex">
-                            <SubtitlesIcon />
-                            <div>
-                                <CardTitle titleTxt={this.state.card.title} onUpdate={this.onUpdateTitle} />
-                                <span className="group-name">in list <u>{this.state.groupName}</u></span>
+                    {this.getCardCover()}
+                    <div className="card-details-modal-container">
+                        <div className="card-modal-title flex justify-space-between">
+                            <div className="card-details-title flex">
+                                <SubtitlesIcon />
+                                <div>
+                                    <CardTitle titleTxt={this.state.card.title} onUpdate={this.onUpdateTitle} />
+                                    <span className="group-name">in list <u>{this.state.groupName}</u></span>
+                                </div>
                             </div>
+                            {!this.state.card.cover &&
+                                <IconButton onClick={this.onCloseCard} aria-label="close" className="modal-close">
+                                    <CloseIcon />
+                                </IconButton>}
                         </div>
-                        {this.getCardCover()}
-                        <IconButton onClick={this.onCloseCard} aria-label="close" className="modal-close">
-                            <CloseIcon />
-                        </IconButton>
-                    </div>
-                    <div className="flex justify-space-between">
-                        <section className="main-modal-section">
-                      
-                            <div className="labels-and-due-date">
-                                {this.getLabels()}
-                                {(this.state.card.dueDate ? <div>
-                                    <h5>Due Date</h5>
-                                    <CardDueDateSetter onUpdateDueDate={this.onUpdateDueDate} dueDate={this.state.card.dueDate} displayDate={true} displayTime={true} />
-                                </div> : <React.Fragment />)}
-                            </div>
-                            <div>
-                            {(this.state.card && this.state.card.attachments) ? this.renderAttachments(urlImg) : ""}
+                        <div className="flex justify-space-between">
+                            <section className="main-modal-section">
 
-                                <CardDescription onUpdateDesc={this.onUpdateDesc} description={this.state.card.description} />
-                                <CardChecklistContainer checklists={this.state.card.checklists} onUpdate={this.onUpdateChecklists} />
-                            </div>
-                        </section>
-                        <CardSidebar
-                            anchorRef={this.ref}
-                            ref={this.ref}
-                            addActivity={this.createActivity}
-                            isUploading={this.state.isUploading}
-                            toggleCoverSelector={this.toggleCoverSelector}
-                            toggleUploadDropzone={this.toggleUploadDropzone}
-                            toggleDisplayMembers={this.toggleDisplayMembers}
-                            dueDate={this.state.card.dueDate}
-                            toggleLabelPalette={this.toggleLabelPalette}
-                            onUpdateDueDate={this.onUpdateDueDate}
-                            onArchiveCard={this.onArchiveCard}
-                            onUpdateChecklists={this.onUpdateChecklists} 
-                            members={this.state.card.members} 
-                            allUsers={this.props.allUsers}
-                            card={this.state.card}
-                            
+                                <div className="labels-and-due-date">
+                                    {this.getLabels()}
+                                    {(this.state.card.dueDate ? <div>
+                                        <h5>Due Date</h5>
+                                        <CardDueDateSetter onUpdateDueDate={this.onUpdateDueDate} dueDate={this.state.card.dueDate} displayDate={true} displayTime={true} />
+                                    </div> : <React.Fragment />)}
+                                </div>
+                                <div>
+                                    {(this.state.card && this.state.card.attachments) ? this.renderAttachments(urlImg) : ""}
+
+                                    <CardDescription onUpdateDesc={this.onUpdateDesc} description={this.state.card.description} />
+                                    <CardChecklistContainer checklists={this.state.card.checklists} onUpdate={this.onUpdateChecklists} />
+                                </div>
+                            </section>
+                            <CardSidebar
+                                anchorRef={this.ref}
+                                ref={this.ref}
+                                addActivity={this.createActivity}
+                                isUploading={this.state.isUploading}
+                                toggleCoverSelector={this.toggleCoverSelector}
+                                toggleUploadDropzone={this.toggleUploadDropzone}
+                                toggleDisplayMembers={this.toggleDisplayMembers}
+                                dueDate={this.state.card.dueDate}
+                                toggleLabelPalette={this.toggleLabelPalette}
+                                onUpdateDueDate={this.onUpdateDueDate}
+                                onArchiveCard={this.onArchiveCard}
+                                onUpdateChecklists={this.onUpdateChecklists}
+                                members={this.state.card.members}
+                                onAddCardMember={this.onAddCardMember} onRemoveCardMember={this.onRemoveCardMember}
+                                allUsers={this.props.allUsers}
+                                card={this.state.card}
+
                             />
+                        </div>
+                        <div>
+                            <section className="flex justify-space-between">
+                                <div className="flex">
+                                    <ListIcon />
+                                    <h3>Activity</h3>
+                                </div>
+                                <button onClick={this.toggleCommentsOnly}>{(this.state.commentsOnly) ? 'Show Details' : 'Hide Details'}</button>
+                            </section>
+                            <CardAddComment onAddComment={this.onAddComment} />
+                            <ActivityLog
+                                boardId={this.props.board._id}
+                                displayMode="card"
+                                activities={this.getFilteredActivities()} />
+                        </div>
+                        <Popover
+                            anchorOrigin={{
+                                vertical: 'center',
+                                horizontal: 'center',
+                            }}
+                            transformOrigin={{
+                                vertical: 'center',
+                                horizontal: 'left',
+                            }}
+                            open={this.state.isLabelPaletteShowing}
+                            anchorEl={this.ref.current}
+                            onClose={this.toggleLabelPalette}
+                            onBackdropClick={this.toggleLabelPalette}>
+                            <LabelPalette createActivity={this.createActivity} card={this.state.card} />
+                        </Popover>
+                        {this.state.isCoverSelectorShown && <CoverSelector card={this.state.card} anchorEl={this.ref} onUpdate={this.onUpdateCover} toggleList={this.toggleCoverSelector} />}
                     </div>
-                    <div>
-                        <section className="flex justify-space-between">
-                            <div className="flex">
-                                <ListIcon />
-                                <h3>Activity</h3>
-                            </div>
-                            <button onClick={this.toggleCommentsOnly}>{(this.state.commentsOnly) ? 'Show Details' : 'Hide Details'}</button>
-                        </section>
-                        <CardAddComment onAddComment={this.onAddComment} />
-                        <ActivityLog
-                            boardId={this.props.board._id}
-                            displayMode="card"
-                            activities={this.getFilteredActivities()} />
-                    </div>
-                    <Popover
-                        anchorOrigin={{
-                            vertical: 'center',
-                            horizontal: 'center',
-                        }}
-                        transformOrigin={{
-                            vertical: 'center',
-                            horizontal: 'left',
-                        }}
-                        open={this.state.isLabelPaletteShowing}
-                        anchorEl={this.ref.current}
-                        onClose={this.toggleLabelPalette}
-                        onBackdropClick={this.toggleLabelPalette}>
-                        <LabelPalette createActivity={this.createActivity} card={this.state.card} />
-                    </Popover>
-                    { this.state.isCoverSelectorShown && <CoverSelector card={this.state.card} anchorEl={this.ref} onUpdate={this.onUpdateCover} toggleList={this.toggleCoverSelector} />}
                 </div>
             </section>
         )

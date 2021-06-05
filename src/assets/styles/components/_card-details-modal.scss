@@ -41,7 +41,7 @@
     position: relative;
     background-color: #f4f5f7;
     margin: auto;
-    padding: 20px;
+    // padding: 20px;
     overflow: scroll;
     max-width: 75vw;
     min-height: 80vh;
@@ -86,7 +86,7 @@
     padding: 8px 0;
     cursor: pointer;
     pre {
-        font-family: Poppins-Regular;
+        // font-family: Poppins-Regular;
         background-color: rgba(9, 30, 66, 0.04);
         border: none;
         border-radius: 3px;
@@ -103,7 +103,7 @@
         // }
         &pre:focus {
             cursor: pointer;
-            font-family: Poppins-Regular;
+            // font-family: Poppins-Regular;
             font-size: rem(12px);
             border: none;
             outline: none;
@@ -118,6 +118,10 @@
 
 .sidebar-button {
     display: flex;
+}
+
+.sidebar-button-with-cover {
+
 }
 
 .activity-text-box {
@@ -137,7 +141,7 @@
     padding: 12px;
     background-color: rgba(152, 152, 152, 0.24);
     margin: 0px;
-    font-family: Poppins-Regular;
+    // font-family: Poppins-Regular;
 }
 
 .label-color {
@@ -169,7 +173,26 @@
     height: 25px;
 }
 
-.card-details-cover-color {
+.card-details-cover-color,.card-details-cover-image {
     width: 100%;
-    height: 25px;
+    height: 100px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+
+    .modal-close {
+        height: 50px;
+        right: 10px;
+        top: 10px;
+    }
+}
+
+.card-details-modal-container {
+    padding: 20px;
+    margin: auto;
+}
+
+.modal-close {
+    height: 50px;
 }
