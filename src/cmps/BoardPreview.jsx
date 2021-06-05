@@ -10,7 +10,6 @@ export function BoardPreview(props) {
 
     const board = props.board
     const boardImg = props.board.style.bgImg
-    console.log(boardImg);
 
     return (
         

@@ -1,4 +1,5 @@
 import { httpService } from './http-service'
+import { socketService } from './socket-service'
 // var cloudinary = require('cloudinary').v2;
 import { utils } from './utils-service'
 
@@ -11,8 +12,6 @@ export const boardService = {
     createImage
 }
 
-var gBoards = require('./data/board.json')
-
 async function getBoardById(id) {
     return await httpService.get(`board/${id}`)
 }
@@ -22,6 +21,7 @@ async function query() {
 }
 
 async function updateBoard(newBoard) {
+    socketService.emit('updated board', newBoard) 
     return await httpService.put(`board/${newBoard._id}`, newBoard)
 }
 

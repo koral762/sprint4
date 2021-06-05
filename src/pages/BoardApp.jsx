@@ -6,31 +6,25 @@ import { BoardNav } from '../cmps/BoardNav'
 import { loadBoard, onRemoveGroup, updateBoard } from '../store/actions/board-actions'
 import { loadAllUsers } from '../store/actions/user-actions.js'
 // import { Link } from "react-router-dom";
+
 import { socketService } from '../services/socket-service.js';
 
 export class _BoardApp extends Component {
     state = {
         lastReceivedUpdateAt: ''
     }
-
+    
     async componentDidMount() {
         const { boardId } = this.props.match.params;
-        await this.props.loadBoard(boardId)
-    }
-
-    async componentDidUpdate(prevProps, prevState) {
-        const { boardId } = this.props.match.params;
-
-        if (prevProps.board._id != boardId) {
-            await this.props.loadBoard(boardId)
-        }
-        this.props.loadAllUsers()
         socketService.setup()
-
-        socketService.emit('join board', boardId)
-        socketService.on('updated board', () => {
-            this.props.updateBoard(this.props.board)
-        })
+        await this.props.loadBoard(boardId)
+        this.props.loadAllUsers()
+    }
+    
+    async componentDidUpdate() {
+      
+        
+        
     }
 
     onAddGroup = (txt) => {
