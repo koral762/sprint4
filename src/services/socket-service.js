@@ -7,8 +7,8 @@ export const SOCKET_EVENT_REVIEW_ADDED = 'review-added';
 
 
 const baseUrl = (process.env.NODE_ENV === 'production')? '' : '//localhost:3030'
-// export const socketService = createSocketService()
-export const socketService = createDummySocketService()
+export const socketService = createSocketService()
+// export const socketService = createDummySocketService()
 
 window.socketService = socketService
 

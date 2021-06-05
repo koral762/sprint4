@@ -1,16 +1,40 @@
 import { boardService } from '../../services/board-service'
+import { socketService } from '../../services/socket-service';
 import { utils } from '../../services/utils-service'
 const { cardService } = require("../../services/card-service");
 
-// import { socketService} from '../../services/socket-service'
+
+// export function loadBoard(id) {
+//     return async dispatch => {
+//         try {
+//             const board = await boardService.getBoardById(id)
+//             dispatch({ type: 'SET_BOARD', board })
+//         } catch (err) {
+//             console.log('ReviewActions: err in loadBoard', err)
+//         }
+//     }
+// }
+
 
 export function loadBoard(id) {
     return async dispatch => {
+
         try {
-            const board = await boardService.getBoardById(id)
+            const board = await boardService.getBoardById(id);
             dispatch({ type: 'SET_BOARD', board })
+            socketService.emit('join board', id) // join('u101')
+            socketService.off('updated board')
+            socketService.on('updated board', board => {
+                console.log('koral',board);
+                dispatch({ type: 'SET_BOARD', board })
+            })
+            // socketService.on('task-updated', task => {
+            //     dispatch({ type: 'saveTask', task })
+            // })
+
         } catch (err) {
-            console.log('ReviewActions: err in loadBoard', err)
+            console.log('boardStore: Error in loadBoard', err)
+            throw err
         }
     }
 }
@@ -28,15 +52,15 @@ export function loadBoards() {
 
 export function removeBoard(boardId) {
     return async dispatch => {
-      try {
-        await boardService.remove(boardId)
-        dispatch({ type: 'REMOVE_REVIEW', boardId })
-      } catch (err) {
-        console.log('ReviewActions: err in removeBoard', err)
-      }
+        try {
+            await boardService.remove(boardId)
+            dispatch({ type: 'REMOVE_REVIEW', boardId })
+        } catch (err) {
+            console.log('ReviewActions: err in removeBoard', err)
+        }
     }
-  }
-  
+}
+
 export function updateBoard(board) {
     return async dispatch => {
         try {
@@ -99,11 +123,11 @@ export function updateCard(board, newCard, activity) {
         try {
             // replicate board
             let newBoard = JSON.parse(JSON.stringify(board))
-                // find the group idx
+            // find the group idx
             const groupIdx = newBoard.groups.findIndex(group => group.cards.find(card => card.id === newCard.id))
-                // find the card idx
+            // find the card idx
             const cardIdx = newBoard.groups[groupIdx].cards.findIndex(card => card.id === newCard.id)
-                // replace the card content
+            // replace the card content
             newBoard.groups[groupIdx].cards[cardIdx] = newCard
 
             if (activity) {
@@ -237,7 +261,7 @@ export function removeCardMember(board, card, id) {
         // find the card idx
         const cardIdx = newBoard.groups[groupIdx].cards.findIndex(card => card.id === newCard.id)
         // replace the card content
-            
+
         newBoard.groups[groupIdx].cards[cardIdx] = newCard
 
         dispatch({ type: 'SET_BOARD', board: newBoard })
@@ -267,7 +291,7 @@ export function addCardMember(board, card, { _id, fullName, imgUrl }) {
         // find the card idx
         const cardIdx = newBoard.groups[groupIdx].cards.findIndex(card => card.id === newCard.id)
         // replace the card content
-            
+
         newBoard.groups[groupIdx].cards[cardIdx] = newCard
 
         dispatch({ type: 'SET_BOARD', board: newBoard })
