@@ -18,10 +18,12 @@ export class _BoardApp extends Component {
         await this.props.loadBoard(boardId)
     }
 
-    async componentDidUpdate() {
+    async componentDidUpdate(prevProps, prevState) {
         const { boardId } = this.props.match.params;
 
-        await this.props.loadBoard(boardId)
+        if (prevProps.board._id != boardId) {
+            await this.props.loadBoard(boardId)
+        }
         this.props.loadAllUsers()
         socketService.setup()
 

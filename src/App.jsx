@@ -47,10 +47,13 @@ class _App extends Component {
 
         // moving between groups
         if (source.droppableId !== destination.droppableId) {
-
           const destinationGroup = this.props.board.groups.find(group => group.id === destination.droppableId)
           const formerGroup = this.props.board.groups.find(group => group.id === source.droppableId)
-          const currCard = formerGroup.cards.find(card => card.id === draggableId)
+          const newGroup = this.props.board.groups.find(group => group.id === destination.droppableId)
+          // try to find card in old group
+          let currCard = formerGroup.cards.find(card => card.id === draggableId)
+          // find card in new group (for some reason it is there after merge, probably groups update before this function is called)
+          if (!currCard) currCard = newGroup.cards.find(card => card.id === draggableId)
           const formerCardIndex = formerGroup.cards.findIndex(card => card.id === draggableId)
           const newCardsArray = Array.from(destinationGroup.cards)
 

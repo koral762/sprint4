@@ -11,6 +11,8 @@ import { CardChecklistContainer } from './CardChecklistContainer.jsx'
 import { CardSidebar } from './card-sidebar/CardSidebar'
 import { CardLabels } from './CardLabels'
 import { LabelPalette } from './card-sidebar/LabelPalette'
+import { CardImagesList } from './CardImagesList'
+import { CardImgUpload } from './CardImgUpload';
 import { withRouter } from 'react-router'
 import { IconButton, Popover } from '@material-ui/core'
 import SubtitlesIcon from '@material-ui/icons/Subtitles'
@@ -27,7 +29,8 @@ class _CardDetails extends Component {
         groupName: null,
         commentsOnly: false,
         isLabelPaletteShowing: false,
-        isCoverSelectorShown: false
+        isCoverSelectorShown: false,
+        isUploading: false
     }
 
     componentDidMount() {
@@ -277,12 +280,54 @@ class _CardDetails extends Component {
             </div>)
     }
 
+    setUploading = () => {
+        return new Promise(resolve => {
+            this.setState({ isUploading: true }, resolve(true))
+        })
+    }
+
+    onAddImage = (imgRef) => {
+        const newImg = boardService.createImage(imgRef)
+        const card = { ...this.state.card }
+        if (!card.attachments) card.attachments = []
+        card.attachments.push(newImg)
+        const activity = this.createActivity('added an image')
+        this.setState({ card }, async () => {
+            await this.submitCard(card, activity)
+            this.setState({ isUploading: false })
+        })
+    }
+
+    onUpdateAttachments = async (newAttachment) => {
+        const card = { ...this.state.card }
+        const idx = card.attachments.findIndex(att => att.id === newAttachment.id)
+
+        if (!newAttachment.title.length) {
+
+            card.attachments.splice(idx, 1)
+        } else {
+            card.attachments[idx] = newAttachment
+        }
+
+        const activity = (newAttachment.title.length) ? this.createActivity('edited the title of an image') : this.createActivity('removed an image')
+
+        this.setState({ card }, () => {
+            this.submitCard(card, activity)
+        })
+    }
+
+    toggleUploadDropzone = () => {
+        if (this.state.isUploadZoneOpen) return this.setState({ isUploadZoneOpen: false })
+        return this.setState({ isUploadZoneOpen: true })
+    }
+
     render() {
         if (!this.state.card) {
             return ""
         }
+        // (this.state.card && this.state.card.attachments) ?
 
-        const urlImg = "url(" + (this.state.card && this.state.card.attachments) ? this.state.card.attachments : "" + ")"
+        //         const urlImg = "url(" + (this.state.card && this.state.card.attachments) ? this.state.card.attachments : "" + ")"
 
         // console.log(this.state.card)
         return (
@@ -314,10 +359,12 @@ class _CardDetails extends Component {
                                     </div> : <React.Fragment />)}
                                 </div>
                                 <div>
-                                    {(this.state.card && this.state.card.attachments) ? this.renderAttachments(urlImg) : ""}
-
+                                    {/* { this.state.card.attachments ? JSON.stringify(this.state.card.attachments) : ""} */}
+                                    {/* {(this.state.card && this.state.card.attachments) ? this.renderAttachments(urlImg) : ""} */}
+                                    <CardImagesList onUpdate={this.onUpdateAttachments} attachments={this.state.card.attachments} />
                                     <CardDescription onUpdateDesc={this.onUpdateDesc} description={this.state.card.description} />
                                     <CardChecklistContainer checklists={this.state.card.checklists} onUpdate={this.onUpdateChecklists} />
+                                    <CardImgUpload onAddImage={this.onAddImage} setUploading={this.setUploading} toggleOpen={this.toggleUploadDropzone} isOpen={this.state.isUploadZoneOpen} />
                                 </div>
                             </section>
                             <CardSidebar

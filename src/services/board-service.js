@@ -7,7 +7,8 @@ export const boardService = {
     updateBoard,
     createActivity,
     getCardTitleById,
-    query
+    query,
+    createImage
 }
 
 var gBoards = require('./data/board.json')
@@ -45,7 +46,7 @@ function createActivity(partialActivity) {
         }
     }
     if (!partialActivity.group) {
-        activity.group = {...partialActivity.group }
+        activity.group = { ...partialActivity.group }
     }
 
     return activity
@@ -59,4 +60,15 @@ function getCardTitleById(cardId, board) {
         }
     }))
     return cardTitle
+}
+
+function createImage(imgRef) {
+    const attachment = {
+        type: 'img',
+        id: utils.makeId(),
+        src: imgRef,
+        title: 'Image',
+        createdAt: Date.now()
+    }
+    return attachment
 }
