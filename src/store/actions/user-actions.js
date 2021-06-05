@@ -13,7 +13,7 @@ export function onLogin(credentials) {
 
 export function loadAllUsers(){
     return async dispatch=>{
-        const users = await userService.getUsersFromDb()
+        const users = await userService.getUsers()
         dispatch({ type: 'SET_USERS', users })
     }
 }

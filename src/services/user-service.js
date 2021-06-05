@@ -64,29 +64,29 @@ function getLoggedinUser() {
 
 async function getUsers() {
     return gUsers;
-    // return storageService.query('user')
-    // return httpService.get(`user`)
+    return storageService.query('user')
+    return httpService.get(`user`)
 }
 
 async function getById(userId) {
     return gUsers.find(user => user._id === userId)
 
-    //return storageService.get('user', userId)
-    // return httpService.get(`user/${userId}`)
+    return storageService.get('user', userId)
+    return httpService.get(`user/${userId}`)
 }
 async function remove(userId) {
     gUsers = gUsers.filter(user => user._id !== userId)
 
-    // return storageService.remove('user', userId)
-    // return httpService.delete(`user/${userId}`)
+    return storageService.remove('user', userId)
+    return httpService.delete(`user/${userId}`)
 }
 
 async function update(user) {
     let userIndex = gUsers.indexOf(_user => _user._id !== user.id);
     gUsers.splice(userIndex, 1, user);
 
-    // return storageService.put('user', user)
-    // user = await httpService.put(`user/${user._id}`, user)
+    return storageService.put('user', user)
+    user = await httpService.put(`user/${user._id}`, user)
     // Handle case in which admin updates other user's details
-    // if (getLoggedinUser()._id === user._id) _saveLocalUser(user)
+    if (getLoggedinUser()._id === user._id) _saveLocalUser(user)
 }
