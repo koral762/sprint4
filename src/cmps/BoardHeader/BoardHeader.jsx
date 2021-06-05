@@ -16,7 +16,7 @@ export class _BoardHeader extends Component {
     render() {
         
         return (
-                <div className="boards-header-container" >
+                <div className="board-header-container" >
                     <h3>{this.props.title}</h3>
                     <div className="members-container">
                         <MemberList members={this.props.members} allUsers={this.props.allUsers}/>

@@ -1,4 +1,3 @@
-
 import React from 'react'
 import { Link } from "react-router-dom";
 
@@ -14,7 +13,7 @@ export function BoardPreview(props) {
     return (
         
         <Link to={`/board/${board._id}`}>
-            <div className="board" style={{backgroundImage:`${boardImg}`}}><span>{board.title}</span></div>
+            <div className="board template" style={{backgroundImage:`${boardImg}`}}><span>{board.title}</span></div>
         </Link>
     )
 }

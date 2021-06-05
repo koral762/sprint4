@@ -7,7 +7,6 @@ import { BoardPreview } from '../cmps/BoardPreview';
 
 export class _Boards extends Component {
 
-
     async componentDidMount() {
         await this.props.loadBoards()
 
@@ -29,7 +28,7 @@ export class _Boards extends Component {
                     </div>
 
                     <section className="select-board-container">
-                        <div className="creat-new-board ">
+                        <div className="create-new-board">
                         <div className="new-board-text flex align-center">
                             <AddBoxIcon />
                             <p>Create new board</p>
@@ -42,34 +41,29 @@ export class _Boards extends Component {
                     <section className="select-board-container templates-board-container">
                         <div className="template" style={{
                             backgroundImage: "url(http://avante.biz/wp-content/uploads/Tab-HD-Wallpapers/Tab-HD-Wallpapers-004.jpg)"
-                        }}><span>Templet</span></div>
+                        }}><span>Template</span></div>
                         <div className="template" style={{
                             backgroundImage: "url(http://avante.biz/wp-content/uploads2/Autumn-City-Wallpapers-for-desktop-1/Autumn-City-Wallpapers-for-desktop-74.jpg)"
-                        }}><span>Templet</span></div>
+                        }}><span>Template</span></div>
                         <div className="template" style={{
                             backgroundImage: "url(http://avante.biz/wp-content/uploads/Tab-HD-Wallpapers/Tab-HD-Wallpapers-027.jpg)"
-                        }}><span>Templet</span></div>
+                        }}><span>Template</span></div>
                         <div className="template" style={{
                             backgroundImage: "url(http://avante.biz/wp-content/uploads2/Autumn-City-Wallpapers-for-desktop-1/Autumn-City-Wallpapers-for-desktop-11.jpg)"
-                        }}><span>Templet</span></div>
+                        }}><span>Template</span></div>
                         <div className="template" style={{
                             backgroundImage: "url(http://avante.biz/wp-content/uploads2/Autumn-City-Wallpapers-for-desktop-1/Autumn-City-Wallpapers-for-desktop-2.jpg)"
-                        }}><span>Templet</span></div>
+                        }}><span>Template</span></div>
                         <div className="template" style={{
-                            backgroundImage: "url(http://avante.biz/wp-content/uploads2/Autumn-City-Wallpapers-for-desktop-1/Autumn-City-Wallpapers-for-desktop-27.jpg)"
-                        }}><span>Templet</span></div>
+                            backgroundImage: "url(https://picsum.photos/195/95?random=2)"
+                        }}><span>Template</span></div>
                         <div className="template" style={{
-                            backgroundImage: "url(http://avante.biz/wp-content/uploads/Tab-HD-Wallpapers/Tab-HD-Wallpapers-059.jpg)"
-                        }}><span>Templet</span></div>
+                            backgroundImage: "url(https://picsum.photos/195/95?random=1)"
+                        }}><span>Template</span></div>
                     </section>
-
                 </div>
-
-
-
             </section>
         )
-
     }
 }
 
