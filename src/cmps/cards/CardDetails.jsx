@@ -16,8 +16,8 @@ import { IconButton, Popover } from '@material-ui/core'
 import SubtitlesIcon from '@material-ui/icons/Subtitles'
 import CloseIcon from '@material-ui/icons/Close'
 import ListIcon from '@material-ui/icons/List'
-import { CardPreviewDueDate } from './CardPreviewDueDate'
-import FileCopyIcon from '@material-ui/icons/FileCopy';
+import FileCopyIcon from '@material-ui/icons/FileCopy'
+import { CoverSelector } from './CoverSelector'
 
 class _CardDetails extends Component {
 
@@ -26,7 +26,8 @@ class _CardDetails extends Component {
         groupId: null,
         groupName: null,
         commentsOnly: false,
-        isLabelPaletteShowing: false
+        isLabelPaletteShowing: false,
+        isCoverSelectorShown: false
     }
 
     componentDidMount() {
@@ -68,6 +69,11 @@ class _CardDetails extends Component {
         }
     }
 
+    toggleCoverSelector = () => {
+        if (this.state.isCoverSelectorShown) return this.setState({ isCoverSelectorShown: false })
+        return this.setState({ isCoverSelectorShown: true })
+    }
+
     onCloseCard = () => {
         this.props.history.push(`/board/id`)
     }
@@ -86,6 +92,28 @@ class _CardDetails extends Component {
             const activity = this.createActivity('updated the description')
             this.submitCard(card, activity)
         })
+    }
+
+    onUpdateCover = (cover) => {
+        const card = { ...this.state.card }
+        card.cover = cover
+        this.setState({ card }, async () => {
+            const activity = this.createActivity('updated the cover')
+            this.submitCard(card, activity)
+        })
+    }
+
+    getCardCover = () => {
+        const cover = this.state.card.cover
+        if (!cover) return <React.Fragment />
+
+        if (!cover.src) return (
+            // if there is no src - this is a color
+            <div className="card-details-cover-color" style={{ backgroundColor: cover.color }} />
+        )
+        return (
+            <div className="card-details-cover-image" style={{ backgroundImage: `url(${cover.src})` }} />
+        )
     }
 
     onAddComment = (txt) => {
@@ -235,6 +263,7 @@ class _CardDetails extends Component {
                                 <span className="group-name">in list <u>{this.state.groupName}</u></span>
                             </div>
                         </div>
+                        {this.getCardCover()}
                         <IconButton onClick={this.onCloseCard} aria-label="close" className="modal-close">
                             <CloseIcon />
                         </IconButton>
@@ -304,6 +333,7 @@ class _CardDetails extends Component {
                         onBackdropClick={this.toggleLabelPalette}>
                         <LabelPalette createActivity={this.createActivity} card={this.state.card} />
                     </Popover>
+                    { this.state.isCoverSelectorShown && <CoverSelector card={this.state.card} anchorEl={this.ref} onUpdate={this.onUpdateCover} toggleList={this.toggleCoverSelector} />}
                 </div>
             </section>
         )

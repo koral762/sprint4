@@ -1,4 +1,5 @@
 import io from 'socket.io-client'
+import {httpService} from './http-service'
 
 export const SOCKET_EMIT_USER_WATCH = 'user-watch';
 export const SOCKET_EVENT_USER_UPDATED = 'user-updated';
@@ -78,11 +79,11 @@ function createDummySocketService() {
 }
 
 // Basic Tests
-function cb(x) {console.log(x)}
-socketService.on('baba', cb)
-socketService.on('mama', cb)
-socketService.on('lala', cb)
-socketService.emit('baba', 'DATA')
+// function cb(x) {console.log(x)}
+// socketService.on('baba', cb)
+// socketService.on('mama', cb)
+// socketService.on('lala', cb)
+// socketService.emit('baba', 'DATA')
 // socketService.off('baba', cb)
 
 

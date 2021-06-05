@@ -116,6 +116,10 @@
     margin-top: 3px;
 }
 
+.sidebar-button {
+    display: flex;
+}
+
 .activity-text-box {
     margin: 12px;
     width: 100%;
@@ -158,4 +162,14 @@
 
 .new-checklist-text {
     width: 10em !important;
+}
+
+.color-choice {
+    width: 25px;
+    height: 25px;
+}
+
+.card-details-cover-color {
+    width: 100%;
+    height: 25px;
 }

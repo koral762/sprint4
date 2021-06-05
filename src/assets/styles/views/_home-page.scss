@@ -17,11 +17,6 @@
     line-height: 1.2em;
     margin-top: 1.6em;
   }
-  // section {
-  //     display: flex;
-  //     flex-direction: column;
-  //     height: 100%;
-  // }
 
   .hero {
     width: 100%;
@@ -85,7 +80,6 @@
   align-self: flex-end;
   width: 50%;
   height: 500px;
-  // position: relative;
   background-image: url('../../imgs/homenew.jpg');
   background-position: right;
   background-size: contain;
@@ -109,7 +103,7 @@
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background-color: rgb(138, 22, 22);
+  background-color: #30aa00;
   margin: 1rem;
 }
 

@@ -1,7 +1,8 @@
 import { boardService } from '../../services/board-service'
 import { utils } from '../../services/utils-service'
 const { cardService } = require("../../services/card-service");
-// import { socketService, SOCKET_EVENT_REVIEW_ADDED } from '../../services/socket-service'
+
+// import { socketService} from '../../services/socket-service'
 
 export function loadBoard(id) {
     return async dispatch => {
@@ -13,6 +14,7 @@ export function loadBoard(id) {
         }
     }
 }
+
 export function loadBoards() {
     return async dispatch => {
         try {
