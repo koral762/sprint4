@@ -12,23 +12,6 @@
     -webkit-font-smoothing: antialiased;
 }
 
-.group-container {
-    background-color: #ebecf0;
-    border-radius: 3px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    white-space: normal;
-    height: fit-content;
-    vertical-align: top;
-    flex:1;
-    span {
-        display: flex;
-        align-items: center;
-    }
-}
-
 div {
     display: block;
 }
@@ -87,7 +70,7 @@ div {
 .new-card-btn-container {
     font-size: rem(12px);
     line-height: 1.25rem;
-font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
     .new-item-form {
         width: 100%;
         textarea {
@@ -100,7 +83,7 @@ font-family: 'Roboto', sans-serif;
             margin-bottom: rem(2px);
             font-size: 0.875rem;
             width: 100%;
-font-family: 'Roboto', sans-serif;
+            font-family: 'Roboto', sans-serif;
             resize: none;
         }
     }

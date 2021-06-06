@@ -1,18 +1,9 @@
 .app-header {
     padding: 4px 4px;
-    // padding: 10px 1rem 10px 1rem;
-    // position: relative;
-    // right: 0;
-    // top: 0;
-    // transform: translateX(100%);
-    // align-items: center;
     height: 40px;
     color: $darktxt;
-    background-color: $trnsprnt;
+    background-color: rgba(0, 0, 0, 0.32);
     width: 100vw;
-    // z-index: 2;
-    //   transition: transform 0.5s ease-in-out;
-    // box-shadow: $boxShadow1;
     &.open {
         transform: translateX(0%);
     }
@@ -22,13 +13,6 @@
         width: 100%;
         flex-direction: column;
         align-items: center;
-        // padding: em(10px);
-        // >*:not(:last-child) {
-        //       margin-bottom: em(16px);
-        //     li {
-        //         padding: 0 10px;
-        //     }
-        // }
     }
     span {
         font-size: rem(24px);
@@ -68,7 +52,7 @@
 
 .login-btn {
     background-color: transparent;
-    color: #30aa00;
+    color: $lighttxt;
     transition: text-decoration 0.15s ease-in-out;
     &:hover {
         text-decoration: underline;
