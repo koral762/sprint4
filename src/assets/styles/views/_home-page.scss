@@ -44,29 +44,54 @@
         transform: translateX(100%);
     }
     100% {
-        transform: translateX(-100px);
+        transform: translateX(0);
     }
 }
 
 // HERO
+.hero {
+    height: 500px;
+    margin: 2rem 15px;
+}
+
 .introduction {
     position: relative;
     z-index: 5;
-    top: 20%;
-    max-width: 58%;
+    top: 130px;
+    max-width: 70%;
     h1 {
         font-weight: 600;
         margin: 1.5rem 0;
     }
     .intro-text {
         word-wrap: break-word;
-        width: 650px;
-        p {
-            font-size: rem(20px);
-            margin-bottom: 1.5rem;
-            font-weight: 500;
-            white-space: normal;
-        }
+        width: 635px;
+        line-height: 1.5;
+        margin-bottom: 3rem;
+    }
+    p {
+        font-size: rem(20px);
+        font-weight: 400;
+        white-space: normal;
+    }
+}
+
+.tryit {
+    color: $lighttxt;
+    font-size: rem(25px);
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #30aa00;
+    padding: .375rem 1.5rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    &:hover {
+        background-color: $lighttxt;
+        color: #30aa00;
+        border: 1px solid #30aa00;
     }
 }
 
@@ -158,33 +183,15 @@
     }
 }
 
-.tryit {
-    color: $lighttxt;
-    font-size: rem(25px);
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #30aa00;
-    padding: 6px 12px 8px 12px;
-    vertical-align: middle;
-    white-space: nowrap;
-    border-radius: 6px;
-    border: 1px solid transparent;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    &:hover {
-        background-color: $lighttxt;
-        color: #30aa00;
-        border: 1px solid #30aa00;
-    }
-    // @media (max-width: 700px) {
-    //   font-size: rem(15px);
-    //   height: 50px;
-    //   width: 100px;
-    //   border-radius: 15px;
-    // }
-    // @media (min-width: 700px) {
-    //   font-size: rem(30px);
-    //   height: 100px;
-    //   width: 200px;
-    //   border-radius: 30px;
-    // }
-}
+// @media (max-width: 700px) {
+//   font-size: rem(15px);
+//   height: 50px;
+//   width: 100px;
+//   border-radius: 15px;
+// }
+// @media (min-width: 700px) {
+//   font-size: rem(30px);
+//   height: 100px;
+//   width: 200px;
+//   border-radius: 30px;
+// }
