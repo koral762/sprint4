@@ -6,6 +6,7 @@
     // font-family: "Helvetica Neue", Arial, sans-serif;
     font-family: 'Roboto', sans-serif;
     color: #091e42;
+    padding: 0 3em;
     h1 {
         font-size: em(48px);
         margin-bottom: em(32px);
@@ -14,58 +15,33 @@
         line-height: 1.2em;
         margin-top: 1.6em;
     }
-    .hero {
-        width: 100%;
-    }
-}
-
-// hero img animation slide-right
-.slide-right {
-    animation: slide-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
-    animation-delay: 1s;
-}
-
-@keyframes slide-right {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(100px);
-    }
-}
-
-// introduction animation slide-left
-.slide-left {
-    animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
-}
-
-@keyframes slide-left {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(0);
-    }
 }
 
 // HERO
 .hero {
+    position: relative;
     height: 500px;
-    margin: 2rem 15px;
+    // margin: 2rem 15px;
+    width: 100%;
+    .img-container {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
 }
 
 .introduction {
     position: relative;
     z-index: 5;
     top: 130px;
-    max-width: 70%;
+    max-width: 635px;
     h1 {
         font-weight: 600;
         margin: 1.5rem 0;
     }
     .intro-text {
         word-wrap: break-word;
-        width: 635px;
+        // width: 635px;
         line-height: 1.5;
         margin-bottom: 3rem;
     }
@@ -95,11 +71,62 @@
     }
 }
 
+// hero img animation slide-right
+.slide-right {
+    animation: slide-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
+    animation-delay: 1s;
+}
+
+@keyframes slide-right {
+    0% {
+        transform: translateX(-120%);
+    }
+    100% {
+        transform: translateX(100px);
+    }
+}
+
+// introduction animation slide-left
+.slide-left {
+    animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
+}
+
+@keyframes slide-left {
+    0% {
+        transform: translateX(120%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+// Info text
+.home-pg-text {
+    max-width: 83%;
+    // overflow-wrap: break-word;
+    white-space: normal;
+    margin: 7rem auto;
+    padding: 0 3rem;
+    text-align: center;
+    text-justify: inter-word;
+    h2 {
+        line-height: 2.5rem;
+    }
+}
+
+// About container
 .about-us-container {
     // background-color: #fff;
     height: 400px;
     width: 100%;
     flex: 1;
+    text-align: center;
+    h3 {
+        font-weight: 600;
+    }
+}
+
+.about-us-title {
     text-align: center;
 }
 
