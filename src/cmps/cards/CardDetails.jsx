@@ -348,7 +348,7 @@ class _CardDetails extends Component {
                                 </div>
                             </div>
                             {!this.state.card.cover &&
-                                <IconButton onClick={this.onCloseCard} aria-label="close" className="modal-close">
+                                <IconButton onClick={this.onCloseCard} aria-label="close" id="modal-close" className="modal-close">
                                     <CloseIcon />
                                 </IconButton>}
                         </div>
