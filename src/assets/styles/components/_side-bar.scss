@@ -1,0 +1,30 @@
+/* The sidebar menu */
+.side-bar-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #f4f5f7;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow: hidden;
+    height: 100%;
+    width: 30%;
+    z-index: 3;
+    box-shadow: 0 12px 24px -6px rgba(9 ,30, 66,0.25), 0 0 0 1px rgba(9, 30, 66,0.08);
+    transform: translateX(0);
+    
+    .side-bar-header{
+        display: flex;
+    }
+    .side-bar-selection{
+        display: flex;
+        flex-direction: column;
+
+    }
+
+  }
+

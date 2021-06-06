@@ -8,10 +8,12 @@ import { loadAllUsers } from '../store/actions/user-actions.js'
 // import { Link } from "react-router-dom";
 
 import { socketService } from '../services/socket-service.js';
+import { SideBar } from '../cmps/BoardHeader/SideBar'
 
 export class _BoardApp extends Component {
     state = {
-        lastReceivedUpdateAt: ''
+        lastReceivedUpdateAt: '',
+        isSidebarShowing: false
     }
     
     async componentDidMount() {
@@ -31,8 +33,8 @@ export class _BoardApp extends Component {
         return txt
     }
 
-    onToggleSidebar = () => {
-
+    onToggleSidebar = (isSidebarShowing) => {
+        this.setState({ isSidebarShowing });
     }
 
     render() {
@@ -46,12 +48,13 @@ export class _BoardApp extends Component {
 
                     <BoardNav title={board.title}
                         members={board.members}
-                        // onToggleSidebar={this.onToggleSidebar}
+                        onToggleSidebar={this.onToggleSidebar}
                         // onFilter={this.onFilter}
                         style={board.style}
                         users={this.props.allUsers}
                         lastUpdate={this.state.lastReceivedUpdateAt}
                     />
+                    {this.state.isSidebarShowing && <SideBar onToggleSidebar={this.onToggleSidebar}/>}
                     <GroupList groups={this.props.board.groups} onAddGroup={this.onAddGroup} history={this.props.history} />
                 </div>
             </React.Fragment>
