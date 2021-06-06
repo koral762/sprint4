@@ -1,19 +1,22 @@
 .home-pg-header {
-  padding: 1rem 1rem;
-  position: fixed;
-  z-index: 666;
-  top: 0;
-  left: 0;
-  width: 100%;
-  max-height: 68px;
-  background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  vertical-align: middle;
+    padding: 1rem 1rem;
+    position: fixed;
+    z-index: 666;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: 68px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    vertical-align: middle;
 }
 
 .logo-img-left {
-  height: 4rem;
-  width: auto;
-  position: relative;
-  left: -12px;
+    height: 4rem;
+    width: auto;
+    position: relative;
+    left: -12px;
+    &:hover {
+        opacity: 0.8;
+    }
 }

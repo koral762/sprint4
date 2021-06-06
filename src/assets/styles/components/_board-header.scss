@@ -1,3 +1,11 @@
+.board-header-container {
+    padding: 8px 4px 4px 8px;
+    &>.btn,
+    button {
+        margin: 0 4px 4px 0;
+    }
+}
+
 .members-container {
     cursor: pointer;
     display: flex;
@@ -6,6 +14,7 @@
     align-items: center;
     color: #172b4d;
 }
+
 .member-preview {
     background-color: $memberClr;
     color: black;
@@ -24,9 +33,7 @@
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    
-    
-    &:hover{
+    &:hover {
         background-color: $hovergray;
     }
 }
@@ -36,8 +43,7 @@
     justify-content: flex-start;
     display: flex;
     flex-grow: 1;
-
-    & > * {
+    &>* {
         align-self: center;
         justify-self: center;
     }
@@ -45,9 +51,9 @@
 
 .add-member-modal {
     width: rem(224px);
-    min-height: rem(350px) ;
+    min-height: rem(350px);
     max-height: rem(450px);
-    overflow-y: auto;    
+    overflow-y: auto;
     background-color: #fff;
     border: 1px solid black;
     text-align: center;
@@ -66,27 +72,24 @@
     cursor: pointer
 }
 
-.member-container{    
+.member-container {
     cursor: pointer;
     display: flex;
     margin: 0 rem(4px);
     font-size: rem(15px);
-    align-items: center;    
+    align-items: center;
     color: black;
-
-    p{  
-        text-align: left;  
+    p {
+        text-align: left;
         color: black;
         // margin: rem(6px);
         line-height: 1;
-        flex-grow:1 ;
+        flex-grow: 1;
     }
-
-    :last-child {
+     :last-child {
         width: rem(18px);
         opacity: 0.8;
     }
-
     &:hover {
         background-color: $hovergray;
         border-radius: 0.45em;

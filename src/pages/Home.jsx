@@ -27,17 +27,27 @@ export function Home() {
                 <div className="introduction slide-right">
                     <h1>Welcome to Treelo</h1>
                     <div className="intro-text">
-                        <p>Start with a Trello board, lists, and cards. Customize and expand with more features as your teamwork grows. Manage projects, organize tasks, and build team spirit—all in one place.</p>
+                        <p>Start with a Treelo board, lists, and cards. Customize and expand with more features as your teamwork grows. Manage projects, organize tasks, and build team spirit—all in one place.</p>
                     </div>
                     <NavLink to={ `/board/` } className="tryit">Try It now! &#x2192;</NavLink>
                 </div>
                 <img src={HeroImg} className="slide-left" />
-                {/* <div className="img-home slide-left"></div> */}
+            </section>
+
+            <section className="home-pg-text">
+                <h2>Sick of replacing dried out white board markers every week?</h2>
+                <h2>Lost in the paper-towers?</h2>
+                <h2>Its time to move on to our simple and efficient technological solution</h2>
+                <h2>Be innovative, increase productivity by bringing new technology and tools into your organization </h2>
+                <h2>Enjoy our many features of task management for higher efficiency</h2>
+                <h2>Live updates from team-mates and faster decisions</h2>
+{/* https://hbr.org/2015/03/convincing-skeptical-employees-to-adopt-new-technology
+https://zapier.com/learn/project-management/kanban-board/ */}
             </section>
 
         <section className="about-wrapper flex column">
-            <p className="about-us">Meet the Team</p>
-            <div className="about-us-container flex justify-center align-center">
+            <h3 className="about-us-title">Meet the Team</h3>
+            <div className="about-us-container flex justify-center align-center wrap">
               
                 <div className="about-me-container">
                     <div className="about-me koral"></div>

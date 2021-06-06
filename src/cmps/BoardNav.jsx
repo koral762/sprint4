@@ -5,14 +5,15 @@ import { MemberList } from '../cmps/BoardHeader/MemberList';
 import { loadAllUsers } from '../store/actions/user-actions.js';
 // import { Notifications } from './Notifications';
 // import MoreHorizOutlinedIcon from '@material-ui/icons/MoreHorizOutlined';
+
 export class _BoardNav extends Component {
     async componentDidMount() {
         // await this.props.loadAllUsers()
     }
     render() {
         return (
-            <div className="boards-header-container flex justify-space-between wrap" >
-                <div className="board-nav-left flex">
+            <div className="board-header-container flex justify-space-between wrap" >
+                <div className="board-nav-left flex align-center">
                     <h2 className="proj-title">{this.props.board.title}</h2>
 
                     <div className="members-container">
@@ -23,7 +24,7 @@ export class _BoardNav extends Component {
                         person_add</span>Invite</div>
                     <input className="btn" type="text" placeholder="Filter here"></input>
                 </div>
-                <div className="board-nav-right">
+                <div className="board-nav-right flex ">
                     <button>notifications</button>
                     <button onClick={() => this.props.onToggleSidebar(true)}>
                         <span className="material-icons">more_horiz</span>Show menu
