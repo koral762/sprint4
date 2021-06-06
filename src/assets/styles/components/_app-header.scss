@@ -2,7 +2,7 @@
     padding: 4px 4px;
     height: 40px;
     color: $darktxt;
-    background-color: rgba(0, 0, 0, 0.32);
+    background-color: rgba(0, 0, 0, 0.205);
     width: 100vw;
     &.open {
         transform: translateX(0%);
@@ -52,7 +52,7 @@
 
 .login-btn {
     background-color: transparent;
-    color: $lighttxt;
+    color: #30aa00;
     transition: text-decoration 0.15s ease-in-out;
     &:hover {
         text-decoration: underline;

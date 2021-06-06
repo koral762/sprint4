@@ -9,6 +9,11 @@
 
 .add-new-group-text {
     white-space: nowrap;
+    width: 272px;
+    background-color: rgba(0, 0, 0, 0.205);
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.205)
+    }
 }
 
 .new-item-btn {
