@@ -32,7 +32,8 @@ class _CardMenu extends Component {
     }
 
     getParentPos = () => {
-        const pos = this.props.anchorEl.current.parentElement.parentElement.getBoundingClientRect()
+        const pos = this.props.anchorEl.current.parentElement.getBoundingClientRect()
+        console.log('pos',pos);
         this.setState({ offsetTop: pos.top, offsetLeft: pos.left, width: pos.width })
     }
 

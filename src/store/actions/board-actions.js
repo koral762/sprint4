@@ -4,18 +4,6 @@ import { utils } from '../../services/utils-service'
 const { cardService } = require("../../services/card-service");
 
 
-// export function loadBoard(id) {
-//     return async dispatch => {
-//         try {
-//             const board = await boardService.getBoardById(id)
-//             dispatch({ type: 'SET_BOARD', board })
-//         } catch (err) {
-//             console.log('ReviewActions: err in loadBoard', err)
-//         }
-//     }
-// }
-
-
 export function loadBoard(id) {
     return async dispatch => {
 
@@ -92,6 +80,7 @@ export function onAddNewGroup(board, groupTitle) {
         try {
             let newBoard = JSON.parse(JSON.stringify(board))
             const groupToPush = {
+                id: utils.makeId(),
                 title: groupTitle,
                 cards: [],
                 archivedAt: false,

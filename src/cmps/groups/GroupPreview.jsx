@@ -16,6 +16,7 @@ class _GroupPreview extends Component {
     }
 
     onAddCard = (txt) => {
+        console.log('group preview',this.props.group);
         return this.props.addCard(this.props.board, txt, this.props.group.id)
     }
 

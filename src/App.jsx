@@ -59,6 +59,7 @@ class _App extends Component {
 
           // time analysis
           const currCardTime = currCard.timeAnalysis
+
           if (currCardTime) {
             currCardTime.timeInGroupsMap[currCardTime.currGroup.groupId] =
               currCardTime.timeInGroupsMap[currCardTime.currGroup.groupId] + (Date.now() - currCardTime.currGroup.enteredAt) ||

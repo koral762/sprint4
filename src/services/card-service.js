@@ -8,6 +8,7 @@ export const cardService = {
 
 
 async function addCard(board, cardTxt, groupId) {
+    console.log('groupId',groupId);
     const newBoard = JSON.parse(JSON.stringify(board))
     const newCard = {
         id: utils.makeId(),
