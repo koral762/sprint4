@@ -13,6 +13,9 @@
         margin: 18px 0;
         text-transform: uppercase;
     }
+    .popular-title {
+        margin-top: 0;
+    }
     input[type='text'] {
         outline: none;
         font-size: em(16px);
@@ -21,7 +24,7 @@
         border: none;
         border-radius: 4px;
         &:focus {
-            background-color: #fff;
+            // background-color: #fff;
         }
         &::placeholder {
             color: $darktxt;
@@ -45,7 +48,8 @@
     height: 92px;
     width: 193px;
     min-width: fit-content;
-    margin: 4px;
+    margin-right: 16px;
+    margin-bottom: 16px;
     padding: 8px;
     border-radius: 3px;
     font-size: rem(16px);

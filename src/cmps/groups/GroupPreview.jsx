@@ -68,7 +68,7 @@ class _GroupPreview extends Component {
             <Draggable draggableId={group.id} index={this.props.index}>
                 {(provided) => (
                     <section
-                        className="card-list group-container"
+                        className="card-list"
                         ref={provided.innerRef}
                         {...provided.draggableProps}>
                         <div className="group-preview-header" {...provided.dragHandleProps} >

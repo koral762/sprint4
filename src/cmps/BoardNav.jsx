@@ -14,7 +14,7 @@ export class _BoardNav extends Component {
         return (
             <div className="board-header-container flex justify-space-between wrap" >
                 <div className="board-nav-left flex align-center">
-                    <h2 className="proj-title">{this.props.board.title}</h2>
+                    <h2 className="proj-title btn">{this.props.board.title}</h2>
 
                     <div className="members-container">
                         <MemberList members={this.props.members} allUsers={this.props.allUsers}/>

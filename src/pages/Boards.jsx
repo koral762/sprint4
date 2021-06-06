@@ -36,7 +36,7 @@ export class _Boards extends Component {
                         {boards.map((board) => <BoardPreview key={board._id} board={board} />)}
                     </section>
 
-                    <h3>Popular templates</h3>
+                    <h3 className="popular-title">Popular templates</h3>
 
                     <section className="select-board-container templates-board-container">
                         <div className="template" style={{

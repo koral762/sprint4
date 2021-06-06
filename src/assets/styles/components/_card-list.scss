@@ -9,8 +9,12 @@
     flex-grow: 0;
     flex-shrink: 0;
     box-sizing: border-box;
-    flex:1;
-    
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    white-space: normal;
+    height: fit-content;
     .group-header {
         font-weight: 600;
         cursor: pointer;
@@ -25,7 +29,9 @@
             background: $trnsprnt;
         }
     }
- 
+    &:first-child {
+        margin-left: 0;
+    }
 }
 
 .cards-content-wrapper {

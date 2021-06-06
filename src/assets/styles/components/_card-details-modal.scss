@@ -28,11 +28,10 @@
     .card-details-title {
         font-weight: bold;
         font-size: em(20px);
-    }  
+    }
 }
 
-.modal-content
-{
+.modal-content {
     // transform: translateY(-100px);
     transition: all 500ms ease-in-out;
 }
@@ -62,11 +61,10 @@
     margin-bottom: 50px;
 }
 
-.member-preview-big{
+.member-preview-big {
     height: 2.5rem !important;
     width: 2.5rem !important;
     line-height: 3em;
-
     .members-list-add-button {
         margin-top: 8px;
     }
@@ -76,10 +74,10 @@
     margin-top: 8%;
 }
 
-
 .description-txt {
     flex-grow: 1;
 }
+
 .modal-description,
 .description-text-box {
     margin: 15px 3px 4px 0;
@@ -120,9 +118,7 @@
     display: flex;
 }
 
-.sidebar-button-with-cover {
-
-}
+.sidebar-button-with-cover {}
 
 .activity-text-box {
     margin: 12px;
@@ -135,8 +131,7 @@
 .activity-text-box-text {
     margin: 12px;
     width: 100%;
-    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
-        0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
     border-radius: 4px;
     padding: 12px;
     background-color: rgba(152, 152, 152, 0.24);
@@ -183,19 +178,14 @@
     margin: 10px;
 }
 
-.card-details-cover-color,.card-details-cover-image {
+.card-details-cover-color,
+.card-details-cover-image {
     width: 100%;
     height: 100px;
     justify-content: flex-end;
     align-items: flex-end;
     display: flex;
     flex-direction: column;
-
-    .modal-close {
-        height: 50px;
-        right: 10px;
-        top: 10px;
-    }
 }
 
 .card-details-modal-container {
@@ -203,6 +193,8 @@
     margin: auto;
 }
 
-.modal-close {
-    height: 50px;
+#modal-close {
+    padding: 8px;
+    margin: 0;
+    align-self: center;
 }
