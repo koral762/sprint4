@@ -2,7 +2,7 @@
     padding: 4px 4px;
     height: 40px;
     color: $darktxt;
-    background-color: rgba(0, 0, 0, 0.205);
+    background-color: rgba(243, 234, 234, 0.486);
     width: 100vw;
     &.open {
         transform: translateX(0%);
@@ -15,17 +15,11 @@
         align-items: center;
     }
     span {
-        font-size: rem(24px);
+        font-size: 20px;
         vertical-align: middle;
         display: flex;
         align-items: center;
     }
-}
-
-.boards-icon {
-    font-weight: bold;
-    //   margin-left: rem(1px);
-    font-size: 14px;
 }
 
 .logo-img {

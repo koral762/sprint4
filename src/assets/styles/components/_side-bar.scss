@@ -6,42 +6,37 @@
     right: 0;
     background-color: #f4f5f7;
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     flex-wrap: nowrap;
-    justify-content: flex-start;
     overflow: hidden;
     height: 100%;
-    width: 400px;
+    width: 340px;
     z-index: 3;
     box-shadow: 0 12px 24px -6px rgba(9, 30, 66, 0.25), 0 0 0 1px rgba(9, 30, 66, 0.08);
     transform: translateX(0);
 }
 
 .side-bar-header {
-    height: 48px;
+    height: 44px;
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    vertical-align: middle;
     white-space: nowrap;
     .menu-title {
+        vertical-align: middle;
         font-size: rem(16px);
-        line-height: 20px;
         text-align: center;
+        line-height: 20px;
         flex: 1;
+        margin: 14px 32px;
     }
+    .close-side-bar {}
 }
 
 hr {
     background-color: rgba(9, 30, 66, .13);
     border: 0;
     height: 1px;
-    margin: 16px 0;
+    margin: 0;
     padding: 0;
-    width: 100%;
+    width: 90%;
 }
 
 .side-bar-selection {
@@ -49,10 +44,11 @@ hr {
     flex-direction: column;
 }
 
-.side-bar-inside-containr {
+.side-bar-inside-container {
     width: -webkit-fill-available;
-    margin-right: 0.5rem;
     overflow-y: auto;
+    width: 100%;
+    padding: 12px 6px 12px 12px;
 }
 
 .board-backgrounds-section-tile {
@@ -61,8 +57,7 @@ hr {
     float: left;
     padding: 0 4px;
     position: relative;
-    text-align: center;
-    width: 50%;
+    width: 100%;
 }
 
 .image {
