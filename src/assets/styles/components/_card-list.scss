@@ -29,6 +29,8 @@
 }
 
 .cards-content-wrapper {
+    max-height: 530px;
+    overflow: auto;
     margin: 0 4px;
     padding: 0 4px;
     z-index: 0;
