@@ -38,12 +38,11 @@ export class _SideBar extends Component {
     render() {
         return (
             <div className="side-bar-container" >
-
-                {console.log('side bar innn')}
+                {console.log('side bar in')}
                 <div className="side-bar-header">
                     {this.state.sideBarTitle !== 'Menu' &&
-                        <button className="close-side-bar" onClick={() => { this.titleClicked('Menu') }}><NavigateBeforeIcon /></button>}
-                    <div className="menu-title">{this.state.sideBarTitle}</div>
+                    <button className="close-side-bar" onClick={() => { this.titleClicked('Menu') }}><NavigateBeforeIcon /></button>}
+                    <h3 className="menu-title">{this.state.sideBarTitle}</h3>
                     <button className="close-side-bar" onClick={() => { this.props.onToggleSidebar(false) }}><CloseIcon /></button>
                 </div>
                 <hr/>
