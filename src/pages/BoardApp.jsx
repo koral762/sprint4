@@ -8,7 +8,7 @@ import { loadAllUsers } from '../store/actions/user-actions.js'
 // import { Link } from "react-router-dom";
 
 import { socketService } from '../services/socket-service.js';
-import { SideBar } from '../cmps/BoardHeader/SideBar'
+import { SideBar } from '../cmps/BoardHeader/SideBar/SideBar'
 
 export class _BoardApp extends Component {
     state = {
