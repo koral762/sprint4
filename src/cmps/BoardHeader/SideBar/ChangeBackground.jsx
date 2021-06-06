@@ -1,29 +1,39 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { PhotosGallery } from './PhotosGallery'
 
 
 export class _ChangeBackground extends Component {
 
     state = {
-        chooseBackground:''
+        chooseBackground: ''
     }
 
+    onSelect=(chooseBackground)=>{
+        this.setState({chooseBackground})
+        console.log(chooseBackground);
+    }
 
     render() {
 
         return (
             <section className="change-background-container">
+                {this.state.chooseBackground === '' &&
+                    <div>
+                        <div className="board-backgrounds-section-tile board-backgrounds-photos-tile" onClick={()=>{this.onSelect('Photos')}}>
+                            <div className="image"></div>
+                            <div className="title">Photos</div>
+                        </div>
+                        <div className="board-backgrounds-section-tile board-backgrounds-colors-tile" onClick={()=>{this.onSelect('Colors')}}>
+                            <div className="image"></div>
+                            <div className="title">Colors</div>
+                        </div>
+                    </div>
+                }
 
-                <div className="change-background-container">change background</div>
-                <hr />
-                <div className="board-backgrounds-section-tile board-backgrounds-photos-tile">
-                    <div className="image"></div>
-                    <div className="title">Photos</div>
-                </div>
-                <div className="board-backgrounds-section-tile board-backgrounds-colors-tile">
-                    <div className="image"></div>
-                    <div className="title">Colors</div>
-                </div>
+                {this.state.chooseBackground === 'Photos' && <PhotosGallery/>}
+                {/* {this.state.chooseBackground === '' && <ColorsGallery/>} */}
+
             </section>
 
         )

@@ -184,6 +184,17 @@
     align-items: flex-end;
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
+=======
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    .modal-close {
+        height: 50px;
+        width: 50px;
+        bottom: 10px;
+    }
+>>>>>>> ef858c4b636a1f5b1b98167cbea17f3ff10be3cf
 }
 
 .card-details-modal-container {
