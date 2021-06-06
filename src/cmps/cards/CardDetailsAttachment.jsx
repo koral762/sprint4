@@ -71,7 +71,7 @@ export class CardDetailsAttachment extends Component {
         const att = this.state.att
         if (!att) return <React.Fragment />
         return (
-            <div className="card-attachment">
+            <div className="card-attachment flex">
                 <div className="att-image" style={{ backgroundImage: `url(${att.src})` }} />
                 <div className="att-details-container">
                     <div className="att-title">

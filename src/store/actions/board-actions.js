@@ -179,7 +179,7 @@ export function addActivity(board, activity) {
             await boardService.updateBoard(newBoard) // updating the DB
             console.log(newBoard)
         } catch (err) {
-            console.log('error removing board', err)
+            console.log('error updating board', err)
         }
     }
 }

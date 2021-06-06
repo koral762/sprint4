@@ -30,7 +30,8 @@ class _CardDetails extends Component {
         commentsOnly: false,
         isLabelPaletteShowing: false,
         isCoverSelectorShown: false,
-        isUploading: false
+        isUploading: false,
+        isUploadZoneOpen: false
     }
 
     componentDidMount() {
@@ -109,21 +110,24 @@ class _CardDetails extends Component {
     onAddCardMember = (user) => {
         var members = JSON.parse(JSON.stringify(this.state.card.members))
         members.unshift(user)
-        this.onChangeMembers(members)
+        this.onChangeMembers(members, "added a member")
     }
 
     onRemoveCardMember = (user) => {
         var members = JSON.parse(JSON.stringify(this.state.card.members))
         members = members.filter(_user => _user._id != user._id)
-        this.onChangeMembers(members)
+        this.onChangeMembers(members, "removed a member")
     }
 
-    onChangeMembers = (members) => {
+    onChangeMembers = (members, txt) => {
         const card = { ...this.state.card }
 
         card.members = members;
         console.log(members)
-        this.setState({ card })
+        this.setState({ card }, () => {
+            const activity = this.createActivity(txt)
+            this.submitCard(card, activity)
+        })
     }
 
     getCardCover = () => {

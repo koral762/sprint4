@@ -43,7 +43,10 @@ export class MemberPreview extends Component {
         if (!name) return
         const newName = name.split(' ')
         const firstLetter = newName[0].charAt(0).toUpperCase()
-        const secondLetter = newName[1].charAt(0).toUpperCase()
+        let secondLetter = ''
+        if (newName.length > 1) {
+            secondLetter = newName[1].charAt(0).toUpperCase()
+        }
         const initials = firstLetter + secondLetter
         return initials
     }

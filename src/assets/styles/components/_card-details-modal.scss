@@ -190,6 +190,9 @@
     align-items: flex-end;
     display: flex;
     flex-direction: column;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 
     .modal-close {
         height: 50px;

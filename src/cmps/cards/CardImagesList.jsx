@@ -6,7 +6,7 @@ export function CardImagesList(props) {
     
     if (!props.attachments) return <React.Fragment />
     return (
-        <div className="card-attachments-container flex">
+        <div className="card-attachments-container">
             {props.attachments.map(att => <CardDetailsAttachment key={att.id} onUpdate={props.onUpdate} attachment={att} />)}
         </div>
     )

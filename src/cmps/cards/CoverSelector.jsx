@@ -31,39 +31,39 @@ export class CoverSelector extends Component {
         { id: 109, value: '#ab8597' },
     ]
 
-    onSelectCover = async(value) => {
-        
-        let cover={
-            id : value.id,
-            color : value.value,
-            src : value.src
+    onSelectCover = async (value) => {
+
+        let cover = {
+            id: value.id,
+            color: value.value,
+            src: value.src
         }
 
-        this.setState({cover},
+        this.setState({ cover },
             this.props.onUpdate(cover))
     }
 
     onRemoveCover = () => {
-        this.setState({cover:null}, () => {
+        this.setState({ cover: null }, () => {
             console.log(this.state.cover)
             this.props.onUpdate(this.state.cover)
         })
     }
 
     getImageEls = () => {
-        // const att = this.props.card.attachments
-        
-        // if (!att) 
-        return <React.Fragment />
-        // const imageEls = att.map(el => {
-        //     let txt = "single-image-choice"
-        //     if (this.state.cover.id === el.id) {
-        //         txt += ' selected'
-        //     }
-        //     return <div key={el.id} className={txt} onClick={() => this.onSelectCover(el)} style={{ backgroundImage: `url(${el.src})` }}></div>
-        // })
-        
-        // return <React.Fragment><h6>Images</h6><div className="image-choice">{imageEls}</div></React.Fragment>
+        const att = this.props.card.attachments
+
+        if (!att)
+            return <React.Fragment />
+        const imageEls = att.map(el => {
+            let txt = "single-image-choice"
+            if (this.state.cover.id === el.id) {
+                txt += ' selected'
+            }
+            return <div key={el.id} className={txt} onClick={() => this.onSelectCover(el)} style={{ backgroundImage: `url(${el.src})` }}></div>
+        })
+
+        return <React.Fragment><h6>Images</h6><div className="image-choice">{imageEls}</div></React.Fragment>
     }
 
     getColorEls = () => {
@@ -106,9 +106,9 @@ export class CoverSelector extends Component {
                             {this.getColorEls()}
                         </div>
                     </div>
-                    {/* <div className="cover-selector-images">
+                    <div className="cover-selector-images">
                         {this.getImageEls()}
-                    </div> */}
+                    </div>
                     <div className="cover-remove-container">
                         <button className="cancel-btn" onClick={this.onRemoveCover}>Remove Cover</button>
                     </div>
