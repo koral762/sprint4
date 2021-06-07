@@ -1,7 +1,8 @@
 import { Button, Checkbox } from '@material-ui/core'
 import React, { Component } from 'react'
 import { utils } from '../../services/utils-service'
-import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
+import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined'
+import AddIcon from '@material-ui/icons/Add'
 
 export class CardChecklistTodo extends Component {
 
@@ -28,7 +29,6 @@ export class CardChecklistTodo extends Component {
     }
 
     componentDidMount() {
-        
         if (this.props.isNew) this.setState({ isNew: true })
         this.updateTodo()
     }
@@ -41,7 +41,8 @@ export class CardChecklistTodo extends Component {
             </form>
         )}
         return (
-            <button className="checklist-add-todo" onClick={this.setEditing}>
+            <button className="flex checklist-add-todo" onClick={this.setEditing}>
+                <AddIcon className="add-icon"/>
                 Add an item
             </button>
         )
@@ -65,10 +66,9 @@ export class CardChecklistTodo extends Component {
             <React.Fragment>
                 <div className={this.getTodoClassName()} onClick={this.setEditing}>
                 <Checkbox checked={this.state.isDone} onChange={this.onCheck} className="checkbox-todo" />
-
                     {this.state.txtValue}
                     <Button onClick={this.onRemove}>
-                        <DeleteOutlineOutlinedIcon fontSize="inherit" />
+                        <DeleteOutlineOutlinedIcon />
                     </Button>
                 </div>
             </React.Fragment>

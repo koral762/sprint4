@@ -3,19 +3,25 @@ import { connect } from 'react-redux';
 import { MemberList } from '../cmps/BoardHeader/MemberList';
 // import { Filter } from './Filter';
 import { loadAllUsers } from '../store/actions/user-actions.js';
+import { updateBoardTitle } from '../store/actions/board-actions.js';
+
 // import { Notifications } from './Notifications';
 // import MoreHorizOutlinedIcon from '@material-ui/icons/MoreHorizOutlined';
-
+import { BoardTitle } from '../cmps/BoardHeader/BoardTitle'
 export class _BoardNav extends Component {
     async componentDidMount() {
         // await this.props.loadAllUsers()
     }
+
+    onUpdateBoardTitle = (title) => {
+        this.props.updateBoardTitle(this.props.board, title)
+    }
+
     render() {
         return (
             <div className="board-header-container flex justify-space-between wrap" >
                 <div className="board-nav-left flex align-center">
-                    <h2 className="proj-title btn">{this.props.board.title}</h2>
-
+                    <BoardTitle titleTxt={this.props.board.title} onUpdate={this.onUpdateBoardTitle}></BoardTitle>
                     <div className="members-container">
                         <MemberList members={this.props.members} allUsers={this.props.allUsers}/>
                     </div>
@@ -41,6 +47,8 @@ const mapStateToProps = state => {
     };
 };
 const mapDispatchToProps = {
-    loadAllUsers
+    loadAllUsers,
+    updateBoardTitle
 };
+
 export const BoardNav = connect(mapStateToProps, mapDispatchToProps)(_BoardNav);
