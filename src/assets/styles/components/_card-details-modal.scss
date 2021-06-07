@@ -52,7 +52,7 @@
     // }
     svg {
         color: #42526e;
-        margin-right: 12px;
+        // margin-right: 12px;
     }
 }
 
@@ -80,11 +80,11 @@
 
 .modal-description,
 .description-text-box {
-    margin: 15px 3px 4px 0;
+    margin: 15px 3px 4px -6px;
     padding: 8px 0;
     cursor: pointer;
     pre {
-        // font-family: Poppins-Regular;
+        font-family: Arial, Helvetica, sans-serif;
         background-color: rgba(9, 30, 66, 0.04);
         border: none;
         border-radius: 3px;
@@ -116,6 +116,9 @@
 
 .sidebar-button {
     display: flex;
+    svg {
+        margin-right: 12px
+    }
 }
 
 .label-color {
@@ -158,7 +161,7 @@
 }
 
 .card-attachment {
-    margin: 10px;
+    // margin: 10px;
 }
 
 .card-details-cover-color,
