@@ -37,7 +37,7 @@ export function Home() {
             </section>
 
             <section className="home-pg-text">
-                <h2>Sick of replacing dried out white board markers every week?</h2>
+                <h2>Sick of replacing white board markers every week?</h2>
                 <h2>Lost in the paper-towers? Save a tree, and your time!</h2>
                 <h2>Be innovative, increase productivity by bringing new technology and tools into your organization.</h2>
                 <h2>Receive live updates from team-mates and make faster progress then ever.</h2>

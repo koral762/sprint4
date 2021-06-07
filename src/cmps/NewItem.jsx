@@ -37,6 +37,7 @@ export class NewItem extends Component {
                     onBlur={this.setNotEditing}
                     onSubmit={this.onSubmit} >
                     <textarea
+                    id="add-new-card"
                         placeholder={this.props.placeHolderTxt}
                         autoFocus
                         type="text"
