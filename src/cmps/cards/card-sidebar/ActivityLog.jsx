@@ -11,7 +11,7 @@ export function ActivityLog({ boardId, displayMode, activities }) {
 
 
     return (
-        <ul className="activity-text-box clean-list">
+        <ul className="activity-list clean-list">
             {activities.map(activity => {
                 const byMember = activity.byMember
 

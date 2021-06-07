@@ -84,7 +84,7 @@ export class _AppHeader extends Component {
                             </div>
                         <div>
                         <NavLink to='/board'>
-                        <span className="btn">
+                        <span className="boards-btn btn">
                             <DashboardIcon/> 
                             Boards
                             </span>

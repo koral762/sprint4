@@ -48,11 +48,11 @@ export class _SideBar extends Component {
                 <hr class="side-menu-divider" />
                 <div className="side-bar-inside-container">
                     {this.state.sideBarTitle === 'Menu' &&
-                        <section className="side-bar-selection">
-                            <div onClick={() => { this.titleClicked('About this board') }}>About this board</div>
-                            <div onClick={() => { this.titleClicked('Change background') }}>Change background</div>
-                            <div onClick={() => { this.titleClicked('Board analysis') }}>Board analysis</div>
-                        </section>
+                        <ul className="side-menu-list clean-list">
+                            <li onClick={() => { this.titleClicked('About this board') }}>About this board</li>
+                            <li onClick={() => { this.titleClicked('Change background') }}>Change background</li>
+                            <li onClick={() => { this.titleClicked('Board analysis') }}>Board analysis</li>
+                        </ul>
                     }
 
                     {this.DynamicCmp()}

@@ -334,6 +334,15 @@ export function updatePosition(newBoardPositioning, cardId) {
     }
 }
 
+export function updateBoardTitle(board, boardTitle) {
+    return async dispatch => {
+        let newBoard = JSON.parse(JSON.stringify(board))
+        newBoard.title = boardTitle
+        dispatch({ type: 'SET_BOARD', board: newBoard })
+        await boardService.updateBoard(newBoard) // updating the DB
+    }
+}
+
 // /////////////////////////////////////////////////
 // function makeId(length = 8) {
 //     let text = '';

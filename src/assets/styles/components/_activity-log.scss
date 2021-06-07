@@ -1,12 +1,28 @@
-.member-preview {
-    align-self: center;
+.whole-activity {
+    margin-left: 10px;
+    min-height: 32px;
+    .member-preview {
+        // align-self: center;
+        font-size: 16px;
+        height: 32px;
+        width: 32px;
+        vertical-align: middle;
+    }
+    pre {
+        font-family: Arial, Helvetica, sans-serif;
+    }
 }
 
 .activity-details {
-    margin: 20px 10px 0px 10px;
+    // margin: 20px 10px 0px 10px;
     flex-grow: 1;
 }
 
-.whole-activity {
-    margin-left: 10px;
+.activity-list {}
+
+.activity-text-box-text {
+    // font-family: Poppins-Regular;
+    a {
+        font-weight: bold;
+    }
 }
