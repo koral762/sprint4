@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { GroupList } from '../cmps/groups/GroupList'
 import { CardDetails } from '../cmps/cards/CardDetails'
 import { BoardNav } from '../cmps/BoardNav'
-import { loadBoard, onRemoveGroup, updateBoard } from '../store/actions/board-actions'
+import { loadBoard, onRemoveGroup, setStyle, updateBoard } from '../store/actions/board-actions'
 import { loadAllUsers } from '../store/actions/user-actions.js'
 // import { Link } from "react-router-dom";
 
@@ -20,6 +20,7 @@ export class _BoardApp extends Component {
         const { boardId } = this.props.match.params;
         socketService.setup()
         await this.props.loadBoard(boardId)
+        this.props.setStyle(this.props.board.style)
         this.props.loadAllUsers()
     }
     
@@ -55,7 +56,7 @@ export class _BoardApp extends Component {
                         lastUpdate={this.state.lastReceivedUpdateAt}
                     />
                     {this.state.isSidebarShowing && <SideBar onToggleSidebar={this.onToggleSidebar}/>}
-                    <GroupList groups={this.props.board.groups} onAddGroup={this.onAddGroup} history={this.props.history} />
+                    <GroupList groups={this.props.board.groups} onAddGroup={this.onAddGroup} history={this.props.history} style={board.style} />
                 </div>
             </React.Fragment>
 
@@ -74,7 +75,8 @@ const mapDispatchToProps = {
     loadBoard,
     onRemoveGroup,
     updateBoard,
-    loadAllUsers
+    loadAllUsers,
+    setStyle 
 }
 
 export const BoardApp = connect(mapStateToProps, mapDispatchToProps)(_BoardApp)

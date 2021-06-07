@@ -45,7 +45,7 @@ export class _SideBar extends Component {
                     <h3 className="menu-title">{this.state.sideBarTitle}</h3>
                     <button className="close-side-bar" onClick={() => { this.props.onToggleSidebar(false) }}><CloseIcon /></button>
                 </div>
-                <hr class="side-menu-divider" />
+                <hr className="side-menu-divider" />
                 <div className="side-bar-inside-container">
                     {this.state.sideBarTitle === 'Menu' &&
                         <ul className="side-menu-list clean-list">

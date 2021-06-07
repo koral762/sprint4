@@ -29,13 +29,20 @@ body {
     margin: 0;
     scroll-behavior: smooth;
     background-repeat: no-repeat;
-    background-image: url('../../imgs/field.jpg');
     background-size: cover;
     white-space: nowrap;
     // background-image: url('../../imgs/output-onlinegiftools.gif');
     // background-size: auto;
     // background-position: bottom right;
     // background-image: url('../../imgs/Quantum-Gradient.svg');
+}
+
+.app-bg{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 100% 100%;
+
 }
 
 img {
