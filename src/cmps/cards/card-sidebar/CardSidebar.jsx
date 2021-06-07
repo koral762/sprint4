@@ -10,6 +10,7 @@ import { CircularProgress } from '@material-ui/core'
 export function CardSidebar(props) {
     return (
         <div className="card-sidebar flex column">
+            <h3>Add to card</h3>
             <MemberList members={props.card.members} onAddCardMember={props.onAddCardMember} onRemoveCardMember={props.onRemoveCardMember} allUsers={props.allUsers} card={props.card} showBig={true} />
             <button className="flex sidebar-button" onClick={props.toggleLabelPalette}><LabelOutlinedIcon /><span className="sidebar-button-text">Labels</span></button>
             <CardNewChecklist addActivity={props.addActivity} onUpdate={props.onUpdateChecklists} />

@@ -32,11 +32,6 @@
 }
 
 .modal-content {
-    // transform: translateY(-100px);
-    transition: all 500ms ease-in-out;
-}
-
-.modal-content {
     position: relative;
     background-color: #f4f5f7;
     margin: auto;
@@ -47,12 +42,17 @@
     // border: 1px solid #888;
     border-radius: 2px;
     width: 768px;
+    transition: all 500ms ease-in-out;
     h3 {
         margin: 0.3em 0;
     }
-    button {
-        margin-bottom: 12px;
-        margin-left: 0;
+    // button {
+    //     margin-bottom: 12px;
+    //     margin-left: 0;
+    // }
+    svg {
+        color: #42526e;
+        margin-right: 12px;
     }
 }
 
@@ -116,25 +116,6 @@
 
 .sidebar-button {
     display: flex;
-}
-
-.activity-text-box {
-    margin: 12px;
-    width: 100%;
-    padding: 35px;
-    margin: 20px;
-    background-color: white;
-}
-
-.activity-text-box-text {
-    margin: 12px;
-    width: 100%;
-    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-    border-radius: 4px;
-    padding: 12px;
-    background-color: rgba(152, 152, 152, 0.24);
-    margin: 0px;
-    // font-family: Poppins-Regular;
 }
 
 .label-color {
@@ -203,4 +184,8 @@
     padding: 8px;
     margin: 0;
     align-self: center;
+}
+
+.card-modal-title {
+    margin-bottom: 2px;
 }
