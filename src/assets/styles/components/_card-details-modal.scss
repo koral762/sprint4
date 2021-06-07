@@ -142,6 +142,10 @@
     width: 10em !important;
 }
 
+.add-icon {
+    margin-right: 10px;
+}
+
 .color-choice {
     width: 25px;
     height: 25px;
@@ -178,6 +182,7 @@
 .card-details-modal-container {
     padding: 20px;
     margin: auto;
+    overflow-x: hidden;
 }
 
 #modal-close {
