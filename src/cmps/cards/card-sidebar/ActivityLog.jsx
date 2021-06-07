@@ -11,11 +11,11 @@ export function ActivityLog({ boardId, displayMode, activities }) {
 
 
     return (
-        <ul className="activity-text-box clean-list">
+        <ul className="activity-list clean-list">
             {activities.map(activity => {
                 const byMember = activity.byMember
 
-                return <li className="whole-activity flex" key={activity.id}>
+                return <li className="whole-activity flex align-center" key={activity.id}>
                     {console.log(byMember)}
                     {(displayMode !== 'user') ? <MemberPreview name={(byMember && byMember.fullName) ? byMember.fullName : "Guest"} imgUrl={byMember ? byMember.imgUrl : ""} /> : <React.Fragment />}
                     <pre className="activity-details">

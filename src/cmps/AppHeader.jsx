@@ -84,7 +84,7 @@ export class _AppHeader extends Component {
                             </div>
                         <div>
                         <NavLink to='/board'>
-                        <span className="btn">
+                        <span className="boards-btn btn">
                             <DashboardIcon/> 
                             Boards
                             </span>
@@ -94,11 +94,6 @@ export class _AppHeader extends Component {
                     {/* <div className="logo">Tree-lo</div> */}
                     <img src={Logo} className="logo-img"/>
 
-                    <div className="flex">
-                        {/* <div onClick={this.toggleModal}></div> */}
-                        <NavLink to='/' className="login-btn">Log in</NavLink>
-                        <NavLink to='/' className="signup-btn">Sign up</NavLink>
-                    </div>
 
                 </div>
             </React.Fragment>

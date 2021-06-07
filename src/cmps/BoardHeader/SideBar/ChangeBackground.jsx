@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { PhotosGallery } from './PhotosGallery'
 
 
+
 export class _ChangeBackground extends Component {
 
     state = {
@@ -48,7 +49,6 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-
 };
 
 export const ChangeBackground = connect(mapStateToProps, mapDispatchToProps)(_ChangeBackground);

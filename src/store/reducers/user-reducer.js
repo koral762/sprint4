@@ -6,17 +6,17 @@ const initialState = {
     users: [{
         "_id": "5f6a2528973d861c5d78c355",
         "fullName": "Koral Sabbah",
-        "imgUrl": "https://i.ibb.co/LSCZg2N/KORAL.png"
+        "imgUrl": "https://www.linkpicture.com/q/koral.jpg"
       },
       {
         "_id": "5f6a2528973d861c5d78c328",
         "fullName": "Ksenia Braginsky",
-        "imgUrl": "https://i.ibb.co/k9H36Tm/MOIPNG.png"
+        "imgUrl": "https://www.linkpicture.com/q/ks.jpg"
       },
       {
         "_id": "5f6a2528973d861c5d78c322",
         "fullName": "Miriam Baranovska",
-        "imgUrl": "https://i.ibb.co/85x18Tb/MIRIAMPNG.png"
+        "imgUrl": "https://www.linkpicture.com/q/mir.jpg"
       },
       {
         "_id": "5f6a2528973d861c5d78c323",

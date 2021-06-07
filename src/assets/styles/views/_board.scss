@@ -5,8 +5,8 @@
     background-color: rgba(0, 0, 0, 0);
     overflow-y: hidden;
     .proj-title {
-        font-size: rem(24px);
-        font-weight: bold;
+        font-size: rem(18px);
+        font-weight: 600;
         letter-spacing: 1.5px;
         vertical-align: baseline;
     }
@@ -14,11 +14,11 @@
     .board-nav-right {
         float: right;
     }
-    &>.btn,
-    button {
-        margin: 0 4px 4px 0;
-        padding: 0 7px 0 7px;
-    }
+    // &>.btn,
+    // button {
+    //     margin: 0 4px 4px 0;
+    //     padding: 0 7px 0 7px;
+    // }
 }
 
 .board-nav-left {

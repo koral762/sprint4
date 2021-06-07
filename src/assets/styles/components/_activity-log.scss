@@ -1,12 +1,30 @@
-.member-preview {
-    align-self: center;
-}
-
-.activity-details {
-    margin: 20px 10px 0px 10px;
-    flex-grow: 1;
+.editing-section-container {
+    margin: 8px 12px;
 }
 
 .whole-activity {
     margin-left: 10px;
+    min-height: 32px;
+    .member-preview {
+        // align-self: center;
+        font-size: 16px;
+        height: 32px;
+        width: 32px;
+        padding-top: 2px;
+    }
+    pre {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
+
+.activity-details {
+    margin-left: 10px;
+    flex-grow: 1;
+}
+
+.activity-text-box-text {
+    // font-family: Poppins-Regular;
+    a {
+        font-weight: bold;
+    }
 }
