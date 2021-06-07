@@ -42,7 +42,7 @@ div {
 }
 
 .group-preview-header {
-    font-family: 'Segoe UI', sans-serif;
+    // font-family: 'Segoe UI', sans-serif;
     color: #172b4d;
     font-size: rem(14px);
     font-weight: 500;
@@ -52,13 +52,13 @@ div {
     justify-content: space-between;
     z-index: 1;
     white-space: normal;
-    padding: rem(7px) rem(7px);
+    padding: 7px 2px 7px 10px;
     .dots-icon {
         color: #6b778c;
         text-align: center;
         font-size: 1.2em;
         margin-right: 0;
-        height: 20px;
+        // height: 20px;
         padding: 6px;
         &:hover {
             border-radius: 0.25em;

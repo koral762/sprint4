@@ -37,18 +37,16 @@ export class _SideBar extends Component {
 
     render() {
         return (
-            <div className="side-bar-container" >
-
-                {console.log('side bar innn')}
-                <div className="side-bar-header">
+            <div className="side-bar-container flex column align-center" >
+                {console.log('side bar in')}
+                <div className="side-bar-header flex align-center">
                     {this.state.sideBarTitle !== 'Menu' &&
-                        <button className="close-side-bar" onClick={() => { this.titleClicked('Menu') }}><NavigateBeforeIcon /></button>}
-                    <div className="menu-title">{this.state.sideBarTitle}</div>
+                    <button className="close-side-bar" onClick={() => { this.titleClicked('Menu') }}><NavigateBeforeIcon /></button>}
+                    <h3 className="menu-title">{this.state.sideBarTitle}</h3>
                     <button className="close-side-bar" onClick={() => { this.props.onToggleSidebar(false) }}><CloseIcon /></button>
                 </div>
-                <hr/>
-                <div className="side-bar-inside-containr">
-
+                <hr class="side-menu-divider" />
+                <div className="side-bar-inside-container">
                     {this.state.sideBarTitle === 'Menu' &&
                         <section className="side-bar-selection">
                             <div onClick={() => { this.titleClicked('About this board') }}>About this board</div>

@@ -21,8 +21,10 @@
     }
 }
 
-.board-nav-left>* {
-    margin-right: 5px;
+.board-nav-left {
+    &>* {
+        margin-right: 5px;
+    }
 }
 
 .board-app {

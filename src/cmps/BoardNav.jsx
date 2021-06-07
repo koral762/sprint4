@@ -28,7 +28,7 @@ export class _BoardNav extends Component {
 
                     <div className="btn"><span className="material-icons">
                         person_add</span>Invite</div>
-                    <input className="btn" type="text" placeholder="Filter here"></input>
+                    <input className="btn board-nav-filter" type="text" placeholder="Filter here"></input>
                 </div>
                 <div className="board-nav-right flex ">
                     <button>notifications</button>
