@@ -16,11 +16,11 @@
     box-shadow: 0px 1px 0 rgba(9, 30, 66, 0.25);
     &:hover {
         .card-btn {
-            display: block;
+            display: flex;
             position: absolute;
             right: 0;
-            margin-right: 0.8rem;
-            margin-top: 0.4rem;
+            margin-right: 0.3rem;
+            margin-top: -0.1rem;
             background-color: $hovergray;
         }
         background: $trnsprnt;
@@ -100,10 +100,11 @@
 }
 
 .card-btn {
+    color:rgba(36, 36, 44, 0.815);
     display: none;
     border-radius: 3px;
     cursor: pointer;
-    padding: 0.3rem;
+    padding: 0.4rem;
     &:hover {
         cursor: pointer;
     }
