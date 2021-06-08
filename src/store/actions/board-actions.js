@@ -38,6 +38,15 @@ export function loadBoards() {
     }
 }
 
+export function addNewBoard(boardName, boardColor = null) {
+    
+    return async dispatch => {
+      const newBoard = await boardService.addNewBoard(boardName, boardColor)
+      dispatch({ type: 'SET_BOARD', newBoard });
+      return newBoard
+    }
+  }
+
 export function removeBoard(boardId) {
     return async dispatch => {
         try {
@@ -253,7 +262,7 @@ export function removeCardMember(board, card, id) {
 
         if (!newCard.members) newCard.members = []
 
-        newCard.members = newCard.members.filter(user => user._id != id)
+        newCard.members = newCard.members.filter(user => user._id !== id)
 
         // replicate board
         let newBoard = JSON.parse(JSON.stringify(board))

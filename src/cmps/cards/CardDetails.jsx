@@ -344,7 +344,9 @@ class _CardDetails extends Component {
                                 <SubtitlesIcon />
                                 <div>
                                     <CardTitle titleTxt={this.state.card.title} onUpdate={this.onUpdateTitle} />
+                                    <div className="in-list">
                                     <span className="group-name">in list <u>{this.state.groupName}</u></span>
+                                    </div>
                                 </div>
                             </div>
                             {!this.state.card.cover &&

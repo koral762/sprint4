@@ -3,6 +3,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { updateCard, onRemoveCard, addActivity } from '../../store/actions/board-actions.js'
 import { boardService } from '../../services/board-service.js'
+import { LabelPalette } from '../cards/card-sidebar/LabelPalette';
+import { AddMemberModal } from '../BoardHeader/AddMemberModal';
+import { CardDueDateSetter } from './CardDueDateSetter';
 import { Button, Dialog } from '@material-ui/core';
 import ArchiveOutlinedIcon from '@material-ui/icons/ArchiveOutlined';
 import CloseRoundedIcon from '@material-ui/icons/CloseRounded';
@@ -10,7 +13,8 @@ import LabelIcon from '@material-ui/icons/Label';
 import PeopleAltOutlinedIcon from '@material-ui/icons/PeopleAltOutlined';
 import ShareIcon from '@material-ui/icons/Share';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
-import { LabelPalette } from '../cards/card-sidebar/LabelPalette';
+
+
 
 class _CardMenu extends Component {
 
@@ -36,7 +40,7 @@ class _CardMenu extends Component {
 
     getParentPos = () => {
         const pos = this.props.anchorEl.current.parentElement.getBoundingClientRect()
-        console.log('pos',pos);
+        console.log('pos', pos);
         this.setState({ offsetTop: pos.top, offsetLeft: pos.left, width: pos.width })
     }
 
@@ -47,6 +51,12 @@ class _CardMenu extends Component {
     componentDidMount() {
         this.getParentPos()
         this.getCurrTitle()
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        // if (prevState.isMemberListOpen) {
+        //     this.setState({ isMemberListOpen: prevState.isMemberListOpen })
+        // }
     }
 
 
@@ -93,7 +103,52 @@ class _CardMenu extends Component {
     }
 
     onToggleLabelPaletteShown = () => {
-        this.setState({isLabelPaletteShown: !this.state.isLabelPaletteShown})
+        this.setState({ isLabelPaletteShown: !this.state.isLabelPaletteShown, isMemberListOpen: false })
+    }
+
+    toggleCardMembersMenu = () => {
+        this.setState({ isMemberListOpen: !this.state.isMemberListOpen, isLabelPaletteShown: false })
+    }
+
+    onUpdateCardMembers = async (card) => {
+        this.setState({ card }, () => {
+            const activity = this.createActivity('edited the card members')
+            this.submitCard(card, activity)
+        })
+    }
+
+    onAddCardMember = (user) => {
+        var members = JSON.parse(JSON.stringify(this.props.props.card.members))
+        members.unshift(user)
+        this.onChangeMembers(members, "added a member")
+    }
+
+    onRemoveCardMember = (user) => {
+        var members = JSON.parse(JSON.stringify(this.props.props.card.members))
+        members = members.filter(_user => _user._id != user._id)
+        this.onChangeMembers(members, "removed a member")
+    }
+
+    onChangeMembers = (members, txt) => {
+        const card = { ...this.props.props.card }
+
+        card.members = members;
+        console.log(members)
+        this.setState({ card }, () => {
+            const activity = this.createActivity(txt)
+            this.submitCard(card, activity)
+        })
+    }
+
+    onUpdateDueDate = async (dueDate) => {
+        let card = { ...this.props.props.card }
+        card.dueDate = dueDate
+
+        this.setState({ card }, async () => {
+            const activity = this.createActivity('updated due date')
+            await this.submitCard(card, activity)
+
+        })
     }
 
     render() {
@@ -101,37 +156,56 @@ class _CardMenu extends Component {
         return (
             <Dialog onClose={this.props.onClose} open={true} >
 
-                    <div className="card-edit-container" onClick={(ev) => ev.stopPropagation()} style={{
-                        left: `${this.state.offsetLeft}px`,
-                        top: `${this.state.offsetTop}px`,
-                        position: 'fixed'
-                    }}>
-                        <div className="card-edit-left">
-                            <div className="card-preview" style={{ width: `${this.state.width}px` }}>
+                <div className="card-edit-container" onClick={(ev) => ev.stopPropagation()} style={{
+                    left: `${this.state.offsetLeft}px`,
+                    top: `${this.state.offsetTop}px`,
+                    position: 'fixed'
+                }}>
+                    <div className="card-edit-left">
+                        <div className="card-preview" style={{ width: `${this.state.width}px` }}>
 
-                                <form>
-                                    <textarea className="card-preview-title-edit" autoFocus onKeyPress={this.onKeyPress} onChange={this.onChange} value={this.state.txtValue} />
-                                </form>
-                            </div>
-                            <button className="save-btn" onClick={this.onUpdateHeader}>Save</button>
+                            <form>
+                                <textarea className="card-preview-title-edit" autoFocus onKeyPress={this.onKeyPress} onChange={this.onChange} value={this.state.txtValue} />
+                            </form>
                         </div>
-
-                        
-
-                        <div className="card-edit-right">
-                            <div className="card-preview-edit-actions-container">
-
-                                <Button onClick={this.onDeleteCard}><ArchiveOutlinedIcon /> <span>Delete Card</span></Button>
-                                <Button onClick={this.onToggleLabelPaletteShown}><LabelIcon /><span>EDIT LABELS</span></Button>
-                                <Button><PeopleAltOutlinedIcon /><span>EDIT MEMBERS</span></Button>
-                                <Button><AccessTimeIcon /><span>SET DUE DATE</span></Button>
-                                <Button><ShareIcon /><span>SHARE</span></Button>
-                                <Button onClick={this.onClose}><CloseRoundedIcon /><span>CLOSE</span></Button>
-
-                            </div>
-                        </div>
-                        { this.state.isLabelPaletteShown && <LabelPalette createActivity={this.createActivity} card={this.props.props.card} isShownOnBoard={true}/>}
+                        <button className="save-btn" onClick={this.onUpdateHeader}>Save</button>
                     </div>
+
+
+                    <div className="card-edit-right">
+                        <div className="card-preview-edit-actions-container">
+
+                            <Button style={{textTransform: 'none'}} onClick={this.onDeleteCard}><ArchiveOutlinedIcon /> <span>Delete card</span></Button>
+                            <Button style={{textTransform: 'none'}} onClick={this.onToggleLabelPaletteShown}><LabelIcon /><span>Edit labels</span></Button>
+                            <Button style={{textTransform: 'none'}} ref={this.ref} onClick={this.toggleCardMembersMenu}><PeopleAltOutlinedIcon /><span>Edit members</span></Button>
+                            <CardDueDateSetter pplyStyle={true} dueDate={this.props.props.card.dueDate} onUpdateDueDate={this.onUpdateDueDate} alwaysShowButton={true} />
+                            <Button style={{textTransform: 'none'}} onClick={this.onClose}><CloseRoundedIcon /><span>Close</span></Button>
+
+                        </div>
+                    </div>
+                    {this.state.isLabelPaletteShown && <LabelPalette
+                        createActivity={this.createActivity}
+                        card={this.props.props.card}
+                        isShownOnBoard={true}
+                        style={{
+                            left: `${-34}px`,
+                            top: `${58}px`,
+                            position: 'relative'
+                        }}/>}
+                    {(this.state.isMemberListOpen) ? <AddMemberModal 
+                    ref={this.ref}
+                    onCloseModal={this.toggleCardMembersMenu} 
+                    allExistingUsers={this.props.board.members} 
+                    card={this.props.props.card} 
+                    members={this.props.props.card.members}
+                    onAddCardMember={this.onAddCardMember}
+                    onRemoveCardMember={this.onRemoveCardMember} 
+                    style={{
+                        left: `${92}px`,
+                        top: `${78}px`,
+                        position: 'relative'
+                    }}/> : <React.Fragment />}
+                </div>
             </Dialog >
 
         )

@@ -54,14 +54,14 @@ export class _AddMemberModal extends Component {
         if(!members) return <div>loading</div>
         return (
             <ClickAwayListener onClickAway={this.props.onCloseModal}>
-                <div className="add-member-modal">
+                <div className="add-member-modal" style={this.props.style}>
                     <h3>Members</h3>
                     <input type="search" onChange={this.handleChange} name="search-member" id="" autoCorrect="off" autoComplete="off"/>
                     <div className="add-members-container">
                         {allUsers.filter(user => 
                         !this.state.searchLetters ? true : user.fullName.includes(this.state.searchLetters)).map(user => {
                                 return <div key={user._id} className="member-container" onClick={() => this.toggleUser(user)}>
-                                    <MemberPreview name={user.fullName} /> 
+                                    <MemberPreview name={user.fullName} imgUrl={user.imgUrl} /> 
                                     <p>{user.fullName}</p>
                                     {this.getMembers(user._id) && <div><CheckIcon /></div>}
                                 </div>

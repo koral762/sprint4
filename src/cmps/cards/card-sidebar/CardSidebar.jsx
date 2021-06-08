@@ -1,8 +1,8 @@
 import React from 'react'
 import { CardDueDateSetter } from "../CardDueDateSetter"
 import { CardNewChecklist } from "../CardNewChecklist"
-import LabelOutlinedIcon from '@material-ui/icons/LabelOutlined'
 import { MemberList } from '../../BoardHeader/MemberList'
+import LabelOutlinedIcon from '@material-ui/icons/LabelOutlined'
 import WebAssetOutlinedIcon from '@material-ui/icons/WebAssetOutlined'
 import AttachFileIcon from '@material-ui/icons/AttachFile'
 import { CircularProgress } from '@material-ui/core'

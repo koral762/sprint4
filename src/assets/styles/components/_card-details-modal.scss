@@ -92,6 +92,8 @@
     min-height: 40px;
     padding: 8px 12px;
     text-decoration: none;
+
+    
     // &:active {
     //     cursor: pointer;
     //     font-size: rem(12px);
@@ -109,7 +111,12 @@
   }
 }
 
+.description-title {
+}
+
 .sidebar-button-text {
+    margin-top: 3px;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
   margin-top: 3px;
 }
 
@@ -133,6 +140,11 @@
 .labels-and-due-date {
   display: flex;
   flex-wrap: wrap;
+}
+
+.in-list{
+    margin: 7px 0px;
+    color: #3f3d3de0;
 }
 
 .card-preview-labels {

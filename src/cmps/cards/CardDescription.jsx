@@ -71,7 +71,7 @@ export class CardDescription extends Component {
             <div className="modal-description flex">
                 <SubjectIcon />
                 <div className="description-txt flex column">
-                    <h3>Description</h3>
+                    <h3 className="description-title">Description</h3>
                     {this.getIsEditing()}
                 </div>
             </div>
