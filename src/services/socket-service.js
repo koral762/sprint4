@@ -6,7 +6,7 @@ export const SOCKET_EVENT_USER_UPDATED = 'user-updated';
 export const SOCKET_EVENT_REVIEW_ADDED = 'review-added';
 
 
-const baseUrl = (process.env.NODE_ENV === 'production')? '' : '//localhost:3030'
+const baseUrl = (process.env.NODE_ENV === 'production')? '/api' : '//localhost:3030/api'
 export const socketService = createSocketService()
 // export const socketService = createDummySocketService()
 
