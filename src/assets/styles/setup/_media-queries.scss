@@ -16,6 +16,8 @@
   .board-nav-filter {
     display: none;
   }
+  
+  
 
   .select-board-container {
     display: flex;
@@ -35,6 +37,11 @@
       float: right;
       gap: 5px;
     }
+
+    .description-title, .activity-title{
+      margin-top: 3px;
+      font-size: 15px;
+        }
   }
 
   .modal-content {
@@ -100,6 +107,7 @@
       margin: 0.3em 0;
     }
   }
+  
 }
 
 @media only screen and (min-width: 992px) {
