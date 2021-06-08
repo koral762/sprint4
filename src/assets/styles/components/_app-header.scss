@@ -4,6 +4,8 @@
     color: $darktxt;
     background-color: rgba(243, 234, 234, 0.486);
     width: 100vw;
+    position: relative;
+    
     &.open {
         transform: translateX(0%);
     }
@@ -30,6 +32,8 @@
     transform: translateX(-50%);
     height: 100%;
     width: auto;
+    position: absolute;
+    left: 50%;
     &:hover {
         opacity: 0.8;
     }

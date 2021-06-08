@@ -37,6 +37,7 @@ export function Home() {
             </section>
 
             <section className="home-pg-text">
+                <img src="https://i.ibb.co/BVwnK1J/kisspng-environmentally-friendly-recycling-image-sustainab-government-flooring-flooring-concepts-inc.png" className="img-container earth-img"></img>
                 <h2>Sick of replacing white board markers every week?</h2>
                 <h2>Lost in the paper-towers? Save a tree, and your time!</h2>
                 <h2>Be innovative, increase productivity by bringing new technology and tools into your organization.</h2>
@@ -46,13 +47,12 @@ https://zapier.com/learn/project-management/kanban-board/ */}
             </section>
 
         <section className="about-wrapper flex column">
-            <h2 className="about-us-title">Meet the Team</h2>
+            <h2 className="about-us-title">Contact us</h2>
             <div className="about-us-container flex justify-center align-center wrap">
               
                 <div className="about-me-container">
                     <div className="about-me koral"></div>
                     <h3>Koral Sabbah</h3>
-                    <p>bla bla bla, nanana kokoko</p>
                     <div className="links-container">
                         <a href="https://www.facebook.com/koral.benabu.5" target="blank"><FacebookIcon className="facebook-icon" /></a>
                         <a href="https://www.linkedin.com/in/%F0%9D%90%8A%F0%9D%90%A8%F0%9D%90%AB%F0%9D%90%9A%F0%9D%90%A5-%F0%9D%90%92%F0%9D%90%9A%F0%9D%90%9B%F0%9D%90%9B%F0%9D%90%9A%F0%9D%90%A1-%F0%91%81%8D-%F0%9D%90%81%F0%9D%90%9E%F0%9D%90%A7-%F0%9D%90%9A%F0%9D%90%9B%F0%9D%90%AE-%F0%91%81%8D-2b8172188/" target="blank"><LinkedInIcon className="linkedin-icon" /></a>
@@ -62,7 +62,6 @@ https://zapier.com/learn/project-management/kanban-board/ */}
                 <div className="about-me-container">
                     <div className="about-me miriam"></div>
                     <h3>Miriam Baranovska</h3>
-                    <p>bla bla bla, nanana kokoko</p>
                     <div className="links-container">
                         <a href="https://www.facebook.com" target="blank"><FacebookIcon className="facebook-icon" /></a>
                         <a href="https://www.linkedin.com" target="blank"><LinkedInIcon className="linkedin-icon" /></a>
@@ -72,7 +71,6 @@ https://zapier.com/learn/project-management/kanban-board/ */}
                 <div className="about-me-container">
                     <div className="about-me ksenia"></div>
                     <h3>Ksenia Braginsky</h3>
-                    <p>bla bla bla, nanana kokoko</p>
                     <div className="links-container">
                         <a href="https://www.facebook.com" target="blank"><FacebookIcon className="facebook-icon" /></a>
                         <a href="https://www.linkedin.com" target="blank"><LinkedInIcon className="linkedin-icon" /></a>

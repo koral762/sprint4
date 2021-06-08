@@ -1,7 +1,7 @@
 .home {
     width: 100%;
     background-color: rgb(255, 255, 255);
-    overflow: hidden;
+    overflow-x: hidden;
     scroll-behavior: smooth;
     // font-family: "Helvetica Neue", sans-serif;
     font-family: 'Roboto', sans-serif;
@@ -69,6 +69,10 @@
         color: #30aa00;
         border: 1px solid #30aa00;
     }
+}
+
+.earth-img{
+    width: 30%;
 }
 
 // hero img animation slide-right
