@@ -38,12 +38,11 @@ body {
     // background-image: url('../../imgs/Quantum-Gradient.svg');
 }
 
-.app-bg{
+.app-bg {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: 100% 100%;
-
 }
 
 
@@ -77,32 +76,32 @@ button {
 }
 
 a {
-    color: $darktxt;
+    color: $lighttxt;
     outline: none;
     text-decoration: none;
     padding: 0;
     margin: 0;
 }
 
-textarea {
-    resize: none;
-    height: 36px;
-    border: none;
-    border-radius: 3px;
-    padding: 2px;
-    line-height: 20px;
-    width: 100%;
-    background-color: transparent;
-    color: inherit;
-    margin-bottom: 2px;
-    white-space: pre-wrap;
-    &:focus {
-        // border: 2px solid $clr4;
-        background-color: #fff;
-    }
-}
-
+// textarea {
+//     resize: none;
+//     height: 36px;
+//     border: none;
+//     border-radius: 3px;
+//     padding: 2px;
+//     line-height: 20px;
+//     width: 100%;
+//     background-color: transparent;
+//     color: inherit;
+//     margin-bottom: 2px;
+//     white-space: pre-wrap;
+//     &:focus {
+//         // border: 2px solid $clr4;
+//         background-color: #fff;
+//     }
+// }
 .board-nav-filter {
+    color: $lighttxt;
     outline: none;
     font-size: em(16px);
     padding: 0.5em 0.5em;
