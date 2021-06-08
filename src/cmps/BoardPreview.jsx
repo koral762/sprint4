@@ -9,11 +9,14 @@ export function BoardPreview(props) {
 
     const board = props.board
     const boardImg = props.board.style.bgImg
+    const boardColor = props.board.style.boardColor
 
     return (
-        
+
         <Link to={`/board/${board._id}`}>
-            <div className="board template" style={{backgroundImage:`${boardImg}`}}><span>{board.title}</span></div>
+            <div className="board template" style={boardImg ? { backgroundImage: boardImg } :
+                { backgroundColor: boardColor }}>
+                <span className="board-title-preview">{board.title}</span></div>
         </Link>
     )
 }
