@@ -31,6 +31,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   white-space: nowrap;
+  overflow-y: hidden;
   // background-image: url('../../imgs/output-onlinegiftools.gif');
   // background-size: auto;
   // background-position: bottom right;
@@ -39,9 +40,8 @@ body {
 
 .app-bg {
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-position: center;
-  background-size: 100% 100%;
+  background-size: cover;
 }
 
 img {
@@ -98,7 +98,6 @@ a {
 //     }
 // }
 .board-nav-filter {
-  color: $lighttxt;
   outline: none;
   font-size: em(16px);
   padding: 0.5em 0.5em;

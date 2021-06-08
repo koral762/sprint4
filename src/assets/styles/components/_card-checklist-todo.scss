@@ -1,0 +1,8 @@
+.trash-bin-icon {
+    visibility: hidden;
+}
+
+.checklist-todo-title:hover .trash-bin-icon {
+    visibility: visible;
+    color: #273758;
+}

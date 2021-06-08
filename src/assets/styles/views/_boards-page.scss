@@ -23,6 +23,7 @@
         background-color: $trnsprnt;
         border: none;
         border-radius: 4px;
+        
         &:focus {
             // background-color: #fff;
         }
@@ -34,9 +35,9 @@
 
 .select-board-container {
     display: flex;
-    justify-content: left;
     flex-wrap: wrap;
     margin-right: 2px;
+  
     // &>a:hover {
     //     background-color: rgba(134, 134, 134, 0.76);
     // }
@@ -66,6 +67,8 @@
     span {
         color: #f0e8e8;
         letter-spacing: 0.7px;
+        
+        
         // text-transform: uppercase;
         // font-family: 'Raleway', cursive;
         // -webkit-text-stroke-width: 0.8px;

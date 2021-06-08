@@ -138,7 +138,7 @@ class _CardDetails extends Component {
             // if there is no src - this is a color
             <div className="card-details-cover-color" style={{ backgroundColor: cover.color }}>
                 { cover &&
-                    <IconButton onClick={this.onCloseCard} aria-label="close" className="modal-close">
+                    <IconButton onClick={this.onCloseCard} aria-label="close" className="card-details-cover-modal-close">
                         <CloseIcon />
                     </IconButton>}
                 { cover && <button className="sidebar-button-with-cover" ref={this.ref} onClick={this.toggleCoverSelector}><WebAssetOutlinedIcon /><span>Cover</span></button>}
@@ -147,7 +147,7 @@ class _CardDetails extends Component {
         return (
             <div className="card-details-cover-image" style={{ backgroundImage: `url(${cover.src})` }} >
                 { cover &&
-                    <IconButton onClick={this.onCloseCard} aria-label="close" className="modal-close">
+                    <IconButton onClick={this.onCloseCard} aria-label="close" className="card-details-cover-modal-close">
                         <CloseIcon />
                     </IconButton>}
                 { cover && <button className="sidebar-button-with-cover" ref={this.ref} onClick={this.toggleCoverSelector}><WebAssetOutlinedIcon /><span>Cover</span></button>}

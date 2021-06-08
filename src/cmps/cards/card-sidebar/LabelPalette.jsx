@@ -56,7 +56,8 @@ class _LabelPalette extends Component {
 
     render() {
         const { board, card } = this.props;
-        return <ul className="clean-list">
+        return <div className={this.props.isShownOnBoard ? "card-preview-label-palette" : "card-details-label-palette"}>
+        <ul className="clean-list">
             <div className="labels-modal flex column">
             <span className="labels-modal-header">Labels</span>
             {board.labels && board.labels.map(label => <li key={label.id} className="label">
@@ -104,6 +105,7 @@ class _LabelPalette extends Component {
             </li>
             </div>
         </ul>
+        </div>
     }
 }
 

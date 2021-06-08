@@ -35,6 +35,8 @@
     position: relative;
     background-color: #f4f5f7;
     margin: auto;
+    margin-top: 40px;
+    margin-bottom: 50px;
     // padding: 20px;
     overflow: scroll;
     max-width: 75vw;
@@ -114,7 +116,7 @@
 .sidebar-button {
     display: flex;
     svg {
-        margin-right: 12px
+        margin-right: 12px;
     }
 }
 
@@ -172,11 +174,20 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    .modal-close {
-        height: 50px;
-        width: 50px;
-        bottom: 10px;
-    }
+}
+
+.card-details-cover-modal-close {
+    height: 40px;
+    width: 40px;
+    bottom: 22px;
+    right: 3px;
+}
+
+.modal-close {
+    height: 40px;
+    width: 40px;
+    bottom: 20px;
+    left: 15px;
 }
 
 .card-details-modal-container {
