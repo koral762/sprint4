@@ -57,7 +57,7 @@
   line-height: 1rem;
   min-width: 2.5rem;
   width: fit-content;
-  font-size: 0.8rem;
+  font-size: 12px;
   padding: 0px 0.5rem;
   color: white;
   overflow: hidden;
@@ -92,6 +92,8 @@
 
 .card-preview-attrs {
   display: flex;
+  // line-height: 16px;
+  // font-size: 12px;
   .member-preview {
     height: 1.25rem;
     width: 1.25rem;
@@ -107,28 +109,6 @@
   &:hover {
     cursor: pointer;
   }
-}
-
-.card-preview-due-date-container {
-  margin-right: 0.5rem;
-}
-
-.card-preview-due-date-container-overdue {
-  background-color: rgb(241, 71, 71);
-  display: flex;
-  align-items: center;
-  border-radius: 0.25em;
-  padding: 0 0.25em;
-  color: aliceblue;
-}
-
-.card-preview-due-date-container-close {
-  background-color: #f2d600;
-  display: flex;
-  align-items: center;
-  border-radius: 0.25em;
-  padding: 0 0.25em;
-  color: aliceblue;
 }
 
 .card-preview-checklist-counter {

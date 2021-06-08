@@ -92,7 +92,7 @@ export class _AppHeader extends Component {
                             </NavLink>
                             </div>
                     </div>
-                     <input className="btn board-nav-filter" type="text" placeholder="Filter here"></input>
+                     <input className="btn board-nav-filter" type="text" placeholder="Search..."></input>
                     </div>
 
                     <img src={Logo} className="logo-img"/>

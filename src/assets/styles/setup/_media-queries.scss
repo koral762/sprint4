@@ -5,10 +5,6 @@
     width: 47%;
   }
 
-  .app-header span.boards-btn {
-    display: none;
-  }
-
   .board-nav-filter {
     display: none;
   }
@@ -48,6 +44,10 @@
     .card-details-title {
       white-space: normal;
       word-wrap: break-word;
+      h2 {
+        font-size: 18px;
+        font-weight: 600;
+      }
     }
     .modal-content-wrapper {
       flex-direction: column;
@@ -65,7 +65,7 @@
     // margin: 0 5px;
     line-height: 24px;
     border-radius: 3px;
-    padding: 1px 9px;
+    padding: 1px 6px;
     cursor: pointer;
     &:hover {
       background-color: $hovergray;
@@ -74,26 +74,42 @@
       background-color: rgba(0, 0, 0, 0.76);
     }
   }
+
+  .main-boards {
+    flex-wrap: wrap;
+  }
+  // Sidebar menu
+  .menu-title {
+    margin: 0 auto;
+  }
+  .side-bar-container {
+  }
 }
 
-// @media only screen and (min-width: 480px) and (max-width: 767px) {
-//   .select-board-container {
-//     display: flex;
-//     a {
-//       display: flex;
-//       width: 47%;
-//     }
-//     & .template,
-//     .board,
-//     .create-new-board {
-//       flex-grow: 1;
-//       white-space: normal;
-//     }
-//     span.boards-btn {
-//       display: none;
-//     }
-//   }
-// }
+@media only screen and (max-width: 490px) {
+  // .main-boards {
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-content: center;
+  //   align-items: center;
+  // }
+  .app-header span.boards-btn {
+    display: none;
+  }
+
+  .card-preview-due-date-container {
+    padding: 5px 6px;
+    border-radius: 4px;
+    margin: 0;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    line-height: 12px;
+    svg {
+      margin-right: 1.5px;
+    }
+  }
+}
 
 // @media only screen and (min-width: 768px) and (max-width: 991px) {
 @media only screen and (min-width: 768px) {
@@ -115,7 +131,9 @@
       margin: 0.3em 0;
     }
   }
-
+  .select-board-container {
+    flex-wrap: nowrap;
+  }
   button,
   .btn {
     color: $darktxt;
@@ -133,7 +151,15 @@
       background-color: rgba(0, 0, 0, 0.76);
     }
   }
+  .side-bar-container {
+    width: 340px;
+  }
 }
 
 @media only screen and (min-width: 992px) {
+  .main-boards {
+    max-width: 900px;
+    .select-board-container {
+    }
+  }
 }

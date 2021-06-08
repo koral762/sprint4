@@ -31,7 +31,7 @@ export class _BoardNav extends Component {
                    
                 </div>
                 <div className="board-nav-right flex ">
-                    <button className="notification-icon">
+                    <button className="notification-icon flex">
                     <NotificationsNoneIcon />
                     </button>
                     <button onClick={() => this.props.onToggleSidebar(true)}>

@@ -17,7 +17,6 @@ export class _Boards extends Component {
 
     render() {
         const { boards } = this.props
-        console.log('propx koral', boards);
         return (
             <section className="boards-page-bg flex column ">
                 <div className="main-boards">
@@ -25,7 +24,7 @@ export class _Boards extends Component {
                     <h3>Your Boards</h3>
                     </div>
 
-                    <section className="select-board-container">
+                    <section className="select-board-container flex wrap">
                         <div className="create-new-board">
                         <div className="new-board-text flex align-center">
                             <AddBoxIcon />

@@ -1,21 +1,40 @@
-.card-preview-due-date-container {
-    padding: 5px;
-    border-radius: 4px;
-    margin: 2px;
-}
-
 .card-preview-due-date-container-long {
-    background-color: lightseagreen;
+  background-color: lightseagreen;
 }
 
 .card-preview-due-date-container-medium {
-    background-color: burlywood;
+  background-color: burlywood;
 }
 
 .card-preview-due-date-container-due-soon {
-    background-color: sandybrown;
+  background-color: sandybrown;
 }
 
 .card-preview-due-date-container-overdue {
-    background-color: coral;
+  background-color: coral;
+}
+
+.card-preview-due-date-container-overdue {
+  background-color: rgb(241, 71, 71);
+  display: flex;
+  align-items: center;
+  border-radius: 0.25em;
+  //   padding: 0 0.25em;
+  color: aliceblue;
+}
+
+.card-preview-due-date-container-close {
+  background-color: #f2d600;
+  display: flex;
+  align-items: center;
+  border-radius: 0.25em;
+  //   padding: 0 0.25em;
+  color: aliceblue;
+}
+
+.card-preview-due-date-container {
+  padding: 4px 6px;
+  border-radius: 4px;
+  margin: 0;
+  vertical-align: middle;
 }

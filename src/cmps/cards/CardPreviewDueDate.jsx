@@ -40,7 +40,7 @@ export function CardPreviewDueDate(props) {
     return (
         <div className = {dueDateClass}>
             <AccessTimeIcon fontSize="inherit" />
-            {parsedDate}
+              {parsedDate}
         </div>
     )
 }
