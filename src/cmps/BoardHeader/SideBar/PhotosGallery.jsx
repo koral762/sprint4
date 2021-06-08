@@ -33,7 +33,7 @@ export class _PhotosGallery extends Component {
             "url(http://avante.biz/wp-content/uploads/Wonderful-Desktop-Wallpapers/Wonderful-Desktop-Wallpapers-032.jpg)",
             "url(http://avante.biz/wp-content/uploads/Outer-space-wallpaper-for-mac/Outer-space-wallpaper-for-mac15.jpg)",
             "url(http://avante.biz/wp-content/uploads/Outer-space-wallpaper-for-mac/Outer-space-wallpaper-for-mac13.jpg)",
-            "url(http://avante.biz/wp-content/uploads2/Autumn-Street-Wallpapers-Desktop-1/Autumn-Street-Wallpapers-Desktop-45.jpg",
+            "url(http://avante.biz/wp-content/uploads2/Autumn-Street-Wallpapers-Desktop-1/Autumn-Street-Wallpapers-Desktop-45.jpg)",
             "url(http://avante.biz/wp-content/uploads/THC-structure-wallpaper/THC-structure-wallpaper1.jpg)"
         ]
 
