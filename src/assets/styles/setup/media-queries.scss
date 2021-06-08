@@ -2,19 +2,27 @@
   .select-board-container {
     display: flex;
     //  flex-direction: column;
+    a {
+      display: flex;
+      width: 100%;
+    }
   }
-  .template,
-  .board {
+  .template {
     // flex-shrink: 1;
     flex-grow: 1;
     white-space: normal;
-    flex-basis: 1;
+    // flex-basis: 1;
+    margin: 0 8px 8px 0;
   }
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
   .select-board-container {
     display: flex;
+    a {
+      display: flex;
+      width: 100%;
+    }
     & .template,
     .board,
     .create-new-board {
