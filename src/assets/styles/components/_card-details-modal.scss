@@ -84,7 +84,6 @@
     padding: 8px 0;
     cursor: pointer;
     pre {
-        font-family: Arial, Helvetica, sans-serif;
         background-color: rgba(9, 30, 66, 0.04);
         border: none;
         border-radius: 3px;
@@ -93,7 +92,6 @@
         text-decoration: none;
         // &:active {
         //     cursor: pointer;
-        //     font-family: Poppins-Regular;
         //     font-size: rem(12px);
         //     border: none;
         //     outline: none;
@@ -101,7 +99,6 @@
         // }
         &pre:focus {
             cursor: pointer;
-            // font-family: Poppins-Regular;
             font-size: rem(12px);
             border: none;
             outline: none;
@@ -139,7 +136,6 @@
 .card-preview-labels {
     display: flex;
     flex-wrap: wrap;
-
 }
 
 .new-checklist-text {
