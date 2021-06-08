@@ -33,9 +33,14 @@
   }
 }
 
+
+
 .select-board-container {
   display: flex;
   flex-wrap: wrap;
+}
+.create-new-board{
+  display: table;
 }
 
 .create-new-board,

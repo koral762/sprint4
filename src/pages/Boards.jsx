@@ -4,13 +4,36 @@ import { loadBoards, removeBoard, addNewBoard } from '../store/actions/board-act
 import { Link } from "react-router-dom";
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import { BoardPreview } from '../cmps/BoardPreview';
+import { Dialog, IconButton } from '@material-ui/core';
+import { AddNewBoard } from './../cmps/AddNewBoard'
+import { CloseOutlined } from '@material-ui/icons';
 
 export class _Boards extends Component {
+
+    state = {
+        isCreateBoardOpen: false
+
+    }
 
     async componentDidMount() {
         await this.props.loadBoards()
 
     }
+
+    onRedirect = (id) => {
+        this.onCloseCreateBoard()
+        this.props.history.push(`/board/${id}`)
+    }
+
+    openNewBoardModal=()=>{
+        this.setState({ isCreateBoardOpen: true })
+    }
+
+    onCloseCreateBoard = () => {
+        this.setState({ isCreateBoardOpen: false })
+    }
+
+
     // this.props.removeBoard()
 
     fn() { }
@@ -26,12 +49,20 @@ export class _Boards extends Component {
                     </div>
 
                     <section className="select-board-container">
-                        <div className="create-new-board" onClick={() => { this.props.addNewBoard()}}>
+
+                        {/* onClose={this.onCloseCreateBoard}
+                                onBackdropClick={this.onCloseCreateBoard}
+                                open={this.state.isCreateBoardOpen}
+                                className="add-board-modal">
+                                <AddNewBoard onCloseModal={this.onCloseCreateBoard} redirectPath={this.onRedirect} />
+                          */}
+                        <div className="create-new-board" onClick={() =>{this.openNewBoardModal()}}>
                             <div className="new-board-text flex align-center">
                                 <AddBoxIcon />
                                 <p>Create new board</p>
                             </div>
                         </div>
+                        {this.state.isCreateBoardOpen && <AddNewBoard onCloseModal={this.onCloseCreateBoard} redirectPath={this.onRedirect}/>}
                         {boards.map((board) => <BoardPreview key={board._id} board={board} />)}
                     </section>
 
@@ -60,8 +91,8 @@ export class _Boards extends Component {
                             backgroundImage: "url(https://picsum.photos/195/95?random=1)"
                         }}><span>Template</span></div>
                     </section>
-                </div>
-            </section>
+                </div >
+            </section >
         )
     }
 }

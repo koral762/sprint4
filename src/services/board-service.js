@@ -5,11 +5,19 @@ import { utils } from './utils-service'
 
 export const boardService = {
     getBoardById,
+    addNewBoard,
     updateBoard,
     createActivity,
     getCardTitleById,
     query,
-    createImage
+    createImage,
+    add
+}
+
+
+async function add(board) {
+    const addedBoard = await httpService.post(`board`, board);
+    return addedBoard
 }
 
 async function getBoardById(id) {
@@ -21,7 +29,7 @@ async function query() {
 }
 
 async function updateBoard(newBoard) {
-    socketService.emit('updated board', newBoard) 
+    socketService.emit('updated board', newBoard)
     return await httpService.put(`board/${newBoard._id}`, newBoard)
 }
 
@@ -71,4 +79,75 @@ function createImage(imgRef) {
         createdAt: Date.now()
     }
     return attachment
+}
+
+async function addNewBoard(boardName, boardColor) {
+    const newBoard = {
+        title: boardName,
+        isArchived: false,
+        createdAt: Date.now,
+        description: 'Board\'s description',
+        labels: [{
+            "id": "l101",
+            "name": "Default",
+            "color": "green"
+        },
+        {
+            "id": "l102",
+            "name": "Default",
+            "color": "yellow"
+        },
+        {
+            "id": "l103",
+            "name": "Default",
+            "color": "orange"
+        },
+        {
+            "id": "l104",
+            "name": "Default",
+            "color": "red"
+        },
+        {
+            "id": "l105",
+            "name": "Default",
+            "color": "purple"
+        },
+        {
+            "id": "l106",
+            "name": "Default",
+            "color": "blue"
+        }
+        ],
+        activities: [],
+        createdBy: { // update from currUser
+            // _id: 'u101', // update from user
+            fullName: 'Abi Abambi',
+            imgUrl: 'http://some-img'
+        },
+        style: {
+            // id: utils.makeId(),
+            fontClr: '#f9f9f9',
+            bgImg: null,
+            boardColor
+        },
+        members: [{ // update from currUser
+            _id: 'u101', // update from user
+            fullName: 'Abi Abambi',
+            imgUrl: 'http://some-img'
+        }],
+        groups: [{
+            id: utils.makeId(),
+            title: 'Add New Card Title',
+            description: "description",
+            archivedAt: false,
+            labels: [],
+            cards: []
+        }]
+    }
+
+    console.log(newBoard);
+
+    const addedBoard = await httpService.post(`board`, newBoard);
+    return addedBoard
+    // push new board to board collection and forword user to the new route
 }
