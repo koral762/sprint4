@@ -1,14 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { Drawer, Divider, IconButton } from '@material-ui/core';
-import ArrowBackIosOutlinedIcon from '@material-ui/icons/ArrowBackIosOutlined';
+import { Drawer } from '@material-ui/core';
 import { addLabel, updateLabel, removeLabel } from '../../store/actions/boardActions.js';
 import { LabelPalette } from './LabelPalette.jsx';
-import { SidebarHeader } from './SidebarHeader.jsx';
 
 class _LabelPanel extends Component {
     render() {
-        const { isShowing, onSetMenuOpt } = this.props;
+        const { isShowing } = this.props;
         return (
             <div className="sidebar-container" >
                 <Drawer classes={{ root: 'sidebar' }}
@@ -17,7 +15,6 @@ class _LabelPanel extends Component {
                     open={isShowing}
                     BackdropProps={{ hideBackdrop: true }}
                     variant={'persistent'}>
-                    <SidebarHeader titleTxt="LABELS" onSetMenuOpt={onSetMenuOpt} />
                     <LabelPalette />
                 </Drawer>
             </div >

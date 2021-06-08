@@ -21,7 +21,7 @@ export class CardChecklistTodo extends Component {
     }
 
     removeText = () => {
-        this.setState({txtValue:''})
+        this.setState({ txtValue: '' })
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -36,21 +36,22 @@ export class CardChecklistTodo extends Component {
     getNewTodoDisplay = () => {
         if (this.state.isEditing) {
             return (
-            <form onBlur={this.setNotEditing} onSubmit={this.onSubmit}>
-                <input className="checkbox-text-edit" type="text" autoFocus value={this.state.txtValue} onChange={this.onChange} />
-            </form>
-        )}
+                <form onBlur={this.setNotEditing} onSubmit={this.onSubmit}>
+                    <input className="checkbox-text-edit" type="text" autoFocus value={this.state.txtValue} onChange={this.onChange} />
+                </form>
+            )
+        }
         return (
             <button className="flex checklist-add-todo" onClick={this.setEditing}>
-                <AddIcon className="add-icon"/>
+                <AddIcon className="add-icon" />
                 Add an item
             </button>
         )
     }
-    
+
     getTodoClassName = () => {
         const doneClass = (this.state.isDone) ? 'todo-done' : 'todo-not-done'
-        return `checklist-todo-title ${doneClass}`
+        return `flex justify-space-between checklist-todo-title ${doneClass}`
     }
     getTextBox = () => {
         if (this.state.isEditing) return (
@@ -65,10 +66,12 @@ export class CardChecklistTodo extends Component {
         return (
             <React.Fragment>
                 <div className={this.getTodoClassName()} onClick={this.setEditing}>
-                <Checkbox checked={this.state.isDone} onChange={this.onCheck} className="checkbox-todo" />
-                    {this.state.txtValue}
+                    <div>
+                        <Checkbox checked={this.state.isDone} onChange={this.onCheck} className="checkbox-todo" />
+                        {this.state.txtValue}
+                    </div>
                     <Button onClick={this.onRemove}>
-                        <DeleteOutlineOutlinedIcon />
+                        <DeleteOutlineOutlinedIcon className="trash-bin-icon" />
                     </Button>
                 </div>
             </React.Fragment>
@@ -81,7 +84,7 @@ export class CardChecklistTodo extends Component {
     }
 
     updateTodo = () => {
-        
+
         const todo = this.props.todo
         if (!todo) return
         const txtValue = todo.title
@@ -91,14 +94,14 @@ export class CardChecklistTodo extends Component {
     }
 
     onChange = (ev) => {
-        
+
         this.setState({ txtValue: ev.target.value })
     }
 
     onCheck = (ev) => {
         let checkStatus = ev.target.checked
-        this.setState({ isDone: checkStatus}, () => {
-             this.updateChecklist()
+        this.setState({ isDone: checkStatus }, () => {
+            this.updateChecklist()
         })
     }
 
@@ -117,27 +120,27 @@ export class CardChecklistTodo extends Component {
     }
 
     updateChecklist = () => {
-            let id;
-            if (this.props.todo) {
-                id = this.props.todo.id
-            } else {
-                id = utils.makeId()
-            }
-            const todo = {
-                id,
-                isDone: this.state.isDone,
-                title: this.state.txtValue
-            }
-            
-            const activityTxt = this.getActivityTxt()
-            if (this.state.isNew) {
-                this.props.onUpdate(todo)
-                this.setState({txtValue:''})
-            } else {
-                this.props.onUpdate(todo,activityTxt)
-            }
+        let id;
+        if (this.props.todo) {
+            id = this.props.todo.id
+        } else {
+            id = utils.makeId()
         }
-    
+        const todo = {
+            id,
+            isDone: this.state.isDone,
+            title: this.state.txtValue
+        }
+
+        const activityTxt = this.getActivityTxt()
+        if (this.state.isNew) {
+            this.props.onUpdate(todo)
+            this.setState({ txtValue: '' })
+        } else {
+            this.props.onUpdate(todo, activityTxt)
+        }
+    }
+
     render() {
         if (!this.props.displayCompleted && this.state.isDone) return <React.Fragment />
         return (

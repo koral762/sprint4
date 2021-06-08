@@ -1,7 +1,8 @@
 // // Edit card preivew - should have edit labels, change memebers change due date and archive
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { updateCard, onRemoveCard } from '../../store/actions/board-actions.js'
+import { updateCard, onRemoveCard, addActivity } from '../../store/actions/board-actions.js'
+import { boardService } from '../../services/board-service.js'
 import { Button, Dialog } from '@material-ui/core';
 import ArchiveOutlinedIcon from '@material-ui/icons/ArchiveOutlined';
 import CloseRoundedIcon from '@material-ui/icons/CloseRounded';
@@ -9,6 +10,7 @@ import LabelIcon from '@material-ui/icons/Label';
 import PeopleAltOutlinedIcon from '@material-ui/icons/PeopleAltOutlined';
 import ShareIcon from '@material-ui/icons/Share';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
+import { LabelPalette } from '../cards/card-sidebar/LabelPalette';
 
 class _CardMenu extends Component {
 
@@ -18,7 +20,8 @@ class _CardMenu extends Component {
         offsetLeft: null,
         width: null,
         txtValue: '',
-        isMemberListOpen: false
+        isMemberListOpen: false,
+        isLabelPaletteShown: false
     }
 
     ref = React.createRef()
@@ -74,6 +77,24 @@ class _CardMenu extends Component {
         this.setState({ txtValue })
     }
 
+    createActivity = (txt) => {
+        const activity = {
+            "txt": txt,
+            "commentTxt": '',
+            "card": {
+                "id": this.props.props.card.id,
+                "title": this.props.props.card.title
+            }
+        }
+
+        console.log('CREATING ACTIVITY FOR CARD ' + JSON.stringify(activity))
+
+        return boardService.createActivity(activity)
+    }
+
+    onToggleLabelPaletteShown = () => {
+        this.setState({isLabelPaletteShown: !this.state.isLabelPaletteShown})
+    }
 
     render() {
 
@@ -95,11 +116,13 @@ class _CardMenu extends Component {
                             <button className="save-btn" onClick={this.onUpdateHeader}>Save</button>
                         </div>
 
+                        
+
                         <div className="card-edit-right">
                             <div className="card-preview-edit-actions-container">
 
                                 <Button onClick={this.onDeleteCard}><ArchiveOutlinedIcon /> <span>Delete Card</span></Button>
-                                <Button><LabelIcon /><span>EDIT LABELS</span></Button>
+                                <Button onClick={this.onToggleLabelPaletteShown}><LabelIcon /><span>EDIT LABELS</span></Button>
                                 <Button><PeopleAltOutlinedIcon /><span>EDIT MEMBERS</span></Button>
                                 <Button><AccessTimeIcon /><span>SET DUE DATE</span></Button>
                                 <Button><ShareIcon /><span>SHARE</span></Button>
@@ -107,6 +130,7 @@ class _CardMenu extends Component {
 
                             </div>
                         </div>
+                        { this.state.isLabelPaletteShown && <LabelPalette createActivity={this.createActivity} card={this.props.props.card} isShownOnBoard={true}/>}
                     </div>
             </Dialog >
 
@@ -121,7 +145,8 @@ const mapStateToProps = state => {
 };
 const mapDispatchToProps = {
     updateCard,
-    onRemoveCard
+    onRemoveCard,
+    addActivity
 };
 
 export const CardMenu = connect(mapStateToProps, mapDispatchToProps)(_CardMenu);
