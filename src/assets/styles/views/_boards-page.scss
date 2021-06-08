@@ -36,11 +36,6 @@
 .select-board-container {
   display: flex;
   flex-wrap: wrap;
-  // margin-right: 2px;
-
-  & > a:hover {
-    background-color: rgba(134, 134, 134, 0.76);
-  }
 }
 
 .create-new-board,
@@ -62,7 +57,7 @@
   background-position: center;
   background-size: cover;
   &:hover {
-    background-color: rgba(134, 134, 134, 0.76);
+    //add hover on templates
   }
   span {
     color: #f0e8e8;

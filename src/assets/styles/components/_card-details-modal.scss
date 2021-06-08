@@ -1,138 +1,138 @@
 .card-details-modal {
-    // width: 272px;
-    // height: 100%;
-    // background-color: #EBECF0;
-    // border-radius: 3px;
-    // border: none;
-    // border-radius: 3px;
-    // padding: 7px;
-    // margin: 0 4px;
-    // display: none;
-    display: block;
-    position: fixed;
-    z-index: 25;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.4);
-    .group-name {
-        font-weight: normal;
-        font-size: em(14px);
-        font-size: 14px;
-        line-height: 20px;
-        // margin-bottom: em()
-    }
-    .card-details-title {
-        font-weight: bold;
-        font-size: em(20px);
-    }
+  // width: 272px;
+  // height: 100%;
+  // background-color: #EBECF0;
+  // border-radius: 3px;
+  // border: none;
+  // border-radius: 3px;
+  // padding: 7px;
+  // margin: 0 4px;
+  // display: none;
+  display: block;
+  position: fixed;
+  z-index: 25;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  .group-name {
+    font-weight: normal;
+    font-size: em(14px);
+    font-size: 14px;
+    line-height: 20px;
+    // margin-bottom: em()
+  }
+  .card-details-title {
+    font-weight: bold;
+    font-size: em(20px);
+  }
 }
 
 .modal-content {
-    position: relative;
-    background-color: #f4f5f7;
-    margin: auto;
-    margin-top: 40px;
-    margin-bottom: 50px;
-    // padding: 20px;
-    overflow: scroll;
-    max-width: 75vw;
-    min-height: 80vh;
-    // border: 1px solid #888;
-    border-radius: 2px;
-    width: 768px;
-    transition: all 500ms ease-in-out;
-    h3 {
-        margin: 0.3em 0;
-    }
-    // button {
-    //     margin-bottom: 12px;
-    //     margin-left: 0;
-    // }
-    svg {
-        color: #42526e;
-        // margin-right: 12px;
-    }
+  //   position: relative;
+  //   background-color: #f4f5f7;
+  //   margin: auto;
+  //   margin-top: 40px;
+  //   margin-bottom: 50px;
+  //   // padding: 20px;
+  //   overflow: scroll;
+  //   max-width: 75vw;
+  //   min-height: 80vh;
+  //   // border: 1px solid #888;
+  //   border-radius: 2px;
+  //   width: 768px;
+  //   transition: all 500ms ease-in-out;
+  //   h3 {
+  //     margin: 0.3em 0;
+  //   }
+  // button {
+  //     margin-bottom: 12px;
+  //     margin-left: 0;
+  // }
+  svg {
+    color: #42526e;
+    // margin-right: 12px;
+  }
 }
 
 .card-modal-header {
-    min-height: 32px;
-    margin-bottom: 50px;
+  min-height: 32px;
+  margin-bottom: 50px;
 }
 
 .member-preview-big {
-    height: 2.5rem !important;
-    width: 2.5rem !important;
-    line-height: 3em;
-    .members-list-add-button {
-        margin-top: 8px;
-    }
+  height: 2.5rem !important;
+  width: 2.5rem !important;
+  line-height: 3em;
+  .members-list-add-button {
+    margin-top: 8px;
+  }
 }
 
 .members-list-add-button {
-    margin-top: 8%;
+  margin-top: 8%;
 }
 
 .description-txt {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .modal-description,
 .description-text-box {
-    margin: 15px 3px 4px -6px;
-    padding: 8px 0;
-    cursor: pointer;
-    pre {
-        background-color: rgba(9, 30, 66, 0.04);
-        border: none;
-        border-radius: 3px;
-        min-height: 40px;
-        padding: 8px 12px;
-        text-decoration: none;
-        // &:active {
-        //     cursor: pointer;
-        //     font-size: rem(12px);
-        //     border: none;
-        //     outline: none;
-        //     height: 108px;
-        // }
-        &pre:focus {
-            cursor: pointer;
-            font-size: rem(12px);
-            border: none;
-            outline: none;
-            height: 108px;
-        }
+  margin: 15px 3px 4px -6px;
+  padding: 8px 0;
+  cursor: pointer;
+  pre {
+    background-color: rgba(9, 30, 66, 0.04);
+    border: none;
+    border-radius: 3px;
+    min-height: 40px;
+    padding: 8px 12px;
+    text-decoration: none;
+    // &:active {
+    //     cursor: pointer;
+    //     font-size: rem(12px);
+    //     border: none;
+    //     outline: none;
+    //     height: 108px;
+    // }
+    &pre:focus {
+      cursor: pointer;
+      font-size: rem(12px);
+      border: none;
+      outline: none;
+      height: 108px;
     }
+  }
 }
 
 .sidebar-button-text {
-    margin-top: 3px;
+  margin-top: 3px;
 }
 
 .sidebar-button {
-    display: flex;
-    svg {
-        margin-right: 12px;
-    }
+  display: flex;
+  svg {
+    margin-right: 12px;
+  }
 }
 
 .label-color {
-    width: 100%;
-    color: white;
+  width: 100%;
+  color: white;
 }
 
 .main-modal-section {
-    flex: 1;
-    padding-right: 20px;
+  flex: 1;
+  padding-right: 20px;
 }
 
 .labels-and-due-date {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .in-list{
@@ -141,72 +141,72 @@
 }
 
 .card-preview-labels {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .new-checklist-text {
-    width: 10em !important;
+  width: 10em !important;
 }
 
 .add-icon {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .color-choice {
-    width: 25px;
-    height: 25px;
+  width: 25px;
+  height: 25px;
 }
 
 .att-image {
-    width: 100px;
-    height: 100px;
-    background-size: cover;
+  width: 100px;
+  height: 100px;
+  background-size: cover;
 }
 
 .card-attachment {
-    // margin: 10px;
+  // margin: 10px;
 }
 
 .card-details-cover-color,
 .card-details-cover-image {
-    width: 100%;
-    height: 100px;
-    justify-content: flex-end;
-    align-items: flex-end;
-    display: flex;
-    flex-direction: column;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+  width: 100%;
+  height: 100px;
+  justify-content: flex-end;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .card-details-cover-modal-close {
-    height: 40px;
-    width: 40px;
-    bottom: 22px;
-    right: 3px;
+  height: 40px;
+  width: 40px;
+  bottom: 22px;
+  right: 3px;
 }
 
 .modal-close {
-    height: 40px;
-    width: 40px;
-    bottom: 20px;
-    left: 15px;
+  height: 40px;
+  width: 40px;
+  bottom: 20px;
+  left: 15px;
 }
 
 .card-details-modal-container {
-    padding: 20px;
-    margin: auto;
-    overflow-x: hidden;
+  padding: 20px;
+  margin: auto;
+  overflow-x: hidden;
 }
 
 #modal-close {
-    padding: 8px;
-    margin: 0;
-    align-self: center;
+  padding: 8px;
+  margin: 0;
+  align-self: center;
 }
 
 .card-modal-title {
-    margin-bottom: 2px;
+  margin-bottom: 2px;
 }
