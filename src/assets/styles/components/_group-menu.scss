@@ -1,4 +1,4 @@
-.group-menu-container{
+.group-menu-container {
     width: 200px;
     border-radius: 0.25em;
     background-color: #fff;
@@ -9,30 +9,25 @@
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;    
-    padding: rem(6px) ;
+    justify-content: space-between;
+    padding: rem(6px);
     position: absolute;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
     cursor: auto;
     // >*{
     // margin-bottom: 8px;
     // padding: rem(6px);
-
     // }
-    &>:first-child{
+    &>:first-child {
         padding: rem(8px) 0;
     }
-
-    &>.group-menu-item{
+    &>.group-menu-item {
         align-self: flex-start;
         width: 100%;
         text-align: left;
         cursor: pointer;
         padding: rem(8px);
         font-weight: 150;
-
-        &:hover{
+        &:hover {
             background-color: $hovergray;
         }
     }

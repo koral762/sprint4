@@ -1,13 +1,9 @@
-//Font awesome
-@import './fontawesome/fontawesome.scss';
-@import './fontawesome/regular.scss';
-@import './fontawesome/brands.scss';
-@import './fontawesome/solid.scss';
 // Setup
 @import 'setup/variables.scss';
 @import 'setup/functions.scss';
 @import 'setup/mixins.scss';
 @import 'setup/typography.scss';
+@import 'setup/media-queries.scss';
 // /Components
 @import 'components/home-pg-header.scss';
 @import 'components/app-header.scss';

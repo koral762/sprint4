@@ -23,8 +23,6 @@ export class _Boards extends Component {
                 <div className="main-boards">
                     <div className="flex justify-space-between align-center">
                     <h3>Your Boards</h3>
-                        <input className="board-nav-filter" type="text" placeholder="Search...
-                        " ></input>
                     </div>
 
                     <section className="select-board-container">
