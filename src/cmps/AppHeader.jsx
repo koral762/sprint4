@@ -85,10 +85,10 @@ export class _AppHeader extends Component {
                             </div>
                         <div>
                         <NavLink to='/board'>
-                        <span className="boards-btn btn">
+                        <button className="flex align-center btn">
                             <DashboardIcon/> 
-                            Boards
-                            </span>
+                          <span className="boards-btn">Boards</span>
+                            </button>
                             </NavLink>
                             </div>
                     </div>
