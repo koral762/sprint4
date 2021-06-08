@@ -75,6 +75,7 @@ export class _AppHeader extends Component {
 
                 <div className="flex justify-space-between app-header align-center">
 
+                    <div className="right-side flex">
                     <div className="header-icons flex">
                         <div>
                         <NavLink to='/'>
@@ -84,17 +85,17 @@ export class _AppHeader extends Component {
                             </div>
                         <div>
                         <NavLink to='/board'>
-                        <span className="boards-btn btn">
+                        <button className="flex align-center btn">
                             <DashboardIcon/> 
-                            Boards
-                            </span>
+                          <span className="boards-btn">Boards</span>
+                            </button>
                             </NavLink>
                             </div>
                     </div>
                      <input className="btn board-nav-filter" type="text" placeholder="Filter here"></input>
-                    {/* <div className="logo">Tree-lo</div> */}
-                    <img src={Logo} className="logo-img"/>
+                    </div>
 
+                    <img src={Logo} className="logo-img"/>
 
                 </div>
             </React.Fragment>

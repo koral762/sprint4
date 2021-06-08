@@ -1,9 +1,12 @@
 .app-header {
+<<<<<<< HEAD
     padding: 4px 4px;
     height: 40px;
     color: $darktxt;
     background-color: rgba(243, 234, 234, 0.486);
     width: 100vw;
+    position: relative;
+    
     &.open {
         transform: translateX(0%);
     }
@@ -30,37 +33,73 @@
     transform: translateX(-50%);
     height: 100%;
     width: auto;
+    position: absolute;
+    left: 50%;
     &:hover {
         opacity: 0.8;
     }
+=======
+  padding: 4px 4px;
+  height: 40px;
+  color: $darktxt;
+  background-color: rgba(243, 234, 234, 0.486);
+  width: 100vw;
+  &.open {
+    transform: translateX(0%);
+  }
+  ul {
+    position: absolute;
+    top: 10vh;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  span {
+    font-size: 20px;
+    vertical-align: middle;
+  }
+  span.boards-btn {
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
+
+.logo-img {
+  transform: translateX(-50%);
+  height: 100%;
+  width: auto;
+  &:hover {
+    opacity: 0.8;
+  }
+>>>>>>> eeaf24b6e256387746b79301136ecc8f7b2c5cfb
 }
 
 .login-btn,
 .signup-btn {
-    color: $lighttxt;
-    background-color: #30aa00;
-    font-weight: 500;
-    font-size: rem(17.5px);
-    line-height: 1.5;
-    border-radius: 0.2rem;
-    white-space: nowrap;
-    user-select: none;
-    padding: rem(4px) rem(8px);
-    margin-right: 4px;
+  color: $lighttxt;
+  background-color: #30aa00;
+  font-weight: 500;
+  font-size: rem(17.5px);
+  line-height: 1.5;
+  border-radius: 0.2rem;
+  white-space: nowrap;
+  user-select: none;
+  padding: rem(4px) rem(8px);
+  margin-right: 4px;
 }
 
 .login-btn {
-    background-color: transparent;
-    color: #30aa00;
-    transition: text-decoration 0.15s ease-in-out;
-    &:hover {
-        text-decoration: underline;
-    }
+  background-color: transparent;
+  color: #30aa00;
+  transition: text-decoration 0.15s ease-in-out;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .signup-btn {
-    transition: background-color 0.15s ease-in-out;
-    &:hover {
-        background-color: #2d9105;
-    }
+  transition: background-color 0.15s ease-in-out;
+  &:hover {
+    background-color: #2d9105;
+  }
 }
