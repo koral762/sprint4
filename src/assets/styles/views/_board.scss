@@ -4,16 +4,21 @@
   padding: 0 8px;
   background-color: rgba(0, 0, 0, 0);
   overflow-y: hidden;
+}
 
-  .proj-title {
-    font-size: rem(18px);
-    font-weight: bolder;
+.proj-title {
+  font-size: rem(18px);
+  font-weight: bolder;
+}
+
+.board-nav-right,
+.board-nav-left {
+  float: right;
+  gap: 5px;
+  .notification-icon {
+    vertical-align: middle;
   }
-  // input[type="text"] {}
-  .board-nav-right {
-    float: right;
-    // gap: 3px;
-  }
+
   // &>.btn,
   // button {
   //     margin: 0 4px 4px 0;
@@ -23,11 +28,6 @@
     margin: 0;
     gap: 5px;
   }
-}
-
-.board-nav-left,
-.board-nav-right {
-  gap: 5px;
 }
 
 .board-app {

@@ -3,7 +3,6 @@
 @import 'setup/functions.scss';
 @import 'setup/mixins.scss';
 @import 'setup/typography.scss';
-@import 'setup/media-queries.scss';
 // /Components
 @import 'components/home-pg-header.scss';
 @import 'components/app-header.scss';
@@ -26,7 +25,6 @@
 @import 'components/side-bar.scss';
 @import 'components/card-checklist-todo.scss';
 
-
 //Views
 @import 'views/home-page.scss';
 @import 'views/board.scss';
@@ -39,4 +37,5 @@
 @import 'basics/base.scss';
 @import 'basics/buttons.scss';
 @import 'basics/scrollbar.scss';
+@import 'setup/media-queries.scss';
 // @import "basics/body.scss";

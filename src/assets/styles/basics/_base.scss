@@ -3,13 +3,10 @@
 }
 
 html {
-  // height: 100vh;
-  // font-family: 'Poppins-Light';
-  font-family: 'Roboto', sans-serif;
   color: $darktxt;
-  line-height: 1.6;
+  // line-height: 1.6;
   margin: 0;
-  -webkit-text-size-adjust: 100%;
+  // -webkit-text-size-adjust: 100%;
 }
 
 body,
@@ -35,12 +32,6 @@ body {
   // background-size: auto;
   // background-position: bottom right;
   // background-image: url('../../imgs/Quantum-Gradient.svg');
-}
-
-.app-bg {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 
 img {
@@ -69,6 +60,7 @@ button {
   outline: none;
   cursor: pointer;
   margin: 0;
+  padding: 0;
 }
 
 a {
@@ -77,6 +69,12 @@ a {
   text-decoration: none;
   padding: 0;
   margin: 0;
+}
+
+.app-bg {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 // textarea {

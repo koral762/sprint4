@@ -36,7 +36,7 @@ export class _Boards extends Component {
 
                     <h3 className="popular-title">Popular templates</h3>
 
-                    <section className="select-board-container">
+                    <section className="select-board-container flex wrap">
                         <div className="template" style={{
                             backgroundImage: "url(http://avante.biz/wp-content/uploads/Tab-HD-Wallpapers/Tab-HD-Wallpapers-004.jpg)"
                         }}><span>Template</span></div>
