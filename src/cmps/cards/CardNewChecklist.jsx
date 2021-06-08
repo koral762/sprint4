@@ -44,7 +44,7 @@ export class CardNewChecklist extends Component {
             </form>
         )
         return (
-            <button className="flex" onClick={this.setEditing}><CheckBoxOutlinedIcon /><span className="sidebar-button-text">New Checklist</span></button>
+            <button className="flex" onClick={this.setEditing}><CheckBoxOutlinedIcon /><span className="sidebar-button-text">New checklist</span></button>
         )
     }
 

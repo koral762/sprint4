@@ -56,7 +56,7 @@ class _LabelPalette extends Component {
 
     render() {
         const { board, card } = this.props;
-        return <div className={this.props.isShownOnBoard ? "card-preview-label-palette" : "card-details-label-palette"}>
+        return <div className={this.props.isShownOnBoard ? "card-preview-label-palette" : "card-details-label-palette"} style={this.props.style}>
         <ul className="clean-list">
             <div className="labels-modal flex column">
             <span className="labels-modal-header">Labels</span>

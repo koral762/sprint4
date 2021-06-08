@@ -44,12 +44,14 @@
 }
 
 .card-preview-title-edit {
+    font-family: Robo;
     width: 100%;
     min-height: 3rem;
     resize: none;
     font-size: 18px;
     border: none;
     outline: 0px;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
 
     &:focus{
         border: none;
@@ -69,4 +71,8 @@
         color: $bluebtn;
     }
   
+}
+
+.material-ui-btn {
+    text-transform: 'none';
 }
