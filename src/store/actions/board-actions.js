@@ -38,6 +38,11 @@ export function loadBoards() {
     }
 }
 
+export function addNewBoard(){
+    
+    console.log('add new board');
+}
+
 export function removeBoard(boardId) {
     return async dispatch => {
         try {

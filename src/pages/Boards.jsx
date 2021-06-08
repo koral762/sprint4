@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { loadBoards, removeBoard } from '../store/actions/board-actions'
+import { loadBoards, removeBoard, addNewBoard } from '../store/actions/board-actions'
 import { Link } from "react-router-dom";
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import { BoardPreview } from '../cmps/BoardPreview';
@@ -22,15 +22,16 @@ export class _Boards extends Component {
             <section className="boards-page-bg flex column ">
                 <div className="main-boards">
                     <div className="flex justify-space-between align-center">
-                    <h3>Your Boards</h3>
+                        <h3>Your Boards</h3>
                     </div>
 
                     <section className="select-board-container">
-                        <div className="create-new-board">
-                        <div className="new-board-text flex align-center">
-                            <AddBoxIcon />
-                            <p>Create new board</p>
-                        </div></div>
+                        <div className="create-new-board" onClick={() => { this.props.addNewBoard()}}>
+                            <div className="new-board-text flex align-center">
+                                <AddBoxIcon />
+                                <p>Create new board</p>
+                            </div>
+                        </div>
                         {boards.map((board) => <BoardPreview key={board._id} board={board} />)}
                     </section>
 
@@ -74,7 +75,8 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = {
     loadBoards,
-    removeBoard
+    removeBoard,
+    addNewBoard
 }
 
 export const Boards = connect(mapStateToProps, mapDispatchToProps)(_Boards)
