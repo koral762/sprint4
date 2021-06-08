@@ -23,15 +23,18 @@ export class _PhotosGallery extends Component {
 
         const imgs = [
             "url(http://avante.biz/wp-content/uploads/Tab-HD-Wallpapers/Tab-HD-Wallpapers-001.jpg)",
-            "url(http://avante.biz/wp-content/uploads/Wonderful-Desktop-Wallpapers/Wonderful-Desktop-Wallpapers-008.jpg}",
-            "url(http://avante.biz/wp-content/uploads/Wonderful-Desktop-Wallpapers/Wonderful-Desktop-Wallpapers-033.jpg)",
-            "url(http://avante.biz/wp-content/uploads/THC-structure-wallpaper/THC-structure-wallpaper1.jpg)",
             "url(http://avante.biz/wp-content/uploads/Wonderful-Desktop-Wallpapers/Wonderful-Desktop-Wallpapers-005.jpg",
+            "url(http://avante.biz/wp-content/uploads/Wonderful-Desktop-Wallpapers/Wonderful-Desktop-Wallpapers-014.jpg)",
+            "url(http://avante.biz/wp-content/uploads2/Summer-Nature-Desktop-HD-1/Summer-Nature-Desktop-HD-8.jpg)",
+            "url(http://avante.biz/wp-content/uploads2/Summer-Nature-Desktop-HD-1/Summer-Nature-Desktop-HD-1.jpg)",
+            "url(http://avante.biz/wp-content/uploads/Wonderful-Desktop-Wallpapers/Wonderful-Desktop-Wallpapers-033.jpg)",
+            "url(http://avante.biz/wp-content/uploads/Wonderful-Desktop-Wallpapers/Wonderful-Desktop-Wallpapers-010.jpg)",
+            "url(http://avante.biz/wp-content/uploads2/Summer-Nature-Desktop-HD-1/Summer-Nature-Desktop-HD-6.jpg)",
             "url(http://avante.biz/wp-content/uploads/Wonderful-Desktop-Wallpapers/Wonderful-Desktop-Wallpapers-032.jpg)",
             "url(http://avante.biz/wp-content/uploads/Outer-space-wallpaper-for-mac/Outer-space-wallpaper-for-mac15.jpg)",
             "url(http://avante.biz/wp-content/uploads/Outer-space-wallpaper-for-mac/Outer-space-wallpaper-for-mac13.jpg)",
-            "url(http://avante.biz/wp-content/uploads/Wonderful-Desktop-Wallpapers/Wonderful-Desktop-Wallpapers-010.jpg)",
-            "url(http://avante.biz/wp-content/uploads/Wonderful-Desktop-Wallpapers/Wonderful-Desktop-Wallpapers-014.jpg)"
+            "url(http://avante.biz/wp-content/uploads2/Autumn-Street-Wallpapers-Desktop-1/Autumn-Street-Wallpapers-Desktop-45.jpg",
+            "url(http://avante.biz/wp-content/uploads/THC-structure-wallpaper/THC-structure-wallpaper1.jpg)"
         ]
 
 
