@@ -1,0 +1,114 @@
+// @media only screen and (min-width: 320px) and (max-width: 479px) {
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  a {
+    display: flex;
+    width: 47%;
+  }
+
+  span.boards-btn {
+    display: none;
+  }
+
+  button {
+    padding: 0;
+  }
+
+  .board-nav-filter {
+    display: none;
+  }
+  
+  
+
+  .select-board-container {
+    display: flex;
+    .template {
+      flex-grow: 1;
+      white-space: normal;
+    }
+  }
+
+  .board-container {
+    & > * {
+      margin: 0;
+      gap: 7px;
+    }
+    .board-nav-left,
+    .board-nav-right {
+      float: right;
+      gap: 5px;
+    }
+
+    .description-title, .activity-title{
+      margin-top: 3px;
+      font-size: 15px;
+        }
+  }
+
+  .modal-content {
+    margin: 40px 7px 0 7px;
+    width: auto;
+    position: relative;
+    background-color: #f4f5f7;
+    overflow: scroll;
+    border-radius: 2px;
+    transition: all 500ms ease-in-out;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    .card-details-title {
+      white-space: normal;
+      word-wrap: break-word;
+    }
+    .modal-content-wrapper {
+      flex-direction: column;
+    }
+    & > * {
+      width: 100%;
+    }
+  }
+}
+
+// @media only screen and (min-width: 480px) and (max-width: 767px) {
+//   .select-board-container {
+//     display: flex;
+//     a {
+//       display: flex;
+//       width: 47%;
+//     }
+//     & .template,
+//     .board,
+//     .create-new-board {
+//       flex-grow: 1;
+//       white-space: normal;
+//     }
+//     span.boards-btn {
+//       display: none;
+//     }
+//   }
+// }
+
+// @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media only screen and (min-width: 768px) {
+  .modal-content {
+    position: relative;
+    background-color: #f4f5f7;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    // padding: 20px;
+    overflow: scroll;
+    max-width: 75vw;
+    min-height: 80vh;
+    // border: 1px solid #888;
+    border-radius: 2px;
+    width: 768px;
+    transition: all 500ms ease-in-out;
+    h3 {
+      margin: 0.3em 0;
+    }
+  }
+  
+}
+
+@media only screen and (min-width: 992px) {
+}
