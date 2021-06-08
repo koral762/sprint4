@@ -4,7 +4,7 @@ import { MemberList } from '../cmps/BoardHeader/MemberList';
 // import { Filter } from './Filter';
 import { loadAllUsers } from '../store/actions/user-actions.js';
 import { updateBoardTitle } from '../store/actions/board-actions.js';
-
+import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
 // import { Notifications } from './Notifications';
 // import MoreHorizOutlinedIcon from '@material-ui/icons/MoreHorizOutlined';
 import { BoardTitle } from '../cmps/BoardHeader/BoardTitle'
@@ -31,7 +31,9 @@ export class _BoardNav extends Component {
                    
                 </div>
                 <div className="board-nav-right flex ">
-                    <button>notifications</button>
+                    <button>
+                    <NotificationsNoneIcon />
+                    </button>
                     <button onClick={() => this.props.onToggleSidebar(true)}>
                         <span className="material-icons">more_horiz</span>Show menu
                 </button>
