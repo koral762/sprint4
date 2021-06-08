@@ -1,49 +1,11 @@
 .app-header {
-<<<<<<< HEAD
-    padding: 4px 4px;
-    height: 40px;
-    color: $darktxt;
-    background-color: rgba(243, 234, 234, 0.486);
-    width: 100vw;
-    position: relative;
-    
-    &.open {
-        transform: translateX(0%);
-    }
-    ul {
-        position: absolute;
-        top: 10vh;
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-    }
-    span {
-        font-size: 20px;
-        vertical-align: middle;
-        display: flex;
-        align-items: center;
-    }
-    span.boards-btn {
-        font-size: 14px;
-        font-weight: 600px;
-    }
-}
-
-.logo-img {
-    transform: translateX(-50%);
-    height: 100%;
-    width: auto;
-    position: absolute;
-    left: 50%;
-    &:hover {
-        opacity: 0.8;
-    }
-=======
   padding: 4px 4px;
   height: 40px;
   color: $darktxt;
   background-color: rgba(243, 234, 234, 0.486);
   width: 100vw;
+  position: relative;
+
   &.open {
     transform: translateX(0%);
   }
@@ -57,10 +19,12 @@
   span {
     font-size: 20px;
     vertical-align: middle;
+    display: flex;
+    align-items: center;
   }
   span.boards-btn {
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 600px;
   }
 }
 
@@ -68,10 +32,11 @@
   transform: translateX(-50%);
   height: 100%;
   width: auto;
+  position: absolute;
+  left: 50%;
   &:hover {
     opacity: 0.8;
   }
->>>>>>> eeaf24b6e256387746b79301136ecc8f7b2c5cfb
 }
 
 .login-btn,

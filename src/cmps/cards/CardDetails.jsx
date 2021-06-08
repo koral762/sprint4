@@ -352,7 +352,7 @@ class _CardDetails extends Component {
                                     <CloseIcon />
                                 </IconButton>}
                         </div>
-                        <div className="flex justify-space-between">
+                        <div className="flex justify-space-between modal-content-wrapper">
                             <section className="main-modal-section">
 
                                 <div className="labels-and-due-date">
