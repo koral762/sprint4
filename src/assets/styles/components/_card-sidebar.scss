@@ -1,31 +1,31 @@
 .card-sidebar {
+  color: #172b4d;
+  a {
     color: #172b4d;
-    a {
-        color: #172b4d;
-    }
-    button {
-        background-color: rgba(9, 30, 66, .04);
-        padding: 6px 10px;
-        align-items: center;
-        user-select: none;
-        margin-bottom: 8px;
-        margin-left: 0;
-    }
-    h3 {
-        text-transform: uppercase;
-        color: #5e6c84;
-        font-weight: bold;
-        line-height: 16px;
-        font-size: 14px;
-        margin-bottom: 8px;
-    }
-    // .MuiSvgIcon-root {
-    //     margin: 3px 7px 0 0;
-    //     font-size: 16px;
-    //     vertical-align: bottom;
-    // }
+  }
+  button {
+    background-color: rgba(9, 30, 66, 0.04);
+    padding: 6px 10px;
+    align-items: center;
+    user-select: none;
+  }
+  h3 {
+    text-transform: uppercase;
+    color: #5e6c84;
+    font-weight: bold;
+    line-height: 16px;
+    font-size: 14px;
+    // margin-bottom: 8px;
+  }
+  // .MuiSvgIcon-root {
+  //     margin: 3px 7px 0 0;
+  //     font-size: 16px;
+  //     vertical-align: bottom;
+  // }
 }
 
 .sidebar-button-with-cover {
-    display: flex;
+  display: flex;
+  background-color: rgba(226, 226, 226, 0.849);
+  font-weight: 500;
 }
