@@ -6,6 +6,7 @@
 .main-boards {
   margin-left: rem(50px);
   margin-right: rem(50px);
+  
   h3 {
     line-height: 24px;
     font-size: 1rem;
@@ -35,12 +36,15 @@
 
 .select-board-container {
   gap: 8px;
+  margin-bottom: 18px;
 }
+
 .create-new-board{
   display: table;
 }
 
 .create-new-board,
+.board,
 .template {
   background-color: rgba(9, 30, 66, 0.212);
   height: 92px;
@@ -75,6 +79,7 @@
   }
 }
 
+
 .create-new-board {
   font-weight: 500;
   font-size: 14px;
@@ -95,4 +100,8 @@
 
 #coverflow__arrow1__2X2XF .coverflow__arrow__IDi7v {
   width: unset;
+}
+
+.board{
+  width: 173px;
 }

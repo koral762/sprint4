@@ -14,7 +14,7 @@ export function BoardPreview(props) {
     return (
 
         <Link to={`/board/${board._id}`} >
-            <div className="template" style={boardImg ? { backgroundImage: boardImg } :
+            <div className="template board" style={boardImg ? { backgroundImage: boardImg } :
                 { backgroundColor: boardColor }}>
                 <span className="board-title-preview">{board.title}</span></div>
         </Link>
