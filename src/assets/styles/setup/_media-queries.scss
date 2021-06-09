@@ -44,9 +44,9 @@
     overflow: scroll;
     border-radius: 2px;
     transition: all 500ms ease-in-out;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    // display: flex;
+    // flex-direction: column;
+    // flex-wrap: wrap;
     .card-details-title {
       white-space: normal;
       word-wrap: break-word;
@@ -88,7 +88,39 @@
   .menu-title {
     margin: 0 auto;
   }
-  .side-bar-container {
+  .card-sidebar {
+    color: #172b4d;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    a {
+      color: #172b4d;
+    }
+    button {
+      background-color: rgba(9, 30, 66, 0.04);
+      padding: 6px 10px;
+      align-items: center;
+      user-select: none;
+      // margin-bottom: 8px;
+      // margin-left: 0;
+      width: calc(50% - 8px);
+    }
+    h3 {
+      text-transform: uppercase;
+      color: #5e6c84;
+      font-weight: bold;
+      line-height: 16px;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+  }
+  .modal-content {
+    .card-sidebar button {
+      width: calc(50% - 8px);
+    }
+    .card-sidebar-container {
+      margin-bottom: 12px;
+    }
   }
 }
 
@@ -104,16 +136,18 @@
   }
 
   .card-preview-due-date-container {
-    padding: 5px 6px;
+    padding: 7px 6px;
     border-radius: 4px;
     margin: 0;
     vertical-align: middle;
-    display: flex;
-    align-items: center;
     line-height: 12px;
     svg {
       margin-right: 1.5px;
     }
+  }
+  .card-details-cover-image {
+    background-size: cover;
+    height: 160px;
   }
 }
 
@@ -133,8 +167,9 @@
     border-radius: 2px;
     width: 768px;
     transition: all 500ms ease-in-out;
-    h3 {
-      margin: 0.3em 0;
+    .card-sidebar {
+      flex-direction: column;
+      gap: 6px;
     }
   }
   .select-board-container {
@@ -165,7 +200,5 @@
 @media only screen and (min-width: 992px) {
   .main-boards {
     max-width: 900px;
-    .select-board-container {
-    }
   }
 }

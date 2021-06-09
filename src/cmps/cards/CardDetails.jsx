@@ -258,7 +258,7 @@ class _CardDetails extends Component {
         const labels = this.state.card.labels
         if (labels && labels.length) return (
             <div className="card-details-label-container">
-                <h5>Labels</h5>
+                <h4>Labels</h4>
                 <CardLabels
                     onClickLabel={this.openEditLabelsModal}
                     cardLabels={labels}
@@ -357,10 +357,10 @@ class _CardDetails extends Component {
                         <div className="flex justify-space-between modal-content-wrapper">
                             <section className="main-modal-section">
 
-                                <div className="labels-and-due-date">
+                                <div className="card-details-data">
                                     {this.getLabels()}
                                     {(this.state.card.dueDate ? <div>
-                                        <h5>Due Date</h5>
+                                        <h4>Due Date</h4>
                                         <CardDueDateSetter onUpdateDueDate={this.onUpdateDueDate} dueDate={this.state.card.dueDate} displayDate={true} displayTime={true} />
                                     </div> : <React.Fragment />)}
                                 </div>
@@ -395,7 +395,7 @@ class _CardDetails extends Component {
                         </div>
                         <div>
                             <section className="flex justify-space-between">
-                                <div className="flex">
+                                <div className="flex modal-activity-title">
                                     <ListIcon />
                                     <h3>Activity</h3>
                                 </div>

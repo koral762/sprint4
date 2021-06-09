@@ -153,7 +153,7 @@ class _CardPreview extends Component {
                 draggableId={this.props.card.id}
                 index={this.props.index}>
                 {(provided) => (
-                    <section className="card-preview"
+                    <section className="card-preview flex justify-space-between"
                         onClick={this.onDetails}
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}

@@ -1,102 +1,104 @@
 .labels-modal {
-    padding: 9px;
-    height: 22rem;
-    width: 20rem;
+  padding: 9px;
+  height: 22rem;
+  width: 20rem;
 }
 
 .label {
-    text-align: end;
+  text-align: end;
 }
 
 .label-color {
-    padding: 7px;
-    height: 35px;
-    color: white;
-    border-radius: 4px;
+  padding: 7px;
+  height: 35px;
+  color: white;
+  border-radius: 4px;
 }
 
 .labels-modal-header {
-    color: slategray;
-    margin-bottom: 10px;
+  color: slategray;
+  margin-bottom: 10px;
 }
 
 .tick-symbol {
-    color: white;
+  color: white;
 }
 
 .btn.new-label-button {
-    text-align: center;
+  text-align: center;
 }
 
 .label-edit-modal {
-    background-color: #fff;
-    height: fit-content;
-    top: rem(150px);
-    left: rem(10px);
-    width: rem(300px);
-    height: rem(180px);
-    border-radius: rem(3px);
-    padding: rem(10px);
-    position: absolute;
-    z-index: 1;
-    box-shadow: 0px 0px 5px 0px #000000;
-    text-align: center;
+  background-color: #fff;
+  height: fit-content;
+  top: rem(150px);
+  left: rem(10px);
+  width: rem(300px);
+  height: rem(180px);
+  border-radius: rem(3px);
+  padding: rem(10px);
+  position: absolute;
+  z-index: 1;
+  box-shadow: 0px 0px 5px 0px #000000;
+  text-align: center;
 }
 
 .color-picker-container {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .color-pallete {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 rem(4px);
-    input[type="radio"] + label {
-        margin: rem(5px);
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 rem(4px);
+  input[type='radio'] + label {
+    margin: rem(5px);
+  }
+  input[type='radio']:checked + label {
+    box-shadow: 0 0 0 2px black;
+    border-radius: 3px;
+  }
+  .color-picker {
+    width: rem(30px);
+    height: rem(25px);
+    border-radius: rem(3px);
+    :checked {
+      border: 1px solid black;
     }
-    input[type="radio"]:checked + label {
-        box-shadow: 0 0 0 2px black;
-        border-radius: 3px;
-    }
-    .color-picker {
-        width: rem(30px);
-        height: rem(25px);
-        border-radius: rem(3px);
-        :checked {
-            border: 1px solid black;
-        }
-    }
+  }
 }
 
 .color-picker {
-    cursor: pointer;
-    height: 25px;
-    width: 25px;
-    margin: 5px;
-    margin-top: 10px;
-    border-radius: 30%;
-    box-shadow: 1px gray
+  cursor: pointer;
+  height: 25px;
+  width: 25px;
+  margin: 5px;
+  margin-top: 10px;
+  border-radius: 30%;
+  box-shadow: 1px gray;
 }
 
 .card-details-label {
-    padding: 5px;
-    margin: 2px;
-    border-radius: 4px;
-    color: white;
+  padding: 5px;
+  // margin: 2px;
+  border-radius: 4px;
+  color: white;
 }
 
 .card-details-mask {
-    margin:5px;
+  margin: 5px;
 }
 
 .label.add-label {
-    padding-bottom: 10px;
+  padding-bottom: 10px;
 }
 .card-preview-label-palette {
-    background-color:white;
-    border-radius: 5px;
-    box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12);
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0px 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0px 3px 14px 2px rgba(0, 0, 0, 0.12);
 }
