@@ -28,6 +28,9 @@
   .card-details-title {
     font-weight: bold;
     font-size: em(20px);
+    h2 {
+      margin: 4px 8px;
+    }
   }
 }
 
@@ -75,14 +78,16 @@
 .description-text-box {
   margin: 15px 3px 4px -6px;
   padding: 8px 0;
-  cursor: pointer;
   pre {
+    cursor: pointer;
     background-color: rgba(9, 30, 66, 0.04);
     border: none;
-    border-radius: 3px;
+    outline: none;
+    // border-radius: 3px;
     min-height: 40px;
     padding: 8px 12px;
     text-decoration: none;
+    resize: none;
 
     // &:active {
     //     cursor: pointer;
@@ -91,17 +96,22 @@
     //     outline: none;
     //     height: 108px;
     // }
-    &pre:focus {
+    &pre:focus,
+    pre:active {
       cursor: pointer;
       font-size: rem(12px);
       border: none;
       outline: none;
       height: 108px;
     }
+    .description-active-box button {
+      width: fit-content;
+    }
   }
 }
 
-.description-title {
+.modal-activity-title {
+  vertical-align: bottom;
 }
 
 .sidebar-button-text {

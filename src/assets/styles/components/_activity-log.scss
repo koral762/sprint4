@@ -1,27 +1,31 @@
 .editing-section-container {
-    margin: 8px 12px;
+  margin: 6px 8px;
 }
 
 .whole-activity {
-    margin-left: 10px;
-    min-height: 32px;
-    .member-preview {
-        // align-self: center;
-        font-size: 16px;
-        height: 32px;
-        width: 32px;
-        padding-top: 2px;
-    }
-    pre {}
+  margin-left: 10px;
+  min-height: 32px;
+  .member-preview {
+    // align-self: center;
+    font-size: 16px;
+    height: 32px;
+    width: 32px;
+    padding-top: 2px;
+  }
 }
 
 .activity-details {
-    margin-left: 10px;
-    flex-grow: 1;
+  font-family: 'Roboto', sans-serif;
+  margin-left: 10px;
+  flex-grow: 1;
 }
 
 .activity-text-box-text {
-    a {
-        font-weight: bold;
-    }
+  a {
+    font-weight: bold;
+  }
+}
+
+#panel1a-header {
+  min-height: fit-content;
 }

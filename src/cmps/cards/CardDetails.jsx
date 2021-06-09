@@ -395,7 +395,7 @@ class _CardDetails extends Component {
                         </div>
                         <div>
                             <section className="flex justify-space-between">
-                                <div className="flex">
+                                <div className="flex modal-activity-title">
                                     <ListIcon />
                                     <h3>Activity</h3>
                                 </div>
