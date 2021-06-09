@@ -145,7 +145,7 @@ class _CardPreview extends Component {
         const strStyle="url("+card.attachments+")"
 
         const cardAttachStyle = {
-            "background-image": strStyle,
+            backgroundImage: strStyle,
         }
 
         return (

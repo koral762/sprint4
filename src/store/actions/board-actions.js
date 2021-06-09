@@ -13,7 +13,6 @@ export function loadBoard(id) {
             socketService.emit('join board', id) // join('u101')
             socketService.off('updated board')
             socketService.on('updated board', board => {
-                console.log('koral', board);
                 dispatch({ type: 'SET_BOARD', board })
             })
             // socketService.on('task-updated', task => {

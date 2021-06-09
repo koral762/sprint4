@@ -34,7 +34,6 @@ export class _AddNewBoard extends Component {
 
     onSubmit = async (ev) => {
         ev.preventDefault()
-        console.log('korallll');
         // const boardColor = this.state.selectedColor
         // const boardName = this.state.newBoardName
         // if (!boardName) return // add an error message when no name has been entered

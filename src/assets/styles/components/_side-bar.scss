@@ -161,9 +161,11 @@ hr {
 .image-gallery {
   display: flex;
   flex-wrap: wrap;
-  height: 80%;
+  overflow-x: hidden;
+  justify-content: center;
+  height: 100%;
   margin-top: 4px;
-  width: 117%;
+  width: 100%;
 
   .image {
     width: 40%;
@@ -186,5 +188,5 @@ hr {
 
 .change-background-container {
   width: 100%;
-  overflow-y: auto;
+  // overflow-y: auto;
 }
