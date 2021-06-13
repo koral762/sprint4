@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { loadBoards, removeBoard, addNewBoard } from '../store/actions/board-actions'
+import { loadBoards, removeBoard} from '../store/actions/board-actions'
 import { Link } from "react-router-dom";
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import { BoardPreview } from '../cmps/BoardPreview';
@@ -48,12 +48,7 @@ export class _Boards extends Component {
                     </div>
 
                     <section className="select-board-container flex wrap">
-                        {/* onClose={this.onCloseCreateBoard}
-                                onBackdropClick={this.onCloseCreateBoard}
-                                open={this.state.isCreateBoardOpen}
-                                className="add-board-modal">
-                                <AddNewBoard onCloseModal={this.onCloseCreateBoard} redirectPath={this.onRedirect} />
-                          */}
+                       
                         <div className="create-new-board" onClick={() =>{this.openNewBoardModal()}}>
                             <div className="new-board-text flex align-center">
                                 <AddBoxIcon />
@@ -104,8 +99,7 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = {
     loadBoards,
-    removeBoard,
-    addNewBoard
+    removeBoard
 }
 
 export const Boards = connect(mapStateToProps, mapDispatchToProps)(_Boards)

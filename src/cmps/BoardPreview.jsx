@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 export function BoardPreview(props) {
 
     const board = props.board
-    const boardImg = props.board.style.bgImg
-    const boardColor = props.board.style.boardColor
+    const boardImg = board.style.bgImg
+    const boardColor = board.style.boardColor
 
     return (
 

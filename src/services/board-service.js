@@ -82,7 +82,7 @@ function createImage(imgRef) {
 }
 
 async function addNewBoard(boardName, boardColor) {
-    const newBoard = {
+    const board = {
         title: boardName,
         isArchived: false,
         createdAt: Date.now,
@@ -120,8 +120,8 @@ async function addNewBoard(boardName, boardColor) {
         ],
         activities: [],
         createdBy: { // update from currUser
-            // _id: 'u101', // update from user
-            fullName: 'Abi Abambi',
+            _id: 'u2345', // update from user
+            fullName: 'Gust',
             imgUrl: 'http://some-img'
         },
         style: {
@@ -130,11 +130,7 @@ async function addNewBoard(boardName, boardColor) {
             bgImg: null,
             boardColor
         },
-        members: [{ // update from currUser
-            _id: 'u101', // update from user
-            fullName: 'Abi Abambi',
-            imgUrl: 'http://some-img'
-        }],
+        members: [],
         groups: [{
             id: utils.makeId(),
             title: 'Add New Card Title',
@@ -144,10 +140,7 @@ async function addNewBoard(boardName, boardColor) {
             cards: []
         }]
     }
-
-    console.log(newBoard);
-
-    const addedBoard = await httpService.post(`board`, newBoard);
+    const addedBoard = await httpService.post(`board`, board);
     return addedBoard
     // push new board to board collection and forword user to the new route
 }

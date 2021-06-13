@@ -34,13 +34,15 @@ export class _AddNewBoard extends Component {
 
     onSubmit = async (ev) => {
         ev.preventDefault()
-        // const boardColor = this.state.selectedColor
-        // const boardName = this.state.newBoardName
-        // if (!boardName) return // add an error message when no name has been entered
-        // const newBoard = await this.props.addNewBoard(boardName, boardColor)
-        // this.props.redirectPath(newBoard._id)
-        // await this.props.loadBoard(newBoard._id)
-        // this.props.setDefaultStyle()
+        const boardColor = this.state.selectedColor
+        const boardName = this.state.newBoardName
+        console.log('koko', boardName,boardColor);
+        if (!boardName) return alert('Board name is required'); // add an error message when no name has been entered
+        const newBoard = await this.props.addNewBoard(boardName, boardColor)
+        console.log('Adsnewboard.jsx',newBoard);
+        this.props.redirectPath(newBoard._id)
+        await this.props.loadBoard(newBoard._id)
+        this.props.setDefaultStyle()
     }
 
     render() {

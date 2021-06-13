@@ -39,7 +39,10 @@
     overflow: auto;
     margin: 0 4px;
     padding: 0 4px;
-    z-index: 2;
     min-height: 2px;
     white-space: normal;
+    
+    &:active{
+        z-index: 2;
+    }
 }

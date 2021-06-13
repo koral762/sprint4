@@ -37,14 +37,14 @@ export function loadBoards() {
     }
 }
 
-export function addNewBoard(boardName, boardColor = null) {
-    
+export function addNewBoard(boardName, boardColor = '#519839') {
+
     return async dispatch => {
-      const newBoard = await boardService.addNewBoard(boardName, boardColor)
-      dispatch({ type: 'SET_BOARD', newBoard });
-      return newBoard
+        const board = await boardService.addNewBoard(boardName, boardColor)
+        dispatch({ type: 'SET_BOARD', board });
+        return board
     }
-  }
+}
 
 export function removeBoard(boardId) {
     return async dispatch => {
